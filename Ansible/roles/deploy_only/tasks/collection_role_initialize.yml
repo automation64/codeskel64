@@ -1,0 +1,30 @@
+---
+- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize / Check Platform compatibility"
+  ansible.builtin.assert:
+    quiet: true
+    fail_msg: "Target Platform not supported: {{ ansible_distribution + ansible_distribution_major_version }}"
+    that:
+      - ansible_distribution + ansible_distribution_major_version in __ROLE_NAME___platforms
+  changed_when: false
+
+- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize / Identify base Platform"
+  ansible.builtin.set_fact:
+    __ROLE_NAME_____initialize_platform: "
+      {%- if
+          ( ansible_distribution == 'CentOS' and ansible_distribution_major_version == '8' ) or
+          ( ansible_distribution == 'OracleLinux' and ansible_distribution_major_version == '8' ) or
+          ( ansible_distribution == 'Fedora' and ansible_distribution_major_version == '33' )
+      -%}
+        {{ 'RedHat' }}
+      {%- elif
+          ( ansible_distribution == 'Ubuntu' and ( ansible_distribution_major_version == '20' or ansible_distribution_major_version == '21' ) )
+      -%}
+        {{ 'Ubuntu' }}
+      {%- endif -%}
+    "
+
+- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize / Set Platform specific variables"
+  ansible.builtin.include_vars:
+    file: "{{ 'platform-' + __ROLE_NAME_____initialize_platform + '.yml' }}"
+  changed_when: false
+...

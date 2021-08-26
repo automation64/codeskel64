@@ -1,0 +1,53 @@
+---
+site_name: "__PROJECT_NAME__ Project"
+site_description: "__PROJECT_NAME__ is an automated infrastructure-as-code management solution for small to medium computing environments"
+site_author: "SerDigital64"
+
+site_url: "https://platform64.readthedocs.io"
+repo_url: "https://github.com/serdigital64/platform64"
+
+copyright: "GPL-3.0-or-later"
+docs_dir: "docs/"
+site_dir: "site/"
+strict: false
+
+extra_css:
+  - "css/codehilite.css"
+
+plugins:
+  - search
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      linenums: false
+      guess_lang: false
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+      truly_sane: true
+  - toc:
+      permalink: true
+      baselevel: 2
+
+nav:
+  - Home: "index.md"
+  - Contributing:
+    - guidelines: "contributing/guidelines.md"
+    - design: "contributing/design.md"
+  - Collections:
+    - application: "collections/application.md"
+    - backup: "collections/backup.md"
+    - development: "collections/development.md"
+    - system: "collections/system.md"
+  - Roles:
+    - app_keepassx: "roles/app_keepassx.md"
+    - backup_archive: "roles/backup_archive.md"
+    - dev_git_client: "roles/dev_git_client.md"
+    - system_package: "roles/system_package.md"
+    - system_repository: "roles/system_repository.md"
+
+theme:
+  name: readthedocs
+  analytics:
+    gtag: "G-JQV1NG5TXT"
+...
