@@ -11,13 +11,19 @@
   ░░░░░░░░░     ░░░░░░░    ░░░░░░░░░░   ░░░░░░░░░░  ░░░░░░░░░  ░░░░░   ░░░░ ░░░░░░░░░░ ░░░░░░░░░░░  ░░░░░░░░        ░░░░░  
 ```
 
-Collection of skeletons, boilerplates and templates for code, test and docs.
+Collection of skeletons, boilerplates and templates for code, tests and docs.
 
-- Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
+Content:
+
+- [Ansible](Ansible)
+
+## Repository
+
+- [SerDigital64](https://github.com/serdigital64)
 
 ## Author
 
-- [SerDigital64](https://github.com/serdigital64)
+- Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
 
 ## License
 
