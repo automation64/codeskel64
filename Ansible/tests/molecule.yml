@@ -1,0 +1,53 @@
+---
+dependency:
+  name: "galaxy"
+  options:
+    ignore-errors: true
+    role-file: "meta/requirements-dev.yml"
+    requirements-file: "meta/requirements-dev.yml"
+driver:
+  name: "podman"
+lint: |
+  set -e
+  yamllint .
+  ansible-lint -c ${__PROJECT_ID_CAPS___ANSIBLE_LINT}
+platforms:
+  - name: "centos8"
+    image: "centos:8"
+    pre_build_image: false
+    groups:
+      - redhat
+      - rhel
+      - centos
+      - linux
+  - name: "ubuntu20"
+    image: "public.ecr.aws/lts/ubuntu:20.04_stable"
+    pre_build_image: false
+    groups:
+      - ubuntu
+      - linux
+  - name: "ubuntu21"
+    image: "ubuntu:21.04"
+    pre_build_image: false
+    groups:
+      - ubuntu
+      - linux
+  - name: "fedora33"
+    image: "fedora:33"
+    pre_build_image: false
+    groups:
+      - redhat
+      - fedora
+      - linux
+  - name: "oraclelinux8"
+    image: "docker.io/library/oraclelinux:8"
+    pre_build_image: false
+    groups:
+      - redhat
+      - rhel
+      - linux
+provisioner:
+  name: "ansible"
+verifier:
+  name: "ansible"
+...
