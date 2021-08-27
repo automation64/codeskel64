@@ -1,4 +1,4 @@
 ---
-__ROLE_NAME___packages:
+X_ROLE_NAME_X_packages:
   - "__PACKAGE_NAME__"
 ...

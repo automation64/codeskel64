@@ -16,7 +16,7 @@
     - name: "Load role variables"
       ansible.builtin.include_role:
         public: true
-        name: "__ROLE_NAME__"
+        name: "X_ROLE_NAME_X"
 
     - name: "Verify required packages are deployed (package: {{ item }})"
       ansible.builtin.assert:

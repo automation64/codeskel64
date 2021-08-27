@@ -10,7 +10,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  ansible-lint -c ${__PROJECT_ID_CAPS___ANSIBLE_LINT}
+  ansible-lint -c ${X_SHELL_PROJECT_ID_X_ANSIBLE_LINT}
 platforms:
   - name: "centos8"
     image: "centos:8"

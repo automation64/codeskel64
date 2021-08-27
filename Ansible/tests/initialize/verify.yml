@@ -12,7 +12,7 @@
     - name: "Load role variables"
       ansible.builtin.include_role:
         public: true
-        name: "__ROLE_NAME__"
+        name: "X_ROLE_NAME_X"
 
     - name: "Verify that core variables are set"
       ansible.builtin.assert:

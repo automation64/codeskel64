@@ -12,5 +12,5 @@
 
     - name: "Initialize Role with defaults"
       ansible.builtin.include_role:
-        name: "__ROLE_NAME__"
+        name: "X_ROLE_NAME_X"
 ...

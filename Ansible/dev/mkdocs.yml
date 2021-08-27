@@ -1,10 +1,10 @@
 ---
-site_name: "__PROJECT_NAME__ Project"
-site_description: "__PROJECT_NAME__ is an automated infrastructure-as-code management solution for small to medium computing environments"
-site_author: "SerDigital64"
+site_name: "X_PROJECT_NAME_X Project"
+site_description: "X_PROJECT_SHORT_DESCRIPTION_X"
+site_author: "X_AUTHOR_ALIAS_X"
 
-site_url: "https://platform64.readthedocs.io"
-repo_url: "https://github.com/serdigital64/platform64"
+site_url: "X_PROJECT_DOC_URL_X"
+repo_url: "X_PROJECT_GIT_URL_X"
 
 copyright: "GPL-3.0-or-later"
 docs_dir: "docs/"
@@ -35,19 +35,12 @@ nav:
     - guidelines: "contributing/guidelines.md"
     - design: "contributing/design.md"
   - Collections:
-    - application: "collections/application.md"
-    - backup: "collections/backup.md"
-    - development: "collections/development.md"
-    - system: "collections/system.md"
+    - X_COLLECTION_NAME_X: "collections/X_COLLECTION_NAME_X.md"
   - Roles:
-    - app_keepassx: "roles/app_keepassx.md"
-    - backup_archive: "roles/backup_archive.md"
-    - dev_git_client: "roles/dev_git_client.md"
-    - system_package: "roles/system_package.md"
-    - system_repository: "roles/system_repository.md"
+    - X_ROLE_NAME_X: "roles/X_ROLE_NAME_X.md"
 
 theme:
   name: readthedocs
   analytics:
-    gtag: "G-JQV1NG5TXT"
+    gtag: "X_GOOGLE_ANALYTICS_GA4_TAG_X"
 ...

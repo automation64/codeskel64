@@ -1,14 +1,14 @@
 ---
-__ROLE_NAME___platforms:
+X_ROLE_NAME_X_platforms:
   - "CentOS8"
   - "OracleLinux8"
   - "Ubuntu20"
   - "Ubuntu21"
   - "Fedora33"
 
-__ROLE_NAME___base:
+X_ROLE_NAME_X_base:
   run:
     __COMMAND__: "__COMMAND_PATH__"
 
-__ROLE_NAME_____initialize_platform: ~
+X_ROLE_NAME_X___initialize_platform: ~
 ...

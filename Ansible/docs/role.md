@@ -1,30 +1,21 @@
-# Ansible Role: __ROLE_NAME__
+# Ansible Role: X_ROLE_NAME_X
 
 ## About
 
-The **__ROLE_NAME__** Ansible-Role is part of the [__PROJECT_NAME__](https://github.com/serdigital64/platform64) project and is available in the [__COLLECTION_NAME__](../collections/__COLLECTION_NAME__.md) Ansible-Collection.
+The **X_ROLE_NAME_X** Ansible-Role is part of the [X_PROJECT_NAME_X](X_PROJECT_GIT_URL_X) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
-The purpose of the role is to automate the management of __COMPONENT__.
+The purpose of the role is to automate the management of X_DOC_COMPONENT_X.
 
 Supported features in the current version:
 
-- __FEATURE__.
+- X_DOC_FEATURE_X.
 
 ## Use Cases
 
-### __USE_CASE__
+### X_DOC_USE_CASE_X
 
 ```yaml
-- name: "__USE_CASE_TASK__"
-  vars:
-    __ROLE_NAME__:
-      prepare: true
-      deploy: true
-      setup: true
-      provision: true
-    __ROLE_PARAMETER__:
-  ansible.builtin.include_role:
-    name: "serdigital64.__COLLECTION_NAME__.__ROLE_NAME__"
+- name: "Example: X_DOC_USE_CASE_X"
 ```
 
 ## Role Parameters
@@ -35,16 +26,12 @@ Supported features in the current version:
 - Parameters should be declared as task level vars as they are intented to be dynamic.
 
 ```yaml
-__ROLE_NAME__:
-  deploy:
+
 ```
 
-| Parameter             | Required? | Type    | Default | Purpose / Value                                 |
-| --------------------- | --------- | ------- | ------- | ----------------------------------------------- |
-| __ROLE_NAME__.prepare   | no        | boolean | false   | Enable preparation of the runtime environment   |
-| __ROLE_NAME__.deploy    | no        | boolean | false   | Enable installation of application packages     |
-| __ROLE_NAME__.setup     | no        | boolean | false   | Enable configuration of the runtime environment |
-| __ROLE_NAME__.provision | no        | boolean | false   | Enable __PROVISIONING_DESCRIPTION__               |
+| Parameter | Required? | Type | Default | Purpose / Value |
+| --------- | --------- | ---- | ------- | --------------- |
+|           |           |      |         |                 |
 
 ### End State
 
@@ -52,12 +39,12 @@ __ROLE_NAME__:
 - Parameters should be declared in **host_vars** or **group_vars** as they are intended to be permanent.
 
 ```yaml
-__ROLE_NAME___packages_installed:
+
 ```
 
-| Parameter                       | Required? | Type    | Default | Purpose / Value           |
-| ------------------------------- | --------- | ------- | ------- | ------------------------- |
-| __ROLE_NAME__\_packages_installed | no        | boolean | true    | Set the package end state |
+| Parameter | Required? | Type | Default | Purpose / Value |
+| --------- | --------- | ---- | ------- | --------------- |
+|           |           |      |         |                 |
 
 ## Deployment
 
@@ -81,22 +68,22 @@ __ROLE_NAME___packages_installed:
 
 ### Installation Procedure
 
-The role can be deployed by installing the Ansible-Collection from the Ansible Galaxy repository: [https://galaxy.ansible.com/serdigital64/__COLLECTION_NAME__](https://galaxy.ansible.com/serdigital64/__COLLECTION_NAME__)
+The role can be deployed by installing the Ansible-Collection from the Ansible Galaxy repository: [X_PROJECT_GALAXY_URL_X/X_COLLECTION_NAME_X](X_PROJECT_GALAXY_URL_X/X_COLLECTION_NAME_X)
 
 ```shell
 # Install the collection
-ansible-galaxy collection install serdigital64.__COLLECTION_NAME__
+ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
 ```
 
 ## Contributing
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-Please see the [guidelines](../contributing/guidelines.md) for further details.
+Please see the [guidelines](X_GUILDELINES_URL_X) for further details.
 
 ## Author
 
-- [SerDigital64](https://github.com/serdigital64)
+- [X_AUTHOR_ALIAS_X](X_AUTHOR_GIT_PROFILE_X)
 
 ## License
 

@@ -12,8 +12,8 @@
 
     - name: "Deploy required packages"
       vars:
-        __ROLE_NAME__:
+        X_ROLE_NAME_X:
           deploy: true
       ansible.builtin.include_role:
-        name: "__ROLE_NAME__"
+        name: "X_ROLE_NAME_X"
 ...

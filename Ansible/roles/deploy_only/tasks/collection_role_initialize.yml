@@ -4,12 +4,12 @@
     quiet: true
     fail_msg: "Target Platform not supported: {{ ansible_distribution + ansible_distribution_major_version }}"
     that:
-      - ansible_distribution + ansible_distribution_major_version in __ROLE_NAME___platforms
+      - ansible_distribution + ansible_distribution_major_version in X_ROLE_NAME_X_platforms
   changed_when: false
 
 - name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize / Identify base Platform"
   ansible.builtin.set_fact:
-    __ROLE_NAME_____initialize_platform: "
+    X_ROLE_NAME_X___initialize_platform: "
       {%- if
           ( ansible_distribution == 'CentOS' and ansible_distribution_major_version == '8' ) or
           ( ansible_distribution == 'OracleLinux' and ansible_distribution_major_version == '8' ) or
@@ -25,6 +25,6 @@
 
 - name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize / Set Platform specific variables"
   ansible.builtin.include_vars:
-    file: "{{ 'platform-' + __ROLE_NAME_____initialize_platform + '.yml' }}"
+    file: "{{ 'platform-' + X_ROLE_NAME_X___initialize_platform + '.yml' }}"
   changed_when: false
 ...
