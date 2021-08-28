@@ -59,7 +59,7 @@ Supported features in the current version:
 
 ### Requirements
 
-- Operating System package manager repository enabled.
+- Operating System package manager repository enabled. This can be automated by using the `` role.
 
 ### Ansible Dependencies
 
@@ -72,7 +72,7 @@ The role can be deployed by installing the Ansible-Collection from the Ansible G
 
 ```shell
 # Install the collection
-ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
+ansible-galaxy collection install X_COLLECTION_NAME_X.X_COLLECTION_NAME_X
 ```
 
 ## Contributing
