@@ -17,6 +17,7 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.snippetSuggestions": "top",
   "workbench.tips.enabled": false,
+  "search.followSymlinks": false,
   "explorer.compactFolders": false,
   "explorer.enableDragAndDrop": false,
   "editor.renderLineHighlight": "none",
@@ -288,13 +289,25 @@
     "titleBar.inactiveForeground": "#15202b99"
   },
   "peacock.color": "#fa9660",
+  "search.exclude": {
+    "**/.git": true,
+    "**/.cache": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.vscode": true,
+    "**/build": true,
+    "**/dist": true
+  },
   "files.exclude": {
     "**/.cache": true,
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.project": true,
-    "**/.settings": true
-  },
+    "**/.settings": true,
+    "**/.vscode": true,
+},
   "yaml.customTags": [
     "!encrypted/pkcs1-oaep scalar",
     "!vault scalar",

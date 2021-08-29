@@ -1,18 +1,18 @@
 ---
-namespace: "serdigital64"
-name: "__COLLECTION_NAME__"
-version: "__COLLECTION_VERSION_X_Y_Z__"
+namespace: "X_PROJECT_NAMESPACE_X"
+name: "X_COLLECTION_NAME_X"
+version: "X_COLLECTION_VERSION_X_Y_Z_X"
 readme: "README.md"
 authors:
-  - "SerDigital64 __serdigital64@gmail.com__"
-description: "__COLLECTION_DESCRIPTION__"
+  - "X_AUTHOR_ALIAS_X <X_AUTHOR_EMAIL_X>"
+description: "X_COLLECTION_SHORT_DESCRIPTION_X"
 license:
   - "GPL-3.0-or-later"
 tags:
-  - "__COLLECTION_TAGS__"
+  - "X_COLLECTION_TAGS_X"
 dependencies: {}
-repository: "https://github.com/serdigital64/platform64"
-homepage: "https://github.com/serdigital64/platform64"
-issues: "https://github.com/serdigital64/platform64/issues"
-documentation: "https://platform64.readthedocs.io"
+repository: "X_PROJECT_GIT_URL_X"
+homepage: "X_PROJECT_GIT_URL_X"
+issues: "X_PROJECT_GIT_URL_X/issues"
+documentation: "X_PROJECT_DOC_URL_X"
 ...
