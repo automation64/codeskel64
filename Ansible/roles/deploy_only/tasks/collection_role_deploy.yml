@@ -1,5 +1,0 @@
----
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Deploy / Package"
-  ansible.builtin.include_tasks:
-    file: __ROLE_NAME___deploy_package.yml
-...

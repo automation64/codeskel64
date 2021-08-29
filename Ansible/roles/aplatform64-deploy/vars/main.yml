@@ -1,0 +1,34 @@
+---
+X_ROLE_NAME_X_platforms:
+  - "CentOS8"
+  - "OracleLinux8"
+  - "Ubuntu20"
+  - "Ubuntu21"
+  - "Fedora33"
+
+X_ROLE_NAME_X_os_family: "
+  {%- if
+      ( ansible_distribution == 'CentOS' ) or
+      ( ansible_distribution == 'OracleLinux' ) or
+      ( ansible_distribution == 'Fedora' )
+  -%}
+    {{ 'RedHat' }}
+  {%- elif
+      ( ansible_distribution == 'Ubuntu' )
+  -%}
+    {{ 'Ubuntu' }}
+  {%- else -%}
+    {{ 'Linux' }}
+  {%- endif -%}
+"
+
+X_ROLE_NAME_X_base:
+  run:
+    __COMMAND__: "__COMMAND_PATH__"
+
+X_ROLE_NAME_X_profiles:
+  X_APP_TYPE_X:
+    X_APP_VERSION_X:
+      packages:
+        - name: "X_APP_PACKAGE_X"
+...

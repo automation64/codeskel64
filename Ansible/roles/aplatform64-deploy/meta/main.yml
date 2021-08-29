@@ -1,11 +1,11 @@
 ---
 galaxy_info:
   role_name: "X_ROLE_NAME_X"
-  author: "X_AUTHOR_ALIAS_X"
+  author: "serdigital64"
   description: "X_ROLE_SHORT_DESCRIPTION_X"
   company: "none"
   license: "GPL-3.0-or-later"
-  min_ansible_version: "X_MINIMUM_ANSIBLE_VERSION_X"
+  min_ansible_version: "2.10"
   platforms:
     - name: "GenericLinux"
       versions:

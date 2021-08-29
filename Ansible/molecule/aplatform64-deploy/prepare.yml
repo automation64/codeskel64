@@ -1,0 +1,40 @@
+---
+- name: "Prepare"
+  hosts: "all"
+  gather_facts: false
+  tasks:
+
+    - name: "Discover platform"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+      changed_when: false
+
+    - name: "Prepare package managers"
+      vars:
+        core_repository:
+          prepare: true
+          deploy: true
+          setup: true
+          provision: true
+        # core_repository_managers:
+        #   flatpak: true
+        #   snap: true
+        #   git: true
+      ansible.builtin.include_role:
+        name: "serdigital64.core.core_repository"
+
+    - name: "Prepare archive manager"
+      vars:
+        core_archive:
+          deploy: true
+      ansible.builtin.include_role:
+        name: "serdigital64.core.core_archive"
+
+    - name: "Prepare package installer"
+      vars:
+        core_package:
+          prepare: true
+      ansible.builtin.include_role:
+        name: "serdigital64.core.core_package"
+...

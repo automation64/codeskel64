@@ -1,0 +1,23 @@
+---
+- name: "Verify"
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: "Discover platform"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+      changed_when: false
+
+    - name: "Load role variables"
+      ansible.builtin.include_role:
+        public: true
+        name: "X_ROLE_NAME_X"
+
+    - name: "Verify that core variables are set"
+      ansible.builtin.assert:
+        that:
+          - X_ROLE_NAME_X_platforms is defined
+          - X_ROLE_NAME_X_profiles is defined
+          - X_ROLE_NAME_X_application is defined
+...

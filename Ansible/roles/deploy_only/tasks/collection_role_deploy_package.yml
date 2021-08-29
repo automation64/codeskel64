@@ -1,9 +1,0 @@
----
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Deploy / Package / GIT package"
-  ansible.builtin.package:
-    state: "{{
-      ( __ROLE_NAME___packages_installed ) |
-      ternary( 'present', 'absent' )
-    }}"
-    name: "{{ __ROLE_NAME___packages  }}"
-...
