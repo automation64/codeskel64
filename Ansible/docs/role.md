@@ -1,4 +1,13 @@
-# Ansible Role: X_ROLE_NAME_X
+---
+title: "Ansible Role: X_PROJECT_NAMESPACE_X.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
+description: ""
+authors:
+  - X_AUTHOR_ALIAS_X
+tags:
+  - 
+---
+
+# Ansible Role: X_PROJECT_NAMESPACE_X.X_COLLECTION_NAME_X.X_ROLE_NAME_X
 
 ## About
 
@@ -72,7 +81,7 @@ The role can be deployed by installing the Ansible-Collection from the Ansible G
 
 ```shell
 # Install the collection
-ansible-galaxy collection install X_COLLECTION_NAME_X.X_COLLECTION_NAME_X
+ansible-galaxy collection install X_COLLECTION_NAME_X
 ```
 
 ## Contributing

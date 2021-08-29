@@ -1,15 +1,15 @@
 ---
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Initialize"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize"
   ansible.builtin.include_tasks:
     file: X_ROLE_NAME_X_initialize.yml
 
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Deploy"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy"
   ansible.builtin.include_tasks:
     file: X_ROLE_NAME_X_deploy.yml
   when:
     - "'deploy' in X_ROLE_NAME_X"
     - X_ROLE_NAME_X['deploy']
 
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Finalize"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Finalize"
   include_tasks: X_ROLE_NAME_X_finalize.yml
 ...

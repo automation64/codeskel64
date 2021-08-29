@@ -17,6 +17,7 @@
     - name: "Verify that core variables are set"
       ansible.builtin.assert:
         that:
-          - X_ROLE_MAIN_VARIABLE1_X is defined
-          - X_ROLE_MAIN_VARIABLEx_X is defined
+          - X_ROLE_NAME_X_platforms is defined
+          - X_ROLE_NAME_X_profiles is defined
+          - X_ROLE_NAME_X_application is defined
 ...

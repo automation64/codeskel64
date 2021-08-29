@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  role_name: "X_ROLE_NAME_X"
+  author: "serdigital64"
+  description: "X_ROLE_SHORT_DESCRIPTION_X"
+  company: "none"
+  license: "GPL-3.0-or-later"
+  min_ansible_version: "2.10"
+  platforms:
+    - name: "GenericLinux"
+      versions:
+        - "any"
+  galaxy_tags:
+    - "X_ROLE_TAG_X"
+dependencies: []
+...

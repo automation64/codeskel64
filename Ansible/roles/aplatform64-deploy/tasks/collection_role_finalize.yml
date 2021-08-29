@@ -1,5 +1,5 @@
 ---
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Finalize / Reset Defaults"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Finalize / Reset Defaults"
   ansible.builtin.include_vars:
     file: "defaults/main/action_parameters.yml"
   changed_when: false

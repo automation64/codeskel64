@@ -1,4 +1,4 @@
-# Ansible Collection - serdigital64.X_COLLECTION_NAME_X
+# Ansible Collection - X_GALAXY_NAMESPACE_X.X_COLLECTION_NAME_X
 
 ## About
 
@@ -16,7 +16,7 @@ This collection is part of the [X_PROJECT_NAME_X](X_PROJECT_GIT_URL_X) project f
 
 The collection can be installed from the Ansible Galaxy repository: [X_PROJECT_GALAXY_URL_X/X_COLLECTION_NAME_X](X_PROJECT_GALAXY_URL_X/X_COLLECTION_NAME_X)
 
-`ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X`
+`ansible-galaxy collection install X_GALAXY_NAMESPACE_X.X_COLLECTION_NAME_X`
 
 ## Contributing
 

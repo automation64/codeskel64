@@ -12,13 +12,29 @@
 
     - name: "Prepare package managers"
       vars:
-        system_repository:
+        core_repository:
           prepare: true
           deploy: true
           setup: true
           provision: true
-        # system_repository_managers:
+        # core_repository_managers:
         #   flatpak: true
+        #   snap: true
+        #   git: true
       ansible.builtin.include_role:
-        name: "serdigital64.system.system_repository"
+        name: "serdigital64.core.core_repository"
+
+    - name: "Prepare archive manager"
+      vars:
+        core_archive:
+          deploy: true
+      ansible.builtin.include_role:
+        name: "serdigital64.core.core_archive"
+
+    - name: "Prepare package installer"
+      vars:
+        core_package:
+          prepare: true
+      ansible.builtin.include_role:
+        name: "serdigital64.core.core_package"
 ...

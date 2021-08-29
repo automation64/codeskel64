@@ -1,9 +1,10 @@
 ---
-- name: "__TASK_COLLECTION_NAME__ / __TASK_ROLE_NAME__ / Deploy / Package / GIT package"
-  ansible.builtin.package:
-    state: "{{
-      ( X_ROLE_NAME_X_packages_installed ) |
-      ternary( 'present', 'absent' )
-    }}"
-    name: "{{ X_ROLE_NAME_X_packages  }}"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy / Package / Provision application"
+  vars:
+    core_package:
+      provision: true
+    core_package_application: "{{ X_ROLE_NAME_X_application }}"
+    core_package_profiles: "{{ X_ROLE_NAME_X_profiles }}"
+  ansible.builtin.include_role:
+    name: "serdigital64.core.core_package"
 ...

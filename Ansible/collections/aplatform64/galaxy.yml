@@ -1,0 +1,18 @@
+---
+namespace: "serdigital64"
+name: "X_COLLECTION_NAME_X"
+version: "X_COLLECTION_VERSION_X_Y_Z_X"
+readme: "README.md"
+authors:
+  - "SerDigital64 <https://github.com/serdigital64>"
+description: "X_COLLECTION_SHORT_DESCRIPTION_X"
+license:
+  - "GPL-3.0-or-later"
+tags:
+  - "X_COLLECTION_TAGS_X"
+dependencies: {}
+repository: "https://github.com/serdigital64/aplatform64"
+homepage: "https://github.com/serdigital64/aplatform64"
+issues: "https://github.com/serdigital64/aplatform64/issues"
+documentation: "https://aplatform64.readthedocs.io"
+...
