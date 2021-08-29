@@ -64,12 +64,12 @@ X_ROLE_NAME_X_application:
   installed:
 ```
 
-| Parameter | Required? | Type | Default | Purpose / Value |
-| ---------------------------------- | --------- | ------- | ------------ | X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.name | no | string | `"X_APP_ID_X"` | Define application X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.type | no | string | `"X_APP_TYPE_X"` | Select application type from X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.version | no | string | `"X_APP_VERSION_X"` | Select application version from profile |
-| X_COLLECTION_NAME_X.installed | no | boolean | `true` | Set application package end X_COLLECTION_NAME_X |
+| Parameter                     | Required? | Type    | Default             | Purpose / Value                                  |
+| ----------------------------- | --------- | ------- | ------------------- | ------------------------------------------------ |
+| X_COLLECTION_NAME_X.name      | no        | string  | `"X_APP_ID_X"`      | Define application X_COLLECTION_NAME_X           |
+| X_COLLECTION_NAME_X.type      | no        | string  | `"X_APP_TYPE_X"`    | Select application type from X_COLLECTION_NAME_X |
+| X_COLLECTION_NAME_X.version   | no        | string  | `"X_APP_VERSION_X"` | Select application version from profile          |
+| X_COLLECTION_NAME_X.installed | no        | boolean | `true`              | Set application package end X_COLLECTION_NAME_X  |
 
 ## Deployment
 
