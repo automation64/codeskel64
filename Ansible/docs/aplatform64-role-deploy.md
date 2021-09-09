@@ -30,6 +30,7 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 - name: "Example: Install X_DOC_APP_NAME_X"
   vars:
     X_ROLE_NAME_X:
+      resolve_prereq: true
       deploy: true
   ansible.builtin.include_role:
     name: "X_ROLE_NAME_X"
@@ -44,12 +45,14 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 
 ```yaml
 X_ROLE_NAME_X:
+  resolve_prereq:
   deploy: false
 ```
 
-| Parameter            | Required? | Type    | Default | Purpose / Value                             |
-| -------------------- | --------- | ------- | ------- | ------------------------------------------- |
-| X_ROLE_NAME_X.deploy | no        | boolean | `false` | Enable installation of application packages |
+| Parameter                    | Required? | Type    | Default | Purpose / Value                             |
+| ---------------------------- | --------- | ------- | ------- | ------------------------------------------- |
+| X_ROLE_NAME_X.resolve_prereq | no        | boolean | `false` | Enable automatic resolution of prequisites  |
+| X_ROLE_NAME_X.deploy         | no        | boolean | `false` | Enable installation of application packages |
 
 ### End State
 
@@ -64,33 +67,34 @@ X_ROLE_NAME_X_application:
   installed:
 ```
 
-| Parameter | Required? | Type | Default | Purpose / Value |
-| ---------------------------------- | --------- | ------- | ------------ | X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.name | no | string | `"X_APP_ID_X"` | Define application X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.type | no | string | `"X_APP_TYPE_X"` | Select application type from X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.version | no | string | `"X_APP_VERSION_X"` | Select application version from profile |
-| X_COLLECTION_NAME_X.installed | no | boolean | `true` | Set application package end X_COLLECTION_NAME_X |
+| Parameter                     | Required? | Type    | Default             | Purpose / Value                                  |
+| ----------------------------- | --------- | ------- | ------------------- | ------------------------------------------------ |
+| X_COLLECTION_NAME_X.name      | no        | string  | `"X_APP_ID_X"`      | Define application X_COLLECTION_NAME_X           |
+| X_COLLECTION_NAME_X.type      | no        | string  | `"X_APP_TYPE_X"`    | Select application type from X_COLLECTION_NAME_X |
+| X_COLLECTION_NAME_X.version   | no        | string  | `"X_APP_VERSION_X"` | Select application version from profile          |
+| X_COLLECTION_NAME_X.installed | no        | boolean | `true`              | Set application package end X_COLLECTION_NAME_X  |
 
 ## Deployment
 
-### Compatibility
+### OS Compatibility
 
-- Platforms
-  - CentOS8
-  - OracleLinux8
-  - Ubuntu20
-  - Ubuntu21
-  - Fedora33
+- CentOS8
+- OracleLinux8
+- Ubuntu20
+- Ubuntu21
+- Fedora33
 
-### Requirements
+### Dependencies
 
-- Operating System package manager repository enabled. This can be automated by using the `serdigital64.core.core_repository` role.
+- Ansible Collections:
+  - serdigital64.core
 
-### Ansible Dependencies
+### Prerequisites
 
-- Roles:
-  - serdigital64.core.core_repository
-  - serdigital64.core.core_package
+All the prerequisites listed in this section can be automatically resolved by enabling the role action `resolve_prereq: true`
+
+- Package managers for the target application are installed and enabled.
+- **A:Platform64** package installer (core_package) runtime environment is ready.
 
 ### Installation Procedure
 
