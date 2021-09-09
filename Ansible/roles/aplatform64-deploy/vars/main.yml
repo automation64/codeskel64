@@ -24,7 +24,7 @@ X_ROLE_NAME_X_os_family: "
 
 X_ROLE_NAME_X_base:
   run:
-    __COMMAND__: "__COMMAND_PATH__"
+    X_COMMAND_X: "X_COMMAND_PATH_X"
 
 X_ROLE_NAME_X_profiles:
   X_APP_TYPE_X:
