@@ -1,0 +1,27 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    empty_list: []
+    none_list: ~
+    undefined_list:
+    empty_string: ""
+  tasks:
+
+    - name: "1: Length empty_list"
+      debug:
+        msg: "{{ empty_list | length }}"
+
+    - name: "2: Length none_list"
+      ignore_errors: true
+      debug:
+        msg: "{{ none_list | length }}"
+
+    - name: "3: Length undefined_list"
+      ignore_errors: true
+      debug:
+        msg: "{{ undefined_list | length }}"
+
+    - name: "4: Length empty_string"
+      ignore_errors: true
+      debug:
+        msg: "{{ empty_string | length }}"

@@ -1,0 +1,21 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    search_string: "value2"
+    search_fail: "non existing value"
+    list_string:
+      - "value1"
+      - "value2"
+      - "value3"
+  tasks:
+    - name: "Search string in list_string"
+      debug:
+        msg: "Value found"
+      when:
+        - list_string is search( search_string )
+
+    - name: "Fail Search string in list_string"
+      debug:
+        msg: "Value not found"
+      when:
+        - not list_string is search( search_fail )

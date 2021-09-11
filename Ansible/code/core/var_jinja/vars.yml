@@ -1,0 +1,14 @@
+---
+generated_content:
+  "{%- if
+        false
+  -%}
+    {{ 'if False' }}
+  {%- elif
+    false
+  -%}
+    {{ 'elif False' }}
+  {%- else -%}
+    {{ 'else' }}
+  {%- endif -%}"
+...

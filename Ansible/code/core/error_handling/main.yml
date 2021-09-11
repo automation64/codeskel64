@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "This task wil never fail"
+      command:
+        argv:
+          - "/usr/bin/false"
+      failed_when: 1 == 2
+      changed_when: false
