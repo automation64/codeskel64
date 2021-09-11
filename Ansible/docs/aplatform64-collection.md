@@ -1,15 +1,3 @@
----
-title: "Ansible Collection: serdigital64.X_COLLECTION_NAME_X"
-description: "X_COLLECTION_SHORT_DESCRIPTION_X"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - devops
-  - linux
-  - automation
----
-
 # Ansible Collection: serdigital64.X_COLLECTION_NAME_X
 
 ## About
