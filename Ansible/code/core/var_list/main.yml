@@ -1,0 +1,17 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    list_test: []
+  tasks:
+    - name: "Create list"
+      set_fact:
+        list_test: "{{ list_test + [ item ] }}"
+      loop:
+        - 1
+        - 2
+        - 3
+        - 4
+
+    - name: "Show list"
+      debug:
+        var: list_test

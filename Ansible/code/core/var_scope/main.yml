@@ -1,0 +1,34 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    playbook_var: "playbook_var"
+
+  tasks:
+    - name: "Declare var as fact"
+      set_fact:
+        fact_var: "fact_var"
+
+    - name: "Declare var in task"
+      vars:
+        task_var: "task_var"
+      debug:
+        var: task_var
+
+    - name: "Can not use var from previous task"
+      ignore_errors: true
+      assert:
+        that:
+          - task_var is defined
+          - task_var == "task_var"
+
+    - name: "Use var from fact"
+      assert:
+        that:
+          - fact_var is defined
+          - fact_var == "fact_var"
+
+    - name: "Use var from playbook"
+      assert:
+        that:
+          - playbook_var is defined
+          - playbook_var == "playbook_var"

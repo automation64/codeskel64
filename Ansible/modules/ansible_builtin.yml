@@ -3,7 +3,7 @@ ansible.builtin.assert:
   quiet: true
   fail_msg: ""
   that:
-    - 
+    - true
 
 ansible.builtin.template:
   backup: false
@@ -30,9 +30,9 @@ ansible.builtin.file:
   setype: "{{  }}"
 
 ansible.builtin.copy:
-  backup: no
-  follow: no
-  force: yes
+  backup: false
+  follow: false
+  force: true
   remote_src: ~
   owner: "{{  }}"
   group: "{{  }}"

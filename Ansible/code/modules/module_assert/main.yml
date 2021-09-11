@@ -1,0 +1,33 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    error_msg: "error msg"
+    success_msg: "no error found"
+  tasks:
+    - name: "1: Assert fail_msg"
+      ignore_errors: true
+      assert:
+        fail_msg: "{{ error_msg }}"
+        that:
+          false
+
+    - name: "2: Assert fail_msg quiet"
+      ignore_errors: true
+      assert:
+        quiet: true
+        fail_msg: "{{ error_msg }}"
+        that:
+          false
+
+    - name: "3: Assert success_msg"
+      assert:
+        success_msg: "{{ success_msg }}"
+        that:
+          true
+
+    - name: "4: Assert fail_msg quiet"
+      assert:
+        quiet: true
+        success_msg: "{{ success_msg }}"
+        that:
+          true
