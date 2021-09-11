@@ -1,0 +1,17 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    none_list: ~
+  tasks:
+
+    - name: "empty_list is none"
+      debug:
+        msg: "{{ empty_list is none }}"
+
+    - name: "empty_list is not none"
+      debug:
+        msg: "{{ empty_list is not none }}"
+
+    - name: "not empty_list is none"
+      debug:
+        msg: "{{ not empty_list is none }}"

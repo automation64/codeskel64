@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "Include Vars.yml file"
+      include_vars:
+        file: "vars.yml"
+    - name: "Show Variable content"
+      debug:
+        var: "test_variable"

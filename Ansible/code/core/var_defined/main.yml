@@ -1,0 +1,114 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    test_list:
+      - "value1"
+      - "value2"
+    test_dict:
+      level1:
+        level2:
+          attr1: "value"
+    test_var: ~
+    test_var2:
+    test_var3: ""
+    test_var4: 0
+    test_var5: none
+    test_var6: omit
+  tasks:
+    - name: "1: Dict: complete path"
+      debug:
+        msg: "attr is defined"
+      when: test_dict['level1']['level2']['attr1'] is defined
+
+    - name: "2: Dict: incomplete path"
+      debug:
+        msg: "attr is not defined"
+      when: not test_dict['level1']['undefined_level']['attr1'] is defined
+
+    - name: "3: List: missing row"
+      debug:
+        msg: "attr is not defined"
+      when: not test_list[10] is defined
+
+    - name: "4: var: set to ~"
+      debug:
+        msg: "var is defined"
+      when: test_var is defined
+
+    - name: "5: var: set to :"
+      debug:
+        msg: "var is defined"
+      when: test_var2 is defined
+
+    - name: "6: var: set to ''"
+      debug:
+        msg: "var is defined"
+      when: test_var3 is defined
+
+    - name: "7: var: set to 0"
+      debug:
+        msg: "var is defined"
+      when: test_var4 is defined
+
+    - name: "8: var: set to none"
+      debug:
+        msg: "var is defined"
+      when: test_var5 is defined
+
+    - name: "9: var: set to omit"
+      debug:
+        msg: "var is defined"
+      when: test_var6 is defined
+
+    - name: "10: incomplete dict in embeded jinja"
+      debug:
+        msg: "{{ test_dict['level1']['undefined_level']['attr1'] is defined  }}"
+
+    - name: "10: incomplete dict in embeded jinja: defined + ternary"
+      debug:
+        msg: "{{
+          (
+            'level1' in test_dict and
+            'undefined_level' in test_dict['level1'] and
+            'attr1' in test_dict['level1']['undefined_level'] is defined
+          ) | ternary( 'defined', 'not defined' )
+        }}"
+
+    - name: "11: FAIL: incomplete dict in embeded jinja: defined + ternary with dict"
+      ignore_errors: true
+      debug:
+        msg: "{{
+          (
+            'level1' in test_dict and
+            'undefined_level' in test_dict['level1'] and
+            'attr1' in test_dict['level1']['undefined_level'] is defined
+          ) | ternary( test_dict['level1']['undefined_level'], 'not defined' )
+        }}"
+
+    - name: "12: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat"
+      ignore_errors: true
+      debug:
+        msg: "{{
+          (
+            'level1' in test_dict and
+            'undefined_level' in test_dict['level1'] and
+            'attr1' in test_dict['level1']['undefined_level'] is defined
+          ) | ternary(
+            'defined' + test_dict['level1']['undefined_level'],
+            'not defined'
+          )
+        }}"
+
+    - name: "13: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat with default"
+      ignore_errors: true
+      debug:
+        msg: "{{
+          (
+            'level1' in test_dict and
+            'undefined_level' in test_dict['level1'] and
+            'attr1' in test_dict['level1']['undefined_level'] is defined
+          ) | ternary(
+            'defined' + (test_dict['level1']['undefined_level']|default('')),
+            'not defined'
+          )
+        }}"

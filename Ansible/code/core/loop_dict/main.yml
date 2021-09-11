@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "Loop dict"
+      vars:
+        test:
+          key1: "value1"
+          key2: "value2"
+          key3: "value3"
+      debug:
+        msg: "item['key'] = {{ item['key'] }} / item['value'] = {{ item['value'] }}"
+      loop: "{{ lookup( 'dict', test ) }}"

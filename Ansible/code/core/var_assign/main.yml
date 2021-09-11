@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    test_dict:
+      key1: 1
+      key2: "s2"
+      key3: 's3'
+    test: "{{ test_dict }}"
+  tasks:
+    - name: "1: Assign dict to dict"
+      debug:
+        var: test

@@ -1,0 +1,37 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1: Command with argv"
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/printf"
+          - "[%q][%q][%q][%q]\n"
+          - "100 200"
+          - "'string1'"
+          - ""
+          - "attribute=string2"
+      register: command_results
+
+    - name: "1: Show results"
+      debug:
+        var: command_results['stdout_lines']
+
+
+    - name: "2: Command with optional argv"
+      vars:
+        condition: true
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/printf"
+          - "[%q][%q][%q][%q]\n"
+          - "100 200"
+          - "'string1'"
+          - ""
+          - "{{ condition | ternary( 'attribute=string2', 'nothing' ) }}"
+      register: command_results
+
+    - name: "1: Show results"
+      debug:
+        var: command_results['stdout_lines']
+...
