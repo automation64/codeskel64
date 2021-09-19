@@ -1,3 +1,7 @@
+# codeskel64
+.yamllint.yml
+.ansible-lint.yml
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
