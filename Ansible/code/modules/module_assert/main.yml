@@ -4,9 +4,10 @@
     error_msg: "error msg"
     success_msg: "no error found"
   tasks:
-    - name: "1: Assert fail_msg"
+    - name: "1: Assert fail_msg not quiet"
       ignore_errors: true
       assert:
+        quiet: false
         fail_msg: "{{ error_msg }}"
         that:
           false
@@ -21,13 +22,26 @@
 
     - name: "3: Assert success_msg"
       assert:
+        quiet: false
         success_msg: "{{ success_msg }}"
         that:
           true
 
-    - name: "4: Assert fail_msg quiet"
+    - name: "4: Assert success_msg quiet"
       assert:
         quiet: true
         success_msg: "{{ success_msg }}"
+        that:
+          true
+
+    - name: "5: Assert ok quiet"
+      assert:
+        quiet: true
+        that:
+          true
+
+    - name: "6: Assert ok not quiet"
+      assert:
+        quiet: false
         that:
           true

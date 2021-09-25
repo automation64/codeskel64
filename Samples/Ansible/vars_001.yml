@@ -1,0 +1,16 @@
+---
+sample_dictionary:
+  key1: "value1"
+  key2: "value2"
+  key3: "value3"
+  key4: "value4"
+sample_list_string:
+  - "sample1"
+  - "sample2"
+  - "sample3"
+sample_string: "sample_string"
+sample_number: 100
+sample_boolean: true
+sample_empty: ""
+sample_none: ~
+...
