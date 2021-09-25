@@ -1,0 +1,20 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1: Scape double curly bracket"
+      vars:
+        test: "{{ 'sample_none: {{ varx }}' }}"
+      debug:
+        var: test
+
+    - name: "2: Scape double quotes"
+      vars:
+        test: '"'
+      debug:
+        var: test
+
+    - name: "3: Scape double quotes"
+      vars:
+        test: "{{ '\"' }}"
+      debug:
+        var: test
