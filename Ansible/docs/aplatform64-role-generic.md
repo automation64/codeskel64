@@ -17,7 +17,7 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 ```yaml
 - name: "Example: "
   ansible.builtin.include_role:
-    name: "X_ROLE_NAME_X"
+    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
 ```
 
 ## Role Parameters

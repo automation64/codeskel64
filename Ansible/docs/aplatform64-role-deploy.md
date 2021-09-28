@@ -12,16 +12,16 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 
 ## Use Cases
 
-### Install application X_DOC_APP_NAME_X
+### Install application X_TASK_ROLE_NAME_X
 
 ```yaml
-- name: "Example: Install X_DOC_APP_NAME_X"
+- name: "Example: Install X_TASK_ROLE_NAME_X"
   vars:
     X_ROLE_NAME_X:
       resolve_prereq: true
       deploy: true
   ansible.builtin.include_role:
-    name: "X_ROLE_NAME_X"
+    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
 ```
 
 ## Role Parameters
@@ -55,12 +55,12 @@ X_ROLE_NAME_X_application:
   installed:
 ```
 
-| Parameter                     | Required? | Type    | Default             | Purpose / Value                                  |
-| ----------------------------- | --------- | ------- | ------------------- | ------------------------------------------------ |
-| X_COLLECTION_NAME_X.name      | no        | string  | `"X_APP_ID_X"`      | Define application X_COLLECTION_NAME_X           |
-| X_COLLECTION_NAME_X.type      | no        | string  | `"X_APP_TYPE_X"`    | Select application type from X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.version   | no        | string  | `"X_APP_VERSION_X"` | Select application version from profile          |
-| X_COLLECTION_NAME_X.installed | no        | boolean | `true`              | Set application package end X_COLLECTION_NAME_X  |
+| Parameter               | Required? | Type    | Default             | Purpose / Value                                  |
+| ----------------------- | --------- | ------- | ------------------- | ------------------------------------------------ |
+| X_ROLE_NAME_X.name      | no        | string  | `"X_APP_ID_X"`      | Define application X_COLLECTION_NAME_X           |
+| X_ROLE_NAME_X.type      | no        | string  | `"X_APP_TYPE_X"`    | Select application type from X_COLLECTION_NAME_X |
+| X_ROLE_NAME_X.version   | no        | string  | `"X_APP_VERSION_X"` | Select application version from profile          |
+| X_ROLE_NAME_X.installed | no        | boolean | `true`              | Set application package end X_COLLECTION_NAME_X  |
 
 ## Deployment
 
