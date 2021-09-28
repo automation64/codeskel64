@@ -1,0 +1,20 @@
+---
+- name: "Converge"
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: "Discover platform"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+      changed_when: false
+
+    - name: "Deploy required packages"
+      vars:
+        X_ROLE_NAME_X:
+          resolve_prereq: true
+          deploy: true
+      ansible.builtin.include_role:
+        name: "X_ROLE_NAME_X"
+...

@@ -1,5 +1,5 @@
 ---
 roles: []
 collections:
-  - serdigital64.core
+  - "serdigital64.core"
 ...

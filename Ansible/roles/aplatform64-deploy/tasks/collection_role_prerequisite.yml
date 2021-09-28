@@ -6,6 +6,9 @@
       deploy: true
       setup: true
       provision: true
+    core_repository_managers:
+      flatpak: "{{ X_ROLE_NAME_X_application['type'] == 'flatpak' }}"
+      snap: "{{ X_ROLE_NAME_X_application['type'] == 'snap' }}"
   ansible.builtin.include_role:
     name: "serdigital64.core.core_repository"
 
