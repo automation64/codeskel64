@@ -1,0 +1,11 @@
+---
+X_ROLE_NAME_X_base:
+  run:
+    X_COMMAND_X: "X_COMMAND_PATH_X"
+
+X_ROLE_NAME_X_profiles:
+  distro:
+    X_APP_VERSION_X:
+      packages:
+        - name: "X_APP_PACKAGE_X"
+...

@@ -1,0 +1,43 @@
+---
+X_ROLE_NAME_X_platforms:
+  - "CentOS8"
+  - "OracleLinux8"
+  - "Ubuntu20"
+  - "Ubuntu21"
+  - "Fedora33"
+
+X_ROLE_NAME_X_os_family: "
+  {%- if
+      ( ansible_distribution == 'CentOS' ) or
+      ( ansible_distribution == 'OracleLinux' ) or
+      ( ansible_distribution == 'Fedora' )
+  -%}
+    {{ 'RedHat' }}
+  {%- elif
+      ( ansible_distribution == 'Ubuntu' )
+  -%}
+    {{ 'Ubuntu' }}
+  {%- else -%}
+    {{ 'Linux' }}
+  {%- endif -%}
+"
+
+X_ROLE_NAME_X_base:
+  run:
+    X_COMMAND_X: "X_COMMAND_PATH_X"
+
+X_ROLE_NAME_X_profiles:
+  distro:
+    X_APP_VERSION_X:
+      packages:
+        - name: "X_APP_PACKAGE_DISTRO_X"
+  flatpak:
+    latest:
+      origin: "flathub"
+      packages:
+        - name: "X_APP_PACKAGE_FLATPAK_X"
+  snap:
+    latest:
+      packages:
+        - name: "X_APP_PACKAGE_SNAP_X"
+...
