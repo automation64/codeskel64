@@ -9,7 +9,7 @@
           key2: "value2"
           key3: "value3"
       debug:
-        msg: "item['key'] = {{ item['key'] }} / item['value'] = {{ item['value'] }}"
+        msg: "{{ item }}"
       loop: "{{ lookup( 'dict', test ) }}"
 
     - name: "2: Loop dict | list"
@@ -22,7 +22,7 @@
             - "value3"
       debug:
         msg: "{{ item }}"
-      loop: "{{ test | list}}"
+      loop: "{{ test | list }}"
 
     - name: "3: Loop dict | dict2items"
       vars:
@@ -34,4 +34,13 @@
             - "value3"
       debug:
         msg: "{{ item }}"
-      loop: "{{ test | dict2items}}"
+      loop: "{{ test | dict2items }}"
+
+    - name: "4: Loop dict | list"
+      vars:
+        test:
+          key1: "value1"
+          key2: "value2"
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ test | list }}"

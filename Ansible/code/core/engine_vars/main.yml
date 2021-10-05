@@ -1,0 +1,6 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1. Ansible Version"
+      debug:
+        msg: "{{ ansible_version }}"
