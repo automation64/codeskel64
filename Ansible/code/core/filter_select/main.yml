@@ -1,0 +1,13 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    list1:
+      - "test string 1"
+      - "test string 2"
+      - "test string 3"
+  tasks:
+
+    - name: "1.1: Search regexp"
+      debug:
+        msg: "{{ list1 | select( 'match', '^test.*2$' ) }}"
+

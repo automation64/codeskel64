@@ -286,7 +286,13 @@
     "titleBar.activeForeground": "#15202b",
     "titleBar.border": "#fcb791",
     "titleBar.inactiveBackground": "#fcb79199",
-    "titleBar.inactiveForeground": "#15202b99"
+    "titleBar.inactiveForeground": "#15202b99",
+    "sash.hoverBorder": "#fcb791",
+    "statusBar.debuggingBackground": "#2fb2f8",
+    "statusBar.debuggingBorder": "#2fb2f8",
+    "statusBar.debuggingForeground": "#15202b",
+    "statusBarItem.remoteBackground": "#f8752f",
+    "statusBarItem.remoteForeground": "#15202b"
   },
   "peacock.color": "#fa9660",
   "search.exclude": {

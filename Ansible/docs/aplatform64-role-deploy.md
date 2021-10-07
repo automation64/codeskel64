@@ -1,3 +1,15 @@
+---
+title: "Ansible Role: serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
+description: "X_ROLE_SHORT_DESCRIPTION_X"
+authors:
+  - SerDigital64
+tags:
+  - ansible
+  - devops
+  - linux
+  - automation
+---
+
 # Ansible Role: serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X
 
 ## Purpose
@@ -6,22 +18,22 @@ X_ROLE_SHORT_DESCRIPTION_X
 
 Supported features in the current version:
 
-- Deploy application
+- Deploy application. Packages are defined in the variable `X_ROLE_NAME_X_profiles`.
 
 The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatform64.readthedocs.io) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
 ## Use Cases
 
-### Install application X_DOC_APP_NAME_X
+### Install application X_TASK_ROLE_NAME_X
 
 ```yaml
-- name: "Example: Install X_DOC_APP_NAME_X"
+- name: "Example: Install X_TASK_ROLE_NAME_X"
   vars:
     X_ROLE_NAME_X:
       resolve_prereq: true
       deploy: true
   ansible.builtin.include_role:
-    name: "X_ROLE_NAME_X"
+    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
 ```
 
 ## Role Parameters
@@ -34,7 +46,7 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 ```yaml
 X_ROLE_NAME_X:
   resolve_prereq:
-  deploy: false
+  deploy:
 ```
 
 | Parameter                    | Required? | Type    | Default | Purpose / Value                             |
@@ -55,12 +67,13 @@ X_ROLE_NAME_X_application:
   installed:
 ```
 
-| Parameter                     | Required? | Type    | Default             | Purpose / Value                                  |
-| ----------------------------- | --------- | ------- | ------------------- | ------------------------------------------------ |
-| X_COLLECTION_NAME_X.name      | no        | string  | `"X_APP_ID_X"`      | Define application X_COLLECTION_NAME_X           |
-| X_COLLECTION_NAME_X.type      | no        | string  | `"X_APP_TYPE_X"`    | Select application type from X_COLLECTION_NAME_X |
-| X_COLLECTION_NAME_X.version   | no        | string  | `"X_APP_VERSION_X"` | Select application version from profile          |
-| X_COLLECTION_NAME_X.installed | no        | boolean | `true`              | Set application package end X_COLLECTION_NAME_X  |
+| Parameter                           | Required? | Type       | Default             | Purpose / Value                    |
+| ----------------------------------- | --------- | ---------- | ------------------- | ---------------------------------- |
+| X_ROLE_NAME_X_application           | no        | dictionary |                     | Set application package end state  |
+| X_ROLE_NAME_X_application.name      | no        | string     | `"X_APP_ID_X"`      | Select application package name    |
+| X_ROLE_NAME_X_application.type      | no        | string     | `"X_APP_TYPE_X"`    | Select application package type    |
+| X_ROLE_NAME_X_application.version   | no        | string     | `"X_APP_VERSION_X"` | Select application package version |
+| X_ROLE_NAME_X_application.installed | no        | boolean    | `true`              | Set application package end state  |
 
 ## Deployment
 

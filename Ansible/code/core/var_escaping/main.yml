@@ -15,6 +15,12 @@
 
     - name: "3: Scape double quotes"
       vars:
-        test: "{{ '\"' }}"
+        test: "{{ '\"' + 'value' + '\"' }}"
+      debug:
+        var: test
+
+    - name: "4: Scape jinja var"
+      vars:
+        test: "{{ '\"{{' + 'value' + '}}\"' }}"
       debug:
         var: test

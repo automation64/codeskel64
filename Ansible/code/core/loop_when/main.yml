@@ -1,0 +1,22 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    list:
+      - 1
+      - 2
+      - 3
+  tasks:
+
+    - name: "1.1: list item == : true"
+      debug:
+        var: item
+      loop: "{{ list }}"
+      when:
+        - item == 2
+
+    - name: "1.2: list item == : false"
+      debug:
+        var: item
+      loop: "{{ list }}"
+      when:
+        - item == 4
