@@ -15,56 +15,21 @@
     test_var5: none
     test_var6: omit
   tasks:
-    - name: "1: Dict: complete path"
+    - name: "1.1: Dict: complete path"
       debug:
         msg: "attr is defined"
       when: test_dict['level1']['level2']['attr1'] is defined
 
-    - name: "2: Dict: incomplete path"
+    - name: "1.2: Dict: incomplete path"
       debug:
         msg: "attr is not defined"
       when: not test_dict['level1']['undefined_level']['attr1'] is defined
 
-    - name: "3: List: missing row"
-      debug:
-        msg: "attr is not defined"
-      when: not test_list[10] is defined
-
-    - name: "4: var: set to ~"
-      debug:
-        msg: "var is defined"
-      when: test_var is defined
-
-    - name: "5: var: set to :"
-      debug:
-        msg: "var is defined"
-      when: test_var2 is defined
-
-    - name: "6: var: set to ''"
-      debug:
-        msg: "var is defined"
-      when: test_var3 is defined
-
-    - name: "7: var: set to 0"
-      debug:
-        msg: "var is defined"
-      when: test_var4 is defined
-
-    - name: "8: var: set to none"
-      debug:
-        msg: "var is defined"
-      when: test_var5 is defined
-
-    - name: "9: var: set to omit"
-      debug:
-        msg: "var is defined"
-      when: test_var6 is defined
-
-    - name: "10: incomplete dict in embeded jinja"
+    - name: "1.3: incomplete dict in embeded jinja"
       debug:
         msg: "{{ test_dict['level1']['undefined_level']['attr1'] is defined  }}"
 
-    - name: "10: incomplete dict in embeded jinja: defined + ternary"
+    - name: "1.4: incomplete dict in embeded jinja: defined + ternary"
       debug:
         msg: "{{
           (
@@ -74,7 +39,7 @@
           ) | ternary( 'defined', 'not defined' )
         }}"
 
-    - name: "11: FAIL: incomplete dict in embeded jinja: defined + ternary with dict"
+    - name: "1.5: FAIL: incomplete dict in embeded jinja: defined + ternary with dict"
       ignore_errors: true
       debug:
         msg: "{{
@@ -84,8 +49,10 @@
             'attr1' in test_dict['level1']['undefined_level'] is defined
           ) | ternary( test_dict['level1']['undefined_level'], 'not defined' )
         }}"
+      when:
+        - ansible_version['full'] is version( '2.9', '<=' )
 
-    - name: "12: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat"
+    - name: "1.6: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat"
       ignore_errors: true
       debug:
         msg: "{{
@@ -99,7 +66,7 @@
           )
         }}"
 
-    - name: "13: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat with default"
+    - name: "1.7: FAIL: incomplete dict in embeded jinja: defined + ternary + string concat with default"
       ignore_errors: true
       debug:
         msg: "{{
@@ -112,3 +79,40 @@
             'not defined'
           )
         }}"
+      when:
+        - ansible_version['full'] is version( '2.9', '<=' )
+
+    - name: "2.1: List: missing row"
+      debug:
+        msg: "attr is not defined"
+      when: not test_list[10] is defined
+
+    - name: "3.1: var: set to ~"
+      debug:
+        msg: "var is defined"
+      when: test_var is defined
+
+    - name: "3.2: var: set to :"
+      debug:
+        msg: "var is defined"
+      when: test_var2 is defined
+
+    - name: "3.3: var: set to ''"
+      debug:
+        msg: "var is defined"
+      when: test_var3 is defined
+
+    - name: "3.4: var: set to 0"
+      debug:
+        msg: "var is defined"
+      when: test_var4 is defined
+
+    - name: "3.5: var: set to none"
+      debug:
+        msg: "var is defined"
+      when: test_var5 is defined
+
+    - name: "3.6: var: set to omit"
+      debug:
+        msg: "var is defined"
+      when: test_var6 is defined

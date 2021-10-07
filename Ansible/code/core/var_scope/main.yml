@@ -3,31 +3,35 @@
   vars:
     playbook_var: "playbook_var"
 
-  tasks:
+  pre_tasks:
+
     - name: "Declare var as fact"
       set_fact:
         fact_var: "fact_var"
 
-    - name: "Declare var in task"
-      vars:
-        task_var: "task_var"
-      debug:
-        var: task_var
+  tasks:
 
-    - name: "Can not use var from previous task"
-      ignore_errors: true
-      assert:
-        that:
-          - task_var is defined
-          - task_var == "task_var"
+    - block:
+      - name: "1: Declare var in task"
+        vars:
+          task_var: "task_var"
+        debug:
+          var: task_var
 
-    - name: "Use var from fact"
+      - name: "2: Can not use var from previous task"
+        ignore_errors: true
+        assert:
+          that:
+            - task_var is defined
+            - task_var == "task_var"
+
+    - name: "2: Use var from fact"
       assert:
         that:
           - fact_var is defined
           - fact_var == "fact_var"
 
-    - name: "Use var from playbook"
+    - name: "3: Use var from playbook"
       assert:
         that:
           - playbook_var is defined

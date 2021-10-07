@@ -1,0 +1,40 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    dict1:
+      k11: 1
+      k12: 2
+      k13: 3
+    dict2:
+      k21: 1
+      k22: 2
+      k23: 3
+    list1:
+      - 11
+      - 12
+      - 13
+    list2:
+      - 21
+      - 22
+      - 23
+
+  tasks:
+
+    - name: "1.1: dict = dict1 + dict2 - FAIL: ilegal operation"
+      ignore_errors: true
+      vars:
+        combined: "{{ dict1 + dict2 }}"
+      debug:
+        var: combined
+
+    - name: "2.1: list = list1 + list2"
+      vars:
+        combined: "{{ list1 + list2 }}"
+      debug:
+        var: combined
+
+    - name: "2.2: list = list1 + []"
+      vars:
+        combined: "{{ list1 + [] }}"
+      debug:
+        var: combined

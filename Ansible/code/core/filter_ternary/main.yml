@@ -1,0 +1,33 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+
+    - name: "1.1: dict element not defined"
+      vars:
+        dict1:
+          k1: 1
+          k3: 3
+      debug:
+        msg: "{{ dict1.k2 is defined | ternary('yes', 'no') }}"
+
+    - name: "1.2: lazy eval dict not defined"
+      vars:
+        dict1:
+          k1: 1
+          k3: 3
+      debug:
+        msg: "{{ dict1.k2 is defined | ternary(dict1.k2, dict1.k1) }}"
+
+
+    - name: "2.1: lazy eval list operation"
+      vars:
+        dict:
+          list1:
+            - 11
+            - 12
+          list3:
+            - 31
+            - 32
+      debug:
+        msg: "{{ dict['list2'] is defined | ternary(dict['list2'], dict['list1']+dict['list3']) }}"
+
