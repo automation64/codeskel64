@@ -16,9 +16,55 @@ platforms:
     image: "centos:8"
     pre_build_image: false
     groups:
+      - centos
       - redhat
       - rhel
+      - linux
+  - name: "centos8-systemd"
+    image: "centos:8"
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    capabilities:
+      - SYS_ADMIN
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
       - centos
+      - centos-systemd
+      - redhat
+      - redhat-systemd
+      - rhel
+      - rhel-systemd
+      - linux
+  - name: "oraclelinux8"
+    image: "docker.io/library/oraclelinux:8"
+    pre_build_image: false
+    groups:
+      - oel
+      - redhat
+      - rhel
+      - linux
+  - name: "oraclelinux8-systemd"
+    image: "docker.io/library/oraclelinux:8"
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    capabilities:
+      - SYS_ADMIN
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
+      - oel
+      - oel-systemd
+      - redhat
+      - redhat-systemd
+      - rhel
+      - rhel-systemd
       - linux
   - name: "ubuntu20"
     image: "public.ecr.aws/lts/ubuntu:20.04_stable"
@@ -36,46 +82,8 @@ platforms:
     image: "fedora:33"
     pre_build_image: false
     groups:
-      - redhat
       - fedora
-      - linux
-  - name: "oraclelinux8"
-    image: "docker.io/library/oraclelinux:8"
-    pre_build_image: false
-    groups:
       - redhat
-      - rhel
-      - linux
-  - name: "centos8-systemd"
-    image: "centos:8"
-    tmpfs:
-      - /run
-      - /tmp
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    capabilities:
-      - SYS_ADMIN
-    command: "/usr/sbin/init"
-    pre_build_image: false
-    groups:
-      - redhat
-      - rhel
-      - centos
-      - linux
-  - name: "oraclelinux8-systemd"
-    image: "docker.io/library/oraclelinux:8"
-    tmpfs:
-      - /run
-      - /tmp
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    capabilities:
-      - SYS_ADMIN
-    command: "/usr/sbin/init"
-    pre_build_image: false
-    groups:
-      - redhat
-      - rhel
       - linux
 provisioner:
   name: "ansible"

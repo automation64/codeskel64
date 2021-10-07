@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: false
   tasks:
-    - name: "1: Command with argv"
+    - name: "1.1: Command with argv"
       ansible.builtin.command:
         argv:
           - "/usr/bin/printf"
@@ -13,12 +13,12 @@
           - "attribute=string2"
       register: command_results
 
-    - name: "1: Show results"
+    - name: "1.1: Show results"
       debug:
         var: command_results['stdout_lines']
 
 
-    - name: "2: Command with optional argv"
+    - name: "1.2: Command with optional argv"
       vars:
         condition: true
       ansible.builtin.command:
@@ -31,7 +31,31 @@
           - "{{ condition | ternary( 'attribute=string2', 'nothing' ) }}"
       register: command_results
 
-    - name: "1: Show results"
+    - name: "1.2: Show results"
+      debug:
+        var: command_results['stdout_lines']
+
+    - name: "2.1: stdout"
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/ls"
+          - "-l"
+          - "/"
+      register: command_results
+
+    - name: "2.1: Show results"
+      debug:
+        var: command_results['stdout']
+
+    - name: "2.2: stdout_lines"
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/ls"
+          - "-l"
+          - "/"
+      register: command_results
+
+    - name: "2.2: Show results"
       debug:
         var: command_results['stdout_lines']
 ...
