@@ -8,4 +8,11 @@ X_ROLE_NAME_X_profiles:
     X_APP_VERSION_X:
       packages:
         - name: "X_APP_PACKAGE_X"
+
+X_ROLE_NAME_X_repository_custom_yum: []
+X_ROLE_NAME_X_repository_custom_apt: []
+
+sec_openssh_client_repository_catalog_distro: {}
+X_ROLE_NAME_X_repository_catalog_yum: {}
+X_ROLE_NAME_X_repository_catalog_apt: {}
 ...

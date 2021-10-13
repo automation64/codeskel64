@@ -1,5 +1,5 @@
 ---
-- name: "Converge"
+- name: "Prepare"
   hosts: all
   gather_facts: false
   tasks:
@@ -10,10 +10,10 @@
         gather_timeout: "10"
       changed_when: false
 
-    - name: "Deploy required packages"
+    - name: "Prepare"
       vars:
         X_ROLE_NAME_X:
-          deploy: true
+          resolve_prereq: true
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"
 ...

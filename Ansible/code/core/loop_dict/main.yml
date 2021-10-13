@@ -2,7 +2,7 @@
   gather_facts: false
   tasks:
 
-    - name: "1: Loop dict"
+    - name: "1: lookup( 'dict', test )"
       vars:
         test:
           key1: "value1"

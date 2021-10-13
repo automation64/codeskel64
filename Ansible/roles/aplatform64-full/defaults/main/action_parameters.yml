@@ -1,5 +1,0 @@
----
-X_ROLE_NAME_X:
-  resolve_prereq: false
-  deploy: false
-...
