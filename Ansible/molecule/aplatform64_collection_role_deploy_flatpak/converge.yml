@@ -13,7 +13,6 @@
     - name: "Deploy required packages"
       vars:
         X_ROLE_NAME_X:
-          resolve_prereq: true
           deploy: true
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"

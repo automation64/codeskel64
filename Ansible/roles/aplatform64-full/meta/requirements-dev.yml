@@ -1,6 +1,0 @@
----
-roles: []
-collections:
-  - name: "../../../../../build/serdigital64-core.tar.gz"
-    type: "file"
-...

@@ -21,6 +21,12 @@
     - name: "Verify required packages are deployed (package: {{ item }})"
       ansible.builtin.assert:
         that:
-          - item in ansible_facts['packages']
-      loop: "{{ __ROLE_PACKAGE_LIST__ }}"
+          - item['name'] in ansible_facts['packages']
+      loop: "{{
+        X_ROLE_NAME_X_profiles[
+          X_ROLE_NAME_X_application['type']
+        ][
+          X_ROLE_NAME_X_application['version']
+        ]['packages']
+      }}"
 ...
