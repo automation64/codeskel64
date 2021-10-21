@@ -8,13 +8,13 @@
       - "value2"
       - "value3"
   tasks:
-    - name: "Search string in list_string"
+    - name: "1.1. Search string in list_string"
       debug:
         msg: "Value found"
       when:
         - list_string is search( search_string )
 
-    - name: "Fail Search string in list_string"
+    - name: "1.2. Fail Search string in list_string"
       debug:
         msg: "Value not found"
       when:
