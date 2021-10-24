@@ -20,5 +20,6 @@ X_ROLE_NAME_X_os_family: "
   {%- else -%}
     {{ 'Linux' }}
   {%- endif -%}
-"
+  "
+
 ...

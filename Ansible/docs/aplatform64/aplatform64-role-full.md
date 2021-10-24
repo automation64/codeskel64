@@ -151,7 +151,7 @@ All the prerequisites listed in this section can be automatically resolved by en
 
 ### Installation Procedure
 
-The role can be deployed by installing the Ansible-Collection from the Ansible Galaxy repository: [https://galaxy.ansible.com/serdigital64/application](https://galaxy.ansible.com/serdigital64/application)
+The role can be deployed by installing the Ansible-Collection from the Ansible Galaxy repository: [https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X](https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X)
 
 ```shell
 # Install Ansible dependencies

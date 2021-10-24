@@ -1,0 +1,10 @@
+---
+- name: ""
+  ansible.builtin.command:
+    argv:
+      - "{{  }}"
+      - "{{  }}"
+      - "{{  }}"
+      - ""
+      - ""
+...
