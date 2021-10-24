@@ -1,0 +1,19 @@
+---
+- name: ""
+  ansible.builtin.lineinfile:
+    backup: false
+    create: false
+    unsafe_writes: false
+    path: "{{  }}"
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    state: "present"
+    firstmatch: true
+    insertafter: ""
+    inserbefore: ""
+    regexp: ""
+    search_string: ""
+    line: ""
+    validate: ""
+...

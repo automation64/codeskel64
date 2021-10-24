@@ -1,0 +1,32 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1.1. text multiple using quotes"
+      vars:
+        multiline1: "
+          line1
+
+          line2
+        "
+      debug:
+        var: multiline1
+
+    - name: "1.2. text multiple using quotes"
+      vars:
+        multiline1: "
+          line1
+
+          line2
+          "
+      debug:
+        var: multiline1
+
+    - name: "1.3. text multiple using quotes"
+      vars:
+        multiline1: "\
+          line1: word1
+          word2
+          line2\
+          "
+      debug:
+        var: multiline1

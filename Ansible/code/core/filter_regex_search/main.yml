@@ -1,0 +1,15 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    list1: "test string 1"
+    list2: "A B C D E"
+    list3: "path/to/file.tar.gz"
+  tasks:
+
+    - name: "1.1: Return first match"
+      debug:
+        msg: "{{ list2 | regex_search( 'B|E') }}"
+
+    - name: "1.2: Return first match"
+      debug:
+        msg: "{{ list3 | regex_search( '\\.tar\\.gz$|\\.tar$') }}"
