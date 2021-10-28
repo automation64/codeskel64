@@ -2,7 +2,7 @@
   gather_facts: false
   tasks:
 
-    - name: "1: lookup( 'dict', test )"
+    - name: "1.1: lookup( 'dict', test )"
       vars:
         test:
           key1: "value1"
@@ -12,7 +12,7 @@
         msg: "{{ item }}"
       loop: "{{ lookup( 'dict', test ) }}"
 
-    - name: "2: Loop dict | list"
+    - name: "2.1: Loop dict | list"
       vars:
         test:
           key1:
@@ -24,7 +24,27 @@
         msg: "{{ item }}"
       loop: "{{ test | list }}"
 
-    - name: "3: Loop dict | dict2items"
+    - name: "2.2: Loop dict | list"
+      vars:
+        test:
+          key1: "value1"
+          key2: "value2"
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ test | list }}"
+
+    - name: "2.3: Loop dict | list"
+      vars:
+        test:
+          key1:
+            subkey1: "value11"
+          key2:
+            subkey1: "value21"
+      debug:
+        msg: "{{ test[item]['subkey1'] }}"
+      loop: "{{ test | list }}"
+
+    - name: "3.1: Loop dict | dict2items"
       vars:
         test:
           key1:
@@ -36,11 +56,13 @@
         msg: "{{ item }}"
       loop: "{{ test | dict2items }}"
 
-    - name: "4: Loop dict | list"
+    - name: "3.2: Loop dict | dict2items"
       vars:
         test:
-          key1: "value1"
-          key2: "value2"
+          key1:
+            subkey1: "value11"
+          key2:
+            subkey1: "value21"
       debug:
-        msg: "{{ item }}"
-      loop: "{{ test | list }}"
+        msg: "{{ item['value']['subkey1'] }}"
+      loop: "{{ test | dict2items }}"
