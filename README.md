@@ -26,11 +26,12 @@ Collection of skeletons, boilerplates and templates for code, tests and docs.
 | [Ansible/Molecule](Ansible/molecule)            | Ansible testing with Molecule          |
 | [Ansible/Roles](Ansible/roles)                  | Ansible roles                          |
 | [Ansible/PluginModules](Ansible/plugin_modules) | Ansible plugin modules                 |
-| [KSH](KSH)                                      | Korn Shell (KSH) code                  |
-| [Bash](Bash)                                    | Bash code                              |
-| [Samples](Samples)                              | Samples for code testing               |
-| [AWK](Awk)                                      | AWK code                               |
+| [KSH](KSH)                                      | Korn Shell (KSH) assets                |
+| [Bash](Bash)                                    | Bash assets                            |
+| [AWK](Awk)                                      | AWK assets                             |
 | [MkDocs](MkDocs)                                | MkDoc assets                           |
+| [Python](Python)                                | Python assets                          |
+| [Samples](Samples)                              | Samples for code testing               |
 
 ## Repository
 
