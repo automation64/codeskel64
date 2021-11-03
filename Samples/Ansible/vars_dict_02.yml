@@ -1,0 +1,8 @@
+---
+vars_dict_02:
+  key1:
+    - "value1"
+    - "value2"
+  key2:
+    - "value3"
+...

@@ -1,3 +1,4 @@
 ---
 test_var: true
+test_dyn: "{{ ansible_distribution }}"
 ...

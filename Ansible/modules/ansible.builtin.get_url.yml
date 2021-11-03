@@ -8,6 +8,9 @@
     checksum: "{{ }}"
     url: "{{ }}"
     dest: "{{ }}"
-    mode: "{{ }}"
     tmp_dest: "{{ }}"
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
 ...

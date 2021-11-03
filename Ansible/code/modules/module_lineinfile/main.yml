@@ -12,7 +12,7 @@
       ansible.builtin.copy:
         mode: "0600"
         dest: "{{ test['path'] }}"
-        src: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_001.yml' }}"
+        src: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_none_01.yml' }}"
       changed_when: false
 
   tasks:

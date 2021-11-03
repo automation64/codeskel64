@@ -1,0 +1,27 @@
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "iam_manager_auto",
+            "UserId": "AIDA3JUNZO4CP57BMWVS2",
+            "Arn": "arn:aws:iam::111111111111:user/iam_manager_auto",
+            "CreateDate": "2021-10-27T20:07:33+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "lab4learning01",
+            "UserId": "AIDA3JUNZO4CNTKVDZXEB",
+            "Arn": "arn:aws:iam::111111111111:user/lab4learning01",
+            "CreateDate": "2021-10-21T14:38:49+00:00",
+            "PasswordLastUsed": "2021-11-02T13:52:40+00:00"
+        },
+        {
+            "Path": "/",
+            "UserName": "sysadmin",
+            "UserId": "AIDA3JUNZO4CDKM5F6TNK",
+            "Arn": "arn:aws:iam::111111111111:user/sysadmin",
+            "CreateDate": "2021-10-28T10:47:53+00:00",
+            "PasswordLastUsed": "2021-10-28T11:02:53+00:00"
+        }
+    ]
+}
