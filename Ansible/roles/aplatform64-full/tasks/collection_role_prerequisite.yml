@@ -1,0 +1,27 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare package managers"
+  vars:
+    core_repository:
+      prepare: true
+      deploy: true
+      setup: true
+      provision: true
+    core_repository_managers:
+      flatpak: "{{ X_ROLE_NAME_X_application['type'] == 'flatpak' }}"
+      snap: "{{ X_ROLE_NAME_X_application['type'] == 'snap' }}"
+      git: "{{ X_ROLE_NAME_X_application['type'] == 'git' }}"
+    core_repository_catalog_distro: "{{ X_ROLE_NAME_X_repository_catalog_distro }}"
+    core_repository_catalog_yum: "{{ X_ROLE_NAME_X_repository_catalog_yum }}"
+    core_repository_catalog_apt: "{{ X_ROLE_NAME_X_repository_catalog_apt }}"
+    core_repository_custom_yum: "{{ X_ROLE_NAME_X_repository_custom_yum }}"
+    core_repository_custom_apt: "{{ X_ROLE_NAME_X_repository_custom_apt }}"
+  ansible.builtin.include_role:
+    name: "serdigital64.core.core_repository"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare package installer"
+  vars:
+    core_package:
+      prepare: true
+  ansible.builtin.include_role:
+    name: "serdigital64.core.core_package"
+...

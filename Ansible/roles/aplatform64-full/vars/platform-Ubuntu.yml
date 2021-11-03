@@ -1,0 +1,25 @@
+---
+X_ROLE_NAME_X_base:
+  run:
+    X_COMMAND_X: "X_COMMAND_PATH_X"
+
+X_ROLE_NAME_X_profiles:
+  distro:
+    X_APP_VERSION_X:
+      packages:
+        - name: "X_APP_PACKAGE_X"
+
+X_ROLE_NAME_X_repository_custom_yum: []
+X_ROLE_NAME_X_repository_custom_apt: []
+
+X_ROLE_NAME_X_repository_catalog_distro: {}
+X_ROLE_NAME_X_repository_catalog_yum: {}
+X_ROLE_NAME_X_repository_catalog_apt: {}
+
+X_ROLE_NAME_X_os_subsystems:
+  service: "X_SUBSYSTEM_NAME_X"
+  states:
+    started: "started"
+    stopped: "stopped"
+    refreshed: "refreshed"
+...

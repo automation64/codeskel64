@@ -1,0 +1,30 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_initialize.yml"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_deploy.yml"
+  when:
+    - "'deploy' in X_ROLE_NAME_X"
+    - "X_ROLE_NAME_X['deploy']"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_setup.yml"
+  when:
+    - "'setup' in X_ROLE_NAME_X"
+    - "X_ROLE_NAME_X['setup']"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_control.yml"
+  when:
+    - "'control' in X_ROLE_NAME_X"
+    - "X_ROLE_NAME_X['control']"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Finalize"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_finalize.yml"
+...

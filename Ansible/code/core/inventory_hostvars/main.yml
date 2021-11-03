@@ -4,10 +4,21 @@
   gather_facts: true
   vars:
     ansible_connection: "local"
+
   tasks:
+
     - name: "1.1: host_vars"
       debug:
         var: test_var
+
     - name: "1.2: host_vars dynamic"
       debug:
         var: test_dyn
+
+    - name: "2.1: groups"
+      debug:
+        var: groups
+
+    - name: "3.1: group_names"
+      debug:
+        var: group_names

@@ -1,0 +1,9 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Subsystem"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_setup_subsystem-' + X_ROLE_NAME_X_os_family + '.yml' }}"
+  when:
+    - X_ROLE_NAME_X_subsystem is defined
+    - X_ROLE_NAME_X_subsystem['enabled'] is defined
+    - X_ROLE_NAME_X_subsystem['status'] is defined
+...

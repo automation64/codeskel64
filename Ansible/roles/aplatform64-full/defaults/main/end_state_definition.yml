@@ -1,0 +1,11 @@
+---
+X_ROLE_NAME_X_application:
+  name: "X_APP_ID_X"
+  type: "X_APP_TYPE_X"
+  version: "X_APP_VERSION_X"
+  installed: true
+
+X_ROLE_NAME_X_os_subsystem:
+  enabled: false
+  status: "stopped"
+...
