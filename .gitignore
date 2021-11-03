@@ -1,6 +1,6 @@
 # codeskel64
-.yamllint.yml
-.ansible-lint.yml
+tmp/
+cache/
 
 .vscode/*
 *.code-workspace

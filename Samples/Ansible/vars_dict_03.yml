@@ -1,0 +1,8 @@
+---
+vars_dict_03:
+  key1:
+    subkey11: "value11"
+    subkey12: "value12"
+  key2:
+    subkey21: "value21"
+...

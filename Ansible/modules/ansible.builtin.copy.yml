@@ -4,7 +4,7 @@
     backup: false
     follow: false
     force: true
-    remote_src: ~
+    remote_src: false
     owner: "{{  }}"
     group: "{{  }}"
     mode: "{{  }}"

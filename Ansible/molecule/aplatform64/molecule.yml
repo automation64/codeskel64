@@ -5,6 +5,7 @@ dependency:
     ignore-errors: true
     role-file: "meta/requirements-dev.yml"
     requirements-file: "meta/requirements-dev.yml"
+    collections-path: ${X_SHELL_PROJECT_ID_X_CACHE_ANSIBLE}
 driver:
   name: "podman"
 lint: |

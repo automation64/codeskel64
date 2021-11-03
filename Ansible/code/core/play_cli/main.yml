@@ -1,0 +1,14 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1.1. Parameter type: number"
+      debug:
+        msg: "is number: {{ (param_number is number) }} / value: {{ param_number }}"
+
+    - name: "2.1. Parameter type: list / empty"
+      debug:
+        msg: "length: {{ (param_list_empty | length) }} / value: {{ param_list_empty }}"
+
+    - name: "2.2. Parameter type: list number"
+      debug:
+        msg: "length: {{ (param_list_number | length) }} / value: {{ param_list_number }}"

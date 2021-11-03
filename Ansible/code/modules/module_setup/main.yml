@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1.1. Get all facts"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+    - name: "1.1. Show [lsb]"
+      debug:
+        var: ansible_facts['lsb']['codename']
+...

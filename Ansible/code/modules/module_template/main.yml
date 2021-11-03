@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1.1. Show [lsb]"
+      ansible.builtin.template:
+        src: "test.yml.j2"
+        mode: "0666"
+        dest: "{{ lookup('env', 'CODESKEL64_TMP') + '/module_template.yml' }}"
+...

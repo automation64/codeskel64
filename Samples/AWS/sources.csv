@@ -1,0 +1,4 @@
+sample_path:source_command
+iam_list-users_01.json:aws iam list-users
+ec2_describe-vpcs_01.json:aws ec2 describe-vpcs
+ec2_describe-regions_01.json:aws ec2 describe-regions
