@@ -1,68 +1,57 @@
+---
 - hosts: localhost
   gather_facts: false
+
+  pre_tasks:
+    - name: "Include Samples"
+      include_vars:
+        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_01.yml' }}"
+    - name: "Include Samples"
+      include_vars:
+        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_02.yml' }}"
+    - name: "Include Samples"
+      include_vars:
+        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_03.yml' }}"
+
   tasks:
 
     - name: "1.1: lookup( 'dict', test )"
-      vars:
-        test:
-          key1: "value1"
-          key2: "value2"
-          key3: "value3"
       debug:
         msg: "{{ item }}"
-      loop: "{{ lookup( 'dict', test ) }}"
+      loop: "{{ lookup( 'dict', vars_dict_01 ) }}"
 
     - name: "2.1: Loop dict | list"
-      vars:
-        test:
-          key1:
-            - "value1"
-            - "value2"
-          key2:
-            - "value3"
       debug:
         msg: "{{ item }}"
-      loop: "{{ test | list }}"
+      loop: "{{ vars_dict_02 | list }}"
 
     - name: "2.2: Loop dict | list"
-      vars:
-        test:
-          key1: "value1"
-          key2: "value2"
       debug:
         msg: "{{ item }}"
-      loop: "{{ test | list }}"
+      loop: "{{ vars_dict_01 | list }}"
 
     - name: "2.3: Loop dict | list"
-      vars:
-        test:
-          key1:
-            subkey1: "value11"
-          key2:
-            subkey1: "value21"
       debug:
-        msg: "{{ test[item]['subkey1'] }}"
-      loop: "{{ test | list }}"
+        msg: "{{ vars_dict_03[item] }}"
+      loop: "{{ vars_dict_03 | list }}"
 
     - name: "3.1: Loop dict | dict2items"
-      vars:
-        test:
-          key1:
-            - "value1"
-            - "value2"
-          key2:
-            - "value3"
       debug:
         msg: "{{ item }}"
-      loop: "{{ test | dict2items }}"
+      loop: "{{ vars_dict_02 | dict2items }}"
 
     - name: "3.2: Loop dict | dict2items"
-      vars:
-        test:
-          key1:
-            subkey1: "value11"
-          key2:
-            subkey1: "value21"
       debug:
-        msg: "{{ item['value']['subkey1'] }}"
-      loop: "{{ test | dict2items }}"
+        msg: "{{ item['value'] }}"
+      loop: "{{ vars_dict_03 | dict2items }}"
+
+    - name: "3.3: Loop dict | dict2items"
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ vars_dict_03 | dict2items }}"
+
+    - name: "3.4: Loop dict | dict2items"
+      debug:
+        msg: "{{ item['value'] }}"
+      loop: "{{ vars_dict_03 | dict2items }}"
+...
