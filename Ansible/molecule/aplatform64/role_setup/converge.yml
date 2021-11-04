@@ -1,0 +1,22 @@
+---
+- name: "Converge"
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: "Discover platform"
+      ansible.builtin.setup:
+        gather_subset: "min"
+        gather_timeout: "10"
+      changed_when: false
+
+    - name: "Control service"
+      vars:
+        X_ROLE_NAME_X:
+          setup: true
+        X_ROLE_NAME_X_subsystem:
+          enabled: true
+          status: "started"
+      ansible.builtin.include_role:
+        name: "X_ROLE_NAME_X"
+...
