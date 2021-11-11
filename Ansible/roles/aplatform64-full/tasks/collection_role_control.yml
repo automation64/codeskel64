@@ -7,6 +7,6 @@
     - X_ROLE_NAME_X_subsystem['enabled'] is defined
     - X_ROLE_NAME_X_subsystem['enabled']
     - X_ROLE_NAME_X_subsystem['status'] is defined
-    - X_ROLE_NAME_X_subsystems['states']
+    - X_ROLE_NAME_X_subsystem_profile['states']
       [X_ROLE_NAME_X_subsystem['status']] is defined
 ...

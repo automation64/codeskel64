@@ -3,6 +3,13 @@
   ansible.builtin.include_tasks:
     file: "X_ROLE_NAME_X_initialize.yml"
 
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_prepare.yml"
+  when:
+    - "'prepare' in X_ROLE_NAME_X"
+    - "X_ROLE_NAME_X['prepare']"
+
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy"
   ansible.builtin.include_tasks:
     file: "X_ROLE_NAME_X_deploy.yml"
@@ -23,6 +30,13 @@
   when:
     - "'control' in X_ROLE_NAME_X"
     - "X_ROLE_NAME_X['control']"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Provision"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_provision.yml"
+  when:
+    - "'provision' in X_ROLE_NAME_X"
+    - "X_ROLE_NAME_X['provision']"
 
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Finalize"
   ansible.builtin.include_tasks:

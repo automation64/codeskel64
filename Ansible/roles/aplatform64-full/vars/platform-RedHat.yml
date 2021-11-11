@@ -1,22 +1,32 @@
 ---
+# Define platform specific paths
 X_ROLE_NAME_X_base:
+  paths:
+    X_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] }}"
+  files:
+    X_FILE_SERVER_SETUP_X: "X_FILE_SERVER_SETUP_PATH_X"
   run:
     X_COMMAND_X: "X_COMMAND_PATH_X"
+  templates: "{{ X_ROLE_NAME_X_base_common['templates'] }}"
 
+# Define application package details
 X_ROLE_NAME_X_profiles:
   distro:
     X_APP_VERSION_X:
       packages:
         - name: "X_APP_PACKAGE_X"
 
+# Define custom package repositories
 X_ROLE_NAME_X_repository_custom_yum: []
 X_ROLE_NAME_X_repository_custom_apt: []
 
+# Set package repositories states
 X_ROLE_NAME_X_repository_catalog_distro: {}
 X_ROLE_NAME_X_repository_catalog_yum: {}
 X_ROLE_NAME_X_repository_catalog_apt: {}
 
-X_ROLE_NAME_X_os_subsystems:
+# Define OS subsystem states
+X_ROLE_NAME_X_subsystem_profile:
   service: "X_SUBSYSTEM_NAME_X"
   states:
     started: "started"

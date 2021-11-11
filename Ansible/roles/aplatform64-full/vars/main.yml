@@ -1,4 +1,5 @@
 ---
+# Define supported platforms
 X_ROLE_NAME_X_platforms:
   - "CentOS8"
   - "OracleLinux8"
@@ -6,6 +7,7 @@ X_ROLE_NAME_X_platforms:
   - "Ubuntu21"
   - "Fedora33"
 
+# Group Linux Distributions by family
 X_ROLE_NAME_X_os_family: "
   {%- if
       ( ansible_distribution == 'CentOS' ) or
@@ -22,4 +24,22 @@ X_ROLE_NAME_X_os_family: "
   {%- endif -%}
   "
 
+# Define common paths
+X_ROLE_NAME_X_base_common:
+  access:
+    owner: "root"
+    group: "root"
+    mode:
+      dir: "0755"
+      file: "0644"
+      exe: "0755"
+  templates:
+    X_TEMPLATE_SERVER_X: "X_TEMPLATE_SERVER_NAME_X.j2"
+
+# Define subsystem server options. This will be used along with X_ROLE_NAME_X_server_options
+X_ROLE_NAME_X_server_presets:
+  X_PREDEFINED1_X: ""
+
+# Temporary variables
+X_ROLE_NAME_X___prepare_path: ~
 ...

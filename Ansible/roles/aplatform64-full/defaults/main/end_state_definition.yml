@@ -5,7 +5,13 @@ X_ROLE_NAME_X_application:
   version: "X_APP_VERSION_X"
   installed: true
 
-X_ROLE_NAME_X_os_subsystem:
+X_ROLE_NAME_X_subsystem:
   enabled: false
   status: "stopped"
+
+X_ROLE_NAME_X_server_options:
+  X_DEFAULT_SERVER_OPTION_X: "X_DEFAULT_SERVER_OPTION_VALUE_X"
+
+X_ROLE_NAME_X_paths:
+  X_DEFAULT_PATH_X: "X_DEFAULT_PATH_VALUE_X"
 ...
