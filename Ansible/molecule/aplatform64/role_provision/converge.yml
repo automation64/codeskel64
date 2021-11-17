@@ -1,5 +1,5 @@
 ---
-- name: "Prepare"
+- name: "Converge"
   hosts: all
   gather_facts: false
   tasks:
@@ -10,11 +10,10 @@
         gather_timeout: "10"
       changed_when: false
 
-    - name: "Prepare"
+    - name: "Provision"
       vars:
         X_ROLE_NAME_X:
-          resolve_prereq: true
-          prepare: true
+          provision: true
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"
 ...

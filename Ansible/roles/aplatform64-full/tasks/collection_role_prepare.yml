@@ -1,0 +1,9 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Paths"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_prepare_paths.yml' }}"
+  loop:
+    - "{{ X_ROLE_NAME_X_base['paths']['X_PATH_X'] }}"
+  loop_control:
+    loop_var: "X_ROLE_NAME_X___prepare_path"
+...

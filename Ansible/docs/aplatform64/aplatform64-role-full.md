@@ -18,10 +18,12 @@ X_ROLE_SHORT_DESCRIPTION_X
 
 Supported features in the current version:
 
+- Prepare environment for application deployment.
 - Deploy application. Packages are defined in the variable `X_ROLE_NAME_X_profiles`.
 - Control application subsystem services. Services are defined in the variable `X_ROLE_NAME_X_subsystems`.
 - Configure application.
-- Provision.
+- Configure application subsystem server.
+- Provision application components.
 
 The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatform64.readthedocs.io) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
@@ -34,6 +36,7 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
   vars:
     X_ROLE_NAME_X:
       resolve_prereq: true
+      prepare: true
       deploy: true
   ansible.builtin.include_role:
     name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
@@ -56,7 +59,6 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 - name: "Example: Enable and activate X_TASK_ROLE_NAME_X subsystem service"
   vars:
     X_ROLE_NAME_X:
-      setup: true
       control: true
     X_ROLE_NAME_X_subsystem:
       enabled: true
@@ -65,10 +67,10 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
     name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
 ```
 
-### Provision application X_TASK_ROLE_NAME_X
+### Provision application X_TASK_ROLE_NAME_X components
 
 ```yaml
-- name: "Example: Provision X_TASK_ROLE_NAME_X"
+- name: "Example: Provision X_TASK_ROLE_NAME_X components"
   vars:
     X_ROLE_NAME_X:
       provision: true
@@ -86,19 +88,21 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatfo
 ```yaml
 X_ROLE_NAME_X:
   resolve_prereq:
+  prepare:
   deploy:
   setup:
   control:
   provision:
 ```
 
-| Parameter                    | Required? | Type    | Default | Purpose / Value                              |
-| ---------------------------- | --------- | ------- | ------- | -------------------------------------------- |
-| X_ROLE_NAME_X.resolve_prereq | no        | boolean | `false` | Enable automatic resolution of prequisites   |
-| X_ROLE_NAME_X.deploy         | no        | boolean | `false` | Enable installation of application packages  |
-| X_ROLE_NAME_X.setup          | no        | boolean | `false` | Enable application configuration             |
-| X_ROLE_NAME_X.control        | no        | boolean | `false` | Enable application subsystem service control |
-| X_ROLE_NAME_X.provision      | no        | boolean | `false` | Enable application provisioning              |
+| Parameter                    | Required? | Type    | Default | Purpose / Value                               |
+| ---------------------------- | --------- | ------- | ------- | --------------------------------------------- |
+| X_ROLE_NAME_X.resolve_prereq | no        | boolean | `false` | Enable automatic resolution of prequisites    |
+| X_ROLE_NAME_X.prepare        | no        | boolean | `false` | Enable environment preparation                |
+| X_ROLE_NAME_X.deploy         | no        | boolean | `false` | Enable installation of application packages   |
+| X_ROLE_NAME_X.setup          | no        | boolean | `false` | Enable application configuration              |
+| X_ROLE_NAME_X.control        | no        | boolean | `false` | Enable application subsystem service control  |
+| X_ROLE_NAME_X.provision      | no        | boolean | `false` | Enable provisioning of application components |
 
 ### End State
 
@@ -114,18 +118,26 @@ X_ROLE_NAME_X_application:
 X_ROLE_NAME_X_subsystem:
   enabled:
   status:
+X_ROLE_NAME_X_server_options:
+  X_DEFAULT_SERVER_OPTION_X:
+X_ROLE_NAME_X_paths:
+  X_DEFAULT_PATH_X:
 ```
 
-| Parameter                           | Required? | Type       | Default             | Purpose / Value                     |
-| ----------------------------------- | --------- | ---------- | ------------------- | ----------------------------------- |
-| X_ROLE_NAME_X_application           | no        | dictionary |                     | Set application package end state   |
-| X_ROLE_NAME_X_application.name      | no        | string     | `"X_APP_ID_X"`      | Select application package name     |
-| X_ROLE_NAME_X_application.type      | no        | string     | `"X_APP_TYPE_X"`    | Select application package type     |
-| X_ROLE_NAME_X_application.version   | no        | string     | `"X_APP_VERSION_X"` | Select application package version  |
-| X_ROLE_NAME_X_application.installed | no        | boolean    | `true`              | Set application package end state   |
-| X_ROLE_NAME_X_subsystem             | no        | dictionary |                     | Set application subsystem end state |
-| X_ROLE_NAME_X_subsystem.enabled     | no        | boolean    | `false`             | Enable the subsystem?               |
-| X_ROLE_NAME_X_subsystem.status      | no        | string     | `"stopped"`         | Set the service state               |
+| Parameter                                              | Required? | Type       | Default                             | Purpose / Value                     |
+| ------------------------------------------------------ | --------- | ---------- | ----------------------------------- | ----------------------------------- |
+| X_ROLE_NAME_X_application                              | no        | dictionary |                                     | Set application package end state   |
+| X_ROLE_NAME_X_application.name                         | no        | string     | `"X_APP_ID_X"`                      | Select application package name     |
+| X_ROLE_NAME_X_application.type                         | no        | string     | `"X_APP_TYPE_X"`                    | Select application package type     |
+| X_ROLE_NAME_X_application.version                      | no        | string     | `"X_APP_VERSION_X"`                 | Select application package version  |
+| X_ROLE_NAME_X_application.installed                    | no        | boolean    | `true`                              | Set application package end state   |
+| X_ROLE_NAME_X_subsystem                                | no        | dictionary |                                     | Set application subsystem end state |
+| X_ROLE_NAME_X_subsystem.enabled                        | no        | boolean    | `false`                             | Enable the subsystem?               |
+| X_ROLE_NAME_X_subsystem.status                         | no        | string     | `"stopped"`                         | Set the service state               |
+| X_ROLE_NAME_X_server_options                           | no        | dictionary |                                     | Set subsystem server options        |
+| X_ROLE_NAME_X_server_options.X_DEFAULT_SERVER_OPTION_X | no        | string     | `"X_DEFAULT_SERVER_OPTION_VALUE_X"` |                                     |
+| X_ROLE_NAME_X_paths                                    | yes       | dictionary |                                     | Set paths                           |
+| X_ROLE_NAME_X_paths.X_DEFAULT_PATH_X                   | yes       | string     | `"X_DEFAULT_PATH_VALUE_X"`          |                                     |
 
 ## Deployment
 

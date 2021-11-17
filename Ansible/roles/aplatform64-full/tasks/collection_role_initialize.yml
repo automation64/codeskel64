@@ -1,0 +1,37 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check Platform compatibility"
+  ansible.builtin.assert:
+    quiet: true
+    fail_msg: "Target Platform not supported: {{ ansible_distribution + ansible_distribution_major_version }}"
+    that:
+      - ansible_distribution + ansible_distribution_major_version in X_ROLE_NAME_X_platforms
+  changed_when: false
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters"
+  ansible.builtin.assert:
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_paths is defined
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters: Deploy"
+  ansible.builtin.assert:
+    quiet: true
+    that:
+      - true
+  when:
+    - "'deploy' in X_ROLE_NAME_X"
+    - X_ROLE_NAME_X['deploy']
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Set Platform specific variables"
+  ansible.builtin.include_vars:
+    # file: "{{ 'platform-' + ansible_distribution + ansible_distribution_major_version + '.yml' }}"
+    file: "{{ 'platform-' + X_ROLE_NAME_X_os_family + '.yml' }}"
+  changed_when: false
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Resolve prerequisites"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_prerequisite.yml"
+  when:
+    - "'resolve_prereq' in X_ROLE_NAME_X"
+    - X_ROLE_NAME_X['resolve_prereq']
+...

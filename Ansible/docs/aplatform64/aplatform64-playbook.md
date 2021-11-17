@@ -22,10 +22,10 @@ Supported features in the current version:
 
 ## Use Cases
 
-### Deploy office productivity applications
+### X_USE_CASE_X
 
 ```yaml
-ansible-playbook playbooks/site/X_PLAYBOOK_NAME_X.yml -i inventories/site/X_GROUP_NAME_X.ini
+ansible-playbook playbooks/site/X_PLAYBOOK_NAME_X.yml -i inventories/site/X_INVENTORY_NAME_X.ini
 ```
 
 ## Playbook Parameters
@@ -34,7 +34,7 @@ ansible-playbook playbooks/site/X_PLAYBOOK_NAME_X.yml -i inventories/site/X_GROU
 
 Register the hosts that will consume the service in the Ansible Inventory file:
 
-- File: `inventories/site/X_GROUP_NAME_X.ini`
+- File: `inventories/site/X_INVENTORY_NAME_X.ini`
 - Host Group: `X_GROUP_NAME_X`
 
 ### End State
@@ -45,13 +45,13 @@ Set playbook specific settings in the file: `inventories/site/group_vars/X_GROUP
 
 ```yaml
 X_PLAYBOOK_NAME_X_apps:
-  X_APP_NAME_X: true
+  X_APP_NAME_X:
 ```
 
-| Parameter                           | Required? | Type    | Default | Purpose / Value                           |
-| ----------------------------------- | --------- | ------- | ------- | ----------------------------------------- |
-| X_PLAYBOOK_NAME_X_apps              | no        | boolean | true    | Define what applications will be deployed |
-| X_PLAYBOOK_NAME_X_apps.X_APP_NAME_X | no        | boolean | true    | Deploy the application?                   |
+| Parameter                           | Required? | Type       | Default | Purpose / Value                           |
+| ----------------------------------- | --------- | ---------- | ------- | ----------------------------------------- |
+| X_PLAYBOOK_NAME_X_apps              | no        | dictionary |         | Define what applications will be deployed |
+| X_PLAYBOOK_NAME_X_apps.X_APP_NAME_X | no        | boolean    | true    | Deploy the application?                   |
 
 Additional role specific settings are available to further customize the playbook:
 

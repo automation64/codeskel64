@@ -4,4 +4,12 @@ vars_dict_01:
   key2: "value2"
   key3: "value3"
   key4: "value4"
+
+vars_dict_02:
+  key1: 2323
+  key2: true
+  key3: "value3"
+  key4: []
+  key5: {}
+  key6: ~
 ...

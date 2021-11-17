@@ -1,0 +1,9 @@
+---
+X_ROLE_NAME_X:
+  resolve_prereq: false
+  prepare: false
+  deploy: false
+  setup: false
+  control: false
+  provision: false
+...
