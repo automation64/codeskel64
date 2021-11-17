@@ -1,0 +1,13 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / Subsystem / Set state (service: {{
+    X_ROLE_NAME_X_subsystem_profile['service'] }})"
+  become: true
+  ansible.builtin.systemd:
+    no_block: false
+    scope: "system"
+    name: "{{ X_ROLE_NAME_X_subsystem_profile['service'] }}"
+    state: "{{
+      X_ROLE_NAME_X_subsystem_profile['states']
+      [X_ROLE_NAME_X_subsystem['status']]
+      }}"
+...

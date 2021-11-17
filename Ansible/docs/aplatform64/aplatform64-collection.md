@@ -10,7 +10,7 @@ This collection is part of the [A:Platform64](https://aplatform64.readthedocs.io
 
 | role                                       | purpose                    |
 | ------------------------------------------ | -------------------------- |
-| [X_ROLE_NAME_X](../roles/X_ROLE_NAME_X.md) | X_ROLE_SHORT_DESCRIPTION_X |
+| [X_ROLE_NAME_X](https://aplatform64.readthedocs.io/en/latest/roles/ROLE_NAME_X.md) | X_ROLE_SHORT_DESCRIPTION_X |
 
 ## Deployment
 

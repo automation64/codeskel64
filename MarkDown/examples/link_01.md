@@ -1,0 +1,2 @@
+[LinkedText](URL)
+

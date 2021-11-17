@@ -1,0 +1,35 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    list_test: []
+  tasks:
+    - name: "1.1. Create dynamic list"
+      set_fact:
+        list_test: "{{ list_test + [ item ] }}"
+      loop:
+        - 1
+        - 2
+        - 3
+        - 4
+
+    - name: "1.1. Show list"
+      debug:
+        var: list_test
+
+    - name: "2.1. Assign empty list"
+      vars:
+        test: []
+      debug:
+        var: test
+
+    - name: "2.2. Assign empty list in quotes"
+      vars:
+        test: "[]"
+      debug:
+        var: test
+
+    - name: "3.1. Assign inline list in quotes"
+      vars:
+        test: "[ 1,2,3 ]"
+      debug:
+        var: test

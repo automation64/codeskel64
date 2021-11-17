@@ -1,0 +1,5 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Provision / "
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_provision_.yml"
+...

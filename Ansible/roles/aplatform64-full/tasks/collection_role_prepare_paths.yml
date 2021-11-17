@@ -1,0 +1,15 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Paths / Create ({{
+    X_ROLE_NAME_X___prepare_path }})"
+  become: true
+  ansible.builtin.file:
+    follow: false
+    force: false
+    unsafe_writes: false
+    recurse: false
+    state: "directory"
+    path: "{{ X_ROLE_NAME_X___prepare_path }}"
+    owner: "{{ X_ROLE_NAME_X_base['access']['owner'] }}"
+    group: "{{ X_ROLE_NAME_X_base['access']['group'] }}"
+    mode: "{{ X_ROLE_NAME_X_base['access']['dir'] }}"
+...
