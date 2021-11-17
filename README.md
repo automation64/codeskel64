@@ -42,11 +42,11 @@ Collection of skeletons, boilerplates and templates for code, tests and docs.
 
 ## Repository
 
-- [SerDigital64](https://github.com/serdigital64)
+- Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
 
 ## Author
 
-- Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
+- [SerDigital64](https://github.com/serdigital64)
 
 ## License
 
