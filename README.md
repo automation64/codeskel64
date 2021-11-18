@@ -34,6 +34,8 @@ Collection of skeletons, boilerplates and templates for code, tests and docs.
 | [AWK/Examples](Awk/examples)               | Code examples                          |
 | [MkDocs](MkDocs)                           | MkDoc assets                           |
 | [MkDocs/Examples](MkDocs/examples)         | Code examples                          |
+| [Dockerfile](Dockerfile)                   | Dockerfile assets                      |
+| [Dockerfile/Examples](Dockerfile/examples) | Dockerfile examples                    |
 | [Python](Python)                           | Python assets                          |
 | [Python/Examples](Python/examples)         | Code examples                          |
 | [MarkDown](MarkDown)                       | MarkDown assets                        |
