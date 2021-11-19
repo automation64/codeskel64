@@ -40,6 +40,7 @@ platforms:
       - rhel
       - rhel-systemd
       - linux
+      - linux-systemd
   - name: "oraclelinux8"
     image: "docker.io/library/oraclelinux:8"
     pre_build_image: false
@@ -67,6 +68,7 @@ platforms:
       - rhel
       - rhel-systemd
       - linux
+      - linux-systemd
   - name: "ubuntu20"
     image: "public.ecr.aws/lts/ubuntu:20.04_stable"
     pre_build_image: false
