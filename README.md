@@ -11,34 +11,23 @@
   ░░░░░░░░░     ░░░░░░░    ░░░░░░░░░░   ░░░░░░░░░░  ░░░░░░░░░  ░░░░░   ░░░░ ░░░░░░░░░░ ░░░░░░░░░░░  ░░░░░░░░        ░░░░░
 ```
 
-Collection of skeletons, boilerplates and templates for code, tests and docs.
+Collection of skeletons, boilerplates, templates, code examples and sample data for development tools and languages.
 
 ## Content
 
-| Section                                    | Content                                |
-| ------------------------------------------ | -------------------------------------- |
-| [Ansible](Ansible)                         | Ansible assets                         |
-| [Ansible/Examples](Ansible/examples)       | Code examples                          |
-| [Ansible/Collections](Ansible/collections) | Collections                            |
-| [Ansible/Dev](Ansible/dev)                 | Development scripts and tools settings |
-| [Ansible/Docs](Ansible/docs)               | Collections and roles documentation    |
-| [Ansible/Modules](Ansible/modules)         | Modules                                |
-| [Ansible/Molecule](Ansible/molecule)       | Testing with Molecule                  |
-| [Ansible/Roles](Ansible/roles)             | Roles                                  |
-| [Ansible/Python](Ansible/python)           | Expanding Ansible with Python          |
-| [KSH](KSH)                                 | Korn Shell (KSH) assets                |
-| [KSH/Examples](KSH/examples)               | Code examples                          |
-| [Bash](Bash)                               | Bash assets                            |
-| [Bash/Examples](Bash/examples)             | Code examples                          |
-| [AWK](Awk)                                 | AWK assets                             |
-| [AWK/Examples](Awk/examples)               | Code examples                          |
-| [MkDocs](MkDocs)                           | MkDoc assets                           |
-| [MkDocs/Examples](MkDocs/examples)         | Code examples                          |
-| [Python](Python)                           | Python assets                          |
-| [Python/Examples](Python/examples)         | Code examples                          |
-| [MarkDown](MarkDown)                       | MarkDown assets                        |
-| [MarkDown/Examples](MarkDown/examples)     | Code examples                          |
-| [Samples](Samples)                         | Samples for code testing               |
+| Section                | Content                      |
+| ---------------------- | ---------------------------- |
+| [Ansible](Ansible)     | Ansible assets               |
+| [AWK](Awk)             | AWK assets                   |
+| [Bash](Bash)           | Bash assets                  |
+| [Container](Container) | Container assets             |
+| [GIT](GIT)             | GIT assets                   |
+| [KSH](KSH)             | Korn Shell (KSH) assets      |
+| [Licenses](Licenses)   | Software Licenses            |
+| [MarkDown](MarkDown)   | MarkDown assets              |
+| [MkDocs](MkDocs)       | MkDoc assets                 |
+| [Python](Python)       | Python assets                |
+| [Samples](Samples)     | Sample data for code testing |
 
 ## Repository
 
