@@ -5,105 +5,121 @@ dependency:
     ignore-errors: true
     role-file: "meta/requirements-dev.yml"
     requirements-file: "meta/requirements-dev.yml"
-    collections-path: ${X_SHELL_PROJECT_ID_X_CACHE_ANSIBLE}
+    collections-path: ${APLATFORM64_CACHE_ANSIBLE}
 driver:
   name: "podman"
 lint: |
   set -e
   yamllint .
-  ansible-lint -c ${X_SHELL_PROJECT_ID_X_ANSIBLE_LINT}
+  ansible-lint -c ${APLATFORM64_ANSIBLE_LINT}
 platforms:
   - name: "centos8"
-    image: "centos:8"
+    image: "docker.io/library/centos:8"
     pre_build_image: false
     groups:
-      - centos
-      - redhat
-      - rhel
-      - linux
+      - "centos"
+      - "redhat"
+      - "rhel"
+      - "linux"
   - name: "centos8-systemd"
-    image: "centos:8"
+    image: "docker.io/library/centos:8"
     tmpfs:
-      - /run
-      - /tmp
+      - "/run"
+      - "/tmp"
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
-      - SYS_ADMIN
+      - "SYS_ADMIN"
     command: "/usr/sbin/init"
     pre_build_image: false
     groups:
-      - centos
-      - centos-systemd
-      - redhat
-      - redhat-systemd
-      - rhel
-      - rhel-systemd
-      - linux
-      - linux-systemd
+      - "centos"
+      - "centos-systemd"
+      - "redhat"
+      - "redhat-systemd"
+      - "rhel"
+      - "rhel-systemd"
+      - "linux"
+      - "linux-systemd"
   - name: "oraclelinux8"
     image: "docker.io/library/oraclelinux:8"
     pre_build_image: false
     groups:
       - oel
-      - redhat
-      - rhel
-      - linux
+      - "redhat"
+      - "rhel"
+      - "linux"
   - name: "oraclelinux8-systemd"
     image: "docker.io/library/oraclelinux:8"
     tmpfs:
-      - /run
-      - /tmp
+      - "/run"
+      - "/tmp"
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
-      - SYS_ADMIN
+      - "SYS_ADMIN"
     command: "/usr/sbin/init"
     pre_build_image: false
     groups:
       - oel
       - oel-systemd
-      - redhat
-      - redhat-systemd
-      - rhel
-      - rhel-systemd
-      - linux
-      - linux-systemd
+      - "redhat"
+      - "redhat-systemd"
+      - "rhel"
+      - "rhel-systemd"
+      - "linux"
+      - "linux-systemd"
   - name: "ubuntu20"
     image: "public.ecr.aws/lts/ubuntu:20.04_stable"
     pre_build_image: false
     groups:
-      - ubuntu
-      - linux
-  - name: "ubuntu21"
-    image: "ubuntu:21.04"
-    pre_build_image: false
-    groups:
-      - ubuntu
-      - linux
-  - name: "ubuntu21-systemd"
-    image: "ghcr.io/serdigital64/ubuntu-21.4-systemd-full:0.1.0"
+      - "ubuntu"
+      - "linux"
+  - name: "ubuntu20-systemd"
+    image: "ghcr.io/serdigital64/ubuntu-20.4-systemd-full:0.1.0"
     tmpfs:
-      - /run
-      - /tmp
+      - "/run"
+      - "/tmp"
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
-      - SYS_ADMIN
+      - "SYS_ADMIN"
     command: "/usr/sbin/init"
     pre_build_image: false
     groups:
-      - ubuntu
-      - ubuntu-systemd
-      - linux
-      - linux-systemd
+      - "ubuntu"
+      - "ubuntu-systemd"
+      - "linux"
+      - "linux-systemd"
+  - name: "ubuntu21"
+    image: "docker.io/library/ubuntu:21.04"
+    pre_build_image: false
+    groups:
+      - "ubuntu"
+      - "linux"
+  - name: "ubuntu21-systemd"
+    image: "ghcr.io/serdigital64/ubuntu-21.4-systemd-full:0.1.0"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
+      - "ubuntu"
+      - "ubuntu-systemd"
+      - "linux"
+      - "linux-systemd"
   - name: "fedora33"
     image: "fedora:33"
     pre_build_image: false
     groups:
-      - fedora
-      - redhat
-      - linux
+      - "fedora"
+      - "redhat"
+      - "linux"
 provisioner:
   name: "ansible"
 verifier:
