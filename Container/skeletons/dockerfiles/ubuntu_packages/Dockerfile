@@ -19,12 +19,14 @@ RUN apt-get -y install \
     X_PKG_PRE_1_X \
     X_PKG_PRE_N_X
 
-# Install packages
+# Install packages: X_PACKAGE_X
 RUN apt-get -y install \
     X_PKG_1_X \
     X_PKG_N_X
 
-# Cleanup
+# Configure packages: X_PACKAGE_X
+
+# Cleanup package manager
 RUN apt-get clean
 
 # Final command

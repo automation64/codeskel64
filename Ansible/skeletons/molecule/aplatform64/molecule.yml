@@ -13,6 +13,34 @@ lint: |
   yamllint .
   ansible-lint -c ${APLATFORM64_ANSIBLE_LINT}
 platforms:
+  - name: "centos7"
+    image: "docker.io/library/centos:7"
+    pre_build_image: false
+    groups:
+      - "centos"
+      - "redhat"
+      - "rhel"
+      - "linux"
+  - name: "centos7-systemd"
+    image: "docker.io/library/centos:7"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
+      - "centos"
+      - "centos-systemd"
+      - "redhat"
+      - "redhat-systemd"
+      - "rhel"
+      - "rhel-systemd"
+      - "linux"
+      - "linux-systemd"
   - name: "centos8"
     image: "docker.io/library/centos:8"
     pre_build_image: false
@@ -70,7 +98,7 @@ platforms:
       - "linux"
       - "linux-systemd"
   - name: "ubuntu20"
-    image: "public.ecr.aws/lts/ubuntu:20.04_stable"
+    image: "docker.io/library/ubuntu:20.04"
     pre_build_image: false
     groups:
       - "ubuntu"
@@ -120,6 +148,68 @@ platforms:
       - "fedora"
       - "redhat"
       - "linux"
+  - name: "debian10"
+    image: "docker.io/library/debian:buster"
+    pre_build_image: false
+    groups:
+      - "debian"
+      - "linux"
+  - name: "debian11"
+    image: "docker.io/library/debian:bullseye"
+    pre_build_image: false
+    groups:
+      - "debian"
+      - "linux"
+  - name: "rhel7"
+    image: "registry.access.redhat.com/ubi7/ubi"
+    pre_build_image: false
+    groups:
+      - "redhat"
+      - "rhel"
+      - "linux"
+  - name: "rhel7-systemd"
+    image: "registry.access.redhat.com/ubi7/ubi-init"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
+      - "redhat"
+      - "redhat-systemd"
+      - "rhel"
+      - "rhel-systemd"
+      - "linux"
+      - "linux-systemd"
+  - name: "rhel8"
+    image: "registry.access.redhat.com/ubi8/ubi"
+    pre_build_image: false
+    groups:
+      - "redhat"
+      - "rhel"
+      - "linux"
+  - name: "rhel8-systemd"
+    image: "registry.access.redhat.com/ubi8/ubi-init"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/usr/sbin/init"
+    pre_build_image: false
+    groups:
+      - "redhat"
+      - "redhat-systemd"
+      - "rhel"
+      - "rhel-systemd"
+      - "linux"
+      - "linux-systemd"
 provisioner:
   name: "ansible"
 verifier:
