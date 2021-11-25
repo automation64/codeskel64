@@ -13,53 +13,9 @@ lint: |
   yamllint .
   ansible-lint -c ${APLATFORM64_ANSIBLE_LINT}
 platforms:
-  - name: "centos7"
-    image: "docker.io/library/centos:7"
-    pre_build_image: false
-    groups:
-      - "centos"
-      - "redhat"
-      - "rhel"
-      - "linux"
-  - name: "centos7-systemd"
-    image: "docker.io/library/centos:7"
-    tmpfs:
-      - "/run"
-      - "/tmp"
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    capabilities:
-      - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
-    groups:
-      - "centos"
-      - "centos-systemd"
-      - "redhat"
-      - "redhat-systemd"
-      - "rhel"
-      - "rhel-systemd"
-      - "linux"
-      - "linux-systemd"
   - name: "centos8"
-    image: "docker.io/library/centos:8"
-    pre_build_image: false
-    groups:
-      - "centos"
-      - "redhat"
-      - "rhel"
-      - "linux"
-  - name: "centos8-systemd"
-    image: "docker.io/library/centos:8"
-    tmpfs:
-      - "/run"
-      - "/tmp"
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    capabilities:
-      - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
+    image: "ghcr.io/serdigital64/centos-8-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
       - "centos"
       - "centos-systemd"
@@ -69,16 +25,6 @@ platforms:
       - "rhel-systemd"
       - "linux"
       - "linux-systemd"
-  - name: "oraclelinux8"
-    image: "docker.io/library/oraclelinux:8"
-    pre_build_image: false
-    groups:
-      - oel
-      - "redhat"
-      - "rhel"
-      - "linux"
-  - name: "oraclelinux8-systemd"
-    image: "docker.io/library/oraclelinux:8"
     tmpfs:
       - "/run"
       - "/tmp"
@@ -86,25 +32,19 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
       - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
+    command: "/lib/systemd/systemd"
+  - name: "oraclelinux8"
+    image: "ghcr.io/serdigital64/oraclelinux-8-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
-      - oel
-      - oel-systemd
+      - "oel"
+      - "oel-systemd"
       - "redhat"
       - "redhat-systemd"
       - "rhel"
       - "rhel-systemd"
       - "linux"
       - "linux-systemd"
-  - name: "ubuntu20"
-    image: "docker.io/library/ubuntu:20.04"
-    pre_build_image: false
-    groups:
-      - "ubuntu"
-      - "linux"
-  - name: "ubuntu20-systemd"
-    image: "ghcr.io/serdigital64/ubuntu-20.4-systemd-full:0.1.0"
     tmpfs:
       - "/run"
       - "/tmp"
@@ -112,63 +52,49 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
       - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
-    groups:
-      - "ubuntu"
-      - "ubuntu-systemd"
-      - "linux"
-      - "linux-systemd"
-  - name: "ubuntu21"
-    image: "docker.io/library/ubuntu:21.04"
-    pre_build_image: false
-    groups:
-      - "ubuntu"
-      - "linux"
-  - name: "ubuntu21-systemd"
-    image: "ghcr.io/serdigital64/ubuntu-21.4-systemd-full:0.1.0"
-    tmpfs:
-      - "/run"
-      - "/tmp"
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    capabilities:
-      - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
-    groups:
-      - "ubuntu"
-      - "ubuntu-systemd"
-      - "linux"
-      - "linux-systemd"
+    command: "/lib/systemd/systemd"
   - name: "fedora33"
-    image: "fedora:33"
-    pre_build_image: false
+    image: "ghcr.io/serdigital64/fedora-33-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
       - "fedora"
+      - "fedora-systemd"
       - "redhat"
+      - "redhat-systemd"
       - "linux"
+      - "linux-systemd"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/lib/systemd/systemd"
   - name: "debian10"
-    image: "docker.io/library/debian:buster"
-    pre_build_image: false
+    image: "ghcr.io/serdigital64/debian-10-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
       - "debian"
+      - "debian-systemd"
       - "linux"
+      - "linux-systemd"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/lib/systemd/systemd"
   - name: "debian11"
-    image: "docker.io/library/debian:bullseye"
-    pre_build_image: false
+    image: "ghcr.io/serdigital64/debian-11-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
       - "debian"
+      - "debian-systemd"
       - "linux"
-  - name: "rhel7"
-    image: "registry.access.redhat.com/ubi7/ubi"
-    pre_build_image: false
-    groups:
-      - "redhat"
-      - "rhel"
-      - "linux"
-  - name: "rhel7-systemd"
-    image: "registry.access.redhat.com/ubi7/ubi-init"
+      - "linux-systemd"
     tmpfs:
       - "/run"
       - "/tmp"
@@ -176,24 +102,17 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
       - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
+    command: "/lib/systemd/systemd"
+  - name: "ubuntu20"
+    image: "ghcr.io/serdigital64/ubuntu-20.4-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
-      - "redhat"
-      - "redhat-systemd"
-      - "rhel"
-      - "rhel-systemd"
+      - "ubuntu"
+      - "ubuntu-systemd"
+      - "debian"
+      - "debian-systemd"
       - "linux"
       - "linux-systemd"
-  - name: "rhel8"
-    image: "registry.access.redhat.com/ubi8/ubi"
-    pre_build_image: false
-    groups:
-      - "redhat"
-      - "rhel"
-      - "linux"
-  - name: "rhel8-systemd"
-    image: "registry.access.redhat.com/ubi8/ubi-init"
     tmpfs:
       - "/run"
       - "/tmp"
@@ -201,15 +120,25 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     capabilities:
       - "SYS_ADMIN"
-    command: "/usr/sbin/init"
-    pre_build_image: false
+    command: "/lib/systemd/systemd"
+  - name: "ubuntu21"
+    image: "ghcr.io/serdigital64/ubuntu-21.4-ansible-node:0.1.0"
+    pre_build_image: true
     groups:
-      - "redhat"
-      - "redhat-systemd"
-      - "rhel"
-      - "rhel-systemd"
+      - "ubuntu"
+      - "ubuntu-systemd"
+      - "debian"
+      - "debian-systemd"
       - "linux"
       - "linux-systemd"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/lib/systemd/systemd"
 provisioner:
   name: "ansible"
 verifier:

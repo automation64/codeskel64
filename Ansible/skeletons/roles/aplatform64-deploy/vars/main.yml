@@ -5,6 +5,8 @@ X_ROLE_NAME_X_platforms:
   - "Ubuntu20"
   - "Ubuntu21"
   - "Fedora33"
+  - "Debian10"
+  - "Debian11"
 
 X_ROLE_NAME_X_os_family: "
   {%- if
@@ -14,6 +16,7 @@ X_ROLE_NAME_X_os_family: "
   -%}
     {{ 'RedHat' }}
   {%- elif
+      ( ansible_distribution == 'Debian' ) or
       ( ansible_distribution == 'Ubuntu' )
   -%}
     {{ 'Ubuntu' }}
