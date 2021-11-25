@@ -32,6 +32,11 @@
 
     - name: "2.3: Loop dict | list"
       debug:
+        msg: "{{ vars_dict_01[item] }}"
+      loop: "{{ vars_dict_01 | list }}"
+
+    - name: "2.4: Loop dict | list"
+      debug:
         msg: "{{ vars_dict_03[item] }}"
       loop: "{{ vars_dict_03 | list }}"
 

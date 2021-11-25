@@ -14,17 +14,18 @@ ENV LC_ALL="C"
 ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get update
 
-# Install pre-requisite packages
-RUN apt-get -y install \
-    X_PKG_PRE_1_X \
-    X_PKG_PRE_N_X
+# Define requirements for application: X_PACKAGE_CAPS_X
+ENV APP_X_PACKAGE_CAPS_X_PREREQS=""
 
-# Install packages
-RUN apt-get -y install \
-    X_PKG_1_X \
-    X_PKG_N_X
+# Define packages for application: X_PACKAGE_CAPS_X
+ENV APP_X_PACKAGE_CAPS_X_PACKAGES=""
 
-# Cleanup
+# Install packages for the application: X_PACKAGE_CAPS_X
+RUN apt-get -y install $APP_X_PACKAGE_CAPS_X_PREREQS $APP_X_PACKAGE_CAPS_X_PACKAGES
+
+# Configure packages: X_PACKAGE_CAPS_X
+
+# Cleanup package manager
 RUN apt-get clean
 
 # Final command
