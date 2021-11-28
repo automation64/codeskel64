@@ -75,6 +75,8 @@ platforms:
     image: "ghcr.io/serdigital64/debian-10-ansible-node:0.1.0"
     pre_build_image: true
     groups:
+      - "debianos"
+      - "debianos-systemd"
       - "debian"
       - "debian-systemd"
       - "linux"
@@ -91,6 +93,8 @@ platforms:
     image: "ghcr.io/serdigital64/debian-11-ansible-node:0.1.0"
     pre_build_image: true
     groups:
+      - "debianos"
+      - "debianos-systemd"
       - "debian"
       - "debian-systemd"
       - "linux"
