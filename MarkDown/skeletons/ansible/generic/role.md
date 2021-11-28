@@ -88,7 +88,7 @@ ansible-galaxy collection install X_COLLECTION_NAME_X
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-Please see the [guidelines](X_GUILDELINES_URL_X) for further details.
+Please see the [guidelines](X_PROJECT_GUILDELINES_URL_X) for further details.
 
 ## Author
 
