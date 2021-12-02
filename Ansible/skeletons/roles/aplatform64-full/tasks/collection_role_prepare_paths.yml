@@ -12,4 +12,8 @@
     owner: "{{ X_ROLE_NAME_X_base['access']['owner'] }}"
     group: "{{ X_ROLE_NAME_X_base['access']['group'] }}"
     mode: "{{ X_ROLE_NAME_X_base['access']['dir'] }}"
+  loop:
+    - "{{ X_ROLE_NAME_X_base['paths']['X_PATH_X'] }}"
+  loop_control:
+    loop_var: "X_ROLE_NAME_X___prepare_path"
 ...
