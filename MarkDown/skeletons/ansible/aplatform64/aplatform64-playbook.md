@@ -68,6 +68,8 @@ Additional role specific settings are available to further customize the playboo
 - Ubuntu20
 - Ubuntu21
 - Fedora33
+- Debian10
+- Debian11
 
 ### Dependencies
 
