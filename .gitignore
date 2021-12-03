@@ -1,6 +1,7 @@
 # codeskel64
-tmp/
-cache/
+.tmp/
+.cache/
+.var/
 
 .vscode/*
 *.code-workspace

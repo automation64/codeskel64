@@ -22,7 +22,8 @@
 # Imports
 #
 
-# source X_PATH_LIBRARY_X
+SHELL64_LIB='X_SHELL64_LIB_LOCATION_X'
+source "${SHELL64_LIB}/shell64.bash"
 
 #
 # Exports
@@ -80,7 +81,12 @@ function X_NAMESPACE_SCRIPT_X_check() {
 #######################################
 function X_NAMESPACE_SCRIPT_X_help() {
 
-  :
+  shell64_msg_show_usage \
+    'X_CODE_PURPOSE_CLI_X' \
+    'X_CODE_PURPOSE_X' \
+    'X_CODE_PURPOSE_COMMANDSX' \
+    'X_CODE_PURPOSE_FLAGSX' \
+    'X_CODE_PURPOSE_PARAMETERSX'
 
 }
 
@@ -88,16 +94,15 @@ function X_NAMESPACE_SCRIPT_X_help() {
 # Main
 #
 
-declare X_NAMESPACE_SCRIPT_X_script="${0##*/}"
-declare X_NAMESPACE_SCRIPT_X_args="$*"
 declare X_NAMESPACE_SCRIPT_X_status=1
 declare X_NAMESPACE_SCRIPT_X_command=''
 declare X_NAMESPACE_SCRIPT_X_X_OPTION_X=''
 declare X_NAMESPACE_SCRIPT_X_X_FLAG_X='0'
+declare X_NAMESPACE_SCRIPT_X_option=''
 
-[[ $# = 0 ]] && X_NAMESPACE_SCRIPT_X_help && exit 1
-while getopts ':xy:zh' X_NAMESPACE_SCRIPT_option; do
-  case "$X_NAMESPACE_SCRIPT_option" in
+(( $# == 0 )) && X_NAMESPACE_SCRIPT_X_help && exit 1
+while getopts ':xy:zh' X_NAMESPACE_SCRIPT_X_option; do
+  case "$X_NAMESPACE_SCRIPT_X_option" in
   x)
     X_NAMESPACE_SCRIPT_X_command='X_NAMESPACE_SCRIPT_X_X_FUNCTION_COMMAND_X'
     ;;

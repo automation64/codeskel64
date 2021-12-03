@@ -5,8 +5,8 @@ declare Status=0
 # 1
 Status=0
 {
-	false
-	Status=$?
+  false
+  Status=$?
 }
 printf "1: Status in subshell (false == %s)\n" $Status
 

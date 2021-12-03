@@ -1,5 +1,5 @@
 ---
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare package managers"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prerequisite / Prepare package managers"
   vars:
     core_repository:
       prepare: true
@@ -18,7 +18,14 @@
   ansible.builtin.include_role:
     name: "serdigital64.core.core_repository"
 
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare package installer"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prerequisite / Prepare archive manager"
+  vars:
+    core_archive:
+      deploy: true
+  ansible.builtin.include_role:
+    name: "serdigital64.core.core_archive"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prerequisite / Prepare package installer"
   vars:
     core_package:
       prepare: true
