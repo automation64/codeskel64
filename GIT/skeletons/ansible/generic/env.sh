@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# X_PROJECT_NAME_X development environment variables
+# X_PROJECT_NAME_NICE_X development environment variables
 #
 
 # Project base location. Adjust to your local GIT repo

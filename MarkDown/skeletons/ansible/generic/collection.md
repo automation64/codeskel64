@@ -4,7 +4,7 @@
 
 Ansible Roles for automating __COLLECTION_SCOPE__ management tasks.
 
-This collection is part of the [X_PROJECT_NAME_X](X_PROJECT_GIT_URL_X) project for automating infrastructure management tasks.
+This collection is part of the [X_PROJECT_NAME_NICE_X](X_PROJECT_GIT_URL_X) project for automating infrastructure management tasks.
 
 ## Content
 
