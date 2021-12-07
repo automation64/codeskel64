@@ -11,7 +11,7 @@ tags:
 
 ## About
 
-The **X_ROLE_NAME_X** Ansible-Role is part of the [X_PROJECT_NAME_X](X_PROJECT_GIT_URL_X) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
+The **X_ROLE_NAME_X** Ansible-Role is part of the [X_PROJECT_NAME_NICE_X](X_PROJECT_GIT_URL_X) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
 The purpose of the role is to automate the management of X_DOC_COMPONENT_X.
 
@@ -21,10 +21,10 @@ Supported features in the current version:
 
 ## Use Cases
 
-### X_DOC_USE_CASE_X
+### X_DOC_USECASE_NAME_X
 
 ```yaml
-- name: "Example: X_DOC_USE_CASE_X"
+- name: "Example: X_DOC_USECASE_NAME_X"
 ```
 
 ## Role Parameters
