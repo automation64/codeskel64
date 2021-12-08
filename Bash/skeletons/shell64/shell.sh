@@ -22,8 +22,11 @@
 # Imports
 #
 
+# shellcheck disable=SC2034
+SHELL64_LIB_STRICT='1'
 SHELL64_LIB='X_SHELL64_LIB_LOCATION_X'
-source "${SHELL64_LIB}/shell64.bash"
+# shellcheck disable=SC1091
+source "${SHELL64_LIB}/shell64.bash" || exit 1
 
 #
 # Exports
@@ -46,19 +49,6 @@ function X_APP_NAMESPACE_X_X_FUNCTION_COMMAND_X() {
 
 }
 
-#######################################
-# Check requirements and prerequisites
-#
-# Globals:
-#   None
-# Arguments:
-#   None
-# Outputs:
-#   Failed check description
-# Returns:
-#   0: check ok
-#   1: requirements not met
-#######################################
 function X_APP_NAMESPACE_X_check() {
 
   local result=1
@@ -67,18 +57,6 @@ function X_APP_NAMESPACE_X_check() {
 
 }
 
-#######################################
-# Show script usage description
-#
-# Globals:
-#   None
-# Arguments:
-#   None
-# Outputs:
-#   Command line format and description
-# Returns:
-#   0
-#######################################
 function X_APP_NAMESPACE_X_help() {
 
   shell64_msg_show_usage \
