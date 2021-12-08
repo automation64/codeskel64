@@ -1,0 +1,12 @@
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "Declare globals"
+      set_fact:
+        test_status: ~
+    - name: "Include tasks.yml file"
+      include_tasks:
+        file: "tasks.yml"
+    - name: "Show include_task status"
+      debug:
+        var: test_stat
