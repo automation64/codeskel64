@@ -9,4 +9,8 @@
     - X_ROLE_NAME_X_subsystem['status'] is defined
     - X_ROLE_NAME_X_subsystem_profile['states']
       [X_ROLE_NAME_X_subsystem['status']] is defined
+
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / "
+#   ansible.builtin.include_tasks:
+#     file: "X_ROLE_NAME_X_control_.yml"
 ...

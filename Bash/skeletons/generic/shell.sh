@@ -2,16 +2,6 @@
 #######################################
 # X_APP_INFO_X
 #
-# Globals:
-#   None
-# Arguments:
-#   None
-# Outputs:
-#   None
-# Returns:
-#   0: successfull execution
-#   >0: error
-#
 # Author: X_AUTHOR_ALIAS_X (X_AUTHOR_GIT_URL_X)
 # License: GPL-3.0-or-later (https://www.gnu.org/licenses/gpl-3.0.txt)
 # Repository: X_PROJECT_GIT_URL_X
@@ -28,8 +18,8 @@
 # Exports
 #
 
-declare -xr X_APP_NAMESPACE_X_X_EXPORT_RO_X=''
-declare -x X_APP_NAMESPACE_X_X_EXPORT_X=''
+readonly X_APP_NAMESPACE_X_X_EXPORT_RO_X=''
+export X_APP_NAMESPACE_X_X_EXPORT_X=''
 
 #
 # Functions
@@ -48,8 +38,6 @@ function X_APP_NAMESPACE_X_X_FUNCTION_COMMAND_X() {
 #######################################
 # Check requirements and prerequisites
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 # Outputs:
@@ -69,8 +57,6 @@ function X_APP_NAMESPACE_X_check() {
 #######################################
 # Show script usage description
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 # Outputs:
@@ -88,8 +74,6 @@ function X_APP_NAMESPACE_X_help() {
 # Main
 #
 
-declare X_APP_NAMESPACE_X_script="${0##*/}"
-declare X_APP_NAMESPACE_X_args="$*"
 declare X_APP_NAMESPACE_X_status=1
 declare X_APP_NAMESPACE_X_command=''
 declare X_APP_NAMESPACE_X_X_OPTION_X=''
@@ -98,21 +82,11 @@ declare X_APP_NAMESPACE_X_X_FLAG_X='0'
 [[ $# = 0 ]] && X_APP_NAMESPACE_X_help && exit 1
 while getopts ':xy:zh' X_NAMESPACE_SCRIPT_option; do
   case "$X_NAMESPACE_SCRIPT_option" in
-  x)
-    X_APP_NAMESPACE_X_command='X_APP_NAMESPACE_X_X_FUNCTION_COMMAND_X'
-    ;;
-  y)
-    X_APP_NAMESPACE_X_X_OPTION_X="$OPTARG"
-    ;;
-  z)
-    X_APP_NAMESPACE_X_X_FLAG_X='1'
-    ;;
-  h)
-    X_APP_NAMESPACE_X_help && exit
-    ;;
-  \?)
-    X_APP_NAMESPACE_X_help && exit 1
-    ;;
+  x) X_APP_NAMESPACE_X_command='X_APP_NAMESPACE_X_X_FUNCTION_COMMAND_X' ;;
+  y) X_APP_NAMESPACE_X_X_OPTION_X="$OPTARG" ;;
+  z) X_APP_NAMESPACE_X_X_FLAG_X='1' ;;
+  h) X_APP_NAMESPACE_X_help && exit ;;
+  \?) X_APP_NAMESPACE_X_help && exit 1 ;;
   esac
 done
 [[ -z "$X_APP_NAMESPACE_X_command" ]] && X_APP_NAMESPACE_X_help && exit 1

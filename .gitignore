@@ -1,27 +1,23 @@
 # codeskel64
-.tmp/
-.cache/
-.var/
+./.tmp/
+./.cache/
+./.var/
+./dist/
 
 .vscode/*
 *.code-workspace
 
-# Local History for Visual Studio Code
 .history/
 
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
 *.so
 
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/

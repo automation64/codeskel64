@@ -31,4 +31,14 @@
       ansible.builtin.assert:
         that:
           - result['stdout_lines'] is search( 'enabled' )
+
+    - name: "Detect target path"
+      ansible.builtin.stat:
+        path: "{{ X_ROLE_NAME_X_base['files']['X_FILE_SERVER_SETUP_X'] }}"
+      register: file_stat
+
+    - name: "Verify path is created"
+      ansible.builtin.assert:
+        that:
+          - file_stat['stat']['exists']
 ...

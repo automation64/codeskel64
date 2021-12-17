@@ -1,0 +1,6 @@
+---
+- name: "task with changed=true"
+  changed_when: true
+  stat:
+    path: "/tmp"
+...

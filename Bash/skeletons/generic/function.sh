@@ -1,8 +1,6 @@
 #######################################
 # X_FUNCTION_INFO_X
 #
-# Globals:
-#   None
 # Arguments:
 #   None
 #   $1:
