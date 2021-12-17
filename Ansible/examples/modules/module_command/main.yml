@@ -58,4 +58,21 @@
     - name: "2.2: Show results"
       debug:
         var: command_results['stdout_lines']
+
+    - name: "3.1: failed_when"
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/false"
+      register: command_results
+      ignore_errors: true
+      failed_when:
+        - "{{ command_results['rc'] != 0 }}"
+
+    - name: "4.1: changed_when"
+      ansible.builtin.command:
+        argv:
+          - "/usr/bin/true"
+      register: command_results
+      changed_when:
+        - "{{ command_results['rc'] == 0 }}"
 ...

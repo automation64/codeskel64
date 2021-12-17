@@ -1,6 +1,5 @@
 ---
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Paths / Create ({{
-    X_ROLE_NAME_X___prepare_path }})"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Paths / Create"
   become: true
   ansible.builtin.file:
     follow: false
@@ -9,9 +8,9 @@
     recurse: false
     state: "directory"
     path: "{{ X_ROLE_NAME_X___prepare_path }}"
-    owner: "{{ X_ROLE_NAME_X_base['access']['owner'] }}"
-    group: "{{ X_ROLE_NAME_X_base['access']['group'] }}"
-    mode: "{{ X_ROLE_NAME_X_base['access']['dir'] }}"
+    owner: "{{ X_ROLE_NAME_X_base['access']['user']['owner'] }}"
+    group: "{{ X_ROLE_NAME_X_base['access']['group']['owner'] }}"
+    mode: "{{ X_ROLE_NAME_X_base['access']['mode']['dir'] }}"
   loop:
     - "{{ X_ROLE_NAME_X_base['paths']['X_PATH_X'] }}"
   loop_control:

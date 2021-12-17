@@ -1,0 +1,4 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / /"
+  ansible.builtin.meta: "noop"
+...

@@ -30,8 +30,12 @@ X_ROLE_NAME_X_os_family: "
 # Define common paths
 X_ROLE_NAME_X_base_common:
   access:
-    owner: "root"
-    group: "root"
+    user:
+      owner: "root"
+#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['name'] }}"
+    group:
+      owner: "root"
+#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['group'] }}"
     mode:
       dir: "0755"
       file: "0644"
