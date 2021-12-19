@@ -118,7 +118,7 @@ Please see the [guidelines](../contributing/guidelines.md) for further details.
 
 ## Author
 
-- [SerDigital64](https://github.com/serdigital64)
+- [SerDigital64](https://serdigital64.github.io/)
 
 ## License
 
