@@ -12,7 +12,6 @@
       ansible.builtin.setup:
         gather_subset: "min"
         gather_timeout: "10"
-      changed_when: false
 
     - name: "Control service"
       vars:

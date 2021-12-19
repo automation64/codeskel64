@@ -5,7 +5,6 @@
     fail_msg: "Target Platform not supported: {{ ansible_distribution + ansible_distribution_major_version }}"
     that:
       - ansible_distribution + ansible_distribution_major_version in X_ROLE_NAME_X_platforms
-  changed_when: false
 
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters: Deploy"
   ansible.builtin.assert:
