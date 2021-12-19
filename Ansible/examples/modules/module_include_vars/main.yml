@@ -2,8 +2,12 @@
   gather_facts: false
   tasks:
     - name: "Include Vars.yml file"
+      register: test_status
       include_vars:
         file: "vars.yml"
     - name: "Show Variable content"
       debug:
         var: "test_variable"
+    - name: "Show module status"
+      debug:
+        var: "test_status"

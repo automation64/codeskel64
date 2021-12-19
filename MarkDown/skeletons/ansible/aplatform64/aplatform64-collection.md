@@ -28,7 +28,7 @@ Please see the [guidelines](https://aplatform64.readthedocs.io/en/latest/contrib
 
 ## Author
 
-- [SerDigital64](https://github.com/serdigital64)
+- [SerDigital64](https://serdigital64.github.io/)
 
 ## License
 

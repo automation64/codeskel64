@@ -6,7 +6,12 @@
       ansible.builtin.setup:
         gather_subset: "min"
         gather_timeout: "10"
+      register: task_status
     - name: "1.1. Show [lsb]"
       debug:
         var: ansible_facts['lsb']['codename']
+    - name: "1.1. Show [status]"
+      debug:
+        var: task_status
+
 ...
