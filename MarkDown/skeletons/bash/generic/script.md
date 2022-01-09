@@ -52,7 +52,7 @@ X_APP_DESCRIPTION_X
 
 ### Installation Procedure
 
-## Source Code
+## Development
 
 ### Repositories
 

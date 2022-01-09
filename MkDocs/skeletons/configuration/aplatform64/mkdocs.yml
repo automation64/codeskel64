@@ -29,18 +29,11 @@ markdown_extensions:
       permalink: true
       baselevel: 2
 
-nav:
-  - Home: "index.md"
-  - Contributing:
-    - guidelines: "contributing/guidelines.md"
-    - design: "contributing/design.md"
-  - Collections:
-    - X_COLLECTION_NAME_X: "collections/X_COLLECTION_NAME_X.md"
-  - Roles:
-    - X_ROLE_NAME_X: "roles/X_ROLE_NAME_X.md"
-
 theme:
   name: readthedocs
   analytics:
     gtag: "X_GOOGLE_ANALYTICS_GA4_TAG_X"
+
+nav:
+  - Home: "index.md"
 ...
