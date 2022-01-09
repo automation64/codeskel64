@@ -47,6 +47,9 @@ X_ROLE_NAME_X_base_common:
 X_ROLE_NAME_X_server_presets:
   X_PREDEFINED1_X: ""
 
+X_ROLE_NAME_X_firewall_predefined:
+  id: "X_ROLE_NAME_X"
+
 # Temporary variables
 X_ROLE_NAME_X___prepare_path: ~
 ...

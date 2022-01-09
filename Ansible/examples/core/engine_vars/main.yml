@@ -4,3 +4,7 @@
     - name: "1. Ansible Version"
       debug:
         msg: "{{ ansible_version }}"
+
+    - name: "2. Ansible User"
+      debug:
+        msg: "{{ ansible_user }}"
