@@ -4,21 +4,30 @@
 
 X_COLLECTION_SHORT_DESCRIPTION_X.
 
-This collection is part of the [A:Platform64](https://aplatform64.readthedocs.io) project for automating infrastructure management tasks.
+This collection is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project for automated infrastructure-as-code management.
 
 ## Content
 
-| role                                       | purpose                    |
-| ------------------------------------------ | -------------------------- |
+| role                                                                               | purpose                    |
+| ---------------------------------------------------------------------------------- | -------------------------- |
 | [X_ROLE_NAME_X](https://aplatform64.readthedocs.io/en/latest/roles/ROLE_NAME_X.md) | X_ROLE_SHORT_DESCRIPTION_X |
 
 ## Deployment
 
-The collection can be installed from the Ansible Galaxy repository: [https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X](https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X)
+### Dependencies
+
+- Ansible Collections:
+  - serdigital64.core
+
+### Installation Procedure
+
+Manually install Ansible Collections from the Ansible Galaxy repository:
 
 ```shell
 ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
 ```
+
+Automatic installation is also available by deploying [A:Platform64](https://aplatform64.readthedocs.io/en/latest/#deployment)
 
 ## Contributing
 

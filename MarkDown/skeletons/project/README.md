@@ -1,11 +1,3 @@
----
-title: "Project: X_PROJECT_NAME_CLI_X"
-description: "X_PROJECT_INFO_X"
-authors:
-  - X_AUTHOR_ALIAS_X
-tags:
-X_PROJECT_TAGS_X
----
 # Project: X_PROJECT_NAME_CLI_X
 
 ## Overview
@@ -14,7 +6,7 @@ X_PROJECT_INFO_X
 
 X_PROJECT_DESCRIPTION_X
 
-## Use Cases
+## Usage
 
 ## Deployment
 
@@ -29,6 +21,7 @@ X_PROJECT_DESCRIPTION_X
 ### Repositories
 
 - Project GIT repository: [X_PROJECT_GIT_URL_X](X_PROJECT_GIT_URL_X)
+- Project Documentation: [X_PROJECT_DOC_URL_X](X_PROJECT_DOC_URL_X)
 
 ### Releases
 
@@ -36,7 +29,7 @@ X_PROJECT_DESCRIPTION_X
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-Please see the [guidelines](X_PROJECT_GUILDELINES_URL_X) for further details.
+[Contributor Covenant Code of Conduct](X_PROJECT_GUILDELINES_URL_X)
 
 ### License
 

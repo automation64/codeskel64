@@ -5,7 +5,7 @@ authors:
   - SerDigital64
 tags:
   - ansible
-  - devops
+  - X_COLLECTION_NAME_X
   - linux
   - automation
 ---
@@ -24,26 +24,22 @@ Supported features in the current version:
 - Configure application.
 - Configure application subsystem server.
 - Provision application components.
+- Configure OS level firewall rules
 
-The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatform64.readthedocs.io) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
+The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
-## Use Cases
+## Usage
 
-- Install packages
-- Configure application
-- Control subsystem services
-- Provision components and resources
-
-Sample Ansible Playbook:
+The following example is an **Ansible Playbook** that includes all the supported features:
 
 ```yaml
 {% include "../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml" %}
 ```
 
-Use the sample playbook to create your own or run it as-is:
+The playbook can be run by executing:
 
 ```shell
-# Set ANSIBLE_COLLECTIONS_PATHS to the default install location. Change as needed.
+# Set ANSIBLE_COLLECTIONS_PATHS to the default location. Change as needed.
 ANSIBLE_COLLECTIONS_PATHS="${HOME}/.ansible/collections"
 ansible-playbook "${ANSIBLE_COLLECTIONS_PATHS}/ansible_collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml"
 ```
@@ -97,6 +93,8 @@ X_ROLE_NAME_X_users:
     name:
     group:
     home:
+X_ROLE_NAME_X_firewall:
+  zone:
 ```
 
 | Parameter                                              | Required?    | Type       | Default                             | Purpose / Value                     |
@@ -118,6 +116,8 @@ X_ROLE_NAME_X_users:
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.name              | yes(prepare) | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.group             | yes(prepare) | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.home              | yes(prepare) | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
+| X_ROLE_NAME_X_firewall                                 | no           | dictionary |                                     | OS Firewall options                 |
+| X_ROLE_NAME_X_firewall.zone                            | yes          | string     | `"public"`                          | Name of the target zone             |
 
 ## Deployment
 
@@ -149,13 +149,10 @@ In addition the following prerequisites can be automatically solved when running
 Manually install Ansible Collections from the Ansible Galaxy repository:
 
 ```shell
-# Install Ansible dependencies
-ansible-galaxy collection install serdigital64.core
-# Install the collection
 ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
 ```
 
-Automatic installation is also available by deploying the [A:Platform64 environment](https://aplatform64.readthedocs.io/en/latest/#deployment)
+Automatic installation is also available by deploying [A:Platform64](https://aplatform64.readthedocs.io/en/latest/#deployment)
 
 ## Contributing
 
