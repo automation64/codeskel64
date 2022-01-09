@@ -5,7 +5,7 @@ authors:
   - SerDigital64
 tags:
   - ansible
-  - devops
+  - X_COLLECTION_NAME_X
   - linux
   - automation
 ---
@@ -24,58 +24,24 @@ Supported features in the current version:
 - Configure application.
 - Configure application subsystem server.
 - Provision application components.
+- Configure OS level firewall rules
 
-The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://aplatform64.readthedocs.io) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
+The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
-## Use Cases
+## Usage
 
-### Install application X_TASK_ROLE_NAME_X
+The following example is an **Ansible Playbook** that includes all the supported features:
 
 ```yaml
-- name: "Example: Install X_TASK_ROLE_NAME_X"
-  vars:
-    X_ROLE_NAME_X:
-      resolve_prereq: true
-      prepare: true
-      deploy: true
-  ansible.builtin.include_role:
-    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
+{% include "../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml" %}
 ```
 
-### Configure application X_TASK_ROLE_NAME_X
+The playbook can be run by executing:
 
-```yaml
-- name: "Example: Configure X_TASK_ROLE_NAME_X"
-  vars:
-    X_ROLE_NAME_X:
-      setup: true
-  ansible.builtin.include_role:
-    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
-```
-
-### Control application X_TASK_ROLE_NAME_X subsystem services
-
-```yaml
-- name: "Example: Enable and activate X_TASK_ROLE_NAME_X subsystem service"
-  vars:
-    X_ROLE_NAME_X:
-      control: true
-    X_ROLE_NAME_X_subsystem:
-      enabled: true
-      status: "started"
-  ansible.builtin.include_role:
-    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
-```
-
-### Provision application X_TASK_ROLE_NAME_X components
-
-```yaml
-- name: "Example: Provision X_TASK_ROLE_NAME_X components"
-  vars:
-    X_ROLE_NAME_X:
-      provision: true
-  ansible.builtin.include_role:
-    name: "serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
+```shell
+# Set ANSIBLE_COLLECTIONS_PATHS to the default location. Change as needed.
+ANSIBLE_COLLECTIONS_PATHS="${HOME}/.ansible/collections"
+ansible-playbook "${ANSIBLE_COLLECTIONS_PATHS}/ansible_collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml"
 ```
 
 ## Role Parameters
@@ -127,6 +93,8 @@ X_ROLE_NAME_X_users:
     name:
     group:
     home:
+X_ROLE_NAME_X_firewall:
+  zone:
 ```
 
 | Parameter                                              | Required?    | Type       | Default                             | Purpose / Value                     |
@@ -148,6 +116,8 @@ X_ROLE_NAME_X_users:
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.name              | yes(prepare) | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.group             | yes(prepare) | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
 | X_ROLE_NAME_X_users.X_DEFAULT_USER_X.home              | yes(prepare) | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
+| X_ROLE_NAME_X_firewall                                 | no           | dictionary |                                     | OS Firewall options                 |
+| X_ROLE_NAME_X_firewall.zone                            | yes          | string     | `"public"`                          | Name of the target zone             |
 
 ## Deployment
 
@@ -168,21 +138,21 @@ X_ROLE_NAME_X_users:
 
 ### Prerequisites
 
-All the prerequisites listed in this section can be automatically resolved by enabling the role action `resolve_prereq: true`
+The Ansible engine must be already installed and configured for privileged access and remote execution.
 
-- Package managers for the target application are installed and enabled.
-- **A:Platform64** package installer (core_package) runtime environment is ready.
+In addition the following prerequisites can be automatically solved when running the playbook by setting the role action: `resolve_prereq: true`
+
+- Package manager for the target application is installed and enabled.
 
 ### Installation Procedure
 
-The role can be deployed by installing the Ansible-Collection from the Ansible Galaxy repository: [https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X](https://galaxy.ansible.com/serdigital64/X_COLLECTION_NAME_X)
+Manually install Ansible Collections from the Ansible Galaxy repository:
 
 ```shell
-# Install Ansible dependencies
-ansible-galaxy collection install serdigital64.core
-# Install the collection
 ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
 ```
+
+Automatic installation is also available by deploying [A:Platform64](https://aplatform64.readthedocs.io/en/latest/#deployment)
 
 ## Contributing
 
