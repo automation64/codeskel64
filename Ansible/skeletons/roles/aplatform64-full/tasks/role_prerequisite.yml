@@ -10,6 +10,7 @@
       flatpak: "{{ X_ROLE_NAME_X_application['type'] == 'flatpak' }}"
       snap: "{{ X_ROLE_NAME_X_application['type'] == 'snap' }}"
       git: "{{ X_ROLE_NAME_X_application['type'] == 'git' }}"
+      pip: "{{ X_ROLE_NAME_X_application['type'] == 'pip' }}"
     core_repository_catalog_distro: "{{ X_ROLE_NAME_X_repository_catalog_distro }}"
     core_repository_catalog_yum: "{{ X_ROLE_NAME_X_repository_catalog_yum }}"
     core_repository_catalog_apt: "{{ X_ROLE_NAME_X_repository_catalog_apt }}"
