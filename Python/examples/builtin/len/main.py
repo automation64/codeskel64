@@ -29,3 +29,9 @@ print('2.6. len string', len(test103))
 #print('3.1. len int', len(test5))
 
 #print('4.1. len float', len(test6))
+
+print('5.1. len list', len(test7))
+
+print('6.1. len tuple', len(test8))
+
+print('7.1. len dict', len(test9))
