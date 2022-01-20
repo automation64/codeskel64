@@ -24,7 +24,7 @@ This collection is part of the [A:Platform64](https://github.com/serdigital64/ap
 Manually install Ansible Collections from the Ansible Galaxy repository:
 
 ```shell
-ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
+ansible-galaxy collection install --upgrade serdigital64.X_COLLECTION_NAME_X
 ```
 
 Automatic installation is also available by deploying [A:Platform64](https://aplatform64.readthedocs.io/en/latest/#deployment)
