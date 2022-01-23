@@ -24,8 +24,12 @@ Supported features in the current version:
 
 ### X_USE_CASE_X
 
-```yaml
-ansible-playbook playbooks/site/X_PLAYBOOK_NAME_X.yml -i inventories/site/X_INVENTORY_NAME_X.ini
+- Verify that target nodes are registered in the inventory file: [X_INVENTORY_NAME_X.ini](#inventory)
+- Verify that target tools are selected in the playbook endstate file: [X_PLAYBOOK_NAME_X.yml](#end-state)
+- Run the playbook. Use the `-s <SITE>` parameter to select the target site.
+
+```shell
+/opt/aplatform64/bin/ap64.sh -n -p X_PLAYBOOK_NAME_X -s <SITE>
 ```
 
 ## Playbook Parameters
@@ -34,14 +38,14 @@ ansible-playbook playbooks/site/X_PLAYBOOK_NAME_X.yml -i inventories/site/X_INVE
 
 Register the hosts that will consume the service in the Ansible Inventory file:
 
-- File: `inventories/site/X_INVENTORY_NAME_X.ini`
+- File: `inventories/<SITE>/X_INVENTORY_NAME_X.ini`
 - Host Group: `X_GROUP_NAME_X`
 
 ### End State
 
 A dedicated group_vars directory is used to store end-state configuration settings for both the playbook and related Ansible Roles.
 
-Set playbook specific settings in the file: `inventories/site/group_vars/X_GROUP_NAME_X/X_PLAYBOOK_NAME_X.yml`
+Set playbook specific settings in the file: `inventories/<SITE>/group_vars/X_GROUP_NAME_X/X_PLAYBOOK_NAME_X.yml`
 
 ```yaml
 X_PLAYBOOK_NAME_X_apps:
@@ -57,7 +61,7 @@ Additional role specific settings are available to further customize the playboo
 
 | A:Platform64 role                                                                | group_vars file                                                  |
 | -------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [serdigital64.core.core_repository](../roles/core_repository.md#role-parameters) | `inventories/site/group_vars/X_GROUP_NAME_X/core_repository.yml` |
+| [serdigital64.core.core_repository](../roles/core_repository.md#role-parameters) | `inventories/<SITE>/group_vars/X_GROUP_NAME_X/core_repository.yml` |
 
 ## Deployment
 
