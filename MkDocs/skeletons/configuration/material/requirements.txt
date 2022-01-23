@@ -3,6 +3,7 @@ mdx-truly-sane-lists
 mkdocs
 mkdocs-autorefs
 mkdocs-awesome-pages-plugin
+mkdocs-exclude
 mkdocs-include-markdown-plugin
 mkdocs-markmap
 mkdocs-material
