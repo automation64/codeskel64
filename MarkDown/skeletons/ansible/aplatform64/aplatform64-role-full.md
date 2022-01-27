@@ -128,6 +128,7 @@ X_ROLE_NAME_X_firewall:
 - Ubuntu20
 - Ubuntu21
 - Fedora33
+- Fedora35
 - Debian10
 - Debian11
 

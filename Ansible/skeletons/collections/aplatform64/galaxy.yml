@@ -10,7 +10,8 @@ license:
   - "GPL-3.0-or-later"
 tags:
   - "X_COLLECTION_TAGS_X"
-dependencies: {}
+dependencies:
+  serdigital64.core: "*"
 repository: "https://github.com/serdigital64/aplatform64"
 homepage: "https://github.com/serdigital64/aplatform64"
 issues: "https://github.com/serdigital64/aplatform64/issues"

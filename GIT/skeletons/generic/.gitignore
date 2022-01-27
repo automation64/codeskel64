@@ -9,3 +9,6 @@
 
 # package builds for prod/dev/test
 dist/
+
+# secrets
+.secrets
