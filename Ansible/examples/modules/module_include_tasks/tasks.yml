@@ -4,4 +4,8 @@
   stat:
     path: "/tmp"
   register: test_stat
+
+- name: "var from task"
+  debug:
+    var: "test_vars"
 ...

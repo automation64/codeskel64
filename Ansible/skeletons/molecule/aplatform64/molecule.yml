@@ -11,7 +11,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  ansible-lint -c ${APLATFORM64_ANSIBLE_LINT}
+  ansible-lint -c ${APLATFORM64_ANSIBLE_LINT} --exclude molecule/
 platforms:
   - name: "centos8"
     image: "ghcr.io/serdigital64/centos-8-ansible-node:0.1.0"
@@ -55,6 +55,24 @@ platforms:
     command: "/lib/systemd/systemd"
   - name: "fedora33"
     image: "ghcr.io/serdigital64/fedora-33-ansible-node:0.1.0"
+    pre_build_image: true
+    groups:
+      - "fedora"
+      - "fedora-systemd"
+      - "redhat"
+      - "redhat-systemd"
+      - "linux"
+      - "linux-systemd"
+    tmpfs:
+      - "/run"
+      - "/tmp"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    capabilities:
+      - "SYS_ADMIN"
+    command: "/lib/systemd/systemd"
+  - name: "fedora35"
+    image: "ghcr.io/serdigital64/fedora-35-ansible-node:0.1.0"
     pre_build_image: true
     groups:
       - "fedora"

@@ -5,6 +5,8 @@
       set_fact:
         test_status: ~
     - name: "Include tasks.yml file"
+      vars:
+        test_vars: "tas variable from include"
       include_tasks:
         file: "tasks.yml"
     - name: "Show include_task status"

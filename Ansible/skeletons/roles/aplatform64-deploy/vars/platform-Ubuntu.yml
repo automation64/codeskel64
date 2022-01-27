@@ -6,6 +6,7 @@ X_ROLE_NAME_X_base:
 X_ROLE_NAME_X_profiles:
   distro:
     X_APP_VERSION_X:
+      supported: true
       packages:
         - name: "X_APP_PACKAGE_X"
 
