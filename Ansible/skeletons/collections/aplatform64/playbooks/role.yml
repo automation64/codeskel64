@@ -1,10 +1,10 @@
 ---
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Usage example"
   hosts: "localhost"
   gather_facts: true
 
   tasks:
-    - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Manage"
+    - name: "Example:"
       vars:
         X_ROLE_NAME_X:
           resolve_prereq: true

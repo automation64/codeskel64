@@ -8,9 +8,9 @@ This collection is part of the [A:Platform64](https://github.com/serdigital64/ap
 
 ## Content
 
-| role                                                                               | purpose                    |
-| ---------------------------------------------------------------------------------- | -------------------------- |
-| [X_ROLE_NAME_X](https://aplatform64.readthedocs.io/en/latest/roles/ROLE_NAME_X.md) | X_ROLE_SHORT_DESCRIPTION_X |
+| role                                                                              | purpose                    |
+| --------------------------------------------------------------------------------- | -------------------------- |
+| [X_ROLE_NAME_X](https://aplatform64.readthedocs.io/en/latest/roles/X_ROLE_NAME_X) | X_ROLE_SHORT_DESCRIPTION_X |
 
 ## Deployment
 
@@ -24,7 +24,7 @@ This collection is part of the [A:Platform64](https://github.com/serdigital64/ap
 Manually install Ansible Collections from the Ansible Galaxy repository:
 
 ```shell
-ansible-galaxy collection install serdigital64.X_COLLECTION_NAME_X
+ansible-galaxy collection install --upgrade serdigital64.X_COLLECTION_NAME_X
 ```
 
 Automatic installation is also available by deploying [A:Platform64](https://aplatform64.readthedocs.io/en/latest/#deployment)
