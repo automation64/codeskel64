@@ -80,8 +80,8 @@ Additional role specific settings are available to further customize the playboo
 Dependencies in this section are automatically solved during the installation process.
 
 - Ansible Collections:
-  - serdigital64.core
-  - serdigital64.
+  - serdigital64.backup
+  - serdigital64.system
 
 ### Prerequisites
 

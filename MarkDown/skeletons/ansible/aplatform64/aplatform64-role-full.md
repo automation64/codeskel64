@@ -32,6 +32,8 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.
 
 The following example is an **Ansible Playbook** that includes all the supported features:
 
+[use this link if viewing the doc on github](../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml)
+
 ```yaml
 {% include "../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml" %}
 ```
@@ -135,7 +137,11 @@ X_ROLE_NAME_X_firewall:
 ### Dependencies
 
 - Ansible Collections:
-  - serdigital64.core
+  - serdigital64.backup
+    - bkp_archive
+  - serdigital64.system
+    - sys_package
+    - sys_repository
 
 ### Prerequisites
 
