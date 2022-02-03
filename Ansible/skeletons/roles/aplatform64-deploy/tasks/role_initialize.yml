@@ -19,7 +19,6 @@
 #   ansible.builtin.include_vars:
 #    file: "{{ 'platform-' + X_ROLE_NAME_X_os_family + '.yml' }}"
 #    file: "{{ 'platform-' + ansible_distribution + ansible_distribution_major_version + '.yml' }}"
-  # changed_when: false
 
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Resolve prerequisites"
   ansible.builtin.include_tasks:
