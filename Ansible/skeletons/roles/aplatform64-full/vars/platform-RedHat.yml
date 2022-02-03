@@ -11,6 +11,8 @@ X_ROLE_NAME_X_base:
 
 # Define application package details
 X_ROLE_NAME_X_profiles:
+  snap: "{{ X_ROLE_NAME_X_profiles_common['snap'] }}"
+  flatpak: "{{ X_ROLE_NAME_X_profiles_common['flatpak'] }}"
   distro:
     X_APP_VERSION_X:
       supported: true

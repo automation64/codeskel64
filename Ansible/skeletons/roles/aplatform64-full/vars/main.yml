@@ -28,6 +28,19 @@ X_ROLE_NAME_X_os_family: "
   {%- endif -%}
   "
 
+# Multiplatform packages
+X_ROLE_NAME_X_profiles_common:
+  snap:
+    latest:
+      packages:
+        - name: "X_APP_PACKAGE_X"
+  flatpak:
+    latest:
+      origin: "flathub"
+      packages:
+        - name: "X_APP_PACKAGE_X"
+
+
 # Define common paths
 X_ROLE_NAME_X_base_common:
   access:

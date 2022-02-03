@@ -1,20 +1,20 @@
 ---
-site_name: "X_PROJECT_NAME_NICE_X Project"
-site_description: "X_PROJECT_SHORT_DESCRIPTION_X"
+site_name: "X_PROJECT_NAME_NICE_X"
+site_description: "X_PROJECT_INFO_X"
 site_author: "X_AUTHOR_ALIAS_X"
 
 site_url: "X_PROJECT_DOC_URL_X"
 repo_url: "X_PROJECT_GIT_URL_X"
 
 copyright: "GPL-3.0-or-later"
-docs_dir: "mkdocs"
-site_dir: "docs"
+docs_dir: "../docs"
+site_dir: "site"
 strict: false
 
 extra:
   analytics:
     provider: "google"
-    property: "X_GOOGLE_ANALYTICS_GA4_TAG_X"
+    property: "X_AUTHOR_GA4_TAG_X"
 
 extra_css:
   - "css/pygments-tango.css"

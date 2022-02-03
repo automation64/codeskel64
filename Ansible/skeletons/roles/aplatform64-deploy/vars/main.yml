@@ -1,4 +1,5 @@
 ---
+# Define supported platforms
 X_ROLE_NAME_X_platforms:
   - "CentOS8"
   - "OracleLinux8"
@@ -9,6 +10,7 @@ X_ROLE_NAME_X_platforms:
   - "Debian10"
   - "Debian11"
 
+# Group Linux Distributions by family
 X_ROLE_NAME_X_os_family: "
   {%- if
       ( ansible_distribution == 'CentOS' ) or
@@ -26,4 +28,20 @@ X_ROLE_NAME_X_os_family: "
   {%- endif -%}
   "
 
+# Multiplatform packages
+X_ROLE_NAME_X_profiles_common:
+  snap:
+    latest:
+      packages:
+        - name: "X_APP_PACKAGE_X"
+  flatpak:
+    latest:
+      origin: "flathub"
+      packages:
+        - name: "X_APP_PACKAGE_X"
+
+# Define common paths
+X_ROLE_NAME_X_base_common:
+  run:
+    X_COMMAND_X: "X_COMMAND_PATH_X"
 ...

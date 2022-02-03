@@ -1,0 +1,4 @@
+- name: "Detect target path"
+  ansible.builtin.stat:
+    path: ""
+    register: file_stat
