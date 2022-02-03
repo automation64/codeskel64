@@ -30,16 +30,23 @@ X_ROLE_NAME_X_os_family: "
 
 # Multiplatform packages
 X_ROLE_NAME_X_profiles_common:
-  snap:
-    latest:
-      packages:
-        - name: "X_APP_PACKAGE_X"
-  flatpak:
-    latest:
-      origin: "flathub"
-      packages:
-        - name: "X_APP_PACKAGE_X"
+  snap: {}
+  # snap:
+  #   latest:
+  #     packages:
+  #       - name: "X_APP_PACKAGE_X"
+  flatpak: {}
+  # flatpak:
+  #   latest:
+  #     origin: "flathub"
+  #     packages:
+  #       - name: "X_APP_PACKAGE_X"
 
+
+# Define default options. Used as a backup for cases where optional Ansible defaults are missing
+X_ROLE_NAME_X_presets:
+  X_DEFAULT_PATH_X: "X_DEFAULT_PATH_VALUE_X"
+  X_PREDEFINED1_X: ""
 
 # Define common paths
 X_ROLE_NAME_X_base_common:
@@ -56,14 +63,16 @@ X_ROLE_NAME_X_base_common:
       exe: "0755"
   templates:
     X_TEMPLATE_SERVER_X: "X_TEMPLATE_SERVER_NAME_X.j2"
-
-# Define subsystem server options. This will be used along with X_ROLE_NAME_X_server_options
-X_ROLE_NAME_X_server_presets:
-  X_PREDEFINED1_X: ""
+  # paths:
+  #   X_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] }}"
+  # files:
+  #   X_FILE_SERVER_SETUP_X: "X_FILE_SERVER_SETUP_PATH_X"
+  # run:
+  #   X_COMMAND_X: "X_COMMAND_PATH_X"
 
 X_ROLE_NAME_X_firewall_predefined:
   id: "X_ROLE_NAME_X"
 
-# Temporary variables
-X_ROLE_NAME_X___prepare_path: ~
+# Temporary loop variables
+# X_ROLE_NAME_X___prepare_path: ~
 ...

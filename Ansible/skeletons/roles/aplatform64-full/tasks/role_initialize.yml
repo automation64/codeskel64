@@ -19,7 +19,7 @@
 #     that:
 #       - true
 #   when:
-#     - "'deploy' in X_ROLE_NAME_X"
+#     - X_ROLE_NAME_X['deploy'] is defined
 #     - X_ROLE_NAME_X['deploy']
 
 # - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Load Dependencies: auto_ansible_control"
@@ -36,6 +36,6 @@
   ansible.builtin.include_tasks:
     file: "X_ROLE_NAME_X_prerequisite.yml"
   when:
-    - "'resolve_prereq' in X_ROLE_NAME_X"
+    - X_ROLE_NAME_X['resolve_prereq'] is defined
     - X_ROLE_NAME_X['resolve_prereq']
 ...
