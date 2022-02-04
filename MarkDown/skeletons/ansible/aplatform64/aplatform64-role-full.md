@@ -32,6 +32,8 @@ The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.
 
 The following example is an **Ansible Playbook** that includes all the supported features:
 
+[use this link if viewing the doc on github](../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml)
+
 ```yaml
 {% include "../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml" %}
 ```
@@ -84,7 +86,7 @@ X_ROLE_NAME_X_application:
 X_ROLE_NAME_X_subsystem:
   enabled:
   status:
-X_ROLE_NAME_X_server_options:
+X_ROLE_NAME_X_server:
   X_DEFAULT_SERVER_OPTION_X:
 X_ROLE_NAME_X_paths:
   X_DEFAULT_PATH_X:
@@ -97,27 +99,27 @@ X_ROLE_NAME_X_firewall:
   zone:
 ```
 
-| Parameter                                              | Required?    | Type       | Default                             | Purpose / Value                     |
-| ------------------------------------------------------ | ------------ | ---------- | ----------------------------------- | ----------------------------------- |
-| X_ROLE_NAME_X_application                              | yes(deploy)  | dictionary |                                     | Set application package end state   |
-| X_ROLE_NAME_X_application.name                         | yes(deploy)  | string     | `"X_APP_ID_X"`                      | Select application package name     |
-| X_ROLE_NAME_X_application.type                         | yes(deploy)  | string     | `"X_APP_TYPE_X"`                    | Select application package type     |
-| X_ROLE_NAME_X_application.version                      | yes(deploy)  | string     | `"X_APP_VERSION_X"`                 | Select application package version  |
-| X_ROLE_NAME_X_application.installed                    | yes(deploy)  | boolean    | `true`                              | Set application package end state   |
-| X_ROLE_NAME_X_subsystem                                | yes(control) | dictionary |                                     | Set application subsystem end state |
-| X_ROLE_NAME_X_subsystem.enabled                        | yes(control) | boolean    | `false`                             | Enable the subsystem?               |
-| X_ROLE_NAME_X_subsystem.status                         | yes(control) | string     | `"stopped"`                         | Set the service state               |
-| X_ROLE_NAME_X_server_options                           | yes(control) | dictionary |                                     | Set subsystem server options        |
-| X_ROLE_NAME_X_server_options.X_DEFAULT_SERVER_OPTION_X | yes(control) | string     | `"X_DEFAULT_SERVER_OPTION_VALUE_X"` |                                     |
-| X_ROLE_NAME_X_paths                                    | yes(prepare) | dictionary |                                     | Set paths                           |
-| X_ROLE_NAME_X_paths.X_DEFAULT_PATH_X                   | yes(prepare) | string     | `"X_DEFAULT_PATH_VALUE_X"`          |                                     |
-| X_ROLE_NAME_X_users                                    | yes(prepare) | dictionary |                                     | Define users                        |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X                   | yes(prepare) | dictionary |                                     | Define directory structure owner    |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.name              | yes(prepare) | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.group             | yes(prepare) | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.home              | yes(prepare) | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
-| X_ROLE_NAME_X_firewall                                 | no           | dictionary |                                     | OS Firewall options                 |
-| X_ROLE_NAME_X_firewall.zone                            | yes          | string     | `"public"`                          | Name of the target zone             |
+| Parameter                                      | Required?    | Type       | Default                             | Purpose / Value                     |
+| ---------------------------------------------- | ------------ | ---------- | ----------------------------------- | ----------------------------------- |
+| X_ROLE_NAME_X_application                      | yes(deploy)  | dictionary |                                     | Set application package end state   |
+| X_ROLE_NAME_X_application.name                 | yes(deploy)  | string     | `"X_APP_ID_X"`                      | Select application package name     |
+| X_ROLE_NAME_X_application.type                 | yes(deploy)  | string     | `"X_APP_TYPE_X"`                    | Select application package type     |
+| X_ROLE_NAME_X_application.version              | yes(deploy)  | string     | `"X_APP_VERSION_X"`                 | Select application package version  |
+| X_ROLE_NAME_X_application.installed            | yes(deploy)  | boolean    | `true`                              | Set application package end state   |
+| X_ROLE_NAME_X_subsystem                        | yes(control) | dictionary |                                     | Set application subsystem end state |
+| X_ROLE_NAME_X_subsystem.enabled                | yes(control) | boolean    | `false`                             | Enable the subsystem?               |
+| X_ROLE_NAME_X_subsystem.status                 | yes(control) | string     | `"stopped"`                         | Set the service state               |
+| X_ROLE_NAME_X_server                           | yes(control) | dictionary |                                     | Set subsystem server options        |
+| X_ROLE_NAME_X_server.X_DEFAULT_SERVER_OPTION_X | yes(control) | string     | `"X_DEFAULT_SERVER_OPTION_VALUE_X"` |                                     |
+| X_ROLE_NAME_X_paths                            | yes(prepare) | dictionary |                                     | Set paths                           |
+| X_ROLE_NAME_X_paths.X_DEFAULT_PATH_X           | yes(prepare) | string     | `"X_DEFAULT_PATH_VALUE_X"`          |                                     |
+| X_ROLE_NAME_X_users                            | yes(prepare) | dictionary |                                     | Define users                        |
+| X_ROLE_NAME_X_users.X_DEFAULT_USER_X           | yes(prepare) | dictionary |                                     | Define directory structure owner    |
+| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.name      | yes(prepare) | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
+| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.group     | yes(prepare) | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
+| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.home      | yes(prepare) | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
+| X_ROLE_NAME_X_firewall                         | no           | dictionary |                                     | OS Firewall options                 |
+| X_ROLE_NAME_X_firewall.zone                    | yes          | string     | `"public"`                          | Name of the target zone             |
 
 ## Deployment
 
@@ -135,7 +137,11 @@ X_ROLE_NAME_X_firewall:
 ### Dependencies
 
 - Ansible Collections:
-  - serdigital64.core
+  - serdigital64.backup
+    - bkp_archive
+  - serdigital64.system
+    - sys_package
+    - sys_repository
 
 ### Prerequisites
 
