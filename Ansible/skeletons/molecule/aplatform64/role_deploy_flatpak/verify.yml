@@ -20,12 +20,12 @@
     - name: "Load Package manager definitions"
       ansible.builtin.include_role:
         public: true
-        name: "serdigital64.core.core_package"
+        name: "serdigital64.system.sys_package"
 
     - name: "Detect installed apps"
       ansible.builtin.command:
         argv:
-          - "{{ core_package_base['run']['flatpak'] }}"
+          - "{{ sys_package_base['run']['flatpak'] }}"
           - "--system"
           - "--app"
           - "--columns=application"

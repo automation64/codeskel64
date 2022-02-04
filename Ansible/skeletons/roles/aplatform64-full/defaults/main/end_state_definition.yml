@@ -12,9 +12,8 @@ X_ROLE_NAME_X_subsystem:
 X_ROLE_NAME_X_firewall:
   zone: "public"
 
-X_ROLE_NAME_X_server_options:
+X_ROLE_NAME_X_server:
   X_DEFAULT_SERVER_OPTION_X: "X_DEFAULT_SERVER_OPTION_VALUE_X"
-  #port: ""
 
 X_ROLE_NAME_X_paths:
   X_DEFAULT_PATH_X: "X_DEFAULT_PATH_VALUE_X"
@@ -24,5 +23,4 @@ X_ROLE_NAME_X_users:
     name: "X_DEFAULT_USER_NAME_X"
     group: "X_DEFAULT_USER_GROUP_X"
     home: "X_DEFAULT_USER_HOME_X"
-
 ...

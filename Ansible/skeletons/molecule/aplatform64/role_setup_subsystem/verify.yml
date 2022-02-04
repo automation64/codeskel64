@@ -33,7 +33,7 @@
 
     - name: "Detect target path"
       ansible.builtin.stat:
-        path: "{{ X_ROLE_NAME_X_base['files']['X_FILE_SERVER_SETUP_X'] }}"
+        path: "{{ X_ROLE_NAME_X_base['files']['X_BASE_FILE_SETUP_X'] }}"
       register: file_stat
 
     - name: "Verify path is created"

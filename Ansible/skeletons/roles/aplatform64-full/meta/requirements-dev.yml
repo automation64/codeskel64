@@ -1,6 +1,8 @@
 ---
 roles: []
 collections:
-  - name: "../../../../../build/serdigital64-core.tar.gz"
+  - name: "../../../../../build/serdigital64-backup.tar.gz"
+    type: "file"
+  - name: "../../../../../build/serdigital64-system.tar.gz"
     type: "file"
 ...
