@@ -1,13 +1,9 @@
 ---
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Firewall / Configure access rule"
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Firewall / Configure access rules"
   vars:
-    core_firewall:
+    sec_firewall_os:
       setup: true
-    core_firewall_rules:
-      - id: "{{ X_ROLE_NAME_X_firewall_predefined['id'] }}"
-        zone: "{{ X_ROLE_NAME_X_firewall['zone'] }}"
-        port: "{{ X_ROLE_NAME_X_server_options['port'] + '/tcp' }}"
-        allow: "{{ X_ROLE_NAME_X_subsystem['enabled'] | ternary('enabled', 'disabled') }}"
+    sec_firewall_os_rules: "{{ X_ROLE_NAME_X_firewall_rules }}"
   ansible.builtin.include_role:
-    name: "serdigital64.core.core_firewall"
+    name: "serdigital64.security.sec_firewall_os"
 ...

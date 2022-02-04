@@ -27,6 +27,20 @@
 #     name: "serdigital64.X_DEPENDENCY_COLLECTION_X.X_DEPENDENCY_ROLE_X"
 #     public: true
 
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters: Control,Setup"
+  ansible.builtin.assert:
+    fail_msg: "Required end-state parameters are missing ({{ X_ROLE_NAME_X_subsystem | default('X_ROLE_NAME_X_subsystem') }})"
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_subsystem is defined
+      - X_ROLE_NAME_X_subsystem | length > 0
+      - X_ROLE_NAME_X_subsystem['enabled'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] | length > 0
+  when:
+    - (X_ROLE_NAME_X['control'] is defined and X_ROLE_NAME_X['control']) or
+      (X_ROLE_NAME_X['setup'] is defined and X_ROLE_NAME_X['setup'])
+
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Set Platform specific variables"
   ansible.builtin.include_vars:
     # file: "{{ 'platform-' + ansible_distribution + ansible_distribution_major_version + '.yml' }}"

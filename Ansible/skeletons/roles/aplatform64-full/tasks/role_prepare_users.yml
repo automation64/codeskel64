@@ -1,14 +1,14 @@
 ---
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Users / Create"
   vars:
-    core_user:
+    sys_user:
       setup: true
-    core_user_accounts:
+    sys_user_accounts:
       - name: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['name'] }}"
         home: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['home'] }}"
         group: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['group'] }}"
         locked: false
         system: false
   ansible.builtin.include_role:
-    name: "serdigital64.core.core_user"
+    name: "serdigital64.system.sys_user"
 ...
