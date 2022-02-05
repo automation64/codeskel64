@@ -22,7 +22,7 @@
         argv:
           - "/usr/bin/systemctl"
           - "is-active"
-          - "{{ X_ROLE_NAME_X_subsystems['service'] }}"
+          - "{{ X_ROLE_NAME_X_subsystem_profile['service'] }}"
       changed_when: false
       register: result
 
