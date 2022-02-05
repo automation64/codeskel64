@@ -59,9 +59,9 @@ X_PLAYBOOK_NAME_X_apps:
 
 Additional role specific settings are available to further customize the playbook:
 
-| A:Platform64 role                                                                | group_vars file                                                  |
-| -------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [serdigital64.core.core_repository](../roles/core_repository.md#role-parameters) | `inventories/<SITE>/group_vars/X_GROUP_NAME_X/core_repository.yml` |
+| A:Platform64 role                                                                | group_vars file                                                   |
+| -------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [serdigital64.system.sys_repository](../roles/sys_repository.md#role-parameters) | `inventories/<SITE>/group_vars/X_GROUP_NAME_X/sys_repository.yml` |
 
 ## Deployment
 
