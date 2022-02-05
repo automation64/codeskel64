@@ -24,7 +24,7 @@ Supported features in the current version:
 - Configure application.
 - Configure application subsystem server.
 - Provision application components.
-- Configure OS level firewall rules
+- Configure OS level firewall rules. Rules are defined in the varible `X_ROLE_NAME_X_firewall_rules`
 
 The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
 
