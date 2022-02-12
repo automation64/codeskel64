@@ -1,4 +1,7 @@
+#
 # codeskel64
+#
+
 ./.tmp/
 ./.cache/
 ./.var/
@@ -6,6 +9,12 @@
 
 .vscode/*
 *.code-workspace
+
+!/**/.gitkeep
+
+#
+# Tools
+#
 
 .history/
 
