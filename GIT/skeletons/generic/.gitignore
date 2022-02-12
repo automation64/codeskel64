@@ -1,14 +1,28 @@
-# codeskel64
+#
+# Project
+#
+
 .tmp/
 .cache/
 .var/
 
-# vscode
+# VScode
 .vscode/*
 *.code-workspace
 
-# package builds for prod/dev/test
+# Builds for prod/dev/test
 dist/
+build/
 
-# secrets
+# Secrets
 .secrets
+
+# Local variables
+.local
+
+# Keep placeholder for empty directories
+!/**/.gitkeep
+
+#
+# Tools
+#
