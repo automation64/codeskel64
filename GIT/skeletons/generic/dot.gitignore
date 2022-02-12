@@ -1,18 +1,19 @@
+# ** ACTION REQUIRED: this is a template file. Copy to .gitignore and remove this line **
 #
-# Project
+# X_PROJECT_NAME_NICE_X
 #
 
-.tmp/
-.cache/
-.var/
+.tmp/*
+.cache/*
+.var/*
 
 # VScode
 .vscode/*
 *.code-workspace
 
 # Builds for prod/dev/test
-dist/
-build/
+dist/*
+build/*
 
 # Secrets
 .secrets
