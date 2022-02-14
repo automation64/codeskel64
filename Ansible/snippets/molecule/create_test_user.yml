@@ -5,3 +5,8 @@
     system: false
     state: "present"
     name: "{{ test_user }}"
+
+# test_user:
+#   name: "testusr"
+#   group: "testusr"
+#   home: "/home/testusr"
