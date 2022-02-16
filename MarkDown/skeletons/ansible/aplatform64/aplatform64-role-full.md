@@ -22,6 +22,7 @@ Supported features in the current version:
 - Deploy application. Packages are defined in the variable `X_ROLE_NAME_X_profiles`.
 - Control application subsystem services. Services are defined in the variable `X_ROLE_NAME_X_subsystems`.
 - Configure application.
+- Configure users.
 - Configure application subsystem server.
 - Provision application components.
 - Configure OS level firewall rules. Rules are defined in the varible `X_ROLE_NAME_X_firewall_rules`
@@ -90,36 +91,42 @@ X_ROLE_NAME_X_server:
   X_DEFAULT_SERVER_OPTION_X:
 X_ROLE_NAME_X_paths:
   X_DEFAULT_PATH_X:
-X_ROLE_NAME_X_users:
+X_ROLE_NAME_X_owners:
   X_DEFAULT_USER_X:
     name:
     group:
     home:
 X_ROLE_NAME_X_firewall:
   zone:
+X_ROLE_NAME_X_setup_users:
+  - user:
+    home:
 ```
 
 | Parameter                                      | Required?    | Type       | Default                             | Purpose / Value                     |
 | ---------------------------------------------- | ------------ | ---------- | ----------------------------------- | ----------------------------------- |
 | X_ROLE_NAME_X_application                      | yes(deploy)  | dictionary |                                     | Set application package end state   |
-| X_ROLE_NAME_X_application.name                 | yes(deploy)  | string     | `"X_APP_ID_X"`                      | Select application package name     |
-| X_ROLE_NAME_X_application.type                 | yes(deploy)  | string     | `"X_APP_TYPE_X"`                    | Select application package type     |
-| X_ROLE_NAME_X_application.version              | yes(deploy)  | string     | `"X_APP_VERSION_X"`                 | Select application package version  |
-| X_ROLE_NAME_X_application.installed            | yes(deploy)  | boolean    | `true`                              | Set application package end state   |
+| X_ROLE_NAME_X_application.name                 | yes          | string     | `"X_APP_ID_X"`                      | Select application package name     |
+| X_ROLE_NAME_X_application.type                 | yes          | string     | `"X_APP_TYPE_X"`                    | Select application package type     |
+| X_ROLE_NAME_X_application.version              | yes          | string     | `"X_APP_VERSION_X"`                 | Select application package version  |
+| X_ROLE_NAME_X_application.installed            | yes          | boolean    | `true`                              | Set application package end state   |
 | X_ROLE_NAME_X_subsystem                        | yes(control) | dictionary |                                     | Set application subsystem end state |
-| X_ROLE_NAME_X_subsystem.enabled                | yes(control) | boolean    | `false`                             | Enable the subsystem?               |
-| X_ROLE_NAME_X_subsystem.status                 | yes(control) | string     | `"stopped"`                         | Set the service state               |
+| X_ROLE_NAME_X_subsystem.enabled                | yes          | boolean    | `false`                             | Enable the subsystem?               |
+| X_ROLE_NAME_X_subsystem.status                 | yes          | string     | `"stopped"`                         | Set the service state               |
 | X_ROLE_NAME_X_server                           | yes(control) | dictionary |                                     | Set subsystem server options        |
-| X_ROLE_NAME_X_server.X_DEFAULT_SERVER_OPTION_X | yes(control) | string     | `"X_DEFAULT_SERVER_OPTION_VALUE_X"` |                                     |
+| X_ROLE_NAME_X_server.X_DEFAULT_SERVER_OPTION_X | yes          | string     | `"X_DEFAULT_SERVER_OPTION_VALUE_X"` |                                     |
 | X_ROLE_NAME_X_paths                            | yes(prepare) | dictionary |                                     | Set paths                           |
-| X_ROLE_NAME_X_paths.X_DEFAULT_PATH_X           | yes(prepare) | string     | `"X_DEFAULT_PATH_VALUE_X"`          |                                     |
-| X_ROLE_NAME_X_users                            | yes(prepare) | dictionary |                                     | Define users                        |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X           | yes(prepare) | dictionary |                                     | Define directory structure owner    |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.name      | yes(prepare) | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.group     | yes(prepare) | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
-| X_ROLE_NAME_X_users.X_DEFAULT_USER_X.home      | yes(prepare) | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
-| X_ROLE_NAME_X_firewall                         | no           | dictionary |                                     | OS Firewall options                 |
+| X_ROLE_NAME_X_paths.X_DEFAULT_PATH_X           | yes          | string     | `"X_DEFAULT_PATH_VALUE_X"`          |                                     |
+| X_ROLE_NAME_X_owners                           | yes(prepare) | dictionary |                                     | Define users                        |
+| X_ROLE_NAME_X_owners.X_DEFAULT_USER_X          | yes          | dictionary |                                     | Define directory structure owner    |
+| X_ROLE_NAME_X_owners.X_DEFAULT_USER_X.name     | yes          | string     | `"X_DEFAULT_USER_NAME_X"`           | Set login name                      |
+| X_ROLE_NAME_X_owners.X_DEFAULT_USER_X.group    | yes          | string     | `"X_DEFAULT_USER_GROUP_X"`          | Set group name                      |
+| X_ROLE_NAME_X_owners.X_DEFAULT_USER_X.home     | yes          | string     | `"X_DEFAULT_USER_HOME_X"`           | Set home directory                  |
+| X_ROLE_NAME_X_firewall                         | yes(setup)   | dictionary |                                     | OS Firewall options                 |
 | X_ROLE_NAME_X_firewall.zone                    | yes          | string     | `"public"`                          | Name of the target zone             |
+| X_ROLE_NAME_X_setup_users                      | yes(setup)   | list       |                                     | List of users for the setup task    |
+| X_ROLE_NAME_X_setup_users.0.user               | yes          | string     |                                     | User login name                     |
+| X_ROLE_NAME_X_setup_users.0.home               | yes          | string     |                                     | Home full path                      |
 
 ## Deployment
 
