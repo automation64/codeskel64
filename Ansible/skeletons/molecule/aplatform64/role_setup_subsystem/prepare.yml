@@ -13,7 +13,7 @@
         gather_subset: "min"
         gather_timeout: "10"
 
-    - name: "Deploy required packages"
+    - name: "Prepare"
       vars:
         X_ROLE_NAME_X:
           resolve_prereq: true

@@ -1,5 +1,5 @@
 ---
-- name: "Prepare"
+- name: "Converge"
   hosts: "{{ lookup('env', 'APLATFORM64_TEST_PLATFORM') | default('all') }}"
   gather_facts: false
   tasks:
@@ -13,12 +13,11 @@
         gather_subset: "min"
         gather_timeout: "10"
 
-    - name: "Prepare"
+    - name: "Control service"
       vars:
         X_ROLE_NAME_X:
-          resolve_prereq: true
-          prepare: true
-          deploy: true
+          setup: true
+        X_ROLE_NAME_X_setup_users: "{{ test_X_ROLE_NAME_X_setup_users }}"
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"
 ...

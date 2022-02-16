@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: "1.1: find files"
+      ansible.builtin.find:
+        paths: "/etc"
+        patterns: "ho*"
+      register: command_results
+
+    - name: "1.1: Show results"
+      debug:
+        var: command_results['stdout_lines']
+...

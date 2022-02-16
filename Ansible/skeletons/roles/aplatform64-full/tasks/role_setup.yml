@@ -14,6 +14,16 @@
   ansible.builtin.include_tasks:
     file: "X_ROLE_NAME_X_setup_firewall.yml"
 
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / User"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_setup_user.yml"
+  loop: "{{ X_ROLE_NAME_X_setup_users }}"
+  loop_control:
+    loop_var: "X_ROLE_NAME_X___setup_user"
+  when:
+    - X_ROLE_NAME_X_setup_users is defined
+    - X_ROLE_NAME_X_setup_users | length > 0
+
 # - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / "
 #   ansible.builtin.include_tasks:
 #     file: "X_ROLE_NAME_X_setup_.yml"

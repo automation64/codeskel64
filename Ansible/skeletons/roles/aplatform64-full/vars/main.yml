@@ -59,10 +59,10 @@ X_ROLE_NAME_X_base_common:
   access:
     user:
       owner: "root"
-#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['name'] }}"
+#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['name'] }}"
     group:
       owner: "root"
-#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_users['X_DEFAULT_USER_X']['group'] }}"
+#      X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['group'] }}"
     mode:
       dir: "0755"
       file: "0644"
@@ -92,5 +92,6 @@ X_ROLE_NAME_X_firewall_rules:
 
 
 # Temporary loop variables
-# X_ROLE_NAME_X___prepare_path: ~
+# X_ROLE_NAME_X___prepare_path
+# X_ROLE_NAME_X___setup_user
 ...
