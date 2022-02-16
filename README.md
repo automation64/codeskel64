@@ -45,8 +45,8 @@ Collection of skeletons, boilerplates, templates, code examples and sample data 
 | X_PROJECT_NAME_CLI_X        | Project / Name as used in the command line (lowercase, no spaces) |
 | X_PROJECT_NAME_CAPS_X       | Project / Same as above, but in all caps                          |
 | X_PROJECT_NAME_NICE_X       | Project / Name with nice formatting for docs                      |
-| X_PROJECT_NAME_DEV_X        | Project / Alias for dev variables and files                       |
-| X_PROJECT_NAME_DEV_CAPS_X   | Project / Same as above, but in all caps                          |
+| X_PROJECT_NAME_DEV_X        | Project / Alias for dev variables and files (eg: devxxx)          |
+| X_PROJECT_NAME_DEV_CAPS_X   | Project / Same as above, but in all caps (eg: DEVXXX)             |
 | X_PROJECT_GIT_URL_X         | Project / GIT Repo URL                                            |
 | X_PROJECT_DOC_URL_X         | Project / Doc site URL                                            |
 | X_PROJECT_LICENSE_X         | Project / License                                                 |
