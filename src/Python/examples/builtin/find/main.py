@@ -1,7 +1,7 @@
 import os
 import importlib.util
 
-spec = importlib.util.spec_from_file_location("sample", os.environ['CODESKEL64_SAMPLES'] + '/Python/var_string_01.py')
+spec = importlib.util.spec_from_file_location("sample", os.environ['DEVCS64_SAMPLES'] + '/Python/var_string_01.py')
 x = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(x)
 

@@ -6,5 +6,5 @@
       ansible.builtin.template:
         src: "test.yml.j2"
         mode: "0666"
-        dest: "{{ lookup('env', 'CODESKEL64_TMP') + '/module_template.yml' }}"
+        dest: "{{ lookup('env', 'DEVCS64_TMP') + '/module_template.yml' }}"
 ...

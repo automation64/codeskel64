@@ -4,13 +4,13 @@
   pre_tasks:
     - name: "Include Samples"
       include_vars:
-        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_01.yml' }}"
+        file: "{{ lookup('env', 'DEVCS64_SAMPLES') + '/Ansible/vars_dict_01.yml' }}"
     - name: "Include Samples"
       include_vars:
-        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_02.yml' }}"
+        file: "{{ lookup('env', 'DEVCS64_SAMPLES') + '/Ansible/vars_dict_02.yml' }}"
     - name: "Include Samples"
       include_vars:
-        file: "{{ lookup('env', 'CODESKEL64_SAMPLES') + '/Ansible/vars_dict_03.yml' }}"
+        file: "{{ lookup('env', 'DEVCS64_SAMPLES') + '/Ansible/vars_dict_03.yml' }}"
 
   tasks:
     - name: "1.1: Assign dict to dict"
