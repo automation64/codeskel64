@@ -1,15 +1,3 @@
----
-title: "Ansible Playbook: X_PLAYBOOK_NAME_X"
-description: "X_PLAYBOOK_SHORT_DESCRIPTION_X"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - devops
-  - linux
-  - automation
----
-
 # Ansible Playbook: X_PLAYBOOK_NAME_X
 
 ## Purpose

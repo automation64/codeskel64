@@ -1,12 +1,3 @@
----
-title: "Script: X_APP_NAME_CLI_X"
-description: "X_APP_INFO_X"
-authors:
-  - X_AUTHOR_ALIAS_X
-tags:
-X_APP_TAGS_X
----
-
 # Script: X_APP_NAME_CLI_X
 
 ## Overview

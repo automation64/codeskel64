@@ -1,12 +1,3 @@
----
-title: "Ansible Role: X_PROJECT_NAMESPACE_X.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
-description: ""
-authors:
-  - X_AUTHOR_ALIAS_X
-tags:
-  - 
----
-
 # Ansible Role: X_PROJECT_NAMESPACE_X.X_COLLECTION_NAME_X.X_ROLE_NAME_X
 
 ## About

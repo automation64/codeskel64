@@ -1,25 +1,11 @@
 # ** ACTION REQUIRED: this is a template file. Copy to .gitignore and remove this line **
 #
-# Project
+# X_PROJECT_NAME_NICE_X
 #
-
-.tmp/*
-.cache/*
-.var/*
 
 # VScode
 .vscode/*
 *.code-workspace
-
-# Builds for prod/dev/test
-dist/*
-build/*
-
-# Secrets
-.secrets
-
-# Local variables
-.local
 
 # Keep placeholder for empty directories
 !/**/.gitkeep
@@ -27,3 +13,8 @@ build/*
 #
 # Tools
 #
+
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/

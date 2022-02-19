@@ -1,15 +1,3 @@
----
-title: "Ansible Role: serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X"
-description: "X_ROLE_SHORT_DESCRIPTION_X"
-authors:
-  - SerDigital64
-tags:
-  - ansible
-  - X_COLLECTION_NAME_X
-  - linux
-  - automation
----
-
 # Ansible Role: serdigital64.X_COLLECTION_NAME_X.X_ROLE_NAME_X
 
 ## Purpose
