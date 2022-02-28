@@ -31,11 +31,12 @@ X_ROLE_NAME_X_base:
 X_ROLE_NAME_X_profiles:
   snap: "{{ X_ROLE_NAME_X_profiles_common['snap'] }}"
   flatpak: "{{ X_ROLE_NAME_X_profiles_common['flatpak'] }}"
-  distro:
-    X_APP_VERSION_X:
-      supported: true
-      packages:
-        - name: "X_APP_PACKAGE_X"
+  distro: {}
+  # distro:
+  #   X_APP_VERSION_X:
+  #     supported: true
+  #     packages:
+  #       - name: "X_APP_PACKAGE_X"
 
 # Define custom package repositories
 X_ROLE_NAME_X_repository_custom_yum: []
