@@ -20,14 +20,28 @@ X_PROJECT_DESCRIPTION_X
 
 ### Environment
 
-- Clone the GitHub repo
-  > `git clone X_PROJECT_GIT_URL_X`
+- Prepare dev tools
+  - Install GIT
+- Clone GIT repository
+
+  ```shell
+  git clone X_PROJECT_GIT_URL_X
+  ```
+
 - Adjust environment variables to reflect your configuration:
-  - Copy environment definition files from templates:
-    > `cd aplatform64; cp dot.local .local; cp dot.secrets .secrets`
-  - Update both `.local` and `.secrets` files
-- Load environment variables
-  > `source .local; source .secrets; source .env`
+
+  ```shell
+  # Copy environment definition files from templates:
+  cp dot.local .local
+  cp dot.secrets .secrets
+  # Review and update content for both files
+  ```
+
+- Initialize dev environment variables
+
+  ```shell
+  source bin/X_PROJECT_NAME_DEV_X-set
+  ```
 
 ### Repositories
 

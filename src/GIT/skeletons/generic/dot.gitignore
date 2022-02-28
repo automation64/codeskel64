@@ -12,7 +12,6 @@
 *.code-workspace
 
 # Builds for prod/dev/test
-dist/*
 build/*
 
 # Secrets

@@ -15,17 +15,17 @@ Collection of skeletons, boilerplates, templates, code examples and sample data 
 
 ## Content
 
-| Section                     | Content                      |
-| --------------------------- | ---------------------------- |
-| [Ansible](src/Ansible)      | Ansible assets               |
-| [Bash](src/Bash)            | Bash assets                  |
-| [Container](src/Container)  | Container assets             |
-| [GIT](src/GIT)              | GIT assets                   |
-| [Licenses](src/Licenses)    | Software Licenses            |
-| [MarkDown](src/MarkDown)    | MarkDown assets              |
-| [MkDocs](src/MkDocs)        | MkDoc assets                 |
-| [Python](src/Python)        | Python assets                |
-| [Terraforkm](src/Terraform) | Terraform assets             |
+| Section                     | Content           |
+| --------------------------- | ----------------- |
+| [Ansible](src/Ansible)      | Ansible assets    |
+| [Bash](src/Bash)            | Bash assets       |
+| [Container](src/Container)  | Container assets  |
+| [GIT](src/GIT)              | GIT assets        |
+| [Licenses](src/Licenses)    | Software Licenses |
+| [MarkDown](src/MarkDown)    | MarkDown assets   |
+| [MkDocs](src/MkDocs)        | MkDoc assets      |
+| [Python](src/Python)        | Python assets     |
+| [Terraforkm](src/Terraform) | Terraform assets  |
 
 ## Usage
 
@@ -47,6 +47,7 @@ Collection of skeletons, boilerplates, templates, code examples and sample data 
 | X_PROJECT_NAME_DEV_CAPS_X   | Project / Same as above, but in all caps (eg: DEVXXX)             |
 | X_PROJECT_GIT_URL_X         | Project / GIT Repo URL                                            |
 | X_PROJECT_DOC_URL_X         | Project / Doc site URL                                            |
+| X_PROJECT_COC_URL_X         | Project / Code of Conduct URL                                     |
 | X_PROJECT_LICENSE_X         | Project / License                                                 |
 | X_PROJECT_GUILDELINES_URL_X | Project / Guidelines URL                                          |
 | X_PROJECT_NAMESPACE_X       | Project / Namespace for function and variable names               |
