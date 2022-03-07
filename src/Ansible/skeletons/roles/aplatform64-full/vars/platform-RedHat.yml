@@ -31,6 +31,7 @@ X_ROLE_NAME_X_base:
 X_ROLE_NAME_X_profiles:
   snap: "{{ X_ROLE_NAME_X_profiles_common['snap'] }}"
   flatpak: "{{ X_ROLE_NAME_X_profiles_common['flatpak'] }}"
+  pip: "{{ X_ROLE_NAME_X_profiles_common['pip'] }}"
   distro: {}
   # distro:
   #   X_APP_VERSION_X:

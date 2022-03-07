@@ -46,13 +46,26 @@ X_ROLE_NAME_X_profiles_common:
   flatpak: {}
   # snap:
   #   latest:
+  #     supported: true
   #     packages:
   #       - name: "X_APP_PACKAGE_X"
   # flatpak:
   #   latest:
+  #     supported: true
   #     origin: "flathub"
   #     packages:
   #       - name: "X_APP_PACKAGE_X"
+  # pip:
+  #   latest:
+  #     supported: true
+  #     packages:
+  #         - name: "X_APP_PACKAGE_X"
+  #     options:
+  #       pip:
+  #         owner: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['name'] }}"
+  #         group: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['group'] }}"
+  #         path: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] }}"
+  #         cli: "{{ X_ROLE_NAME_X_application['name'] }}"
 
 # Define common paths
 X_ROLE_NAME_X_base_common:

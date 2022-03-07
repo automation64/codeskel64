@@ -10,7 +10,7 @@
 # - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters"
 #   ansible.builtin.assert:
 #     quiet: true
-#     fail_msg: "required parameters are missing ({{ X_VAR_X | default('X_VAR_NAME_X') }})"
+#     fail_msg: "required parameters are missing ({{ X_ROLE_NAME_X_paths | default('X_ROLE_NAME_X_paths') }})"
 #     that:
 #       - X_ROLE_NAME_X_paths is defined
 
