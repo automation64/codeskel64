@@ -2,7 +2,7 @@
 
 ## Purpose
 
-X_ROLE_SHORT_DESCRIPTION_X
+X_ROLE_SHORT_DESCRIPTION_X.
 
 Supported features in the current version:
 
@@ -15,13 +15,13 @@ Supported features in the current version:
 - Provision application components.
 - Configure OS level firewall rules. Rules are defined in the varible `X_ROLE_NAME_X_firewall_rules`
 
-The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project and is available in the [X_COLLECTION_NAME_X](../collections/X_COLLECTION_NAME_X.md) Ansible-Collection.
+The **X_ROLE_NAME_X** Ansible-Role is part of the [A:Platform64](https://github.com/serdigital64/aplatform64) project and is available in the [X_COLLECTION_NAME_X](https://aplatform64.readthedocs.io/en/latest/collections/X_COLLECTION_NAME_X) Ansible-Collection.
 
 ## Usage
 
 The following example is an **Ansible Playbook** that includes all the supported features:
 
-[use this link if viewing the doc on github](../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml)
+[use this link if viewing the doc on github](https://github.com/aplatform64/X_COLLECTION_NAME_X/blob/main/playbooks/X_ROLE_NAME_X.yml)
 
 ```yaml
 {% include "../../collections/serdigital64/X_COLLECTION_NAME_X/playbooks/X_ROLE_NAME_X.yml" %}
@@ -160,7 +160,7 @@ Automatic installation is also available by deploying [A:Platform64](https://apl
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-Please see the [guidelines](../contributing/guidelines.md) for further details.
+Please see the [guidelines](https://aplatform64.readthedocs.io/en/latest/contributing/CONTRIBUTING) for further details.
 
 ## Author
 

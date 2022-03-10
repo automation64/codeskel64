@@ -15,17 +15,17 @@ Collection of skeletons, boilerplates, templates, code examples and sample data 
 
 ## Content
 
-| Section                     | Content           |
-| --------------------------- | ----------------- |
-| [Ansible](src/Ansible)      | Ansible assets    |
-| [Bash](src/Bash)            | Bash assets       |
-| [Container](src/Container)  | Container assets  |
-| [GIT](src/GIT)              | GIT assets        |
-| [Licenses](src/Licenses)    | Software Licenses |
-| [MarkDown](src/MarkDown)    | MarkDown assets   |
-| [MkDocs](src/MkDocs)        | MkDoc assets      |
-| [Python](src/Python)        | Python assets     |
-| [Terraforkm](src/Terraform) | Terraform assets  |
+| Section                             | Content           |
+| ----------------------------------- | ----------------- |
+| [Ansible](src/catalog/Ansible)      | Ansible assets    |
+| [Bash](src/catalog/Bash)            | Bash assets       |
+| [Container](src/catalog/Container)  | Container assets  |
+| [GIT](src/catalog/GIT)              | GIT assets        |
+| [Licenses](src/catalog/Licenses)    | Software Licenses |
+| [MarkDown](src/catalog/MarkDown)    | MarkDown assets   |
+| [MkDocs](src/catalog/MkDocs)        | MkDoc assets      |
+| [Python](src/catalog/Python)        | Python assets     |
+| [Terraforkm](src/catalog/Terraform) | Terraform assets  |
 
 ## Usage
 

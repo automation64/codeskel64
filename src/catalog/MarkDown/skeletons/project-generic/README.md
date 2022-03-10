@@ -48,18 +48,18 @@ X_PROJECT_DESCRIPTION_X
 - Project GIT repository: [X_PROJECT_GIT_URL_X](X_PROJECT_GIT_URL_X)
 - Project Documentation: [X_PROJECT_DOC_URL_X](X_PROJECT_DOC_URL_X)
 
-### Releases
+## Releases
 
-### Contributing
+## Contributing
 
 Help on implementing new features and maintaining the code base is welcomed.
 
 [Contributor Covenant Code of Conduct](X_PROJECT_GUILDELINES_URL_X)
 
-### License
+## License
 
 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
 
-### Author
+## Author
 
 - [X_AUTHOR_X](X_AUTHOR_GIT_URLX)
