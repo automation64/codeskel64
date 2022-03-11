@@ -7,6 +7,7 @@ X_ROLE_NAME_X_base:
   run: "{{ X_ROLE_NAME_X_base_common['run'] }}"
   templates: "{{ X_ROLE_NAME_X_base_common['templates'] }}"
   access: "{{ X_ROLE_NAME_X_base_common['access'] }}"
+  # TODO: Remove this snippet if not used
   # paths:
   #   X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
   # etc:
@@ -33,6 +34,7 @@ X_ROLE_NAME_X_profiles:
   flatpak: "{{ X_ROLE_NAME_X_profiles_common['flatpak'] }}"
   pip: "{{ X_ROLE_NAME_X_profiles_common['pip'] }}"
   distro: {}
+  # TODO: Remove this snippet if not used
   # distro:
   #   X_APP_VERSION_X:
   #     supported: true
@@ -41,11 +43,17 @@ X_ROLE_NAME_X_profiles:
 
 # Define custom package repositories
 X_ROLE_NAME_X_repository_custom_yum: []
+  # TODO: Remove this snippet if not used
+  # - name: "X_YUM_REPO_X"
+  #   description: "X_YUM_INFO_X"
+  #   url: "X_YUM_URL_X"
+  #   gpgkey: "X_YUM_GPG_X"
 X_ROLE_NAME_X_repository_custom_apt: []
 
 # Set package repositories states
 X_ROLE_NAME_X_repository_catalog_distro: {}
 X_ROLE_NAME_X_repository_catalog_yum: {}
+  # X_YUM_REPO_X: true
 X_ROLE_NAME_X_repository_catalog_apt: {}
 
 # Define OS subsystem states

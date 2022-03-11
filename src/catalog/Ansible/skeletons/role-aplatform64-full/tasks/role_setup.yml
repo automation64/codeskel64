@@ -1,7 +1,10 @@
 ---
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Check required parameters"
   ansible.builtin.assert:
-    fail_msg: "Required end-state parameters are missing ({{ X_ROLE_NAME_X_subsystem | default('X_ROLE_NAME_X_subsystem') }})"
+    fail_msg: "Required end-state parameters are missing ({{
+      X_ROLE_NAME_X_subsystem | default('X_ROLE_NAME_X_subsystem') }} / {{
+      X_ROLE_NAME_X_firewall | default('X_ROLE_NAME_X_firewall') }} / {{
+      X_ROLE_NAME_X_server | default('X_ROLE_NAME_X_server') }})"
     quiet: true
     that:
       - X_ROLE_NAME_X_subsystem is defined
@@ -9,6 +12,12 @@
       - X_ROLE_NAME_X_subsystem['enabled'] is defined
       - X_ROLE_NAME_X_subsystem['status'] is defined
       - X_ROLE_NAME_X_subsystem['status'] | length > 0
+      - X_ROLE_NAME_X_firewall is defined
+      - X_ROLE_NAME_X_firewall['zone'] is defined
+      - X_ROLE_NAME_X_firewall['zone'] | length > 0
+      - X_ROLE_NAME_X_server is defined
+      - X_ROLE_NAME_X_server['X_DEFAULT_SERVER_OPTION_X'] is defined
+      - X_ROLE_NAME_X_server['X_DEFAULT_SERVER_OPTION_X'] | length > 0
 
 - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Server"
   ansible.builtin.include_tasks:
