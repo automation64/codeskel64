@@ -1,0 +1,170 @@
+#!/bin/bash
+#######################################
+# Create initial code structure from skeletons and templates
+#
+# Author: serdigital64 (https://github.com/serdigital64)
+# License: GPL-3.0-or-later (https://www.gnu.org/licenses/gpl-3.0.txt)
+# Repository: https://github.com/serdigital64/codeskel64
+# Version: 1.15.0
+#######################################
+
+# shellcheck disable=SC1091
+source "${BASH_SOURCE[0]%/*}/bashlib64.bash" || { echo "Error: unable to load bashlib64" && exit 1; }
+
+function codeskel64_download() {
+  local library="$1"
+
+  bl64_rxtx_git_get_dir \
+    "$CODESKEL64_REPO" \
+    'src/catalog' \
+    "$library" \
+    "$BL64_LIB_VAR_ON"
+
+}
+
+function codeskel64_list() {
+  local library="$1"
+  bl64_check_file "${library}/${CODESKEL64_PATH_INVENTORY}" || return 1
+  "$BL64_OS_CMD_CAT" "${library}/${CODESKEL64_PATH_INVENTORY}"
+}
+
+function codeskel64_create_file() {
+  local destination="$1"
+  local source="$2"
+
+  [[ -f "$destination" ]] && bl64_msg_show_error "destination is already present ($destination)" && return 1
+  bl64_check_file "$source" || return 1
+
+  bl64_os_cp_file "$source" "$destination"
+
+}
+
+function codeskel64_create_dir() {
+  local destination="$1"
+  local source="$2"
+  local base_path=''
+
+  [[ -d "$destination" ]] && bl64_msg_show_error "destination is already present ($destination)" && return 1
+  bl64_check_directory "$source" || return 1
+
+  base_path="$(bl64_fmt_dirname "$destination")"
+  skeleton="$(bl64_fmt_basename "$source")"
+
+  bl64_os_cp_dir "$source" "$base_path" && \
+  bl64_os_mv "${base_path}/${skeleton}" "$destination"
+
+}
+
+function codeskel64_create() {
+  local library="$1"
+  local collection="$2"
+  local skeleton="$3"
+  local destination="$4"
+  declare -a spec
+  local source=''
+
+  read -r -a spec < <(
+    bl64_xsv_search_records \
+      "${collection}${BL64_XSV_FS}${skeleton}" \
+      "${library}/${CODESKEL64_PATH_INVENTORY}" \
+      "${CODESKEL64_DB_COLLECTION}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SKELETON}" \
+      "${CODESKEL64_DB_TYPE}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SOURCE}" \
+      "$BL64_XSV_FS_COLON" \
+      "$BL64_XSV_FS_SPACE"
+  ) || return 1
+
+  if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
+    source="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
+    codeskel64_create_file "$destination" "$source"
+  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
+    source="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}"
+    codeskel64_create_dir "$destination" "$source"
+  fi
+
+}
+
+function codeskel64_check() {
+  :
+}
+
+function codeskel64_help() {
+
+  bl64_msg_show_usage \
+    '<-d|-l|-c> [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-g TARGET] [-h]' \
+    'Create initial code structure from skeletons and templates' \
+    '
+    -d           : Download catalog
+    -l           : List collection and skeletons
+    -c           : Create initial structure
+    ' '
+    -h           : Show help
+    ' "
+    -a LIBRARY   : Library location. Default: ${XDG_DATA_HOME}/codeskel64
+    -o COLLECTION: Collection name
+    -k SKELETON  : Skeleton name
+    -g TARGET    : Target full path
+    "
+
+}
+
+#
+# Main
+#
+
+readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
+readonly CODESKEL64_PATH_SKELETONS='skeletons'
+readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64.git'
+readonly CODESKEL64_DB_COLLECTION='1'
+readonly CODESKEL64_DB_SKELETON='2'
+readonly CODESKEL64_DB_TYPE='3'
+readonly CODESKEL64_DB_SOURCE='4'
+readonly CODESKEL64_TYPE_FILE='f'
+readonly CODESKEL64_TYPE_DIR='d'
+
+export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
+
+declare codeskel64_status=1
+declare codeskel64_option=''
+declare codeskel64_command=''
+declare codeskel64_command_tag=''
+declare codeskel64_library="${XDG_DATA_HOME}/codeskel64"
+declare codeskel64_collection=''
+declare codeskel64_skeleton=''
+declare codeskel64_target=''
+
+(($# == 0)) && codeskel64_help && exit 1
+while getopts ':dlca:o:k:g:h' codeskel64_option; do
+  case "$codeskel64_option" in
+  d)
+    codeskel64_command='codeskel64_download'
+    codeskel64_command_tag='download catalog'
+    ;;
+  l)
+    codeskel64_command='codeskel64_list'
+    codeskel64_command_tag='show catalog'
+    ;;
+  c)
+    codeskel64_command='codeskel64_create'
+    codeskel64_command_tag='create structure'
+    ;;
+  a) codeskel64_library="$OPTARG" ;;
+  o) codeskel64_collection="$OPTARG" ;;
+  k) codeskel64_skeleton="$OPTARG" ;;
+  g) codeskel64_target="$OPTARG" ;;
+  h) codeskel64_help && exit ;;
+  \?) codeskel64_help && exit 1 ;;
+  esac
+done
+[[ -z "$codeskel64_command" ]] && codeskel64_help && exit 1
+codeskel64_check || exit 1
+
+bl64_msg_show_batch_start "$codeskel64_command_tag"
+case "$codeskel64_command" in
+'codeskel64_download') "$codeskel64_command" "$codeskel64_library" ;;
+'codeskel64_list') "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection" ;;
+'codeskel64_create') "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection" "$codeskel64_skeleton" "$codeskel64_target" ;;
+esac
+codeskel64_status=$?
+
+bl64_msg_show_batch_finish $codeskel64_status "$codeskel64_command_tag"
+exit $codeskel64_status
