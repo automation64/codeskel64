@@ -47,8 +47,7 @@ X_PROJECT_DESCRIPTION_X
 
 - Project GIT repository: [X_PROJECT_GIT_URL_X](X_PROJECT_GIT_URL_X)
 - Project Documentation: [X_PROJECT_DOC_URL_X](X_PROJECT_DOC_URL_X)
-
-## Releases
+- Release history: [CHANGELOG](CHANGELOG.md)
 
 ## Contributing
 

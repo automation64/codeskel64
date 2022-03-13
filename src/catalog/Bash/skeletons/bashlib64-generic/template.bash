@@ -101,5 +101,5 @@ case "$X_APP_NAMESPACE_X_command" in
 esac
 X_APP_NAMESPACE_X_status=$?
 
-bl64_msg_show_batch_finish X_APP_NAMESPACE_X_status "$X_APP_NAMESPACE_X_command_tag"
+bl64_msg_show_batch_finish $X_APP_NAMESPACE_X_status "$X_APP_NAMESPACE_X_command_tag"
 exit $X_APP_NAMESPACE_X_status
