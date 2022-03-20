@@ -24,5 +24,10 @@ X_ROLE_NAME_X_owners:
     group: "X_DEFAULT_USER_GROUP_X"
     home: "X_DEFAULT_USER_HOME_X"
 
+# TODO: Remove this snippet if not used
+# X_ROLE_NAME_X_actions:
+#   setup:
+#     X_ACTION_OPTION:
+
 X_ROLE_NAME_X_setup_users: []
 ...
