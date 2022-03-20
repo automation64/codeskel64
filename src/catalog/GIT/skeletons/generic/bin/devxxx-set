@@ -17,3 +17,5 @@ fi
 
 # Load global variables
 . ./.env
+
+set | grep X_PROJECT_NAME_DEV_CAPS_X_
