@@ -24,7 +24,7 @@ The following example is an **Ansible Playbook** that includes all the supported
 [use this link if viewing the doc on github](https://github.com/aplatform64/X_COLLECTION_NAME_X/blob/main/playbooks/X_ROLE_NAME_X.yml)
 
 ```yaml
-{% include "../examples/X_ROLE_NAME_X.yml" %}
+{ % include "../examples/X_ROLE_NAME_X.yml" % }
 ```
 
 The playbook can be run by executing:
@@ -89,6 +89,9 @@ X_ROLE_NAME_X_firewall:
 X_ROLE_NAME_X_setup_users:
   - user:
     home:
+# X_ROLE_NAME_X_actions:
+#   setup:
+#     X_ACTION_OPTION:
 ```
 
 | Parameter                                      | Required?    | Type       | Default                             | Purpose / Value                     |
@@ -115,6 +118,9 @@ X_ROLE_NAME_X_setup_users:
 | X_ROLE_NAME_X_setup_users                      | yes(setup)   | list       |                                     | List of users for the setup task    |
 | X_ROLE_NAME_X_setup_users.0.user               | yes          | string     |                                     | User login name                     |
 | X_ROLE_NAME_X_setup_users.0.home               | yes          | string     |                                     | Home full path                      |
+| X_ROLE_NAME_X_actions                          | no           | dictionary |                                     | Set action options                  |
+| X_ROLE_NAME_X_actions.setup                    | no           | dictionary |                                     | Set setup action options            |
+| X_ROLE_NAME_X_actions.setup.X_ACTION_OPTION    | no           |            |                                     |                                     |
 
 ## Deployment
 
