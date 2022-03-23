@@ -5,7 +5,7 @@
 # Author: serdigital64 (https://github.com/serdigital64)
 # License: GPL-3.0-or-later (https://www.gnu.org/licenses/gpl-3.0.txt)
 # Repository: https://github.com/serdigital64/codeskel64
-# Version: 1.15.0
+# Version: 1.2.0
 #######################################
 
 # shellcheck disable=SC1091
@@ -24,44 +24,110 @@ function codeskel64_download() {
 
 function codeskel64_list() {
   local library="$1"
+
   bl64_check_file "${library}/${CODESKEL64_PATH_INVENTORY}" || return 1
+
   "$BL64_OS_CMD_CAT" "${library}/${CODESKEL64_PATH_INVENTORY}"
 }
 
-function codeskel64_create_file() {
-  local destination="$1"
-  local source="$2"
+function codeskel64_create_combo() {
+  local library="$1"
+  local project="$2"
+  local target="$3"
+  local overwrite="$4"
+  local source="$5"
+  local catalog="${library}/${CODESKEL64_PATH_COMBOS}"
+  declare -a combo
 
-  [[ -f "$destination" ]] && bl64_msg_show_error "destination is already present ($destination)" && return 1
+  bl64_check_file "$catalog" || return 1
+
+  IFS=':'
+  while read -r -a combo; do
+    if [[ "${combo[0]}" == "$source" ]]; then
+      unset IFS
+      codeskel64_dispatch \
+        "$codeskel64_library" \
+        "$overwrite" \
+        "${combo[1]}" \
+        "${combo[2]}" \
+        "$project" \
+        "$BL64_LIB_VAR_TBD"
+      IFS=':'
+    fi
+  done <"$catalog"
+
+}
+
+function codeskel64_create_file() {
+  local project="$1"
+  local target="$2"
+  local overwrite="$3"
+  local source="$4"
+  local destination="${project}/${target}"
+
   bl64_check_file "$source" || return 1
+  [[ "$overwrite" == "$BL64_LIB_VAR_OFF" && -f "$destination" ]] &&
+    bl64_msg_show_error "target file is already created ($destination)" && return 1
 
   bl64_os_cp_file "$source" "$destination"
 
 }
 
 function codeskel64_create_dir() {
-  local destination="$1"
-  local source="$2"
-  local base_path=''
+  local project="$1"
+  local target="$2"
+  local overwrite="$3"
+  local source="$4"
+  local skeleton=''
+  local origin="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${source}"
 
-  [[ -d "$destination" ]] && bl64_msg_show_error "destination is already present ($destination)" && return 1
-  bl64_check_directory "$source" || return 1
+  bl64_check_directory "$origin" || return 1
 
-  base_path="$(bl64_fmt_dirname "$destination")"
-  skeleton="$(bl64_fmt_basename "$source")"
-
-  bl64_os_cp_dir "$source" "$base_path" && \
-  bl64_os_mv "${base_path}/${skeleton}" "$destination"
+  bl64_os_merge_dir "$origin" "$project"
 
 }
 
 function codeskel64_create() {
   local library="$1"
-  local collection="$2"
-  local skeleton="$3"
-  local destination="$4"
-  declare -a spec
+  local overwrite="$2"
+  local collection="$3"
+  local skeleton="$4"
+  local project="$5"
+  local target="$6"
+
+  bl64_check_parameter 'collection' &&
+    bl64_check_parameter 'skeleton' &&
+    bl64_check_parameter 'project' &&
+    bl64_check_file "${library}/${CODESKEL64_PATH_INVENTORY}" || return 1
+
+  if [[ -d "$project" ]]; then
+    [[ "$overwrite" == "$BL64_LIB_VAR_OFF" ]] &&
+      bl64_msg_show_error "project is already created ($project)" &&
+      return 1
+  else
+    "$BL64_OS_CMD_MKDIR" "$project"
+    bl64_check_directory "$project" || return 1
+  fi
+
+  codeskel64_dispatch \
+    "$codeskel64_library" \
+    "$codeskel64_overwrite" \
+    "$codeskel64_collection" \
+    "$codeskel64_skeleton" \
+    "$codeskel64_project" \
+    "$codeskel64_target"
+
+}
+
+function codeskel64_dispatch() {
+  local library="$1"
+  local overwrite="$2"
+  local collection="$3"
+  local skeleton="$4"
+  local project="$5"
+  local target="$6"
   local source=''
+  declare -a spec
 
   read -r -a spec < <(
     bl64_xsv_search_records \
@@ -74,11 +140,19 @@ function codeskel64_create() {
   ) || return 1
 
   if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
+    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
     source="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
-    codeskel64_create_file "$destination" "$source"
+    codeskel64_create_file "$project" "$target" "$overwrite" "$source"
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
-    source="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}"
-    codeskel64_create_dir "$destination" "$source"
+    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
+    source="${skeleton}"
+    codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
+  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
+    source="${skeleton}"
+    codeskel64_create_combo "$library" "$project" "$target" "$overwrite" "$source"
+  else
+    bl64_msg_show_error "skeleton not found (Collection: ${collection} / Skeleton: ${skeleton})"
+    return 1
   fi
 
 }
@@ -90,19 +164,21 @@ function codeskel64_check() {
 function codeskel64_help() {
 
   bl64_msg_show_usage \
-    '<-d|-l|-c> [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-g TARGET] [-h]' \
+    '<-d|-l|-c> [-w] [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-h]' \
     'Create initial code structure from skeletons and templates' \
     '
-    -d           : Download catalog
-    -l           : List collection and skeletons
-    -c           : Create initial structure
+    -d           : Download catalog to LIBRARY
+    -l           : List collection and skeletons from LIBRARY
+    -c           : Create initial code structure
     ' '
+    -w           : Overwrite target
     -h           : Show help
     ' "
     -a LIBRARY   : Library location. Default: ${XDG_DATA_HOME}/codeskel64
     -o COLLECTION: Collection name
     -k SKELETON  : Skeleton name
-    -g TARGET    : Target full path
+    -t PROJECT   : Destination full path
+    -g TARGET    : New structure name. Default: skeleton's default
     "
 
 }
@@ -111,6 +187,7 @@ function codeskel64_help() {
 # Main
 #
 
+readonly CODESKEL64_PATH_COMBOS='combos.csv'
 readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
 readonly CODESKEL64_PATH_SKELETONS='skeletons'
 readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64.git'
@@ -120,6 +197,7 @@ readonly CODESKEL64_DB_TYPE='3'
 readonly CODESKEL64_DB_SOURCE='4'
 readonly CODESKEL64_TYPE_FILE='f'
 readonly CODESKEL64_TYPE_DIR='d'
+readonly CODESKEL64_TYPE_COMBO='b'
 
 export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
 
@@ -128,12 +206,14 @@ declare codeskel64_option=''
 declare codeskel64_command=''
 declare codeskel64_command_tag=''
 declare codeskel64_library="${XDG_DATA_HOME}/codeskel64"
-declare codeskel64_collection=''
-declare codeskel64_skeleton=''
-declare codeskel64_target=''
+declare codeskel64_collection="$BL64_LIB_VAR_TBD"
+declare codeskel64_skeleton="$BL64_LIB_VAR_TBD"
+declare codeskel64_project="$BL64_LIB_VAR_TBD"
+declare codeskel64_target="$BL64_LIB_VAR_TBD"
+declare codeskel64_overwrite="$BL64_LIB_VAR_OFF"
 
 (($# == 0)) && codeskel64_help && exit 1
-while getopts ':dlca:o:k:g:h' codeskel64_option; do
+while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
   case "$codeskel64_option" in
   d)
     codeskel64_command='codeskel64_download'
@@ -147,7 +227,9 @@ while getopts ':dlca:o:k:g:h' codeskel64_option; do
     codeskel64_command='codeskel64_create'
     codeskel64_command_tag='create structure'
     ;;
+  t) codeskel64_project="$OPTARG" ;;
   a) codeskel64_library="$OPTARG" ;;
+  w) codeskel64_overwrite="$BL64_LIB_VAR_ON" ;;
   o) codeskel64_collection="$OPTARG" ;;
   k) codeskel64_skeleton="$OPTARG" ;;
   g) codeskel64_target="$OPTARG" ;;
@@ -160,9 +242,21 @@ codeskel64_check || exit 1
 
 bl64_msg_show_batch_start "$codeskel64_command_tag"
 case "$codeskel64_command" in
-'codeskel64_download') "$codeskel64_command" "$codeskel64_library" ;;
-'codeskel64_list') "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection" ;;
-'codeskel64_create') "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection" "$codeskel64_skeleton" "$codeskel64_target" ;;
+'codeskel64_download')
+  "$codeskel64_command" "$codeskel64_library"
+  ;;
+'codeskel64_list')
+  "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection"
+  ;;
+'codeskel64_create')
+  "$codeskel64_command" \
+    "$codeskel64_library" \
+    "$codeskel64_overwrite" \
+    "$codeskel64_collection" \
+    "$codeskel64_skeleton" \
+    "$codeskel64_project" \
+    "$codeskel64_target"
+  ;;
 esac
 codeskel64_status=$?
 
