@@ -1,0 +1,28 @@
+# ** ACTION REQUIRED: this is a template file. Copy to .gitignore and remove this line **
+#
+# Project
+#
+
+.tmp/*
+.cache/*
+.var/*
+
+# VScode
+.vscode/*
+*.code-workspace
+
+# Builds for prod/dev/test
+build/*
+
+# Secrets
+.secrets
+
+# Local variables
+.local
+
+# Keep placeholder for empty directories
+!/**/.gitkeep
+
+#
+# Tools
+#

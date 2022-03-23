@@ -1,7 +1,0 @@
----
-sample_list_string:
-  - "sample1"
-  - "sample2"
-  - "sample3"
-sample_list_empty: []
-...

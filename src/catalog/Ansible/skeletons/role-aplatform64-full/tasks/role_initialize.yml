@@ -1,0 +1,34 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check Platform compatibility"
+  ansible.builtin.assert:
+    quiet: true
+    fail_msg: "Target Platform not supported: {{ ansible_distribution + ansible_distribution_major_version }}"
+    that:
+      - ansible_distribution + ansible_distribution_major_version in X_ROLE_NAME_X_platforms
+
+# TODO: Remove this snippet if not used
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Check required parameters"
+#   ansible.builtin.assert:
+#     quiet: true
+#     fail_msg: "required parameters are missing ({{ X_ROLE_NAME_X_paths | default('X_ROLE_NAME_X_paths') }})"
+#     that:
+#       - X_ROLE_NAME_X_paths is defined
+
+# TODO: Remove this snippet if not used
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Load Dependencies: X_DEPENDENCY_ROLE_X"
+#   ansible.builtin.include_role:
+#     name: "serdigital64.X_DEPENDENCY_COLLECTION_X.X_DEPENDENCY_ROLE_X"
+#     public: true
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Set Platform specific variables"
+  ansible.builtin.include_vars:
+    # file: "{{ 'platform-' + ansible_distribution + ansible_distribution_major_version + '.yml' }}"
+    file: "{{ 'platform-' + X_ROLE_NAME_X_os_family + '.yml' }}"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Initialize / Resolve prerequisites"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_prerequisite.yml"
+  when:
+    - X_ROLE_NAME_X['resolve_prereq'] is defined
+    - X_ROLE_NAME_X['resolve_prereq']
+...

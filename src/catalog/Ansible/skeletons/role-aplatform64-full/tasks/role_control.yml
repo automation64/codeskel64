@@ -1,0 +1,21 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / Check required parameters"
+  ansible.builtin.assert:
+    fail_msg: "Required end-state parameters are missing ({{ X_ROLE_NAME_X_subsystem | default('X_ROLE_NAME_X_subsystem') }})"
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_subsystem is defined
+      - X_ROLE_NAME_X_subsystem | length > 0
+      - X_ROLE_NAME_X_subsystem['enabled'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] | length > 0
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / Subsystem"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_control_subsystem-' + X_ROLE_NAME_X_os_family + '.yml' }}"
+
+# TODO: Remove this snippet if not used
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / "
+#   ansible.builtin.include_tasks:
+#     file: "X_ROLE_NAME_X_control_.yml"
+...

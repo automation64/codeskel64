@@ -1,0 +1,19 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy / Check required parameters"
+  ansible.builtin.assert:
+    fail_msg: "Required end-state parameters are missing ({{ X_ROLE_NAME_X_application | default('X_ROLE_NAME_X_application') }})"
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_application is defined
+      - X_ROLE_NAME_X_application | length > 0
+      - X_ROLE_NAME_X_application['name'] is defined
+      - X_ROLE_NAME_X_application['type'] is defined
+      - X_ROLE_NAME_X_application['version'] is defined
+      - X_ROLE_NAME_X_application['installed'] is defined
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Deploy / Package"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_deploy_package.yml"
+  when:
+    - X_ROLE_NAME_X_application is defined
+...

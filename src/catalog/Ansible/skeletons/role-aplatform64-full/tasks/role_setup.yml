@@ -1,0 +1,51 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Check required parameters"
+  ansible.builtin.assert:
+    fail_msg: "Required end-state parameters are missing ({{
+      X_ROLE_NAME_X_subsystem | default('X_ROLE_NAME_X_subsystem') }} / {{
+      X_ROLE_NAME_X_firewall | default('X_ROLE_NAME_X_firewall') }} / {{
+      X_ROLE_NAME_X_server | default('X_ROLE_NAME_X_server') }})"
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_subsystem is defined
+      - X_ROLE_NAME_X_subsystem | length > 0
+      - X_ROLE_NAME_X_subsystem['enabled'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] is defined
+      - X_ROLE_NAME_X_subsystem['status'] | length > 0
+      - X_ROLE_NAME_X_firewall is defined
+      - X_ROLE_NAME_X_firewall['zone'] is defined
+      - X_ROLE_NAME_X_firewall['zone'] | length > 0
+      - X_ROLE_NAME_X_server is defined
+      - X_ROLE_NAME_X_server['X_DEFAULT_SERVER_OPTION_X'] is defined
+      - X_ROLE_NAME_X_server['X_DEFAULT_SERVER_OPTION_X'] | length > 0
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Server"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_setup_server.yml"
+  when:
+    - X_ROLE_NAME_X_server is defined
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Subsystem"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_setup_subsystem-' + X_ROLE_NAME_X_os_family + '.yml' }}"
+
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / Firewall"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_setup_firewall.yml"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / User"
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_setup_user.yml"
+  loop: "{{ X_ROLE_NAME_X_setup_users }}"
+  loop_control:
+    loop_var: "X_ROLE_NAME_X___setup_user"
+  when:
+    - X_ROLE_NAME_X_setup_users is defined
+    - X_ROLE_NAME_X_setup_users | length > 0
+
+# TODO: Remove this snippet if not used
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / "
+#   ansible.builtin.include_tasks:
+#     file: "X_ROLE_NAME_X_setup_.yml"
+...

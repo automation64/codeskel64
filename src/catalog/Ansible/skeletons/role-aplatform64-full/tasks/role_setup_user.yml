@@ -1,0 +1,4 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Setup / User / ({{ X_ROLE_NAME_X___setup_user['user'] }})"
+  ansible.builtin.meta: "noop"
+...

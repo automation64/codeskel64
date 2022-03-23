@@ -1,0 +1,20 @@
+# ** ACTION REQUIRED: this is a template file. Copy to .gitignore and remove this line **
+#
+# X_PROJECT_NAME_NICE_X
+#
+
+# VScode
+.vscode/*
+*.code-workspace
+
+# Keep placeholder for empty directories
+!/**/.gitkeep
+
+#
+# Tools
+#
+
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/

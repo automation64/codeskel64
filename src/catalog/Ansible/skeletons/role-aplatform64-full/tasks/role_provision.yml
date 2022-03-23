@@ -1,0 +1,13 @@
+---
+# TODO: Remove this snippet if not used
+# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Provision / Check required parameters"
+#   ansible.builtin.assert:
+#     fail_msg: "Required end-state parameters are missing ()"
+#     quiet: true
+#     that:
+#       - true
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Provision / "
+  ansible.builtin.include_tasks:
+    file: "X_ROLE_NAME_X_provision_.yml"
+...

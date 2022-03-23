@@ -1,9 +1,0 @@
----
-- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / Subsystem"
-  ansible.builtin.include_tasks:
-    file: "{{ 'X_ROLE_NAME_X_control_subsystem-' + X_ROLE_NAME_X_os_family + '.yml' }}"
-
-# - name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Control / "
-#   ansible.builtin.include_tasks:
-#     file: "X_ROLE_NAME_X_control_.yml"
-...

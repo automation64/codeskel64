@@ -1,0 +1,33 @@
+---
+X_ROLE_NAME_X_application:
+  name: "X_APP_ID_X"
+  type: "X_APP_TYPE_X"
+  version: "X_APP_VERSION_X"
+  installed: true
+
+X_ROLE_NAME_X_subsystem:
+  enabled: false
+  status: "stopped"
+
+X_ROLE_NAME_X_firewall:
+  zone: "public"
+
+X_ROLE_NAME_X_server:
+  X_DEFAULT_SERVER_OPTION_X: "X_DEFAULT_SERVER_OPTION_VALUE_X"
+
+X_ROLE_NAME_X_paths:
+  X_DEFAULT_PATH_X: "X_DEFAULT_PATH_VALUE_X"
+
+X_ROLE_NAME_X_owners:
+  X_DEFAULT_USER_X:
+    name: "X_DEFAULT_USER_NAME_X"
+    group: "X_DEFAULT_USER_GROUP_X"
+    home: "X_DEFAULT_USER_HOME_X"
+
+# TODO: Remove this snippet if not used
+# X_ROLE_NAME_X_actions:
+#   setup:
+#     X_ACTION_OPTION:
+
+X_ROLE_NAME_X_setup_users: []
+...

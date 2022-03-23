@@ -1,0 +1,21 @@
+---
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Check required parameters"
+  ansible.builtin.assert:
+    fail_msg: "Required end-state parameters are missing ({{ X_ROLE_NAME_X_paths | default('X_ROLE_NAME_X_paths') }})"
+    quiet: true
+    that:
+      - X_ROLE_NAME_X_paths is defined
+      - X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] is defined
+      - X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | length > 0
+      - X_ROLE_NAME_X_owners is defined
+      - X_ROLE_NAME_X_owners['X_DEFAULT_USER_X'] is defined
+      - X_ROLE_NAME_X_owners['X_DEFAULT_USER_X'] | length > 0
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Owners"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_prepare_owners.yml' }}"
+
+- name: "X_TASK_COLLECTION_NAME_X / X_TASK_ROLE_NAME_X / Prepare / Paths"
+  ansible.builtin.include_tasks:
+    file: "{{ 'X_ROLE_NAME_X_prepare_paths.yml' }}"
+...

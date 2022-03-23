@@ -1,8 +1,0 @@
----
-test_var: "{{ 'simple var expansion' }}"
-test_var2: "
-{% if true %}
-code var expansion
-{% endif %}
-"
-...
