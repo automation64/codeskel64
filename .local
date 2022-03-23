@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Project development environment / Local variables
+#
+# * this file should be excluded from GIT
+# * source before .env
+#
+
+# Project base location. Adjust to your local GIT repo
+DEVCS64_ROOT="${HOME}/github/codeskel64"
+export DEVCS64_ROOT
