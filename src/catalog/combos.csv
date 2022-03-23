@@ -1,0 +1,6 @@
+# combo:collection:skeleton
+aplatform64-role:Ansible:molecule-aplatform64
+aplatform64-role:Ansible:role-aplatform64-full
+aplatform64-role:Licenses:git-coc
+aplatform64-role:Licenses:gnu-v3
+aplatform64-role:MarkDown:ansible-role-aplatform64

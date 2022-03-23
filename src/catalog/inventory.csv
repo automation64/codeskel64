@@ -30,3 +30,4 @@ MkDocs:configuration-readthedocs:d:configuration-readthedocs
 Python:modules-ansible:d:modules-ansible
 Terraform:module-basic:d:module-basic
 Terraform:module-registry:d:module-registry
+Combo:aplatform64-role:b:aplatform64-role
