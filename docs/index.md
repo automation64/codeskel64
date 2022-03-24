@@ -14,7 +14,8 @@
 ## Overview
 
 _CodeSkel64_ is a simple tool for creating initial project structures and code from skeletons.
-Skeletons can be single-file templates with replaceble tags or complext directory structures.
+Skeletons can be single-file templates with replaceable tags or complex directory structures.
+
 The current catalog is available on GitHub and open for contributions:
 
 | Collection                          | Content           |
@@ -41,12 +42,12 @@ Commands
     -d           : Download catalog to LIBRARY
     -l           : List collection and skeletons from LIBRARY
     -c           : Create initial code structure
-    
+
 Flags
 
     -w           : Overwrite target
     -h           : Show help
-    
+
 Parameters
 
     -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY (/home/serdigital64/.local/share/codeskel64)
@@ -58,6 +59,10 @@ Parameters
 
 ### Create new project or code
 
+Use this option to create new files or projects.
+
+For example:
+
 - Create new bash script:
 
 ```shell
@@ -66,11 +71,15 @@ codeskel64 -c -o Bash -k script-generic -t ~/MyBashProject -g new-bash-script
 
 ### List collections and skeletons
 
+Use this option to list available options from the local library
+
 ```shell
 codeskel64 -l
 ```
 
 ### Update local catalog
+
+Use this option to download the latest collections and skeletons from the CodeSkel64 GitHub repo
 
 ```shell
 codeskel64 -d
@@ -98,7 +107,7 @@ codeskel64 -d
 
 ### Installation
 
-Download *codeskel64* from the source GitHub repository:
+Download _codeskel64_ from the source GitHub repository:
 
 ```shell
 curl -O https://raw.githubusercontent.com/serdigital64/codeskel64/main/codeskel64
