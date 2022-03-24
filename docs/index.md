@@ -13,7 +13,7 @@
 
 ## Overview
 
-_CodeSkel64_ is a simple tool for creating initial project structures and code from skeletons.
+**CodeSkel64** is a simple tool for creating initial project structures and code from skeletons.
 Skeletons can be single-file templates with replaceable tags or complex directory structures.
 
 The current catalog is available on GitHub and open for contributions:
@@ -29,6 +29,14 @@ The current catalog is available on GitHub and open for contributions:
 | [MkDocs](src/catalog/MkDocs)        | MkDoc assets      |
 | [Python](src/catalog/Python)        | Python assets     |
 | [Terraforkm](src/catalog/Terraform) | Terraform assets  |
+
+In addition to single files and directories skeletons can be grouped together in the form of _combos_ to allow the creation of complete project structures:
+
+| Combo                | Content                                                                             |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| aplatform64-role     | Ansible A:Platform64 role                                                           |
+| git-generic          | GIT repository for generic project                                                  |
+| git-terraform-module | GIT repository for Terraform Module. Ready for publishing into Terraform's Registry |
 
 ## Usage
 
