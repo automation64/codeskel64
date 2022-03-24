@@ -1,42 +1,34 @@
-#!/bin/bash
-#######################################
-# Create initial code structure from skeletons and templates
 #
-# Author: serdigital64 (https://github.com/serdigital64)
-# License: GPL-3.0-or-later (https://www.gnu.org/licenses/gpl-3.0.txt)
-# Repository: https://github.com/serdigital64/codeskel64
-# Version: 1.2.0
-#######################################
+###[ embedded-bashlib64-end ]#####################
+#
 
-# shellcheck disable=SC1091
-source "${BASH_SOURCE[0]%/*}/bashlib64.bash" || { echo "Error: unable to load bashlib64" && exit 1; }
+#
+# CodeSkel64 Functions
+#
 
 function codeskel64_download() {
-  local library="$1"
 
   bl64_rxtx_git_get_dir \
     "$CODESKEL64_REPO" \
     'src/catalog' \
-    "$library" \
+    "$CODESKEL64_LIBRARY" \
     "$BL64_LIB_VAR_ON"
 
 }
 
 function codeskel64_list() {
-  local library="$1"
 
-  bl64_check_file "${library}/${CODESKEL64_PATH_INVENTORY}" || return 1
+  bl64_check_file "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" || return 1
 
-  "$BL64_OS_CMD_CAT" "${library}/${CODESKEL64_PATH_INVENTORY}"
+  "$BL64_OS_CMD_CAT" "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}"
 }
 
 function codeskel64_create_combo() {
-  local library="$1"
-  local project="$2"
-  local target="$3"
-  local overwrite="$4"
-  local source="$5"
-  local catalog="${library}/${CODESKEL64_PATH_COMBOS}"
+  local project="$1"
+  local target="$2"
+  local overwrite="$3"
+  local source="$4"
+  local catalog="${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_COMBOS}"
   declare -a combo
 
   bl64_check_file "$catalog" || return 1
@@ -46,7 +38,7 @@ function codeskel64_create_combo() {
     if [[ "${combo[0]}" == "$source" ]]; then
       unset IFS
       codeskel64_dispatch \
-        "$codeskel64_library" \
+        "$CODESKEL64_LIBRARY" \
         "$overwrite" \
         "${combo[1]}" \
         "${combo[2]}" \
@@ -79,7 +71,7 @@ function codeskel64_create_dir() {
   local overwrite="$3"
   local source="$4"
   local skeleton=''
-  local origin="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${source}"
+  local origin="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${source}"
 
   bl64_check_directory "$origin" || return 1
 
@@ -88,17 +80,16 @@ function codeskel64_create_dir() {
 }
 
 function codeskel64_create() {
-  local library="$1"
-  local overwrite="$2"
-  local collection="$3"
-  local skeleton="$4"
-  local project="$5"
-  local target="$6"
+  local overwrite="$1"
+  local collection="$2"
+  local skeleton="$3"
+  local project="$4"
+  local target="$5"
 
   bl64_check_parameter 'collection' &&
     bl64_check_parameter 'skeleton' &&
     bl64_check_parameter 'project' &&
-    bl64_check_file "${library}/${CODESKEL64_PATH_INVENTORY}" || return 1
+    bl64_check_file "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" || return 1
 
   if [[ -d "$project" ]]; then
     [[ "$overwrite" == "$BL64_LIB_VAR_OFF" ]] &&
@@ -110,7 +101,6 @@ function codeskel64_create() {
   fi
 
   codeskel64_dispatch \
-    "$codeskel64_library" \
     "$codeskel64_overwrite" \
     "$codeskel64_collection" \
     "$codeskel64_skeleton" \
@@ -120,19 +110,18 @@ function codeskel64_create() {
 }
 
 function codeskel64_dispatch() {
-  local library="$1"
-  local overwrite="$2"
-  local collection="$3"
-  local skeleton="$4"
-  local project="$5"
-  local target="$6"
+  local overwrite="$1"
+  local collection="$2"
+  local skeleton="$3"
+  local project="$4"
+  local target="$5"
   local source=''
   declare -a spec
 
   read -r -a spec < <(
     bl64_xsv_search_records \
       "${collection}${BL64_XSV_FS}${skeleton}" \
-      "${library}/${CODESKEL64_PATH_INVENTORY}" \
+      "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" \
       "${CODESKEL64_DB_COLLECTION}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SKELETON}" \
       "${CODESKEL64_DB_TYPE}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SOURCE}" \
       "$BL64_XSV_FS_COLON" \
@@ -141,7 +130,7 @@ function codeskel64_dispatch() {
 
   if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
     [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
-    source="${library}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
+    source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
     codeskel64_create_file "$project" "$target" "$overwrite" "$source"
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
     [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
@@ -149,7 +138,7 @@ function codeskel64_dispatch() {
     codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
     source="${skeleton}"
-    codeskel64_create_combo "$library" "$project" "$target" "$overwrite" "$source"
+    codeskel64_create_combo "$project" "$target" "$overwrite" "$source"
   else
     bl64_msg_show_error "skeleton not found (Collection: ${collection} / Skeleton: ${skeleton})"
     return 1
@@ -164,8 +153,8 @@ function codeskel64_check() {
 function codeskel64_help() {
 
   bl64_msg_show_usage \
-    '<-d|-l|-c> [-w] [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-h]' \
-    'Create initial code structure from skeletons and templates' \
+    '<-d|-l|-c> [-w] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-a LIBRARY] [-h]' \
+    'Create initial structure from skeletons and templates' \
     '
     -d           : Download catalog to LIBRARY
     -l           : List collection and skeletons from LIBRARY
@@ -174,11 +163,11 @@ function codeskel64_help() {
     -w           : Overwrite target
     -h           : Show help
     ' "
-    -a LIBRARY   : Library location. Default: ${XDG_DATA_HOME}/codeskel64
     -o COLLECTION: Collection name
     -k SKELETON  : Skeleton name
     -t PROJECT   : Destination full path
     -g TARGET    : New structure name. Default: skeleton's default
+    -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY ($CODESKEL64_LIBRARY)
     "
 
 }
@@ -186,6 +175,9 @@ function codeskel64_help() {
 #
 # Main
 #
+
+export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
+export CODESKEL64_LIBRARY="${CODESKEL64_LIBRARY:-${XDG_DATA_HOME}/codeskel64}"
 
 readonly CODESKEL64_PATH_COMBOS='combos.csv'
 readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
@@ -199,13 +191,10 @@ readonly CODESKEL64_TYPE_FILE='f'
 readonly CODESKEL64_TYPE_DIR='d'
 readonly CODESKEL64_TYPE_COMBO='b'
 
-export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
-
 declare codeskel64_status=1
 declare codeskel64_option=''
 declare codeskel64_command=''
 declare codeskel64_command_tag=''
-declare codeskel64_library="${XDG_DATA_HOME}/codeskel64"
 declare codeskel64_collection="$BL64_LIB_VAR_TBD"
 declare codeskel64_skeleton="$BL64_LIB_VAR_TBD"
 declare codeskel64_project="$BL64_LIB_VAR_TBD"
@@ -228,7 +217,7 @@ while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
     codeskel64_command_tag='create structure'
     ;;
   t) codeskel64_project="$OPTARG" ;;
-  a) codeskel64_library="$OPTARG" ;;
+  a) CODESKEL64_LIBRARY="$OPTARG" ;;
   w) codeskel64_overwrite="$BL64_LIB_VAR_ON" ;;
   o) codeskel64_collection="$OPTARG" ;;
   k) codeskel64_skeleton="$OPTARG" ;;
@@ -243,14 +232,13 @@ codeskel64_check || exit 1
 bl64_msg_show_batch_start "$codeskel64_command_tag"
 case "$codeskel64_command" in
 'codeskel64_download')
-  "$codeskel64_command" "$codeskel64_library"
+  "$codeskel64_command"
   ;;
 'codeskel64_list')
-  "$codeskel64_command" "$codeskel64_library" "$codeskel64_collection"
+  "$codeskel64_command" "$codeskel64_collection"
   ;;
 'codeskel64_create')
   "$codeskel64_command" \
-    "$codeskel64_library" \
     "$codeskel64_overwrite" \
     "$codeskel64_collection" \
     "$codeskel64_skeleton" \

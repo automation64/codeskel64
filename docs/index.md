@@ -11,11 +11,13 @@
   ░░░░░░░░░     ░░░░░░░    ░░░░░░░░░░   ░░░░░░░░░░  ░░░░░░░░░  ░░░░░   ░░░░ ░░░░░░░░░░ ░░░░░░░░░░░  ░░░░░░░░        ░░░░░
 ```
 
-Collection of skeletons, boilerplates, templates, code examples and sample data for development tools and languages.
+## Overview
 
-## Content
+_CodeSkel64_ is a simple tool for creating initial project structures and code from skeletons.
+Skeletons can be single-file templates with replaceble tags or complext directory structures.
+The current catalog is available on GitHub and open for contributions:
 
-| Section                             | Content           |
+| Collection                          | Content           |
 | ----------------------------------- | ----------------- |
 | [Ansible](src/catalog/Ansible)      | Ansible assets    |
 | [Bash](src/catalog/Bash)            | Bash assets       |
@@ -29,56 +31,129 @@ Collection of skeletons, boilerplates, templates, code examples and sample data 
 
 ## Usage
 
-1. Copy the skeleton to the target project
-2. Use text find/replace to populate tags. See below the [Replacement Table] for common values.
-3. Insert your code
+```text
+Usage: codeskel64 <-d|-l|-c> [-w] [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-h]
 
-### Replacement Table
+Create initial structure from skeletons and templates
 
-| Tag                         | Purpose                                                           |
-| --------------------------- | ----------------------------------------------------------------- |
-| X_PROJECT_INFO_X            | Project / Short description                                       |
-| X_PROJECT_TAGS_X            | Project / Tag list (markdown format)                              |
-| X_PROJECT_DESCRIPTION_X     | Project / Full description                                        |
-| X_PROJECT_NAME_CLI_X        | Project / Name as used in the command line (lowercase, no spaces) |
-| X_PROJECT_NAME_CAPS_X       | Project / Same as above, but in all caps                          |
-| X_PROJECT_NAME_NICE_X       | Project / Name with nice formatting for docs                      |
-| X_PROJECT_NAME_DEV_X        | Project / Alias for dev variables and files (eg: devxxx)          |
-| X_PROJECT_NAME_DEV_CAPS_X   | Project / Same as above, but in all caps (eg: DEVXXX)             |
-| X_PROJECT_GIT_URL_X         | Project / GIT Repo URL                                            |
-| X_PROJECT_DOC_URL_X         | Project / Doc site URL                                            |
-| X_PROJECT_COC_URL_X         | Project / Code of Conduct URL                                     |
-| X_PROJECT_LICENSE_X         | Project / License                                                 |
-| X_PROJECT_GUILDELINES_URL_X | Project / Guidelines URL                                          |
-| X_PROJECT_NAMESPACE_X       | Project / Namespace for function and variable names               |
-| X_AUTHOR_NAME_X             | Author / Full name                                                |
-| X_AUTHOR_ALIAS_X            | Author / Alias, short-name, or AKA                                |
-| X_AUTHOR_GIT_URL_X          | Author / GIT repo                                                 |
-| X_AUTHOR_HOME_URL_X         | Author / Home page                                                |
-| X_AUTHOR_GA4_TAG_X          | Author / Google analytics GA4 tag                                 |
-| X_APP_NAME_CLI_X            | App / Name as used in the command line                            |
-| X_APP_NAME_NICE_X           | App / Name with nice formatting for docs                          |
-| X_APP_INFO_X                | App / Short description                                           |
-| X_APP_DESCRIPTION_X         | App / Full description                                            |
-| X_APP_TAGS_X                | App / Tag list (markdown format)                                  |
-| X_APP_VERSION_X             | App / Version                                                     |
-| X_APP_NAMESPACE_X           | App / Namespace for function and variables names                  |
-| X_LIB_NAME_CLI_X            | Library / Name as used in import statement                        |
-| X_LIB_NAME_NICE_X           | Library / Name with nice formatting for docs                      |
-| X_LIB_INFO_X                | Library / Short description                                       |
-| X_LIB_VERSION_X             | Library / Version                                                 |
-| X_LIB_NAMESPACE_X           | Library / Namespace for function and variables names              |
-| X_FUNCTION_NAME_CLI_X       | Function / Name as used in call statement                         |
-| X_FUNCTION_INFO_X           | Function / Short description                                      |
+Commands
 
-## Repository
+    -d           : Download catalog to LIBRARY
+    -l           : List collection and skeletons from LIBRARY
+    -c           : Create initial code structure
+    
+Flags
+
+    -w           : Overwrite target
+    -h           : Show help
+    
+Parameters
+
+    -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY (/home/serdigital64/.local/share/codeskel64)
+    -o COLLECTION: Collection name
+    -k SKELETON  : Skeleton name
+    -t PROJECT   : Destination full path
+    -g TARGET    : New structure name. Default: skeleton's default
+```
+
+### Create new project or code
+
+- Create new bash script:
+
+```shell
+codeskel64 -c -o Bash -k script-generic -t ~/MyBashProject -g new-bash-script
+```
+
+### List collections and skeletons
+
+```shell
+codeskel64 -l
+```
+
+### Update local catalog
+
+```shell
+codeskel64 -d
+```
+
+## Deployment
+
+### OS Compatibility
+
+- AlmaLinux8
+- Alpine3
+- CentOS8
+- Debian10
+- Debian11
+- Fedora33
+- Fedora35
+- OracleLinux8
+- RedHatLinux8
+- Ubuntu20
+- Ubuntu21
+
+### Prerequisites
+
+- Bash
+
+### Installation
+
+Download *codeskel64* from the source GitHub repository:
+
+```shell
+curl -O https://raw.githubusercontent.com/serdigital64/codeskel64/main/codeskel64
+chmod 0755 codeskel64
+# Optional: move to searchable path
+mv codeskel64 ~/.local/bin
+```
+
+Update the skeleton library:
+
+```shell
+codeskel64 -d
+```
+
+## Development
+
+### Environment
+
+- Prepare dev tools
+  - Install GIT
+- Clone GIT repository
+
+```shell
+git clone https://github.com/serdigital64/codeskel64.git
+```
+
+- Adjust environment variables to reflect your configuration:
+
+```shell
+# Copy environment definition files from templates:
+cp dot.local .local
+cp dot.secrets .secrets
+# Review and update content for both files
+```
+
+- Initialize dev environment variables
+
+```shell
+source bin/devcs-set
+```
+
+### Repositories
 
 - Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
 
-## Author
+## Contributing
 
-- [SerDigital64](https://serdigital64.github.io/)
+Help on implementing new features and maintaining the code base is welcomed.
+
+[Contributor Covenant Code of Conduct](CODE_OF_CONDUCT)
 
 ## License
 
 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+
+## Author
+
+- [SerDigital64](https://serdigital64.github.io/)
