@@ -15,8 +15,8 @@ GIT:terraform-module-registry:d:terraform-module-registry
 Licenses:apache-v2:f:LICENSE
 Licenses:git-coc:f:CODE_OF_CONDUCT.md
 Licenses:gnu-v3:f:COPYING
-MarkDown:project-generic:f:README.md
-MarkDown:project-generic:f:CHANGELOG.md
+MarkDown:project-generic-readme:f:README.md
+MarkDown:project-generic-changelog:f:CHANGELOG.md
 MarkDown:bash-generic:f:README.md
 MarkDown:terraform-generic:f:module-registry.md
 MarkDown:terraform-terra4aws64:f:README.md
@@ -31,3 +31,4 @@ Python:modules-ansible:d:modules-ansible
 Terraform:module-basic:d:module-basic
 Terraform:module-registry:d:module-registry
 Combo:aplatform64-role:b:aplatform64-role
+Combo:git-generic:b:git-generic

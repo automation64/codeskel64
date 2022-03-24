@@ -4,3 +4,8 @@ aplatform64-role:Ansible:role-aplatform64-full
 aplatform64-role:Licenses:git-coc
 aplatform64-role:Licenses:gnu-v3
 aplatform64-role:MarkDown:ansible-role-aplatform64
+git-generic:GIT:generic
+git-generic:Licenses:git-coc
+git-generic:Licenses:gnu-v3
+git-generic:MarkDown:project-generic-readme
+git-generic:MarkDown:project-generic-changelog
