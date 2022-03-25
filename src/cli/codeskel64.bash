@@ -19,16 +19,17 @@ function codeskel64_download() {
 function codeskel64_list() {
 
   bl64_check_file "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" || return 1
-
-  "$BL64_OS_CMD_CAT" "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}"
+  bl64_xsv_dump "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}"
 }
 
 function codeskel64_create_combo() {
+
   local project="$1"
   local target="$2"
   local overwrite="$3"
   local source="$4"
   local catalog="${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_COMBOS}"
+  local -i found=1
   declare -a combo
 
   bl64_check_file "$catalog" || return 1
@@ -36,9 +37,9 @@ function codeskel64_create_combo() {
   IFS=':'
   while read -r -a combo; do
     if [[ "${combo[0]}" == "$source" ]]; then
+      found=0
       unset IFS
       codeskel64_dispatch \
-        "$CODESKEL64_LIBRARY" \
         "$overwrite" \
         "${combo[1]}" \
         "${combo[2]}" \
@@ -46,8 +47,10 @@ function codeskel64_create_combo() {
         "$BL64_LIB_VAR_TBD"
       IFS=':'
     fi
-  done <"$catalog"
+  done < <(bl64_xsv_dump "$catalog")
+  ((found == 1)) && bl64_msg_show_error "undefined combo: [$source]"
 
+  return $found
 }
 
 function codeskel64_create_file() {
@@ -71,11 +74,51 @@ function codeskel64_create_dir() {
   local overwrite="$3"
   local source="$4"
   local skeleton=''
-  local origin="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${source}"
 
-  bl64_check_directory "$origin" || return 1
+  bl64_check_directory "$source" || return 1
 
-  bl64_os_merge_dir "$origin" "$project"
+  bl64_os_merge_dir "$source" "$project"
+
+}
+
+function codeskel64_dispatch() {
+  local overwrite="$1"
+  local collection="$2"
+  local skeleton="$3"
+  local project="$4"
+  local target="$5"
+  local source=''
+  local -a spec
+
+  read -r -a spec < <(
+    bl64_xsv_search_records \
+      "${collection}${BL64_XSV_FS}${skeleton}" \
+      "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" \
+      "${CODESKEL64_DB_COLLECTION}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SKELETON}" \
+      "${CODESKEL64_DB_TYPE}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SOURCE}" \
+      "$BL64_XSV_FS_COLON" \
+      "$BL64_XSV_FS_SPACE"
+  )
+  [[ "${#spec[@]}" == 0 ]] && bl64_msg_show_error "skeleton not found: [${collection}/${skeleton}]" && return 1
+
+  if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
+    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
+    source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
+    bl64_msg_show_task "create new file using the [${collection}/${skeleton}] skeleton"
+    codeskel64_create_file "$project" "$target" "$overwrite" "$source"
+  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
+    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
+    source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}"
+    bl64_msg_show_task "create new structure using the [${collection}/${skeleton}] skeleton"
+    codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
+  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
+    bl64_msg_show_task "create new project structure using the [${skeleton}] skeleton "
+    source="${skeleton}"
+    codeskel64_create_combo "$project" "$target" "$overwrite" "$source"
+  else
+    bl64_msg_show_error "skeleton not found: [${collection}/${skeleton}]"
+    return 1
+  fi
 
 }
 
@@ -106,43 +149,6 @@ function codeskel64_create() {
     "$codeskel64_skeleton" \
     "$codeskel64_project" \
     "$codeskel64_target"
-
-}
-
-function codeskel64_dispatch() {
-  local overwrite="$1"
-  local collection="$2"
-  local skeleton="$3"
-  local project="$4"
-  local target="$5"
-  local source=''
-  declare -a spec
-
-  read -r -a spec < <(
-    bl64_xsv_search_records \
-      "${collection}${BL64_XSV_FS}${skeleton}" \
-      "${CODESKEL64_LIBRARY}/${CODESKEL64_PATH_INVENTORY}" \
-      "${CODESKEL64_DB_COLLECTION}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SKELETON}" \
-      "${CODESKEL64_DB_TYPE}${BL64_XSV_FS_COLON}${CODESKEL64_DB_SOURCE}" \
-      "$BL64_XSV_FS_COLON" \
-      "$BL64_XSV_FS_SPACE"
-  ) || return 1
-
-  if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
-    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
-    source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
-    codeskel64_create_file "$project" "$target" "$overwrite" "$source"
-  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
-    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
-    source="${skeleton}"
-    codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
-  elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
-    source="${skeleton}"
-    codeskel64_create_combo "$project" "$target" "$overwrite" "$source"
-  else
-    bl64_msg_show_error "skeleton not found (Collection: ${collection} / Skeleton: ${skeleton})"
-    return 1
-  fi
 
 }
 
@@ -228,6 +234,7 @@ while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
 done
 [[ -z "$codeskel64_command" ]] && codeskel64_help && exit 1
 codeskel64_check || exit 1
+bl64_msg_setup "$BL64_MSG_FORMAT_PLAIN"
 
 bl64_msg_show_batch_start "$codeskel64_command_tag"
 case "$codeskel64_command" in
