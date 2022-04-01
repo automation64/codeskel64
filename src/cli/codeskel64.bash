@@ -112,7 +112,7 @@ function codeskel64_dispatch() {
     bl64_msg_show_task "create new structure using the [${collection}/${skeleton}] skeleton"
     codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
-    bl64_msg_show_task "create new project structure using the [${skeleton}] skeleton "
+    bl64_msg_show_task "create new project structure using the [${skeleton}] combo"
     source="${skeleton}"
     codeskel64_create_combo "$project" "$target" "$overwrite" "$source"
   else
