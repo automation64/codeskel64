@@ -1,6 +1,10 @@
-// template: 170322
+//
+// Settings Template Version: 040422
+// VSCode Version: >= 1.66
+//
+// Static settings section. Use to keep read-only settings that will only be modified when updating from the master template.
+//
 {
-  "ansible.executionEnvironment.containerEngine": "podman",
   "aws.telemetry": false,
   "azureTerraform.checkTerraformCmd": false,
   "azureTerraform.files": "**/*.{rb,sh,tf,tfvars}",
@@ -15,9 +19,6 @@
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 1,
-  "editor.fontFamily": "'MesloLGS NF'",
-  "editor.fontSize": 12,
-  "editor.inlayHints.fontFamily": "'MesloLGS NF'",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
@@ -107,61 +108,6 @@
     "**/*.css",
     "**/*.scss"
   ],
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "code-runner.executorMap": {
-    "javascript": "node",
-    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "php": "php",
-    "python": "python -u",
-    "perl": "perl",
-    "perl6": "perl6",
-    "ruby": "ruby",
-    "go": "go run",
-    "lua": "lua",
-    "groovy": "groovy",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "cmd /c",
-    "shellscript": "bash",
-    "fsharp": "fsi",
-    "csharp": "scriptcs",
-    "vbscript": "cscript //Nologo",
-    "typescript": "ts-node",
-    "coffeescript": "coffee",
-    "scala": "scala",
-    "swift": "swift",
-    "julia": "julia",
-    "crystal": "crystal",
-    "ocaml": "ocaml",
-    "r": "Rscript",
-    "applescript": "osascript",
-    "clojure": "lein exec",
-    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
-    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
-    "racket": "racket",
-    "scheme": "csi -script",
-    "ahk": "autohotkey",
-    "autoit": "autoit3",
-    "dart": "dart",
-    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
-    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
-    "haskell": "runhaskell",
-    "nim": "nim compile --verbosity:0 --hints:off --run",
-    "lisp": "sbcl --script",
-    "kit": "kitc --run",
-    "v": "v run",
-    "sass": "sass --style expanded",
-    "scss": "scss --style expanded",
-    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
-    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -285,38 +231,6 @@
       "value": "#42b883"
     }
   ],
-  "files.associations": {
-    "*.tsv": "tsv",
-    "*.toml": "toml",
-    "*.bash": "shellscript",
-    "*.sh": "shellscript",
-    "*.ini.j2": "jinja-toml",
-    "*.toml.j2": "jinja-toml",
-    "*.yml.j2": "jinja-yaml",
-    "*.sh.j2": "jinja-shell",
-    "*.json.j2": "jinja-json",
-    "*.service.j2": "jinja-systemd",
-    "*.yml": "ansible",
-    "*.html": "html"
-  },
-  "search.exclude": {
-    "**/.git": true,
-    "**/.cache": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.vscode": true,
-    "**/build": true,
-    "**/dist": true
-  },
-  "files.exclude": {
-    "**/.cache": true,
-    "**/.classpath": true,
-    "**/.factorypath": true,
-    "**/.project": true,
-    "**/.settings": true
-  },
   "peacock.darkForegroundColor": "",
   "peacock.lightForegroundColor": "",
   "terminal.integrated.profiles.linux": {
@@ -380,11 +294,83 @@
     "javascriptreact",
     "typescriptreact"
   ],
-  // Project specific defaults. Customize as needed
+  "files.associations": {
+    "*.tsv": "tsv",
+    "*.toml": "toml",
+    "*.bash": "shellscript",
+    "*.sh": "shellscript",
+    "*.ini.j2": "jinja-toml",
+    "*.toml.j2": "jinja-toml",
+    "*.yml.j2": "jinja-yaml",
+    "*.sh.j2": "jinja-shell",
+    "*.json.j2": "jinja-json",
+    "*.service.j2": "jinja-systemd",
+    "*.yml": "ansible",
+    "*.html": "html"
+  },
+  //
+  // Local defaults section. Use to isolate settings that should not be replaced when updating from the master template
+  //
+  "editor.fontFamily": "'MesloLGS NF'",
+  "editor.inlayHints.fontFamily": "'MesloLGS NF'",
   "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Night Owl",
   "workbench.productIconTheme": "fluent-icons",
-  "workbench.sideBar.location": "right"
-  // Project specific settings. Use this section to add settings not included in the source skeleton
+  "workbench.sideBar.location": "right",
+  "editor.fontSize": 11,
+  "scm.inputFontSize": 11,
+  "debug.console.fontSize": 11,
+  "markdown.preview.fontSize": 11,
+  "preview.preview.fontSize": 11,
+  "terminal.integrated.fontSize": 11,
+  "ansible.executionEnvironment.containerEngine": "podman",
+  "search.exclude": {
+    "**/.git": true,
+    "**/.cache": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.vscode": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  "files.exclude": {
+    "**/.cache": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.tmp/*": true,
+    "**/.var/*": true,
+    "**/.cache/*": true,
+    "**/build/*": true
+  },
+  "cSpell.words": [
+    "centos",
+    "cloudutils",
+    "distro",
+    "drawio",
+    "flatpak",
+    "iptraf",
+    "keepassx",
+    "localds",
+    "nmcli",
+    "resolv",
+    "runcmd",
+    "spotify",
+    "tcpdump",
+    "tilix",
+    "vcpu",
+    "xmind"
+  ],
+  //
+  // Runtime section. Use this section to isolate local changes made automatically by VSCode
+  //
 }
