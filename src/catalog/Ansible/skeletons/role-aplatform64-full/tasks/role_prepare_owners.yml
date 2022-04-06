@@ -4,7 +4,7 @@
     sys_user:
       setup: true
     sys_user_accounts:
-      - name: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['name'] }}"
+      - name: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['user'] }}"
         home: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['home'] }}"
         group: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['group'] }}"
         locked: false
