@@ -1,0 +1,9 @@
+- name: "Detect target path"
+  ansible.builtin.stat:
+    path: ""
+  register: file_stat
+
+- name: "Verify path is created"
+  ansible.builtin.assert:
+    that:
+      - file_stat['stat']['exists']

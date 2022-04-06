@@ -2,6 +2,7 @@
 X_ROLE_NAME_X_application:
   name: "X_APP_ID_X"
   type: "X_APP_TYPE_X"
+  #type: "{{ (ansible_distribution == 'MacOSX') | ternary('brew', 'distro') }}"
   version: "X_APP_VERSION_X"
   installed: true
 
@@ -16,11 +17,12 @@ X_ROLE_NAME_X_server:
   X_DEFAULT_SERVER_OPTION_X: "X_DEFAULT_SERVER_OPTION_VALUE_X"
 
 X_ROLE_NAME_X_paths:
+  # root: "X_ROOT_PATH_VALUE_X"
   X_DEFAULT_PATH_X: "X_DEFAULT_PATH_VALUE_X"
 
 X_ROLE_NAME_X_owners:
   X_DEFAULT_USER_X:
-    name: "X_DEFAULT_USER_NAME_X"
+    user: "X_DEFAULT_USER_NAME_X"
     group: "X_DEFAULT_USER_GROUP_X"
     home: "X_DEFAULT_USER_HOME_X"
 

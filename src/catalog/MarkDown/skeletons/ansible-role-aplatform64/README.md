@@ -126,14 +126,7 @@ X_ROLE_NAME_X_setup_users:
 
 ### OS Compatibility
 
-- CentOS8
-- OracleLinux8
-- Ubuntu20
-- Ubuntu21
-- Fedora33
-- Fedora35
-- Debian10
-- Debian11
+The operating system compatibility list is defined in the variable: `X_ROLE_NAME_X_platforms`
 
 ### Dependencies
 
