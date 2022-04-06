@@ -11,6 +11,7 @@
       snap: "{{ X_ROLE_NAME_X_application['type'] == 'snap' }}"
       git: "{{ X_ROLE_NAME_X_application['type'] == 'git' }}"
       pip: "{{ X_ROLE_NAME_X_application['type'] == 'pip' }}"
+      brew: "{{ X_ROLE_NAME_X_application['type'] == 'brew' }}"
     sys_repository_catalog_distro: "{{ X_ROLE_NAME_X_repository_catalog_distro }}"
     sys_repository_catalog_yum: "{{ X_ROLE_NAME_X_repository_catalog_yum }}"
     sys_repository_catalog_apt: "{{ X_ROLE_NAME_X_repository_catalog_apt }}"

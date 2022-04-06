@@ -1,0 +1,11 @@
+---
+- name: ""
+  become: true
+  ansible.builtin.command:
+    argv:
+      - "/bin/su"
+      - "-l"
+      - "-c"
+      - "<COMMAND>"
+      - "<RUN_AS_USER>"
+...

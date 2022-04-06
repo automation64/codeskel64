@@ -18,7 +18,7 @@ X_ROLE_NAME_X_base:
   # access:
   #   user:
   #     owner: "root"
-  #     X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['name'] }}"
+  #     X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['user'] }}"
   #   group:
   #     owner: "root"
   #     X_DEFAULT_USER_X: "{{ X_ROLE_NAME_X_owners['X_DEFAULT_USER_X']['group'] }}"
@@ -32,6 +32,7 @@ X_ROLE_NAME_X_profiles:
   snap: "{{ X_ROLE_NAME_X_profiles_common['snap'] }}"
   flatpak: "{{ X_ROLE_NAME_X_profiles_common['flatpak'] }}"
   pip: "{{ X_ROLE_NAME_X_profiles_common['pip'] }}"
+  brew: "{{ X_ROLE_NAME_X_profiles_common['brew'] }}"
   distro: {}
   # distro:
   #   X_APP_VERSION_X:
