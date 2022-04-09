@@ -10,7 +10,7 @@ function codeskel64_download() {
 
   bl64_rxtx_git_get_dir \
     "$CODESKEL64_REPO" \
-    'src/catalog' \
+    '.' \
     "$CODESKEL64_LIBRARY" \
     "$BL64_LIB_VAR_ON"
 
@@ -188,7 +188,7 @@ export CODESKEL64_LIBRARY="${CODESKEL64_LIBRARY:-${XDG_DATA_HOME}/codeskel64}"
 readonly CODESKEL64_PATH_COMBOS='combos.csv'
 readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
 readonly CODESKEL64_PATH_SKELETONS='skeletons'
-readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64.git'
+readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64-catalog.git'
 readonly CODESKEL64_DB_COLLECTION='1'
 readonly CODESKEL64_DB_SKELETON='2'
 readonly CODESKEL64_DB_TYPE='3'
