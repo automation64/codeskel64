@@ -6,4 +6,14 @@
 # test_X_ROLE_NAME_X_setup_users:
 #   - user: "{{ test_user }}"
 #     home: "{{ test_home }}"
+# test_X_ROLE_NAME_X_application_brew:
+#   name: "X_APP_ID_X"
+#   type: "brew"
+#   version: "latest"
+#   installed: true
+# test_X_ROLE_NAME_X_application_flatpak:
+#   name: "X_APP_ID_X"
+#   type: "flatpak"
+#   version: "latest"
+#   installed: true
 ...

@@ -17,6 +17,7 @@
       vars:
         X_ROLE_NAME_X:
           deploy: true
+        X_ROLE_NAME_X_application: "{{ test_X_ROLE_NAME_X_application_flatpak }}"
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"
 ...

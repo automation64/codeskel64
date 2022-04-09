@@ -10,6 +10,15 @@ X_ROLE_NAME_X_base:
   # TODO: Remove this snippet if not used
   # paths:
   #   X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
+  # paths:
+  #   distro:
+  #     X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
+  #   brew:
+  #     X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
+  #   flatpak:
+  #     X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
+  #   snap:
+  #     X_BASE_PATH_X: "{{ X_ROLE_NAME_X_paths['X_DEFAULT_PATH_X'] | default('X_DEFAULT_PATH_VALUE_X') }}"
   # etc:
   #   X_BASE_ETC_X: "X_BASE_ETC_VALUE_X"
   # files:
@@ -35,20 +44,9 @@ X_ROLE_NAME_X_profiles:
   pip: "{{ X_ROLE_NAME_X_profiles_common['pip'] }}"
   brew: "{{ X_ROLE_NAME_X_profiles_common['brew'] }}"
   distro: {}
-  # TODO: Remove this snippet if not used
-  # distro:
-  #   X_APP_VERSION_X:
-  #     supported: true
-  #     packages:
-  #       - name: "X_APP_PACKAGE_X"
 
 # Define custom package repositories
 X_ROLE_NAME_X_repository_custom_yum: []
-  # TODO: Remove this snippet if not used
-  # - name: "X_YUM_REPO_X"
-  #   description: "X_YUM_INFO_X"
-  #   url: "X_YUM_URL_X"
-  #   gpgkey: "X_YUM_GPG_X"
 X_ROLE_NAME_X_repository_custom_apt: []
 
 # Set package repositories states

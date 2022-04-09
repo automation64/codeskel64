@@ -15,8 +15,10 @@
     sys_repository_catalog_distro: "{{ X_ROLE_NAME_X_repository_catalog_distro }}"
     sys_repository_catalog_yum: "{{ X_ROLE_NAME_X_repository_catalog_yum }}"
     sys_repository_catalog_apt: "{{ X_ROLE_NAME_X_repository_catalog_apt }}"
+    sys_repository_catalog_brew: "{{ X_ROLE_NAME_X_repository_catalog_brew }}"
     sys_repository_custom_yum: "{{ X_ROLE_NAME_X_repository_custom_yum }}"
     sys_repository_custom_apt: "{{ X_ROLE_NAME_X_repository_custom_apt }}"
+    sys_repository_custom_brew: "{{ X_ROLE_NAME_X_repository_custom_brew }}"
   ansible.builtin.include_role:
     name: "serdigital64.system.sys_repository"
 
