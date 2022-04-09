@@ -104,6 +104,16 @@ X_ROLE_NAME_X_base_common:
   # etc:
   #   X_BASE_ETC_X: "X_BASE_ETC_VALUE_X"
 
+# Define custom package repositories
+X_ROLE_NAME_X_repository_custom_brew: []
+  # TODO: Remove this snippet if not used
+  # - name: "X_BREW_REPO_X"
+  #   url: "X_BREW_SRC_X"
+
+# Set package repositories states
+X_ROLE_NAME_X_repository_catalog_brew: {}
+  # X_BREW_REPO_X: true
+
 # Build firewall rules based on end-state requirements
 X_ROLE_NAME_X_firewall_rules:
   - id: "X_FWE_RULE"

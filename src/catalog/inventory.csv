@@ -29,8 +29,7 @@ MarkDown:ansible-playbook-aplatform64:f:README.md
 MkDocs:configuration-material:d:configuration-material
 MkDocs:configuration-readthedocs:d:configuration-readthedocs
 Python:modules-ansible:d:modules-ansible
-Terraform:module-basic:d:module-basic
-Terraform:module-registry:d:module-registry
+Terraform:module-generic:d:module-generic
 VSCode:configuration-full:d:.vscode
 Combo:aplatform64-role:b:aplatform64-role
 Combo:git-generic:b:git-generic

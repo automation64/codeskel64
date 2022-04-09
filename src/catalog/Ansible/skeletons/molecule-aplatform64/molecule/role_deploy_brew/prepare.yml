@@ -18,7 +18,7 @@
         X_ROLE_NAME_X:
           resolve_prereq: true
           prepare: true
-        X_ROLE_NAME_X_application: "{{ test_X_ROLE_NAME_X_application_flatpak }}"
+        X_ROLE_NAME_X_application: "{{ test_X_ROLE_NAME_X_application_brew }}"
       ansible.builtin.include_role:
         name: "X_ROLE_NAME_X"
 ...
