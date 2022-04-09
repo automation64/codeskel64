@@ -1,8 +1,0 @@
----
-- name: ""
-  ansible.builtin.systemd:
-    no_block: false
-    scope: "system"
-    enabled: "{{ }}"
-    name: "{{ }}"
-...

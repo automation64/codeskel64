@@ -1,4 +1,0 @@
-- name: "Remove test directory: "
-  ansible.builtin.file:
-    state: "absent"
-    path: "{{ test_path }}"

@@ -1,8 +1,0 @@
----
-- name: ""
-  ansible.builtin.assert:
-    quiet: true
-    fail_msg: ""
-    that:
-      - true
-...
