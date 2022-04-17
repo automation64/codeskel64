@@ -44,7 +44,7 @@ function codeskel64_create_combo() {
         "${combo[1]}" \
         "${combo[2]}" \
         "$project" \
-        "$BL64_LIB_VAR_TBD"
+        "$BL64_LIB_DEFAULT"
       IFS=':'
     fi
   done < <(bl64_xsv_dump "$catalog")
@@ -64,7 +64,7 @@ function codeskel64_create_file() {
   [[ "$overwrite" == "$BL64_LIB_VAR_OFF" && -f "$destination" ]] &&
     bl64_msg_show_error "target file is already created ($destination)" && return 1
 
-  bl64_os_cp_file "$source" "$destination"
+  bl64_fs_cp_file "$source" "$destination"
 
 }
 
@@ -77,7 +77,7 @@ function codeskel64_create_dir() {
 
   bl64_check_directory "$source" || return 1
 
-  bl64_os_merge_dir "$source" "$project"
+  bl64_fs_merge_dir "$source" "$project"
 
 }
 
@@ -102,12 +102,12 @@ function codeskel64_dispatch() {
   [[ "${#spec[@]}" == 0 ]] && bl64_msg_show_error "skeleton not found: [${collection}/${skeleton}]" && return 1
 
   if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
-    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
+    [[ "$target" == "$BL64_LIB_DEFAULT" ]] && target="${spec[1]}"
     source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
     bl64_msg_show_task "create new file using the [${collection}/${skeleton}] skeleton"
     codeskel64_create_file "$project" "$target" "$overwrite" "$source"
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
-    [[ "$target" == "$BL64_LIB_VAR_TBD" ]] && target="${spec[1]}"
+    [[ "$target" == "$BL64_LIB_DEFAULT" ]] && target="${spec[1]}"
     source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}"
     bl64_msg_show_task "create new structure using the [${collection}/${skeleton}] skeleton"
     codeskel64_create_dir "$project" "$target" "$overwrite" "$source"
@@ -201,10 +201,10 @@ declare codeskel64_status=1
 declare codeskel64_option=''
 declare codeskel64_command=''
 declare codeskel64_command_tag=''
-declare codeskel64_collection="$BL64_LIB_VAR_TBD"
-declare codeskel64_skeleton="$BL64_LIB_VAR_TBD"
-declare codeskel64_project="$BL64_LIB_VAR_TBD"
-declare codeskel64_target="$BL64_LIB_VAR_TBD"
+declare codeskel64_collection="$BL64_LIB_DEFAULT"
+declare codeskel64_skeleton="$BL64_LIB_DEFAULT"
+declare codeskel64_project="$BL64_LIB_DEFAULT"
+declare codeskel64_target="$BL64_LIB_DEFAULT"
 declare codeskel64_overwrite="$BL64_LIB_VAR_OFF"
 
 (($# == 0)) && codeskel64_help && exit 1
