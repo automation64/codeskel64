@@ -7,5 +7,5 @@
 #
 
 # Project base location. Adjust to your local GIT repo
-DEVCS64_ROOT="${HOME}/github/codeskel64"
-export DEVCS64_ROOT
+DEVCS_ROOT="${HOME}/github/codeskel64"
+export DEVCS_ROOT
