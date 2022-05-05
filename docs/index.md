@@ -41,7 +41,7 @@ In addition to single files and directories skeletons can be grouped together in
 ## Usage
 
 ```text
-Usage: codeskel64 <-d|-l|-c> [-w] [-a LIBRARY] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-h]
+Usage: codeskel64 <-d|-l|-c> [-w] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-a LIBRARY] [-h]
 
 Create initial structure from skeletons and templates
 
@@ -58,11 +58,11 @@ Flags
 
 Parameters
 
-    -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY (/home/serdigital64/.local/share/codeskel64)
     -o COLLECTION: Collection name
     -k SKELETON  : Skeleton name
     -t PROJECT   : Destination full path
     -g TARGET    : New structure name. Default: skeleton's default
+    -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY (/home/serdigital64/.local/share/codeskel64)
 ```
 
 ### Create new project or code

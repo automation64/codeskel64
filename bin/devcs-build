@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source bin/devcs-set || exit 1
-source "$DEVCS_BIN/bashlib64.bash"
+source "$DEVCS_LIB_BASHLIB64"
 
 bl64_fs_rm_file "$DEVCS_BUILD_PROD"
 bl64_fs_merge_files \
@@ -9,6 +9,6 @@ bl64_fs_merge_files \
   "$BL64_LIB_DEFAULT" \
   "$BL64_LIB_DEFAULT" \
   "$DEVCS_BUILD_PROD" \
-  "$DEVCS_SRC/cli/codeskel64.header" \
-  "$DEVCS_SRC/cli/bashlib64.bash" \
-  "$DEVCS_SRC/cli/codeskel64.bash"
+  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}.header" \
+  "$DEVCS_LIB_BASHLIB64" \
+  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}.bash" \
