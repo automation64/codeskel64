@@ -11,4 +11,5 @@ bl64_fs_merge_files \
   "$DEVCS_BUILD_PROD" \
   "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}.header" \
   "$DEVCS_LIB_BASHLIB64" \
+  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}.env" \
   "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}.bash" \
