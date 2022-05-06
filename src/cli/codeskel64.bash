@@ -3,7 +3,7 @@
 #
 
 #
-# CodeSkel64 Functions
+# Functions
 #
 
 function codeskel64_download() {
@@ -153,13 +153,13 @@ function codeskel64_create() {
 }
 
 function codeskel64_check() {
-  :
+  [[ -z "$codeskel64_command" ]] && codeskel64_help && return 1
 }
 
 function codeskel64_help() {
 
   bl64_msg_show_usage \
-    '<-d|-l|-c> [-w] [-o COLLECTION] [-k SKELETON] [-t PROJECT] [-g TARGET] [-a LIBRARY] [-h]' \
+    '<-d|-l|-c> [-w] [-o Collection] [-k Skeleton] [-t Project] [-g Target] [-a Library] [-h]' \
     'Create initial structure from skeletons and templates' \
     '
     -d           : Download catalog to LIBRARY
@@ -169,11 +169,11 @@ function codeskel64_help() {
     -w           : Overwrite target
     -h           : Show help
     ' "
-    -o COLLECTION: Collection name
-    -k SKELETON  : Skeleton name
-    -t PROJECT   : Destination full path
-    -g TARGET    : New structure name. Default: skeleton's default
-    -a LIBRARY   : Library location. Default: CODESKEL64_LIBRARY ($CODESKEL64_LIBRARY)
+    -o Collection: Collection name
+    -k Skeleton  : Skeleton name
+    -t Project   : Destination full path
+    -g Target    : New structure name. Default: skeleton's default
+    -a Library   : Library location. Default: XDG_DATA_HOME/codeskel64
     "
 
 }
@@ -181,21 +181,6 @@ function codeskel64_help() {
 #
 # Main
 #
-
-export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
-export CODESKEL64_LIBRARY="${CODESKEL64_LIBRARY:-${XDG_DATA_HOME}/codeskel64}"
-
-readonly CODESKEL64_PATH_COMBOS='combos.csv'
-readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
-readonly CODESKEL64_PATH_SKELETONS='skeletons'
-readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64-catalog.git'
-readonly CODESKEL64_DB_COLLECTION='1'
-readonly CODESKEL64_DB_SKELETON='2'
-readonly CODESKEL64_DB_TYPE='3'
-readonly CODESKEL64_DB_SOURCE='4'
-readonly CODESKEL64_TYPE_FILE='f'
-readonly CODESKEL64_TYPE_DIR='d'
-readonly CODESKEL64_TYPE_COMBO='b'
 
 declare codeskel64_status=1
 declare codeskel64_option=''
@@ -229,21 +214,16 @@ while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
   k) codeskel64_skeleton="$OPTARG" ;;
   g) codeskel64_target="$OPTARG" ;;
   h) codeskel64_help && exit ;;
-  \?) codeskel64_help && exit 1 ;;
+  *) codeskel64_help && exit 1 ;;
   esac
 done
-[[ -z "$codeskel64_command" ]] && codeskel64_help && exit 1
 codeskel64_check || exit 1
 bl64_msg_setup "$BL64_MSG_FORMAT_PLAIN"
 
 bl64_msg_show_batch_start "$codeskel64_command_tag"
 case "$codeskel64_command" in
-'codeskel64_download')
-  "$codeskel64_command"
-  ;;
-'codeskel64_list')
-  "$codeskel64_command" "$codeskel64_collection"
-  ;;
+'codeskel64_download') "$codeskel64_command" ;;
+'codeskel64_list') "$codeskel64_command" "$codeskel64_collection" ;;
 'codeskel64_create')
   "$codeskel64_command" \
     "$codeskel64_overwrite" \
@@ -252,6 +232,7 @@ case "$codeskel64_command" in
     "$codeskel64_project" \
     "$codeskel64_target"
   ;;
+*) bl64_check_show_undefined "$codeskel64_command" ;;
 esac
 codeskel64_status=$?
 
