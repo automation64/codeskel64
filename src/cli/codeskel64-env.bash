@@ -1,4 +1,8 @@
 #
+###[ embedded-bashlib64-end ]#####################
+#
+
+#
 # Globals
 #
 
