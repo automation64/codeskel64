@@ -7,6 +7,7 @@
 #
 
 export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
+
 export CODESKEL64_LIBRARY="${CODESKEL64_LIBRARY:-${XDG_DATA_HOME}/codeskel64}"
 
 readonly CODESKEL64_PATH_COMBOS='combos.csv'
