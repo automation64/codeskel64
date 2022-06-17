@@ -1,14 +1,14 @@
 setup() {
-  . "$DEVCS_TEST_BATSCORE_SETUP"
+  . "$TESTMANSH_TEST_BATSCORE_SETUP"
 }
 
 @test "codeskel64: no params" {
-  run "$DEVCS_BUILD_PROD"
+  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}"
   true
   assert_failure
 }
 
 @test "codeskel64: help" {
-  run "$DEVCS_BUILD_PROD" -h
+  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -h
   assert_success
 }

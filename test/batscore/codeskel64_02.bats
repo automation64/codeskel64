@@ -1,6 +1,6 @@
 setup() {
-  . "$DEVCS_TEST_BATSCORE_SETUP"
-  [[ ! -d "$XDG_DATA_HOME" ]] && mkdir -p "$XDG_DATA_HOME"
+  . "$TESTMANSH_TEST_BATSCORE_SETUP"
+
 }
 
 @test "codeskel64: download catalog" {
@@ -8,6 +8,6 @@ setup() {
     skip 'this case can only be tested inside a container'
   fi
 
-  run "$DEVCS_BUILD_PROD" -d
+  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -d
   assert_success
 }
