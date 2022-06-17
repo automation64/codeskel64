@@ -5,29 +5,31 @@
 # * Source this script from the project's root directory
 # * Template Version: v1.1.0
 #
-set -x
+
 test -f ./.env
 if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
 fi
 
-echo 'Load local environment variables'
+#echo 'Load local environment variables'
 # shellcheck disable=SC2154
 if test -f ./.local; then
+  echo "branch -> .local"
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
 elif test -n "$GITHUB_WORKSPACE"; then
+  echo "branch -> .github: $GITHUB_WORKSPACE"
   # shellcheck disable=SC2155
-  echo "asdasd $GITHUB_WORKSPACE"
   export DEVCS_ROOT="$GITHUB_WORKSPACE"
 fi
+exit 10
 
-echo 'Load local secrets'
-if test -f ./.secrets; then
-  # shellcheck source=SCRIPTDIR/../.secrets
-  . ./.secrets || return 1
-fi
+# echo 'Load local secrets'
+# if test -f ./.secrets; then
+#   # shellcheck source=SCRIPTDIR/../.secrets
+#   . ./.secrets || return 1
+# fi
 
-echo 'Load project environment variables'
-# shellcheck source=SCRIPTDIR/../.env
-. ./.env || return 1
+# echo 'Load project environment variables'
+# # shellcheck source=SCRIPTDIR/../.env
+# . ./.env || return 1

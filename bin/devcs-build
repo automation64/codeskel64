@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck source=SCRIPTDIR/devcs-set
-source bin/devcs-set || exit 1
+source ./bin/devcs-set || exit 1
 # shellcheck source=SCRIPTDIR/../lib/bashlib64.bash
 source "$DEVCS_LIB_BASHLIB64"
 
