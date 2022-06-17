@@ -17,7 +17,8 @@ if test -f ./.local; then
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
 elif test -n "$GITHUB_REPOSITORY"; then
-  export DEVCS_ROOT="$GITHUB_REPOSITORY"
+  # shellcheck disable=SC2155
+  export DEVCS_ROOT="$(pwd)"
 fi
 
 echo 'Load local secrets'
