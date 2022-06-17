@@ -5,9 +5,8 @@
 # * Source this script from the project's root directory
 # * Template Version: v1.1.0
 #
-
-env
-
+set -x
+echo $GITHUB_REPOSITORY
 test -f ./.env
 if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
