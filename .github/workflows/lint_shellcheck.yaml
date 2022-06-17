@@ -17,4 +17,4 @@ jobs:
         run: "curl -O https://raw.githubusercontent.com/serdigital64/testmansh/main/testmansh"
 
       - name: "Run linter"
-        run: "bash testmansh -t -c codeskel64
+        run: "bash testmansh -t -c codeskel64"
