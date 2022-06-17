@@ -9,10 +9,10 @@ setup() {
     skip 'this case can only be tested inside a container'
   fi
 
-  "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -d
+  "$DEVCS_BUILD_PROD" -d
 
   cd "${TEST_SANDBOX}"
-  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -c -o Combo -k git-generic
+  run "$DEVCS_BUILD_PROD" -c -o Combo -k git-generic
   assert_success
   assert_dir_exist "${TEST_SANDBOX}/new-git-generic-project"
   assert_file_exist "${TEST_SANDBOX}/new-git-generic-project/README.md"
