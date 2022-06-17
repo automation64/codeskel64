@@ -11,25 +11,23 @@ if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
 fi
 
-#echo 'Load local environment variables'
 # shellcheck disable=SC2154
 if test -f ./.local; then
-  echo "branch -> .local"
+  echo 'Load local environment variables'
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
 elif test -n "$GITHUB_WORKSPACE"; then
-  echo "branch -> .github: $GITHUB_WORKSPACE"
+  echo 'Load GitHub environment variables'
   # shellcheck disable=SC2155
   export DEVCS_ROOT="$GITHUB_WORKSPACE"
 fi
-exit 10
 
-# echo 'Load local secrets'
-# if test -f ./.secrets; then
-#   # shellcheck source=SCRIPTDIR/../.secrets
-#   . ./.secrets || return 1
-# fi
+if test -f ./.secrets; then
+  echo 'Load local secrets'
+  # shellcheck source=SCRIPTDIR/../.secrets
+  . ./.secrets || return 1
+fi
 
-# echo 'Load project environment variables'
-# # shellcheck source=SCRIPTDIR/../.env
-# . ./.env || return 1
+echo 'Load project environment variables'
+# shellcheck source=SCRIPTDIR/../.env
+. ./.env || return 1
