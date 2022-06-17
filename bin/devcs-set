@@ -3,23 +3,28 @@
 # Set development environment variables
 #
 # * Source this script from the project's root directory
-# * Template Version: v1.0.1
+# * Template Version: v1.1.0
 #
 
-# Check calling location
-test -f ./.local
+test -f ./.env
 if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
 fi
 
-# Load local variables
-# shellcheck source=SCRIPTDIR/../.local
-. ./.local
+echo 'Load local environment variables'
+if test -f ./.local; then
+  # shellcheck source=SCRIPTDIR/../.local
+  . ./.local || return 1
+elif test -n "$GITHUB_WORKSPACE"; then
+  export DEVCS_ROOT="$GITHUB_WORKSPACE"
+fi
 
-# Load secrets
-# shellcheck source=SCRIPTDIR/../.secrets
-. ./.secrets
+echo 'Load local secrets'
+if test -f ./.secrets; then
+  # shellcheck source=SCRIPTDIR/../.secrets
+  . ./.secrets || return 1
+fi
 
-# Load global variables
+echo 'Load project environment variables'
 # shellcheck source=SCRIPTDIR/../.env
-. ./.env
+. ./.env || return 1
