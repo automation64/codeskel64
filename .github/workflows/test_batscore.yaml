@@ -17,10 +17,10 @@ jobs:
         run: "curl -O https://raw.githubusercontent.com/serdigital64/testmansh/main/testmansh"
 
       - name: "Prepare build environment"
-        run: "bash ./bin/devcs-lib"
+        run: "./bin/devcs-lib"
 
       - name: "Build app"
-        run: "bash ./bin/devcs-build"
+        run: "./bin/devcs-build"
 
       - name: "Run tests"
         shell: 'script -q -e -c "bash {0}"'

@@ -16,8 +16,8 @@ echo 'Load local environment variables'
 if test -f ./.local; then
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
-elif test -n "$GITHUB_WORKSPACE"; then
-  export DEVCS_ROOT="$GITHUB_WORKSPACE"
+elif test -n "$GITHUB_REPOSITORY"; then
+  export DEVCS_ROOT="$GITHUB_REPOSITORY"
 fi
 
 echo 'Load local secrets'
