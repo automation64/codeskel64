@@ -14,23 +14,28 @@
 ## Overview
 
 **CodeSkel64** is a simple tool for creating initial project structures and code from skeletons.
+
 Skeletons can be single-file templates with replaceable tags or complex directory structures.
 
 The current catalog is available on GitHub and open for contributions:
 
-| Collection                          | Content           |
-| ----------------------------------- | ----------------- |
-| [Ansible](src/catalog/Ansible)      | Ansible assets    |
-| [Bash](src/catalog/Bash)            | Bash assets       |
-| [Container](src/catalog/Container)  | Container assets  |
-| [GIT](src/catalog/GIT)              | GIT assets        |
-| [Licenses](src/catalog/Licenses)    | Software Licenses |
-| [MarkDown](src/catalog/MarkDown)    | MarkDown assets   |
-| [MkDocs](src/catalog/MkDocs)        | MkDoc assets      |
-| [VSCode](src/catalog/VSCode)        | VSCode assets     |
-| [YAML](src/catalog/YAML)            | YAML assets       |
-| [Python](src/catalog/Python)        | Python assets     |
-| [Terraforkm](src/catalog/Terraform) | Terraform assets  |
+| Collection                           | Content               |
+| ------------------------------------ | --------------------- |
+| [Ansible](src/catalog/Ansible)       | Ansible assets        |
+| [Bash](src/catalog/Bash)             | Bash assets           |
+| [Container](src/catalog/Container)   | Container assets      |
+| [GHActions](src/catalog/GHActions)   | GitHub Actions assets |
+| [GIT](src/catalog/GIT)               | GIT assets            |
+| [Go](src/catalog/Go)                 | GoLang assets         |
+| [Licenses](src/catalog/Licenses)     | Software Licenses     |
+| [MarkDown](src/catalog/MarkDown)     | MarkDown assets       |
+| [MkDocs](src/catalog/MkDocs)         | MkDoc assets          |
+| [Python](src/catalog/Python)         | Python assets         |
+| [ShellCheck](src/catalog/ShellCheck) | ShellCheck assets     |
+| [Terraforkm](src/catalog/Terraform)  | Terraform assets      |
+| [TestManSH](src/catalog/TestManSH)   | TestManSH assets      |
+| [VSCode](src/catalog/VSCode)         | VSCode assets         |
+| [YAML](src/catalog/YAML)             | YAML assets           |
 
 In addition to single files and directories skeletons can be grouped together in the form of _combos_ to allow the creation of complete project structures:
 
@@ -50,9 +55,9 @@ Create initial structure from skeletons and templates
 
 Commands
 
+    -c           : Create initial code structure
     -d           : Download catalog to LIBRARY
     -l           : List collection and skeletons from LIBRARY
-    -c           : Create initial code structure
 
 Flags
 
@@ -61,9 +66,9 @@ Flags
 
 Parameters
 
-    -o Collection: Collection name
-    -k Skeleton  : Skeleton name
-    -t Project   : Destination full path
+    -t Project   : Full path to the project where artifacts will be created. Default: <CURRENT_DIRECTORY>
+    -o Collection: Collection name. Use the -l command to show available.
+    -k Skeleton  : Skeleton name. Use the -l command to show available.
     -g Target    : New structure name. Default: skeleton's default
     -a Library   : Library location. Default: XDG_DATA_HOME/codeskel64
 ```
@@ -100,24 +105,9 @@ codeskel64 -d
 
 ### OS Compatibility
 
-- AlmaLinux8
-- Alpine3
-- CentOS7
-- CentOS8
-- CentOS9
-- Debian9
-- Debian10
-- Debian11
-- Fedora33
-- Fedora34
-- Fedora35
-- MacOS12
-  - Requires Bash4 (e.g. homebrew install bash)
-- OracleLinux7
-- OracleLinux8
-- RedHatLinux8
-- Ubuntu20
-- Ubuntu21
+The tool uses the [BastLib64](https://github.com/serdigital64/bashlib64) library and supports the same tested platforms.
+
+Refer to the [OS-Compatibility](https://serdigital64.github.io/bashlib64/#os-compatibility) list for further details.
 
 ### Requirements
 
@@ -144,8 +134,8 @@ codeskel64 -d
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-- [Guidelines](CONTRIBUTING.md)
-- [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
+- [Guidelines](https://github.com/serdigital64/codeskel64/blob/main/CONTRIBUTING.md)
+- [Contributor Covenant Code of Conduct](https://github.com/serdigital64/codeskel64/blob/main/CODE_OF_CONDUCT.md)
 
 ## License
 

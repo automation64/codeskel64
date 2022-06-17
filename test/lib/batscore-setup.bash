@@ -4,22 +4,18 @@
 # * Source this file from the first line of the setup() function in the test-case
 #
 
-. "${DEVCS_BATS_HELPER_SUPPORT}/load.bash"
-. "${DEVCS_BATS_HELPER_ASSERT}/load.bash"
-. "${DEVCS_BATS_HELPER_FILE}/load.bash"
+. "$TESTMANSH_CMD_BATS_HELPER_SUPPORT"
+. "$TESTMANSH_CMD_BATS_HELPER_ASSERT"
+. "$TESTMANSH_CMD_BATS_HELPER_FILE"
 
-# Do not overwrite signals already set by bats-core (err,exit)
+# Do not overwrite signals already set by bats-core
+# ERR, DEBUG, EXIT
 
 # Sets used by bats-core. Do not overwrite
 set -o 'errexit'
 set +o 'nounset'
-
 # Do not set/unset: 'keyword', 'noexec'
 
-#
-# Application specific shared setup
-#
-
-export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
-
-export BL64_LIB_DEBUG=0
+# (Optional) Add shared settings. Available to all test-cases using this setup routine
+export DEVCS_ROOT="$TESTMANSH_PROJECT_ROOT"
+. "${TESTMANSH_PROJECT_ROOT}/.env"
