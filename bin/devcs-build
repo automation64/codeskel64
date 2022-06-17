@@ -6,6 +6,7 @@ source bin/devcs-set || exit 1
 source "$DEVCS_LIB_BASHLIB64"
 
 # shellcheck disable=SC2154
+bl64_msg_show_text "Build app (${DEVCS_BUILD_PROD})"
 bl64_fs_merge_files \
   '0755' \
   "$BL64_LIB_DEFAULT" \

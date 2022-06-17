@@ -3,12 +3,12 @@ setup() {
 }
 
 @test "codeskel64: no params" {
-  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}"
+  run "$DEVCS_BUILD_PROD"
   true
   assert_failure
 }
 
 @test "codeskel64: help" {
-  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -h
+  run "$DEVCS_BUILD_PROD" -h
   assert_success
 }

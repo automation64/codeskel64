@@ -7,8 +7,8 @@ setup() {
     skip 'this case can only be tested inside a container'
   fi
 
-  "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -d
+  "$DEVCS_BUILD_PROD" -d
 
-  run "${TESTMANSH_PROJECT_BUILD}/${DEVCS_APP_NAME}" -l
+  run "$DEVCS_BUILD_PROD" -l
   assert_success
 }
