@@ -18,6 +18,7 @@ if test -f ./.local; then
   . ./.local || return 1
 elif test -n "$GITHUB_REPOSITORY"; then
   # shellcheck disable=SC2155
+  env
   export DEVCS_ROOT="$(pwd)"
 fi
 
