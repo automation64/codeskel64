@@ -6,7 +6,6 @@
 # * Template Version: v1.1.0
 #
 set -x
-echo $GITHUB_REPOSITORY
 test -f ./.env
 if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
@@ -17,9 +16,10 @@ echo 'Load local environment variables'
 if test -f ./.local; then
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
-elif test -n "$GITHUB_REPOSITORY"; then
+elif test -n "$GITHUB_WORKSPACE"; then
   # shellcheck disable=SC2155
-  export DEVCS_ROOT="$(pwd)"
+  echo "asdasd $GITHUB_WORKSPACE"
+  export DEVCS_ROOT="$GITHUB_WORKSPACE"
 fi
 
 echo 'Load local secrets'
