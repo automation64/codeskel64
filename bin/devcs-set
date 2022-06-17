@@ -12,6 +12,7 @@ if test $? -ne 0; then
 fi
 
 echo 'Load local environment variables'
+# shellcheck disable=SC2154
 if test -f ./.local; then
   # shellcheck source=SCRIPTDIR/../.local
   . ./.local || return 1
