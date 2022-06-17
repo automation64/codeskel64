@@ -19,8 +19,6 @@ if test -f ./.local; then
 elif test -n "$GITHUB_REPOSITORY"; then
   # shellcheck disable=SC2155
   export DEVCS_ROOT="$(pwd)"
-  pwd
-  ls -l
 fi
 
 echo 'Load local secrets'

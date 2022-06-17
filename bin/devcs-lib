@@ -10,6 +10,10 @@
 # shellcheck source=SCRIPTDIR/devcs-set
 source bin/devcs-set || exit 1
 
+echo "====================="
+pwd
+ls -l
+
 echo 'Download bash library: BashLib64'
 cd "$DEVCS_LIB" &&
   curl -O https://raw.githubusercontent.com/serdigital64/bashlib64/main/bashlib64.bash || exit 1
