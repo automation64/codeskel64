@@ -3,6 +3,12 @@
 #
 
 function codeskel64_download() {
+  if [[ "${XDG_DATA_HOME}/codeskel64" == "$CODESKEL64_LIBRARY" ]]; then
+    bl64_dbg_app_show_info "using XDG_DATA_HOME as default for CODESKEL64_LIBRARY (${CODESKEL64_LIBRARY}). Create if needed. "
+    bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "${HOME}/.local" "${HOME}/.local/share" ||
+      return $?
+  fi
+
   bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$CODESKEL64_LIBRARY" &&
     bl64_rxtx_git_get_dir "$CODESKEL64_REPO" '.' "$CODESKEL64_LIBRARY" "$BL64_LIB_VAR_ON"
 }
@@ -33,7 +39,8 @@ function codeskel64_create_combo() {
         "${combo[1]}" \
         "${combo[2]}" \
         "$project" \
-        "$BL64_LIB_DEFAULT"
+        "$BL64_LIB_DEFAULT" ||
+        return $?
       IFS=':'
     fi
   done < <(bl64_xsv_dump "$catalog")
@@ -63,7 +70,8 @@ function codeskel64_create_directory() {
       return 1
   else
     bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$project" &&
-      bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$destination"
+      bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$destination" ||
+      return $?
   fi
 
   bl64_fs_merge_dir "$source" "$destination"
