@@ -2,24 +2,11 @@
 #
 # Project development environment / Local variables
 #
-# * this file should be excluded from GIT
-# * source before .env
+# * This file should be excluded from GIT
+# * Source before .env
+# * Template version: 1.0.0
 #
 
 # Project base location. Adjust to your local GIT repo
 DEVCS_ROOT="${HOME}/github/codeskel64"
 export DEVCS_ROOT
-
-#
-# Tools
-#
-
-TESTMANSH_CMD_BATS='/opt/bats-core/bin/bats'
-export TESTMANSH_CMD_BATS
-
-DEVCS_BATS_HELPER_SUPPORT='/opt/bats-core/test_helpers/support'
-export DEVCS_BATS_HELPER_SUPPORT
-DEVCS_BATS_HELPER_ASSERT='/opt/bats-core/test_helpers/assert'
-export DEVCS_BATS_HELPER_ASSERT
-DEVCS_BATS_HELPER_FILE='/opt/bats-core/test_helpers/file'
-export DEVCS_BATS_HELPER_FILE
