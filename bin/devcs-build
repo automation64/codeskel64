@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 # shellcheck source=SCRIPTDIR/devcs-set
-source bin/devcs-set || exit 1
+source ./bin/devcs-set || exit 1
 # shellcheck source=SCRIPTDIR/../lib/bashlib64.bash
 source "$DEVCS_LIB_BASHLIB64"
 
 # shellcheck disable=SC2154
+bl64_msg_show_text "Build app (${DEVCS_BUILD_PROD})"
 bl64_fs_merge_files \
   '0755' \
   "$BL64_LIB_DEFAULT" \

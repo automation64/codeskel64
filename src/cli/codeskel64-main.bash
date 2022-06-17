@@ -38,7 +38,6 @@ while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
   esac
 done
 codeskel64_check_requirements || exit 1
-bl64_msg_setup "$BL64_MSG_FORMAT_PLAIN"
 
 bl64_msg_show_batch_start "$codeskel64_command_tag"
 case "$codeskel64_command" in

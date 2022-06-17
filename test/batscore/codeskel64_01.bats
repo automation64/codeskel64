@@ -1,5 +1,5 @@
 setup() {
-  . "$DEVCS_TEST_BATSCORE_SETUP"
+  . "$TESTMANSH_TEST_BATSCORE_SETUP"
 }
 
 @test "codeskel64: no params" {

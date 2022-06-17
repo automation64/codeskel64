@@ -1,6 +1,6 @@
 setup() {
-  . "$DEVCS_TEST_BATSCORE_SETUP"
-  [[ ! -d "$XDG_DATA_HOME" ]] && mkdir -p "$XDG_DATA_HOME"
+  . "$TESTMANSH_TEST_BATSCORE_SETUP"
+
 }
 
 @test "codeskel64: download catalog" {
