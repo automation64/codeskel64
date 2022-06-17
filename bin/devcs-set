@@ -6,6 +6,8 @@
 # * Template Version: v1.1.0
 #
 
+env
+
 test -f ./.env
 if test $? -ne 0; then
   echo "Error: source this file from the project's root directory" && return 1
@@ -18,7 +20,6 @@ if test -f ./.local; then
   . ./.local || return 1
 elif test -n "$GITHUB_REPOSITORY"; then
   # shellcheck disable=SC2155
-  env
   export DEVCS_ROOT="$(pwd)"
 fi
 
