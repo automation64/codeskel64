@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
+#
+# Assemble modular script
+#
+# * Use to build script from multiple sources (modular)
+# * Template Version: v1.0.0
+#
 
 # shellcheck source=SCRIPTDIR/devcs-set
 source ./bin/devcs-set || exit 1
 # shellcheck source=SCRIPTDIR/../lib/bashlib64.bash
-source "$DEVCS_LIB_BASHLIB64"
+source "$DEVCS_LIB_BASHLIB64" || exit 1
 
 # shellcheck disable=SC2154
 bl64_msg_show_text "Build app (${DEVCS_BUILD_PROD})"
