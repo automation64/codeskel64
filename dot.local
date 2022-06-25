@@ -10,17 +10,3 @@
 # Project base location. Adjust to your local GIT repo
 DEVCS_ROOT="${HOME}/git/codeskel64"
 export DEVCS_ROOT
-
-#
-# Tools
-#
-
-TESTMANSH_CMD_BATS='/opt/bats-core/bin/bats'
-export TESTMANSH_CMD_BATS
-
-DEVCS_BATS_HELPER_SUPPORT='/opt/bats-core/test_helpers/support'
-export DEVCS_BATS_HELPER_SUPPORT
-DEVCS_BATS_HELPER_ASSERT='/opt/bats-core/test_helpers/assert'
-export DEVCS_BATS_HELPER_ASSERT
-DEVCS_BATS_HELPER_FILE='/opt/bats-core/test_helpers/file'
-export DEVCS_BATS_HELPER_FILE
