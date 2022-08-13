@@ -27,6 +27,7 @@ The current catalog is available on GitHub and open for contributions:
 | [GHActions](src/catalog/GHActions)   | GitHub Actions assets |
 | [GIT](src/catalog/GIT)               | GIT assets            |
 | [Go](src/catalog/Go)                 | GoLang assets         |
+| [Helm](src/catalog/Helm)             | Helm assets           |
 | [Licenses](src/catalog/Licenses)     | Software Licenses     |
 | [MarkDown](src/catalog/MarkDown)     | MarkDown assets       |
 | [MkDocs](src/catalog/MkDocs)         | MkDoc assets          |
