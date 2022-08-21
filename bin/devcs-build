@@ -12,13 +12,13 @@ source ./bin/devcs-set || exit 1
 source "$DEVCS_LIB_BASHLIB64" || exit 1
 
 # shellcheck disable=SC2154
-bl64_msg_show_text "Build app (${DEVCS_BUILD_PROD})"
+bl64_msg_show_text "Build app (${DEVCS_BUILD_TARGET})"
 bl64_fs_merge_files \
   '0755' \
   "$BL64_LIB_DEFAULT" \
   "$BL64_LIB_DEFAULT" \
   "$BL64_LIB_VAR_ON" \
-  "$DEVCS_BUILD_PROD" \
+  "$DEVCS_BUILD_TARGET" \
   "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-header.bash" \
   "$DEVCS_LIB_BASHLIB64" \
   "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-env.bash" \

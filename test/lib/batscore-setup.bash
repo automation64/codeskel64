@@ -17,5 +17,4 @@ set +o 'nounset'
 # Do not set/unset: 'keyword', 'noexec'
 
 # (Optional) Add shared settings. Available to all test-cases using this setup routine
-export DEVCS_ROOT="$TESTMANSH_PROJECT_ROOT"
-. "${TESTMANSH_PROJECT_ROOT}/.env"
+. "${TESTMANSH_PROJECT_ROOT}/bin/devcs-set"
