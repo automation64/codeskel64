@@ -4,10 +4,17 @@
 
 - Prepare dev tools
   - Install GIT
+  - Install Git Flow
 - Clone GIT repository
 
 ```shell
 git clone https://github.com/serdigital64/codeskel64.git
+# Create module repositories as git submodules
+git submodule init
+# Update modules
+git submodule update
+# Init git flow
+git flow init
 ```
 
 - Adjust environment variables to reflect your configuration:
@@ -19,10 +26,10 @@ cp dot.secrets .secrets
 # Review and update content for both files
 ```
 
-- Initialize dev environment variables
+- Initialize dev environment
 
 ```shell
-source bin/devcs-set
+./bin/devcs-lib
 ```
 
 ## Update source code
