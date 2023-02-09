@@ -6,11 +6,11 @@ declare codeskel64_status=1
 declare codeskel64_option=''
 declare codeskel64_command=''
 declare codeskel64_command_tag=''
-declare codeskel64_collection="$BL64_LIB_DEFAULT"
-declare codeskel64_skeleton="$BL64_LIB_DEFAULT"
-declare codeskel64_project="$BL64_LIB_DEFAULT"
-declare codeskel64_target="$BL64_LIB_DEFAULT"
-declare codeskel64_overwrite="$BL64_LIB_VAR_OFF"
+declare codeskel64_collection="$BL64_VAR_DEFAULT"
+declare codeskel64_skeleton="$BL64_VAR_DEFAULT"
+declare codeskel64_project="$BL64_VAR_DEFAULT"
+declare codeskel64_target="$BL64_VAR_DEFAULT"
+declare codeskel64_overwrite="$BL64_VAR_OFF"
 
 (($# == 0)) && codeskel64_help && exit 1
 while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
@@ -29,7 +29,7 @@ while getopts ':dlca:o:k:t:g:wh' codeskel64_option; do
     ;;
   t) codeskel64_project="$OPTARG" ;;
   a) CODESKEL64_LIBRARY="$OPTARG" ;;
-  w) codeskel64_overwrite="$BL64_LIB_VAR_ON" ;;
+  w) codeskel64_overwrite="$BL64_VAR_ON" ;;
   o) codeskel64_collection="$OPTARG" ;;
   k) codeskel64_skeleton="$OPTARG" ;;
   g) codeskel64_target="$OPTARG" ;;

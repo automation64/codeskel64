@@ -5,12 +5,12 @@
 function codeskel64_download() {
   if [[ "${XDG_DATA_HOME}/codeskel64" == "$CODESKEL64_LIBRARY" ]]; then
     bl64_dbg_app_show_info "using XDG_DATA_HOME as default for CODESKEL64_LIBRARY (${CODESKEL64_LIBRARY}). Create if needed. "
-    bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "${HOME}/.local" "${HOME}/.local/share" ||
+    bl64_fs_create_dir "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "${HOME}/.local" "${HOME}/.local/share" ||
       return $?
   fi
 
-  bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$CODESKEL64_LIBRARY" &&
-    bl64_rxtx_git_get_dir "$CODESKEL64_REPO" '.' "$CODESKEL64_LIBRARY" "$BL64_LIB_VAR_ON"
+  bl64_fs_create_dir "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$CODESKEL64_LIBRARY" &&
+    bl64_rxtx_git_get_dir "$CODESKEL64_REPO" '.' "$CODESKEL64_LIBRARY" "$BL64_VAR_ON"
 }
 
 function codeskel64_list() {
@@ -39,7 +39,7 @@ function codeskel64_create_combo() {
         "${combo[1]}" \
         "${combo[2]}" \
         "$project" \
-        "$BL64_LIB_DEFAULT" ||
+        "$BL64_VAR_DEFAULT" ||
         return $?
       IFS=':'
     fi
@@ -65,12 +65,12 @@ function codeskel64_create_directory() {
   fi
 
   if [[ -d "$destination" ]]; then
-    [[ "$overwrite" == "$BL64_LIB_VAR_OFF" ]] &&
+    [[ "$overwrite" == "$BL64_VAR_OFF" ]] &&
       bl64_msg_show_error "target directory is already created ($destination). Use -w flag to allow content overwrite" &&
       return 1
   else
-    bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$project" &&
-      bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$destination" ||
+    bl64_fs_create_dir "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$project" &&
+      bl64_fs_create_dir "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$destination" ||
       return $?
   fi
 
@@ -86,10 +86,10 @@ function codeskel64_create_file() {
   local destination="${project}/${target}"
 
   bl64_check_file "$source" || return 1
-  [[ "$overwrite" == "$BL64_LIB_VAR_OFF" && -f "$destination" ]] &&
+  [[ "$overwrite" == "$BL64_VAR_OFF" && -f "$destination" ]] &&
     bl64_msg_show_error "target file is already created ($destination). Use -w flag to allow content overwrite" && return 1
 
-  bl64_fs_create_dir "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$BL64_LIB_DEFAULT" "$project" &&
+  bl64_fs_create_dir "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$BL64_VAR_DEFAULT" "$project" &&
     bl64_fs_cp_file "$source" "$destination"
 
 }
@@ -116,22 +116,22 @@ function codeskel64_deploy() {
 
   if [[ "${spec[0]}" == "$CODESKEL64_TYPE_FILE" ]]; then
 
-    [[ "$project" == "$BL64_LIB_DEFAULT" ]] && project="$(pwd)"
-    [[ "$target" == "$BL64_LIB_DEFAULT" ]] && target="${spec[1]}"
+    [[ "$project" == "$BL64_VAR_DEFAULT" ]] && project="$(pwd)"
+    [[ "$target" == "$BL64_VAR_DEFAULT" ]] && target="${spec[1]}"
     bl64_msg_show_task "create new file (${project}/${target})"
     source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}/${spec[1]}"
     codeskel64_create_file "$project" "$target" "$overwrite" "$source"
 
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_DIR" ]]; then
 
-    [[ "$target" == "$BL64_LIB_DEFAULT" ]] && target="${spec[1]}"
+    [[ "$target" == "$BL64_VAR_DEFAULT" ]] && target="${spec[1]}"
 
     if [[ "$target" == "$CODESKEL64_FLAG_USE_PROJECT" ]]; then
       bl64_check_parameter 'project' 'the selected skeleton requires a project path. Retry using the -t paremeter.' || return $?
       bl64_msg_show_task "create new directory structure (${project})"
     else
       bl64_msg_show_task "create new directory structure (${project}/${target})"
-      [[ "$project" == "$BL64_LIB_DEFAULT" ]] && project="$(pwd)"
+      [[ "$project" == "$BL64_VAR_DEFAULT" ]] && project="$(pwd)"
     fi
 
     source="${CODESKEL64_LIBRARY}/${collection}/${CODESKEL64_PATH_SKELETONS}/${skeleton}"
@@ -139,7 +139,7 @@ function codeskel64_deploy() {
 
   elif [[ "${spec[0]}" == "$CODESKEL64_TYPE_COMBO" ]]; then
 
-    [[ "$project" == "$BL64_LIB_DEFAULT" ]] && project="$(pwd)/new-${skeleton}-project"
+    [[ "$project" == "$BL64_VAR_DEFAULT" ]] && project="$(pwd)/new-${skeleton}-project"
     bl64_msg_show_task "create new project structure (${project})"
     source="${skeleton}"
     codeskel64_create_combo "$project" "$target" "$overwrite" "$source"
