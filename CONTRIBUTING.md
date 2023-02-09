@@ -10,19 +10,21 @@
 git clone https://github.com/serdigital64/codeskel64.git
 ```
 
-- Adjust environment variables to reflect your configuration:
+- Adjust environment variables to match your configuration:
+
+  - Copy environment definition files from templates:
+
+  ```shell
+  cp dot.local .local
+  cp dot.secrets .secrets
+  ```
+
+  - Review and update content for both files to match your environment
+
+- Download dev support scripts
 
 ```shell
-# Copy environment definition files from templates:
-cp dot.local .local
-cp dot.secrets .secrets
-# Review and update content for both files
-```
-
-- Initialize dev environment variables
-
-```shell
-source bin/devcs-set
+./bin/devcs-lib
 ```
 
 ## Update source code
@@ -32,7 +34,7 @@ source bin/devcs-set
   - Build CLI:
 
 ```shell
-./bin/devcs-build`
+./bin/devcs-build
 ```
 
 - Catalog
