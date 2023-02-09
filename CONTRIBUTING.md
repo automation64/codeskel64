@@ -17,16 +17,18 @@ git submodule update
 git flow init
 ```
 
-- Adjust environment variables to reflect your configuration:
+- Adjust environment variables to match your configuration:
 
-```shell
-# Copy environment definition files from templates:
-cp dot.local .local
-cp dot.secrets .secrets
-# Review and update content for both files
-```
+  - Copy environment definition files from templates:
 
-- Initialize dev environment
+  ```shell
+  cp dot.local .local
+  cp dot.secrets .secrets
+  ```
+
+  - Review and update content for both files to match your environment
+
+- Download dev support scripts
 
 ```shell
 ./bin/devcs-lib
@@ -39,7 +41,7 @@ cp dot.secrets .secrets
   - Build CLI:
 
 ```shell
-./bin/devcs-build`
+./bin/devcs-build
 ```
 
 - Catalog

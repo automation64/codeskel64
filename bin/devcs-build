@@ -15,9 +15,9 @@ source "$DEVCS_LIB_BASHLIB64" || exit 1
 bl64_msg_show_text "Build app (${DEVCS_BUILD_TARGET})"
 bl64_fs_merge_files \
   '0755' \
-  "$BL64_LIB_DEFAULT" \
-  "$BL64_LIB_DEFAULT" \
-  "$BL64_LIB_VAR_ON" \
+  "$BL64_VAR_DEFAULT" \
+  "$BL64_VAR_DEFAULT" \
+  "$BL64_VAR_ON" \
   "$DEVCS_BUILD_TARGET" \
   "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-header.bash" \
   "$DEVCS_LIB_BASHLIB64" \
