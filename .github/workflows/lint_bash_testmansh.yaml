@@ -18,7 +18,7 @@ jobs:
         uses: "actions/checkout@main"
 
       - name: "Prepare build environment"
-        run: "./bin/devcs-lib"
+        run: "./bin/dev-lib"
 
       - name: "Run Bash linter"
         run: "./lib/testmansh -t -c codeskel64"
