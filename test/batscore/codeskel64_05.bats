@@ -2,17 +2,14 @@ setup() {
   . "$TESTMANSH_TEST_BATSCORE_SETUP"
 
   TEST_SANDBOX="$(temp_make)"
+  bl64_cnt_is_inside_container || skip 'test-case for container mode'
 }
 
 @test "codeskel64: create file" {
-  if [[ ! -f '/run/.containerenv' ]]; then
-    skip 'this case can only be tested inside a container'
-  fi
-
-  "$DEVCS_BUILD_TARGET" -d
+  "$DEVCS_BUILD_FULL_PATH" -d
 
   cd "${TEST_SANDBOX}"
-  run "$DEVCS_BUILD_TARGET" -c -o Bash -k script-generic
+  run "$DEVCS_BUILD_FULL_PATH" -c -o Bash -k script-generic
   assert_success
   assert_file_exist "${TEST_SANDBOX}/template.bash"
 }

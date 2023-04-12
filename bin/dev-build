@@ -3,24 +3,24 @@
 # Assemble modular script
 #
 # * Use to build script from multiple sources (modular)
-# * Template Version: v1.0.0
+# * Template Version: v1.0.1
 #
 
 # shellcheck source=SCRIPTDIR/dev-set
 source ./bin/dev-set || exit 1
 # shellcheck source=SCRIPTDIR/../lib/bashlib64.bash
-source "$DEVCS_LIB_BASHLIB64" || exit 1
+source "$DEVCS_CICD_BASHLIB64" || exit 1
 
 # shellcheck disable=SC2154
-bl64_msg_show_text "Build app (${DEVCS_BUILD_TARGET})"
+bl64_msg_show_task "Build app (${DEVCS_BUILD_NAME})"
 bl64_fs_merge_files \
   '0755' \
   "$BL64_VAR_DEFAULT" \
   "$BL64_VAR_DEFAULT" \
   "$BL64_VAR_ON" \
-  "$DEVCS_BUILD_TARGET" \
-  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-header.bash" \
-  "$DEVCS_LIB_BASHLIB64" \
-  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-env.bash" \
-  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-functions.bash" \
-  "${DEVCS_SRC}/cli/${DEVCS_APP_NAME}-main.bash" \
+  "$DEVCS_BUILD_FULL_PATH" \
+  "${DEVCS_SRC}/cli/header.bash" \
+  "$DEVCS_CICD_BASHLIB64" \
+  "${DEVCS_SRC}/cli/env.bash" \
+  "${DEVCS_SRC}/cli/functions.bash" \
+  "${DEVCS_SRC}/cli/main.bash"
