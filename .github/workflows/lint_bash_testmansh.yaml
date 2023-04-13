@@ -1,5 +1,5 @@
 ---
-# Template: 1.1.0
+# Template Version: 2.0.0
 name: "Lint / Bash / TestManSH"
 
 on:
@@ -7,7 +7,7 @@ on:
     branches:
       - "feature/*"
       - "develop"
-      - "master"
+      - "main"
 
 jobs:
   lint-bash-testmansh:
@@ -18,8 +18,9 @@ jobs:
         uses: "actions/checkout@main"
 
       - name: "Prepare build environment"
-        run: "./bin/devcs-lib"
+        run: "./bin/dev-lib"
 
       - name: "Run Bash linter"
-        run: "./lib/testmansh -t -c codeskel64"
+        shell: 'script -q -e -c "bash {0}"'
+        run: "./bin/dev-lint"
 ...

@@ -31,7 +31,7 @@ git flow init
 - Download dev support scripts
 
 ```shell
-./bin/devcs-lib
+./bin/dev-lib
 ```
 
 ## Update source code
@@ -41,7 +41,7 @@ git flow init
   - Build CLI:
 
 ```shell
-./bin/devcs-build
+./bin/dev-build
 ```
 
 - Catalog
