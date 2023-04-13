@@ -1,13 +1,9 @@
 setup() {
   . "$TESTMANSH_TEST_BATSCORE_SETUP"
-
+  bl64_cnt_is_inside_container || skip 'test-case for container mode'
 }
 
 @test "codeskel64: download catalog" {
-  if [[ ! -f '/run/.containerenv' ]]; then
-    skip 'this case can only be tested inside a container'
-  fi
-
-  run "$DEVCS_BUILD_TARGET" -d
+  run "$DEVCS_BUILD_FULL_PATH" -d
   assert_success
 }

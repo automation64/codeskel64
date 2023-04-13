@@ -17,4 +17,4 @@ set +o 'nounset'
 # Do not set/unset: 'keyword', 'noexec'
 
 # (Optional) Add shared settings. Available to all test-cases using this setup routine
-. "${TESTMANSH_PROJECT_ROOT}/bin/devcs-set"
+. "${TESTMANSH_PROJECT_ROOT}/bin/dev-set"

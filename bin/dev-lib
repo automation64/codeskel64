@@ -7,8 +7,8 @@
 # * Template Version: v1.0.0
 #
 
-# shellcheck source=SCRIPTDIR/devcs-set
-source ./bin/devcs-set || exit 1
+# shellcheck source=SCRIPTDIR/dev-set
+source ./bin/dev-set || exit 1
 
 echo 'Download bash library: BashLib64'
 cd "$DEVCS_LIB" &&
