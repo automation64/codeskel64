@@ -17,7 +17,7 @@ readonly CODESKEL64_PATH_INVENTORY='inventory.csv'
 readonly CODESKEL64_PATH_SKELETONS='skeletons'
 
 # Source catalog repo
-readonly CODESKEL64_REPO='https://github.com/serdigital64/codeskel64-catalog.git'
+readonly CODESKEL64_REPO='https://github.com/automation64/codeskel64-catalog.git'
 
 # Inventory DB / field numbers
 readonly CODESKEL64_DB_COLLECTION='1'
