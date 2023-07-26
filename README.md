@@ -19,24 +19,28 @@ Skeletons can be single-file templates with replaceable tags or complex director
 
 The current catalog is available on GitHub and open for contributions:
 
-| Collection                           | Content               |
-| ------------------------------------ | --------------------- |
-| [Ansible](src/catalog/Ansible)       | Ansible assets        |
-| [Bash](src/catalog/Bash)             | Bash assets           |
-| [Container](src/catalog/Container)   | Container assets      |
-| [GHActions](src/catalog/GHActions)   | GitHub Actions assets |
-| [GIT](src/catalog/GIT)               | GIT assets            |
-| [Go](src/catalog/Go)                 | GoLang assets         |
-| [Helm](src/catalog/Helm)             | Helm assets           |
-| [Licenses](src/catalog/Licenses)     | Software Licenses     |
-| [MarkDown](src/catalog/MarkDown)     | MarkDown assets       |
-| [MkDocs](src/catalog/MkDocs)         | MkDoc assets          |
-| [Python](src/catalog/Python)         | Python assets         |
-| [ShellCheck](src/catalog/ShellCheck) | ShellCheck assets     |
-| [Terraforkm](src/catalog/Terraform)  | Terraform assets      |
-| [TestManSH](src/catalog/TestManSH)   | TestManSH assets      |
-| [VSCode](src/catalog/VSCode)         | VSCode assets         |
-| [YAML](src/catalog/YAML)             | YAML assets           |
+| Collection                           |
+| ------------------------------------ |
+| [Ansible](src/catalog/Ansible)       |
+| [Bash](src/catalog/Bash)             |
+| [BashLib64](src/catalog/BashLib64)   |
+| [BatsCore](src/catalog/BatsCore)     |
+| [Container](src/catalog/Container)   |
+| [GHActions](src/catalog/GHActions)   |
+| [GIT](src/catalog/GIT)               |
+| [GitLabCI](src/catalog/GitLabCI)     |
+| [Go](src/catalog/Go)                 |
+| [Helm](src/catalog/Helm)             |
+| [Licenses](src/catalog/Licenses)     |
+| [MarkDown](src/catalog/MarkDown)     |
+| [MkDocs](src/catalog/MkDocs)         |
+| [Python](src/catalog/Python)         |
+| [ShellCheck](src/catalog/ShellCheck) |
+| [Terraforkm](src/catalog/Terraform)  |
+| [TestManSH](src/catalog/TestManSH)   |
+| [TestManTF](src/catalog/TestManTF)   |
+| [VSCode](src/catalog/VSCode)         |
+| [YAML](src/catalog/YAML)             |
 
 In addition to single files and directories skeletons can be grouped together in the form of _combos_ to allow the creation of complete project structures:
 
@@ -106,7 +110,7 @@ codeskel64 -d
 
 ### OS Compatibility
 
-The tool uses the [BastLib64](https://github.com/serdigital64/bashlib64) library and supports the same tested platforms.
+The tool uses the [BastLib64](https://github.com/automation64/bashlib64) library and supports the same tested platforms.
 
 Refer to the [OS-Compatibility](https://serdigital64.github.io/bashlib64/#os-compatibility) list for further details.
 
@@ -119,7 +123,7 @@ Refer to the [OS-Compatibility](https://serdigital64.github.io/bashlib64/#os-com
 - Download _codeskel64_ from the source GitHub repository:
 
 ```shell
-curl -O https://raw.githubusercontent.com/serdigital64/codeskel64/main/codeskel64
+curl -O https://raw.githubusercontent.com/automation64/codeskel64/main/codeskel64
 chmod 0755 codeskel64
 # Optional: move to searchable path
 mv codeskel64 ~/.local/bin
@@ -135,8 +139,8 @@ codeskel64 -d
 
 Help on implementing new features and maintaining the code base is welcomed.
 
-- [Guidelines](https://github.com/serdigital64/codeskel64/blob/main/CONTRIBUTING.md)
-- [Contributor Covenant Code of Conduct](https://github.com/serdigital64/codeskel64/blob/main/CODE_OF_CONDUCT.md)
+- [Guidelines](https://github.com/automation64/codeskel64/blob/main/CONTRIBUTING.md)
+- [Contributor Covenant Code of Conduct](https://github.com/automation64/codeskel64/blob/main/CODE_OF_CONDUCT.md)
 
 ## License
 
