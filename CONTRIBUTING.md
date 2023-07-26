@@ -4,17 +4,14 @@
 
 - Prepare dev tools
   - Install GIT
-  - Install Git Flow
 - Clone GIT repository
 
 ```shell
-git clone https://github.com/serdigital64/codeskel64.git
+git clone https://github.com/automation64/codeskel64.git
 # Create module repositories as git submodules
 git submodule init
 # Update modules
 git submodule update
-# Init git flow
-git flow init
 ```
 
 - Adjust environment variables to match your configuration:
@@ -52,5 +49,5 @@ git flow init
 
 ## Repositories
 
-- Project GIT repository: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
-- Project Documentation: [https://github.com/serdigital64/codeskel64](https://github.com/serdigital64/codeskel64)
+- Project GIT repository: [https://github.com/automation64/codeskel64](https://github.com/automation64/codeskel64)
+- Project Documentation: [https://github.com/automation64/codeskel64](https://github.com/automation64/codeskel64)
