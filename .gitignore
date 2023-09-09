@@ -29,3 +29,6 @@ lib/*
 #
 # Project specific exclusions
 #
+
+# Ignore GIT repo to allow independent development and fork
+src/catalog
