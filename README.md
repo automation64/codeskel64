@@ -19,37 +19,37 @@ Skeletons can be single-file templates with replaceable tags or complex director
 
 The current catalog is available on GitHub and open for contributions:
 
-| Collection                           |
-| ------------------------------------ |
-| [Ansible](src/catalog/Ansible)       |
-| [Bash](src/catalog/Bash)             |
-| [BashLib64](src/catalog/BashLib64)   |
-| [BatsCore](src/catalog/BatsCore)     |
-| [Container](src/catalog/Container)   |
-| [GHActions](src/catalog/GHActions)   |
-| [GIT](src/catalog/GIT)               |
-| [GitLabCI](src/catalog/GitLabCI)     |
-| [Go](src/catalog/Go)                 |
-| [Helm](src/catalog/Helm)             |
-| [Licenses](src/catalog/Licenses)     |
-| [MarkDown](src/catalog/MarkDown)     |
-| [MkDocs](src/catalog/MkDocs)         |
-| [Python](src/catalog/Python)         |
-| [ShellCheck](src/catalog/ShellCheck) |
-| [Terraforkm](src/catalog/Terraform)  |
-| [TestManSH](src/catalog/TestManSH)   |
-| [TestManTF](src/catalog/TestManTF)   |
-| [VSCode](src/catalog/VSCode)         |
-| [YAML](src/catalog/YAML)             |
+| Collection                                 |
+| ------------------------------------------ |
+| [Ansible](src/catalog/Ansible)             |
+| [Bash](src/catalog/Bash)                   |
+| [BashLib64](src/catalog/BashLib64)         |
+| [BatsCore](src/catalog/BatsCore)           |
+| [Container](src/catalog/Container)         |
+| [GHActions](src/catalog/GHActions)         |
+| [GIT](src/catalog/GIT)                     |
+| [GitLabCI](src/catalog/GitLabCI)           |
+| [Go](src/catalog/Go)                       |
+| [Helm](src/catalog/Helm)                   |
+| [Licenses](src/catalog/Licenses)           |
+| [Documentation](src/catalog/Documentation) |
+| [MkDocs](src/catalog/MkDocs)               |
+| [Python](src/catalog/Python)               |
+| [ShellCheck](src/catalog/ShellCheck)       |
+| [Terraforkm](src/catalog/Terraform)        |
+| [TestManSH](src/catalog/TestManSH)         |
+| [TestManTF](src/catalog/TestManTF)         |
+| [VSCode](src/catalog/VSCode)               |
+| [YAML](src/catalog/YAML)                   |
 
 In addition to single files and directories skeletons can be grouped together in the form of _combos_ to allow the creation of complete project structures:
 
-| Combo                | Content                                         |
-| -------------------- | ----------------------------------------------- |
-| aplatform64-role     | Ansible A:Platform64 role                       |
-| git-generic          | GIT repository for generic project              |
-| git-terraform-module | GIT repository for Terraform Module             |
-| git-shellscript      | GIT repository for generic shell script project |
+| Combo                  | Content                                         |
+| ---------------------- | ----------------------------------------------- |
+| `aplatform64-role`     | Ansible A:Platform64 role                       |
+| `git-generic`          | GIT repository for generic project              |
+| `git-terraform-module` | GIT repository for Terraform Module             |
+| `git-shellscript`      | GIT repository for generic shell script project |
 
 ## Usage
 
