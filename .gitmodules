@@ -1,3 +1,0 @@
-[submodule "src/catalog"]
-	path = src/catalog
-	url = https://github.com/serdigital64/codeskel64-catalog.git
