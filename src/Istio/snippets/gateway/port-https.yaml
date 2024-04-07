@@ -1,0 +1,9 @@
+spec:
+  servers:
+  - port:
+      number: 443
+      name: "https"
+      protocol: "HTTPS"
+    tls:
+      mode: "SIMPLE"
+      credentialName: "X_CERT_SECRET_X"

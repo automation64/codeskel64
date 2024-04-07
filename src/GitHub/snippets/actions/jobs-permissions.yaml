@@ -1,0 +1,18 @@
+X_PERMISSIONS_PLACEHOLDER_X
+permissions:
+  # example # actions: read|write|none
+  # example # checks: read|write|none
+  # example # contents: read|write|none
+  # example # deployments: read|write|none
+  # example # id-token: read|write|none
+  # example # issues: read|write|none
+  # example # discussions: read|write|none
+  # example # packages: read|write|none
+  # example # pages: read|write|none
+  # example # pull-requests: read|write|none
+  # example # repository-projects: read|write|none
+  # example # security-events: read|write|none
+  # example # statuses: read|write|none
+  # example # write-all
+  # example # read-all
+  # example # {}

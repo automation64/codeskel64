@@ -1,0 +1,11 @@
+{
+  //
+  // VSCode / Settings / Markdown
+  //
+  // Settings Template Version: 11MAR24
+  // VSCode Version: >= 1.66
+  //
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}

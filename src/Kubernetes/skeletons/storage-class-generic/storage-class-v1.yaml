@@ -1,0 +1,10 @@
+---
+apiVersion: "storage.k8s.io/v1"
+kind: "StorageClass"
+metadata:
+  name: "X_SC_NAME_X"
+  # X_METADATA_PLACEHOLDER_X
+provisioner: "X_SC_PROVISIONER_X"
+reclaimPolicy: "X_SC_RC_X"
+volumeBindingMode: "X_SC_VBM_X"
+...

@@ -1,0 +1,3 @@
+output "X_TERRAFORM_OUTPUT_NAME_X" {
+  value = X_TERRAFORM_OUTPUT_VALUE_X
+}

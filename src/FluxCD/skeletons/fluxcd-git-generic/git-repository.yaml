@@ -1,0 +1,12 @@
+---
+apiVersion: "source.toolkit.fluxcd.io/v1"
+kind: "GitRepository"
+metadata:
+  name: "X_NAME_X"
+  namespace: "X_TARGET_NS_X"
+spec:
+  interval: "X_REFRESH_INTERNAL_X"
+  url: "X_REPO_URL_X"
+  ref:
+    branch: "X_BRANCH_NAME_X"
+...

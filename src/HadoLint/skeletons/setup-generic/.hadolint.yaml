@@ -1,0 +1,21 @@
+---
+failure-threshold: "error"
+no-color: false
+strict-labels: true
+disable-ignore-pragma: false
+no-fail: false
+trustedRegistries:
+  - "docker.io"
+  - "ghcr.io"
+  - "quay.io"
+  - "registry.suse.com"
+label-schema:
+  author: text
+  contact: email
+  created: rfc3339
+  version: semver
+  documentation: url
+  git-revision: hash
+  license: spdx
+ignored: []
+...

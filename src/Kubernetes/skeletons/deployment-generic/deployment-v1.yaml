@@ -1,0 +1,22 @@
+---
+apiVersion: "v1"
+kind: "Deployment"
+metadata:
+  name: "X_DEPLOYMENT_NAME_X"
+  # X_OBJECT_METADATA_LABELS_PLACEHOLDER_X
+spec:
+  # X_OBJECT_SPEC_SELECTOR_PLACEHOLDER_X
+  replicas: X_DEPLOYMENT_REPLICAS_X
+  progressDeadlineSeconds: X_DEPLOYMENT_DEADLINE_X
+  revisionHistoryLimit: X_DEPLOYMENT_HISTORY_X
+  strategy:
+    type: "RollingUpdate"
+    rollingUpdate:
+      maxSurge: X_DEPLOYMENT_STRATEGY_MAX_SURGE_X
+      maxUnavailable: X_DEPLOYMENT_STRATEGY_MAX_UNAVAILABLE_X
+  template:
+    metadata:
+      # X_OBJECT_METADATA_LABELS_PLACEHOLDER_X
+    spec:
+      # X_OBJECT_SPEC_SELECTOR_PLACEHOLDER_X
+...

@@ -1,0 +1,11 @@
+{
+	"name": "X_DEVCONTAINER_NAME_X",
+	"image": "X_DEVCONTAINER_IMAGE_X",
+	"features": {},
+	"forwardPorts": [],
+	"customizations": {
+		"vscode": {
+			"extensions": []
+		}
+	}
+}

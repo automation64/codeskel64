@@ -1,0 +1,13 @@
+## 1. Boot
+## 2. Hardware
+## 3. Kernel
+## 4. Packages
+## 5. Network
+## 6. Users
+## 7. Printing
+## 8. Storage
+## 9. Services
+## 10. X11
+## 11. System
+## 12. Security
+## 13. Other

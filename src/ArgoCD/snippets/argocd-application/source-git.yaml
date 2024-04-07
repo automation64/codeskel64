@@ -1,0 +1,4 @@
+spec:
+  source:
+    repoURL: "X_GIT_REPO_URL_X"
+    path: "X_GIT_REPO_PATH_X"

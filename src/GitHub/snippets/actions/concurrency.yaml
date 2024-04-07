@@ -1,0 +1,4 @@
+# X_CONCURRENCY_PLACEHOLDER_X
+concurrency:
+  # example # group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true

@@ -1,0 +1,9 @@
+topologySpreadConstraints:
+  - maxSkew: X_TOPOLOGY_SPREAD_SKEW_X
+    minDomains: X_TOPOLOGY_SPREAD_MIN_DOMAIN_X
+    topologyKey: X_TOPOLOGY_SPREAD_KEY_X
+    whenUnsatisfiable: X_TOPOLOGY_SPREAD_WHEN_X
+    labelSelector: X_TOPOLOGY_SPREAD_SELECTOR_X
+    matchLabelKeys: X_TOPOLOGY_SPREAD_MATCH_X
+    nodeAffinityPolicy: X_TOPOLOGY_SPREAD_AFFINITY_X
+    nodeTaintsPolicy: X_TOPOLOGY_SPREAD_TAINT_X

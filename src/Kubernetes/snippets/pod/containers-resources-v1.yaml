@@ -1,0 +1,7 @@
+resources:
+  requests:
+    memory: "X_CONTAINER_RESOURCE_REQUEST_MEM_X"
+    cpu: "X_CONTAINER_RESOURCE_REQUEST_CPU_X"
+  limits:
+    memory: "X_CONTAINER_RESOURCE_LIMIT_MEM_X"
+    cpu: "X_CONTAINER_RESOURCE_LIMIT_CPU_X"

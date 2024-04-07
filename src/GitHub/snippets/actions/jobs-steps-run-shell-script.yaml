@@ -1,0 +1,4 @@
+# X_STEPS_PLACEHOLDER_X
+- name: "X_STEP_NAME_X"
+  shell: 'script -q -e -c "bash {0}"'
+  run: "X_SHELL_PLACEHOLDER_X"

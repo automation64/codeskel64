@@ -1,0 +1,10 @@
+---
+apiVersion: "batch/v1"
+kind: "Job"
+metadata:
+  name: "X_JOB_NAME_X"
+  # X_METADATA_PLACEHOLDER_X
+spec:
+  template:
+    spec:
+...

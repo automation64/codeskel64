@@ -1,0 +1,9 @@
+metadata:
+  labels:
+    app.kubernetes.io/name: "X_LABEL_NAME_X"
+    app.kubernetes.io/instance: "X_LABEL_INSTANCE_X"
+    app.kubernetes.io/version: "X_LABEL_VERSION_X"
+    app.kubernetes.io/component: "X_LABEL_COMPONENT_X"
+    app.kubernetes.io/part-of: "X_LABEL_PART_OF_X"
+    app.kubernetes.io/managed-by: "X_LABEL_MANAGED_BY_X"
+    X_LABEL_KEY_X: "X_LABEL_VALUE_X"

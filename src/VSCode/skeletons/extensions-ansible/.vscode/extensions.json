@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / Ansible
+    //
+    // Settings Template Version: 110922
+    // VSCode Version: >= 1.66
+    //
+    "redhat.ansible",
+  ]
+}

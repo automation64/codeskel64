@@ -1,0 +1,15 @@
+---
+apiVersion: "autoscaling/v1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "X_HPA_NAME_X"
+  # X_OBJECT_METADATA_PLACEHOLDER_X
+spec:
+  maxReplicas: "X_HPA_REPLICAS_MAX_X"
+  minReplicas: "X_HPA_REPLICAS_MIN_X"
+  targetCPUUtilizationPercentage: "X_HPA_CPU_USAGE_PERCENT_X"
+  scaleTargetRef:
+    apiVersion: "apps/v1"
+    kind: "Deployment"
+    name: "X_DEPLOYMENT_NAME_X"
+...

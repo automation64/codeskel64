@@ -1,0 +1,17 @@
+---
+apiVersion: "v2"
+name: "X_CHART_NAME_X"
+description: "X_CHART_SHORT_DESCRIPTION_X"
+type: "application"
+version: "X_CHART_VERSION_X"
+appVersion: "X_CHART_APP_VERSION_X"
+keywords:
+  - "X_CHART_TAG_X"
+home: "X_PROJECT_DOC_URL_X"
+sources:
+  - "X_PROJECT_GIT_URL_X"
+maintainers:
+  - name: "X_AUTHOR_ALIAS_X"
+    email: "X_AUTHOR_EMAIL_X"
+    url: "X_PROJECT_DOC_URL_X"
+...

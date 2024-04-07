@@ -1,0 +1,46 @@
+---
+site_name: "X_PROJECT_NAME_NICE_X Project"
+site_description: "X_PROJECT_INFO_X"
+site_author: "X_AUTHOR_ALIAS_X"
+
+site_url: "X_PROJECT_DOC_URL_X"
+repo_url: "X_PROJECT_GIT_URL_X"
+
+copyright: "GPL-3.0-or-later"
+docs_dir: "docs/"
+site_dir: "site/"
+strict: false
+
+extra_css:
+  - "css/codehilite.css"
+
+plugins:
+  - search
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      linenums: false
+      guess_lang: false
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+      truly_sane: true
+  - toc:
+      permalink: true
+      baselevel: 2
+
+nav:
+  - Home: "index.md"
+  - Contributing:
+    - guidelines: "contributing/guidelines.md"
+    - design: "contributing/design.md"
+  - Collections:
+    - X_COLLECTION_NAME_X: "collections/X_COLLECTION_NAME_X.md"
+  - Roles:
+    - X_ROLE_NAME_X: "roles/X_ROLE_NAME_X.md"
+
+theme:
+  name: readthedocs
+  analytics:
+    gtag: "X_AUTHOR_GA4_TAG_X"
+...

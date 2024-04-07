@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / Docker
+    //
+    // Settings Template Version: 27APR24
+    // VSCode Version: >= 1.66
+    //
+    "marquesmps.dockerfile-validator",
+    "ms-azuretools.vscode-docker",
+  ]
+}

@@ -1,0 +1,13 @@
+---
+apiVersion: "kustomize.toolkit.fluxcd.io/v1"
+kind: "Kustomization"
+metadata:
+  name: "X_NAME_X"
+  namespace: "X_TARGET_NS_X"
+spec:
+  interval: "X_REFRESH_INTERNAL_X"
+  path: "X_INTERNAL_PATH_X"
+  sourceRef:
+    kind: "GitRepository"
+    name: "X_REPO_NAME_X"
+...
