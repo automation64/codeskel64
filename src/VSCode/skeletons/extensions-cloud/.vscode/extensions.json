@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / Cloud
+    //
+    // Settings Template Version: 19FEB24
+    // VSCode Version: >= 1.66
+    //
+    "AmazonWebServices.aws-toolkit-vscode",
+    "GoogleCloudTools.cloudcode",
+    "ms-vscode.azurecli",
+  ]
+}
+

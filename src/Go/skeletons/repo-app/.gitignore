@@ -1,0 +1,15 @@
+#
+# GIT Ignore
+#
+# * Version: 1.0.0
+#
+
+# VScode
+.vscode/*
+*.code-workspace
+
+# Go
+vendor/*
+
+# Keep placeholder for empty directories
+!/**/.gitkeep

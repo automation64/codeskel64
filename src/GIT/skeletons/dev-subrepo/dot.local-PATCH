@@ -1,0 +1,9 @@
+# delete-me # Add to the dot.local file
+
+# Subrepo / GitHub CLI
+DEV_LIB_GH_BIN="gh"
+export DEV_LIB_GH_BIN
+
+# Subrepo / Origin base URL
+DEV_CICD_SUBREPO_ORIGIN_URL='X_ORIGIN_URL_X'
+export DEV_CICD_SUBREPO_ORIGIN_URL

@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / YAML
+    //
+    // Settings Template Version: 27OCT24
+    // VSCode Version: >= 1.66
+    //
+    "redhat.vscode-yaml",
+  ]
+}
+

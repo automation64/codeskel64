@@ -1,0 +1,8 @@
+---
+apiVersion: "v1"
+kind: "Namespace"
+metadata:
+  name: "X_NAMESPACE_X"
+  # X_METADATA_PLACEHOLDER_X
+spec: {}
+...

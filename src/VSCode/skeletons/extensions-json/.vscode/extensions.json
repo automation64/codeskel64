@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / Json
+    //
+    // Settings Template Version: 27OCT24
+    // VSCode Version: >= 1.66
+    //
+    "tuxtina.json2yaml",
+    "zainchen.json",
+  ]
+}
+

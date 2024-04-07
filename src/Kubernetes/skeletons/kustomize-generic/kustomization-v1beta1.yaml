@@ -1,0 +1,16 @@
+---
+apiVersion: "kustomize.config.k8s.io/v1beta1"
+kind: "Kustomization"
+
+resources:
+  - "X_OBJECT_PATHX_X"
+
+generators:
+  - "X_OBJECT_PATHX_X"
+
+transformers:
+  - "X_OBJECT_PATHX_X"
+
+validators:
+  - "X_OBJECT_PATHX_X"
+...

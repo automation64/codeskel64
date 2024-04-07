@@ -1,0 +1,55 @@
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: "X_LABEL_KEY_X"
+            operator: "X_AFFINITY_OPERATOR_X"
+            values:
+              - "X_LABEL_VALUE_X"
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: "X_AFFINITY_WEIGHT_X"
+        preference:
+          matchExpressions:
+          - key: "X_LABEL_KEY_X"
+            operator: "X_AFFINITY_OPERATOR_X"
+            values:
+              - "X_LABEL_VALUE_X"
+  podAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+            - key: "X_LABEL_KEY_X"
+              operator: "X_AFFINITY_OPERATOR_X"
+              values:
+                - "X_LABEL_VALUE_X"
+        topologyKey: "X_TOPOLOGY_KEY_X"
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: "X_LABEL_KEY_X"
+                operator: "X_AFFINITY_OPERATOR_X"
+                values:
+                  - "X_LABEL_VALUE_X"
+          topologyKey: "X_TOPOLOGY_KEY_X"
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+            - key: "X_LABEL_KEY_X"
+              operator: "X_AFFINITY_OPERATOR_X"
+              values:
+                - "X_LABEL_VALUE_X"
+        topologyKey: "X_TOPOLOGY_KEY_X"
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: "X_LABEL_KEY_X"
+                operator: "X_AFFINITY_OPERATOR_X"
+                values:
+                  - "X_LABEL_VALUE_X"
+          topologyKey: "X_TOPOLOGY_KEY_X"

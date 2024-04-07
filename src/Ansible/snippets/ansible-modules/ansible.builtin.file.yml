@@ -1,0 +1,27 @@
+---
+- name: "create file"
+  ansible.builtin.file:
+    follow: false
+    force: false
+    unsafe_writes: false
+    recurse: false
+    state: "touch"
+    path: "{{  }}"
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
+
+- name: "create directory"
+  ansible.builtin.file:
+    follow: false
+    force: false
+    unsafe_writes: false
+    recurse: false
+    state: "directory"
+    path: "{{  }}"
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
+...

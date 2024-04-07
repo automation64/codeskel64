@@ -1,0 +1,12 @@
+- name: "Create test user"
+  become: true
+  ansible.builtin.user:
+    create_home: true
+    system: false
+    state: "present"
+    name: "{{ test_user }}"
+
+# test_user:
+#   name: "testusr"
+#   group: "testusr"
+#   home: "/home/testusr"

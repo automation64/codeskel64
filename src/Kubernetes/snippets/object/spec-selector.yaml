@@ -1,0 +1,4 @@
+spec:
+  selector:
+    matchLabels:
+      X_LABEL_KEY_X: "X_LABEL_VALUE_X"

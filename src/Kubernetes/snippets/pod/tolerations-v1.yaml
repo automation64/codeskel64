@@ -1,0 +1,8 @@
+tolerations:
+  - key: "X_LABEL_KEY_X"
+    operator: "Equal"
+    value: "X_LABEL_VALUE_X"
+    effect: "X_TOLERATION_EFFECT_X"
+  - key: "X_LABEL_KEY_X"
+    operator: "Exists"
+    effect: "X_TOLERATION_EFFECT_X"

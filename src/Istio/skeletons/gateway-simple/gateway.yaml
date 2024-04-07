@@ -1,0 +1,14 @@
+---
+apiVersion: "networking.istio.io/v1beta1"
+kind: "Gateway"
+metadata:
+  name: "X_GW_NAME_X"
+spec:
+  selector:
+    X_GW_LABEL_X: "X_GW_LABEL_VALUE_X"
+  servers:
+    - port:
+        X_GW_PORT_PLACEHOLDER_X
+      hosts:
+        X_GW_HOSTS_PLACEHOLDER_X
+...

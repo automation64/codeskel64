@@ -1,0 +1,9 @@
+...
+apiVersion: "v1"
+kind: "ConfigMap"
+metadata:
+  name: "X_SECRET_NAME_X"
+  # X_METADATA_PLACEHOLDER_X
+data:
+  # X_CONFIG_MAP_DATA_PLACEHOLDER_X
+---

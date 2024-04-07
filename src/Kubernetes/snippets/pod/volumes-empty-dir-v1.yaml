@@ -1,0 +1,4 @@
+volumes:
+  - name: "X_VOLUME_NAME_X"
+    emptyDir:
+      sizeLimit: "X_VOLUME_SIZE_X"

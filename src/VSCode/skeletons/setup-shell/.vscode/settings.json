@@ -1,0 +1,18 @@
+{
+  //
+  // VSCode / Settings / Shell
+  //
+  // Settings Template Version: 29MAR24
+  // VSCode Version: >= 1.66
+  //
+  "shellcheck.run": "onType",
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.logLevel": "error",
+  "bashIde.includeAllWorkspaceSymbols": true,
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.eol": "\n"
+  },
+}

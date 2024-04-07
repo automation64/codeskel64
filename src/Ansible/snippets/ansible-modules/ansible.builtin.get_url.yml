@@ -1,0 +1,16 @@
+---
+- name: ""
+  ansible.builtin.get_url:
+    backup: false
+    force: false
+    unsafe_writes: false
+    timeout: "{{ }}"
+    checksum: "{{ }}"
+    url: "{{ }}"
+    dest: "{{ }}"
+    tmp_dest: "{{ }}"
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
+...

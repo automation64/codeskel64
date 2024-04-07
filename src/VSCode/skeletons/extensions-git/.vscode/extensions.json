@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    //
+    // VSCode / Extensions / GIT
+    //
+    // Settings Template Version: 19FEB24
+    // VSCode Version: >= 1.66
+    //
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+  ]
+}
+

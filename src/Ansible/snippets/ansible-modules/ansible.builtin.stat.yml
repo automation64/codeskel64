@@ -1,0 +1,9 @@
+---
+- name: ""
+  ansible.builtin.stat:
+    follow: false
+    get_checksum: false
+    get_mime: false
+    get_attributes: false
+    path: "{{ }}"
+...

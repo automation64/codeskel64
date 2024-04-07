@@ -1,0 +1,14 @@
+---
+- name: ""
+  ansible.builtin.template:
+    backup: false
+    follow: false
+    force: true
+    unsafe_writes: false
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
+    src: "{{  }}"
+    dest: "{{  }}"
+...

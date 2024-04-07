@@ -1,0 +1,14 @@
+---
+- name: ""
+  ansible.builtin.copy:
+    backup: false
+    follow: false
+    force: true
+    remote_src: false
+    owner: "{{  }}"
+    group: "{{  }}"
+    mode: "{{  }}"
+    setype: "{{  }}"
+    src: "{{  }}"
+    dest: "{{  }}"
+...

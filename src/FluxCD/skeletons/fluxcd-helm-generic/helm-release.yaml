@@ -1,0 +1,17 @@
+---
+apiVersion: "helm.toolkit.fluxcd.io/v2beta1"
+kind: "HelmRelease"
+metadata:
+  name: "X_NAME_X"
+  namespace: "X_TARGET_NS_X"
+spec:
+  interval: "X_REFRESH_INTERNAL_X"
+  chart:
+    spec:
+      chart: "X_CHART_NAME_X"
+      reconcileStrategy: "ChartVersion"
+      version: "X_CHART_VERSION_X"
+      sourceRef:
+        kind: HelmRepository
+        name: "X_REPO_NAME_X"
+...

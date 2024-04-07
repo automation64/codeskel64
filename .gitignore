@@ -1,34 +1,27 @@
 #
 # GIT Ignore
 #
-# * Template version: 1.0.1
+# * Template version: 1.3.0
 #
 
-.tmp/*
-.var/*
+#
+# Main
+#
 
-# VScode
-.vscode
-*.code-workspace
+/build/*
+/lib/*
+/logs/*
+/tmp/*
+/vault/*
 
-# Builds for prod/dev/test
-build/*
-
-# Dev libs. Dynamic content update at dev time
-lib/*
-
-# Secrets
-.secrets
-
-# Local variables
-.local
-
-# Keep placeholder for empty directories
-!/**/.gitkeep
+/.local
+/.secrets
 
 #
 # Project specific exclusions
 #
 
-# Ignore GIT repo to allow independent development and fork
-src/catalog
+/.vscode
+
+# Keep placeholder for empty directories
+!/**/.gitkeep

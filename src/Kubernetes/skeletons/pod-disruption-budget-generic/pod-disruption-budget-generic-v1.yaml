@@ -1,0 +1,11 @@
+---
+apiVersion: "policy/v1"
+kind: "PodDisruptionBudget"
+metadata:
+  name: "X_DEPLOYMENT_NAME_X"
+  # X_OBJECT_METADATA_PLACEHOLDER_X
+spec:
+  minAvailable: X_PDB_AVAILABLE_MIN_X
+  maxUnavailable: X_PDB_UNAVAILABLE_MAX_X
+  # X_OBJECT_SELECTOR_PLACEHOLDER_X
+...

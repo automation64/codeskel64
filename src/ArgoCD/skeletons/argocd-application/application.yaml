@@ -1,0 +1,19 @@
+---
+apiVersion: "argoproj.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: "X_APP_NAME_X"
+  namespace: "argocd"
+spec:
+  project: "X_APP_NAME_X"
+  source: {}
+    # X_APPLICATION_SOURCE_PLACEHOLDER_X
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "X_APP_NAME_X"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+...

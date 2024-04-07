@@ -1,0 +1,6 @@
+# X_ON_PLACEHOLDER_X
+push:
+  branches:
+    - "feature/**"
+  paths:
+    # X_PATH_PLACEHOLDER_X

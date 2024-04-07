@@ -1,0 +1,7 @@
+spec:
+  source:
+    chart: "X_APP_CHART_NAME_X"
+    repoURL: "X_HELM_REPO_URL_X"
+    targetRevision: "X_APP_RELEASE_X"
+    helm:
+      valuesObject: {}

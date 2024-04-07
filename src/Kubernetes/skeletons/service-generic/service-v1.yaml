@@ -1,0 +1,12 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "X_SERVICE_NAME_X"
+  # X_METADATA_PLACEHOLDER_X
+spec:
+  selector:
+    # X_SERVICE_SELECTOR_PLACEHOLDER_X
+  ports:
+    # X_SERVICE_PORTS_PLACEHOLDER_X
+---

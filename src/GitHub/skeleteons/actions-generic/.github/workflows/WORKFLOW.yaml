@@ -1,0 +1,28 @@
+---
+# Template: 1.0.0
+name: "X_TARGET_TITLE_X"
+
+concurrency: {}
+  # X_CONCURRENCY_PLACEHOLDER_X
+
+defaults: {}
+  # X_DEFAULTS_PLACEHOLDER_X
+
+env: {}
+  # X_ENV_PLACEHOLDER_X
+
+on: {}
+  # X_ON_PLACEHOLDER_X
+
+jobs:
+  X_JOB_ID_X:
+    # X_PERMISSIONS_PLACEHOLDER_X
+    # X_MATRIX_PLACEHOLDER_X
+    runs-on: "ubuntu-latest"
+    steps:
+
+      - name: "Check out repository code"
+        uses: "actions/checkout@main"
+
+      # "X_STEPS_PLACEHOLDER_X"
+...

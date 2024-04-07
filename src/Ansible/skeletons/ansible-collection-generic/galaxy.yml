@@ -1,0 +1,18 @@
+---
+namespace: "X_PROJECT_NAMESPACE_X"
+name: "X_COLLECTION_NAME_X"
+version: "X_COLLECTION_VERSION_X_Y_Z_X"
+readme: "README.md"
+authors:
+  - "X_AUTHOR_ALIAS_X <X_AUTHOR_EMAIL_X>"
+description: "X_COLLECTION_SHORT_DESCRIPTION_X"
+license:
+  - "GPL-3.0-or-later"
+tags:
+  - "X_COLLECTION_TAGS_X"
+dependencies: {}
+repository: "X_PROJECT_GIT_URL_X"
+homepage: "X_PROJECT_GIT_URL_X"
+issues: "X_PROJECT_GIT_URL_X/issues"
+documentation: "X_PROJECT_DOC_URL_X"
+...

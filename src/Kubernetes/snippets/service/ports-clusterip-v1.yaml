@@ -1,0 +1,4 @@
+ports:
+  - name: "X_PROTOCOL_X"
+    port: X_PORT_X
+    targetPort: X_TARGETPORT_X

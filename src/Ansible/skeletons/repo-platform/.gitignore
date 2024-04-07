@@ -1,0 +1,21 @@
+#
+# GIT Ignore
+#
+# * Version: 1.0.0
+#
+
+# VScode
+.vscode
+*.code-workspace
+
+# Ansible secrets
+
+etc/keys
+etc/tokens
+
+# Keep placeholder for empty directories
+!/**/.gitkeep
+
+#
+# Project specific exclusions
+#
