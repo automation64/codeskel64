@@ -6,6 +6,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+
 				//
 				// VSCode / Extensions / Base
 				//
@@ -31,13 +32,29 @@
 				"tyriar.sort-lines",
 				"visualstudioexptteam.vscodeintellicode",
 				//
-				// VSCode / Extensions / GIT
+				// VSCode / Extensions / Doc
 				//
-				// Settings Template Version: 19FEB24
+				// Settings Template Version: 20MAY24
 				// VSCode Version: >= 1.66
 				//
-				"donjayamanne.githistory",
-				"eamodio.gitlens",
+				"bierner.markdown-checkbox",
+				"bierner.markdown-emoji",
+				"bierner.markdown-mermaid",
+				"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+				"darkriszty.markdown-table-prettify",
+				"davidanson.vscode-markdownlint",
+				"mdickin.markdown-shortcuts",
+				"phoihos.markdown-markmap",
+				"yzhang.markdown-all-in-one",
+				"hediet.vscode-drawio",
+				//
+				// VSCode / Extensions / Python
+				//
+				// Settings Template Version: 20MAY24
+				// VSCode Version: >= 1.66
+				//
+				"ms-python.python",
+				"ms-toolsai.jupyter",
 				//
 				// VSCode / Extensions / Shell
 				//
@@ -53,49 +70,14 @@
 				"rogalmic.bash-debug",
 				"shakram02.bash-beautify",
 				//
-				// VSCode / Extensions / Docker
+				// VSCode / Extensions / Text
 				//
-				// Settings Template Version: 27APR24
-				// VSCode Version: >= 1.66
-				//
-				"marquesmps.dockerfile-validator",
-				"ms-azuretools.vscode-docker",
-				//
-				// VSCode / Extensions / Json
-				//
-				// Settings Template Version: 27OCT24
+				// Settings Template Version: 20MAY24
 				// VSCode Version: >= 1.66
 				//
 				"tuxtina.json2yaml",
 				"zainchen.json",
-				//
-				// VSCode / Extensions / XML
-				//
-				// Settings Template Version: 27FEB24
-				// VSCode Version: >= 1.66
-				//
 				"dotjoshjohnson.xml",
-				//
-				// VSCode / Extensions / Markdown
-				//
-				// Settings Template Version: 27FEB24
-				// VSCode Version: >= 1.66
-				//
-				"bierner.markdown-checkbox",
-				"bierner.markdown-emoji",
-				"bierner.markdown-mermaid",
-				"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
-				"darkriszty.markdown-table-prettify",
-				"davidanson.vscode-markdownlint",
-				"mdickin.markdown-shortcuts",
-				"phoihos.markdown-markmap",
-				"yzhang.markdown-all-in-one",
-				//
-				// VSCode / Extensions / YAML
-				//
-				// Settings Template Version: 27OCT24
-				// VSCode Version: >= 1.66
-				//
 				"redhat.vscode-yaml"
 			]
 		}

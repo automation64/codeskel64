@@ -7,7 +7,7 @@
     // VSCode Version: >= 1.66
     //
     "ms-python.python",
-    "ms-toolsai.jupyter"
+    "ms-toolsai.jupyter",
   ]
 }
 
