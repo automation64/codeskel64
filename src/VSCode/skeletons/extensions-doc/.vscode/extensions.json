@@ -1,9 +1,9 @@
 {
   "recommendations": [
     //
-    // VSCode / Extensions / Markdown
+    // VSCode / Extensions / Text
     //
-    // Settings Template Version: 27FEB24
+    // Settings Template Version: 20MAY24
     // VSCode Version: >= 1.66
     //
     "bierner.markdown-checkbox",
@@ -15,5 +15,6 @@
     "mdickin.markdown-shortcuts",
     "phoihos.markdown-markmap",
     "yzhang.markdown-all-in-one",
+    "hediet.vscode-drawio"
   ]
 }
