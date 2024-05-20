@@ -1,0 +1,39 @@
+{
+  //
+  // VSCode / Settings / IAC
+  //
+  // Settings Template Version: 20MAY24
+  // VSCode Version: >= 1.66
+  //
+  "redhat.telemetry.enabled": false,
+  "[ansible]": {
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.formatOnSaveMode": "file"
+  },
+  "terraform.languageServer": {
+    "external": true,
+    "pathToBinary": "",
+    "args": ["serve"],
+    "maxNumberOfProblems": 100,
+    "trace.server": "off"
+  },
+}

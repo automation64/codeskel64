@@ -9,7 +9,7 @@
     "HashiCorp.terraform",
     "ms-azuretools.vscode-azureterraform",
     "redhat.ansible",
-    "Tim-Koehler.helm-intellisense",
+    "Tim-Koehler.helm-intellisense"
   ]
 }
 
