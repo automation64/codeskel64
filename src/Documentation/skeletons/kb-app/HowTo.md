@@ -2,19 +2,19 @@
 
 - [Usage](#usage)
   - [1.](#1)
-    - [1.1. Version: OS:](#11-version-os)
-      - [](#)
+    - [](#)
+      - [Version: OS:](#version-os)
   - [A. References](#a-references)
 
 ## 1.
 
-### 1.1. Version: OS:
+###
 
-####
+#### Version: OS:
 
 ```shell
 ```
 
 ## A. References
 
-**_template: 1.0.0_**
+**_template: 2.0.0_**

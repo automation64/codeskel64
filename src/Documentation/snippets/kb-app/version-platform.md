@@ -12,6 +12,7 @@
 | `KVM4AMD64` | `Linux KVM Hypervisor on amd64`   |
 | `KVM4X86`   | `Linux KVM Hypervisor on x86`     |
 | `PPC`       | `IBM Power CPU`                   |
+| `APPSH`     | `Application interactive shell`   |
 | `SL`        | `IBM Softlayer`                   |
 | `TUI`       | `Platform independent Text UI`    |
 | `VMW`       | `VMWare Hypervisor`               |

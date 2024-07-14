@@ -2,8 +2,8 @@
 
 - [Cases](#cases)
   - [1.](#1)
-    - [1.1. Version: OS:](#11-version-os)
-      - [Problem: ``](#problem-)
+    - [Problem: \`\`](#problem-)
+      - [Version: OS:](#version-os)
         - [Description](#description)
         - [Diagnostic](#diagnostic)
         - [Solution](#solution)
@@ -11,9 +11,9 @@
 
 ## 1.
 
-### 1.1. Version: OS:
+### Problem: ``
 
-#### Problem: ``
+#### Version: OS:
 
 ##### Description
 
@@ -38,4 +38,4 @@
 
 -
 
-**_Template: 1.2.4_**
+**_Template: 2.0.0_**

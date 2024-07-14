@@ -2,25 +2,25 @@
 
 - [Concepts](#concepts)
   - [.](#)
-    - [.1. Overview](#1-overview)
-    - [.2. Specification](#2-specification)
-    - [.3. Configuration rules](#3-configuration-rules)
-    - [.4. Management rules](#4-management-rules)
-    - [.5. Best Practices](#5-best-practices)
+    - [Overview](#overview)
+    - [Specification](#specification)
+    - [Configuration rules](#configuration-rules)
+    - [Management rules](#management-rules)
+    - [Best Practices](#best-practices)
   - [A. References](#a-references)
 
 ## . 
 
-### .1. Overview
+### Overview
 
-### .2. Specification
+### Specification
 
-### .3. Configuration rules
+### Configuration rules
 
-### .4. Management rules
+### Management rules
 
-### .5. Best Practices
+### Best Practices
 
 ## A. References
 
-**_template: 1.2.0_**
+**_template: 2.0.0_**
