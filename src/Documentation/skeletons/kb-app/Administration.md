@@ -2,26 +2,17 @@
 
 - [Administration](#administration)
   - [1.](#1)
-    - [1.1. Info](#11-info)
-    - [1.2. Control](#12-control)
-    - [1.3. Management](#13-management)
-      - [1.3.1. Version: OS:](#131-version-os)
-        - [](#)
+    - [TASK](#task)
+      - [Version: OS:](#version-os)
   - [A. References](#a-references)
   - [B. Files](#b-files)
   - [C. Log-Format](#c-log-format)
 
 ## 1.
 
-### 1.1. Info
+### TASK
 
-### 1.2. Control
-
-### 1.3. Management
-
-#### 1.3.1. Version: OS:
-
-#####
+#### Version: OS:
 
 -
 
@@ -34,4 +25,4 @@
 
 ## C. Log-Format
 
-**_template: 2.0.0_**
+**_template: 4.0.0_**
