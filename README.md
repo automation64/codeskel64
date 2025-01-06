@@ -17,7 +17,6 @@
 
 | Collection                         |
 | ---------------------------------- |
-| [Ansible](src/catalog/Ansible)     |
 | [Ansible](src/Ansible)             |
 | [ArgoCD](src/ArgoCD)               |
 | [Bash](src/Bash)                   |
