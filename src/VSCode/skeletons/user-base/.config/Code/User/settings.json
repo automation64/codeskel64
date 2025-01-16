@@ -1,0 +1,50 @@
+{
+  //
+  // VSCode / Settings / Base
+  //
+  // Settings Template Version: 20MAY24
+  // VSCode Version: >= 1.66
+  //
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorStyle": "block",
+  "editor.cursorSurroundingLines": 1,
+  "editor.linkedEditing": true,
+  "editor.matchBrackets": "never",
+  "editor.minimap.enabled": false,
+  "editor.parameterHints.cycle": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlightOnlyWhenFocus": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.showFoldingControls": "always",
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.enableDragAndDrop": false,
+  "files.enableTrash": true,
+  "search.followSymlinks": false,
+  "search.useIgnoreFiles": true,
+  "terminal.integrated.defaultLocation": "editor",
+  "window.closeWhenEmpty": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tips.enabled": false,
+  //
+  // Local defaults section. Use to isolate settings that should not be replaced when updating from the master template
+  //
+  "debug.console.fontSize": 12,
+  "editor.fontFamily": "Noto Mono",
+  "editor.fontSize": 13,
+  "editor.inlayHints.fontFamily": "",
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  "terminal.integrated.fontSize": 14,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Zacks Contrast (rainglow)",
+  //
+  // Runtime section. Use this section to isolate local changes made automatically by VSCode
+  //
+}

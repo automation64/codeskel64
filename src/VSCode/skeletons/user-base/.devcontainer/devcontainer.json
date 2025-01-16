@@ -1,0 +1,11 @@
+{
+	"name": "generic",
+	"image": "alpine",
+	"features": {},
+	"forwardPorts": [],
+	"customizations": {
+		"vscode": {
+			"extensions": []
+		}
+	}
+}
