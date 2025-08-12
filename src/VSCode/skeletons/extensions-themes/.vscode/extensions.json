@@ -3,7 +3,7 @@
     //
     // VSCode / Extensions / Themes
     //
-    // Settings Template Version: 21AUG23
+    // Settings Template Version: 12AUG25
     // VSCode Version: >= 1.66
     //
     "ahmadawais.shades-of-purple",
@@ -26,8 +26,6 @@
     "eliverlara.andromeda",
     "emmanuelbeziat.vscode-great-icons",
     "equinusocio.vsc-community-material-theme",
-    "equinusocio.vsc-material-theme-icons",
-    "equinusocio.vsc-material-theme",
     "felipe-mendes.slack-theme",
     "file-icons.file-icons",
     "fisheva.eva-theme",
