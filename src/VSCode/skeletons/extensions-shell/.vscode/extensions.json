@@ -3,16 +3,21 @@
     //
     // VSCode / Extensions / Shell
     //
-    // Settings Template Version: 26APR22
+    // Settings Template Version: 12AUG25
     // VSCode Version: >= 1.66
     //
-    "foxundermoon.shell-format",
     "ironmansoftware.powershellprotools",
     "ms-vscode.powershell",
     "remisa.shellman",
-    "timonwong.shellcheck",
     "mads-hartmann.bash-ide-vscode",
     "rogalmic.bash-debug",
-    "shakram02.bash-beautify",
   ]
 }
+
+//
+// Deprecated
+//
+
+// "foxundermoon.shell-format",
+// "mkhl.shfmt",
+// "timonwong.shellcheck",
