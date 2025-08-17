@@ -6,6 +6,9 @@
     // Settings Template Version: 12AUG25
     // VSCode Version: >= 1.66
     //
+    // Theme tools
+    "johnpapa.vscode-peacock",
+    // Theme Library
     "ahmadawais.shades-of-purple",
     "akamud.vscode-theme-onedark",
     "akamud.vscode-theme-onelight",
