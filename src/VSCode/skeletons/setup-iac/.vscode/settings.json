@@ -2,10 +2,30 @@
   //
   // VSCode / Settings / IAC
   //
-  // Settings Template Version: 20MAY24
+  // Settings Template Version: 15AUG25
   // VSCode Version: >= 1.66
   //
+  "opentofu.codelens.referenceCount": true,
+  "opentofu.experimentalFeatures.prefillRequiredFields": true,
   "redhat.telemetry.enabled": false,
+  "[opentofu]": {
+    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 2
+  },
+  "[opentofu-vars]": {
+    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 2
+  },
+  "[opentofu-test]": {
+    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 2
+  },
   "[ansible]": {
     "editor.formatOnType": true,
     "editor.detectIndentation": false,
@@ -35,5 +55,9 @@
     "args": ["serve"],
     "maxNumberOfProblems": 100,
     "trace.server": "off"
-  },
+  }
+  // "files.associations": {
+  //   "*.tofu": "opentofu"
+  // }
+
 }
