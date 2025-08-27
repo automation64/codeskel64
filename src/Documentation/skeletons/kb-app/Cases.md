@@ -1,7 +1,7 @@
 # Cases
 
 - [Cases](#cases)
-  - [1.](#1)
+  - [](#)
     - [Problem: \`\`](#problem-)
       - [Version: OS:](#version-os)
         - [Description](#description)
@@ -9,7 +9,7 @@
         - [Solution](#solution)
         - [Support](#support)
 
-## 1.
+##
 
 ### Problem: ``
 
@@ -20,11 +20,14 @@
 - Scenario
   -
 - Command
-  - ``
+
+```shell
+```
+
 - Error Message
 
-  ```text
-  ```
+```text
+```
 
 ##### Diagnostic
 
@@ -38,4 +41,4 @@
 
 -
 
-**_Template: 2.0.0_**
+**_Template: 2.0.1_**

@@ -1,15 +1,15 @@
 # Concepts
 
 - [Concepts](#concepts)
-  - [.](#)
+  - [](#)
     - [Overview](#overview)
     - [Specification](#specification)
     - [Configuration rules](#configuration-rules)
     - [Management rules](#management-rules)
     - [Best Practices](#best-practices)
-  - [A. References](#a-references)
+  - [References](#references)
 
-## . 
+## 
 
 ### Overview
 
@@ -21,6 +21,8 @@
 
 ### Best Practices
 
-## A. References
+## References
 
-**_template: 2.0.0_**
+- []()
+
+**_template: 2.0.1_**
