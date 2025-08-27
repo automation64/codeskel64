@@ -1,28 +1,40 @@
 # Administration
 
 - [Administration](#administration)
-  - [1.](#1)
-    - [TASK](#task)
+  - [X\_SECTION\_X](#x_section_x)
+    - [X\_TASK\_X](#x_task_x)
       - [Version: OS:](#version-os)
-  - [A. References](#a-references)
-  - [B. Files](#b-files)
-  - [C. Log-Format](#c-log-format)
+    - [`X_CHILD_PATH_X/`](#x_child_path_x)
+      - [Version: OS:](#version-os-1)
+  - [References](#references)
 
-## 1.
+## X_SECTION_X
 
-### TASK
+### X_TASK_X
 
 #### Version: OS:
 
--
+X_DESCRIPTION_X
+
+- X_STEP_X
 
 ```shell
 ```
 
-## A. References
+[## Paths]
 
-## B. Files
+### `X_CHILD_PATH_X/`
 
-## C. Log-Format
+X_DESCRIPTION_X
 
-**_template: 4.0.0_**
+#### Version: OS:
+
+- `X_PARENT_PATH_X/`
+
+[## Log-Format]
+
+## References
+
+- []()
+
+**_template: 4.0.2_**

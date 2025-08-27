@@ -1,0 +1,19 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: "X_OBJECT_NAME_X"
+spec:
+  jobTemplate:
+    metadata:
+      name: "X_OBJECT_NAME_X"
+    spec:
+      template:
+        spec:
+          containers:
+          - image: "X_CONTAINER_IMAGE_X"
+            name: skeleton
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: 'X_SCHEDULE_X'
+...

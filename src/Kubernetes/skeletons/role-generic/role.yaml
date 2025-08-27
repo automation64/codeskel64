@@ -1,0 +1,13 @@
+---
+apiVersion: "rbac.authorization.k8s.io/v1"
+kind: "Role"
+metadata:
+  name: "X_NAME_PLACEHOLDER_X"
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - "X_RESOURCE_PLACEHOLDER_X"
+  verbs:
+  - "X_VERB_PLACEHOLDER_X"
+...
