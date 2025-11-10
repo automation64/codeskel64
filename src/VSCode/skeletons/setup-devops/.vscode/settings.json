@@ -2,9 +2,15 @@
   //
   // VSCode / Settings / DevOps
   //
-  // Settings Template Version: 20MAY24
+  // Settings Template Version: 10NOV25
   // VSCode Version: >= 1.66
   //
+  "git.enableSmartCommit": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.telemetry.enabled": false,
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   }

@@ -1,2 +1,3 @@
 ports:
-  - containerPort: X_CONTAINER_PORT_X
+  - containerPort: X_CONTAINER_PORT_NUMBER_X
+    name: "X_CONTAINER_PORT_NAME_X"

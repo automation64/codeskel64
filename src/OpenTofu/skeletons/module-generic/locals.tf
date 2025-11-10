@@ -1,0 +1,6 @@
+#
+# Locals
+#
+
+locals {
+}

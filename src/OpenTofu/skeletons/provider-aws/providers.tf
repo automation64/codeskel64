@@ -1,0 +1,6 @@
+#
+# Provider: AWS
+#
+
+provider "aws" {
+}
