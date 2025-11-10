@@ -2,7 +2,7 @@
   //
   // VSCode / Settings / Text
   //
-  // Settings Template Version: 20MAY24
+  // Settings Template Version: 10NOV25
   // VSCode Version: >= 1.66
   //
   "yaml.validate": true,
@@ -20,6 +20,7 @@
     "editor.formatOnType": true,
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
 }

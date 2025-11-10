@@ -25,7 +25,6 @@
 | [Container](src/Container)         |
 | [Documentation](src/Documentation) |
 | [FluxCD](src/FluxCD)               |
-| [GIT](src/GIT)                     |
 | [GitHub](src/GitHub)               |
 | [Go](src/Go)                       |
 | [HadoLint](src/HadoLint)           |
@@ -33,8 +32,8 @@
 | [Istio](src/Istio)                 |
 | [Kubernetes](src/Kubernetes)       |
 | [Licenses](src/Licenses)           |
-| [Minikube](src/Minikube)           |
 | [MkDocs](src/MkDocs)               |
+| [OpenTofu](src/OpenTofuerraform)   |
 | [Python](src/Python)               |
 | [ShellCheck](src/ShellCheck)       |
 | [Terraform](src/Terraform)         |
@@ -46,6 +45,10 @@
 Help on implementing new features and maintaining the code base is welcomed.
 
 - [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)
+
+## Disclaimer
+
+This repository is provided "as is" without any warranties and is intended solely for educational purposes. The author is not responsible for any damages or issues arising from its use. Additionally, this project is not affiliated with or endorsed by any organization or entity. Use at your own risk.
 
 ## License
 

@@ -2,26 +2,29 @@
   //
   // VSCode / Settings / IAC
   //
-  // Settings Template Version: 15AUG25
+  // Settings Template Version: 10NOV25
   // VSCode Version: >= 1.66
   //
+  "azureTerraform.checkTerraformCmd": false,
+  "opentofu.experimentalFeatures.validateOnSave": true,
+  "opentofu.languageServer.ignoreSingleFileWarning": true,
   "opentofu.codelens.referenceCount": true,
   "opentofu.experimentalFeatures.prefillRequiredFields": true,
   "redhat.telemetry.enabled": false,
   "[opentofu]": {
-    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.defaultFormatter": "opentofu.vscode-opentofu",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 2
   },
   "[opentofu-vars]": {
-    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.defaultFormatter": "opentofu.vscode-opentofu",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 2
   },
   "[opentofu-test]": {
-    "editor.defaultFormatter": "opentofu.opentofu",
+    "editor.defaultFormatter": "opentofu.vscode-opentofu",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 2
@@ -49,15 +52,11 @@
     "editor.tabSize": 2,
     "editor.formatOnSaveMode": "file"
   },
-  "terraform.languageServer": {
-    "external": true,
-    "pathToBinary": "",
-    "args": ["serve"],
-    "maxNumberOfProblems": 100,
-    "trace.server": "off"
-  }
+  "azureTerraform.survey": {
+    "surveyPromptDate": "never",
+    "surveyPromptIgnoreCount": 0
+  },
   // "files.associations": {
   //   "*.tofu": "opentofu"
   // }
-
 }

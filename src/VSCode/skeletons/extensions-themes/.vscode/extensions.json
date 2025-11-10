@@ -3,7 +3,7 @@
     //
     // VSCode / Extensions / Themes
     //
-    // Settings Template Version: 12AUG25
+    // Settings Template Version: 21SEP25
     // VSCode Version: >= 1.66
     //
     // Theme tools
@@ -28,6 +28,7 @@
     "dunstontc.dark-plus-syntax",
     "eliverlara.andromeda",
     "emmanuelbeziat.vscode-great-icons",
+    "Endormi.2077-theme",
     "equinusocio.vsc-community-material-theme",
     "felipe-mendes.slack-theme",
     "file-icons.file-icons",
@@ -51,6 +52,7 @@
     "jprestidge.theme-material-theme",
     "karyfoundation.theme-karyfoundation-themes",
     "kuscamara.electron",
+    "LittleWaterfall.neon-cyberpunk-theme",
     "liviuschera.noctis",
     "lkytal.flatui",
     "mariorodeghiero.vue-theme",
@@ -62,6 +64,7 @@
     "ms-vscode.theme-materialkit",
     "naumovs.theme-oceanicnext",
     "pkief.material-icon-theme",
+    "RobbOwen.synthwave-vscode",
     "rokoroku.vscode-theme-darcula",
     "sdras.night-owl",
     "solarliner.linux-themes",

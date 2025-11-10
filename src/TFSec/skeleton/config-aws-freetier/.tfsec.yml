@@ -1,0 +1,4 @@
+---
+# Exclude controls that are not in the free tier
+exclude:
+  - aws-ec2-require-vpc-flow-logs-for-all-vpcs
