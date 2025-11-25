@@ -1,0 +1,19 @@
+{
+  //
+  // VSCode / Settings / Theme
+  //
+  // Settings Template Version: 20NOV25
+  // VSCode Version: >= 1.66
+  //
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Neon Cyberpunk",
+  "debug.console.fontSize": 13,
+  "editor.fontFamily": "Noto Mono",
+  "editor.fontSize": 13,
+  "editor.inlayHints.fontFamily": "",
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  "terminal.integrated.fontSize": 13,
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusAndTitleBorders": true,
+  "peacock.surpriseMeOnStartup": true,
+}
