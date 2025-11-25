@@ -3,7 +3,7 @@
     //
     // VSCode / Extensions / Base
     //
-    // Settings Template Version: 27FEB24
+    // Settings Template Version: 19NOV25
     // VSCode Version: >= 1.66
     //
     "aaron-bond.better-comments",
@@ -23,9 +23,5 @@
     "sleistner.vscode-fileutils",
     "streetsidesoftware.code-spell-checker",
     "tyriar.sort-lines",
-    "visualstudioexptteam.vscodeintellicode",
-    //
-    // Local defaults section. Use to isolate settings that should not be replaced when updating from the master template
-    //
   ]
 }

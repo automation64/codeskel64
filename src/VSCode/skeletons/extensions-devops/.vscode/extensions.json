@@ -3,12 +3,25 @@
     //
     // VSCode / Extensions / DevOps
     //
-    // Settings Template Version: 20MAY24
+    // Settings Template Version: 20NOV25
     // VSCode Version: >= 1.66
     //
     "marquesmps.dockerfile-validator",
     "ms-azuretools.vscode-docker",
     "donjayamanne.githistory",
     "eamodio.gitlens",
+    "ironmansoftware.powershellprotools",
+    "ms-vscode.powershell",
+    "remisa.shellman",
+    "mads-hartmann.bash-ide-vscode",
+    "rogalmic.bash-debug",
   ]
 }
+
+//
+// Deprecated
+//
+
+// "foxundermoon.shell-format",
+// "mkhl.shfmt",
+// "timonwong.shellcheck",
