@@ -1,0 +1,22 @@
+---
+# Template: 1.0.0
+name: "X_WORKFLOW_TITLE_X"
+
+permissions:
+  # X_PERMISSIONS_PLACEHOLDER_X
+
+defaults:
+  # X_DEFAULTS_PLACEHOLDER_X
+
+env:
+  # X_WORKFLOW_ENV_PLACEHOLDER_X
+
+on:
+  workflow_call:
+    # X_CALL_INPUTS_PLACEHOLDER_X
+    # X_CALL_SECRETS_PLACEHOLDER_X
+    # X_CALL_OUTPUTS_PLACEHOLDER_X
+
+jobs:
+  # X_JOB_PLACEHOLDER_X
+...

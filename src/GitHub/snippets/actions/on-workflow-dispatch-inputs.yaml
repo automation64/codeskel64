@@ -1,0 +1,21 @@
+# X_CALL_INPUTS_PLACEHOLDER_X
+on:
+  workflow_dispatch:
+    inputs:
+      X_INPUT_NAME_X:
+        # example # required: true
+        # example # required: false
+        # example # type: "boolean"
+        # example # type: "number"
+        # example # type: "environment"
+        # example # type: "string"
+
+on:
+  workflow_dispatch:
+    inputs:
+      X_INPUT_NAME_X:
+        required: false
+        type: "choice"
+        options:
+          - "X_INPUT_OPTION1_X"
+          - "X_INPUT_OPTION2_X"

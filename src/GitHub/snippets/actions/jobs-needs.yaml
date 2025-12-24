@@ -1,0 +1,4 @@
+# X_NEEDS_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    needs: "X_JOB_ID_X"

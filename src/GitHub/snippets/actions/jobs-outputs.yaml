@@ -1,0 +1,5 @@
+# X_JOB_OUTPUTS_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    outputs:
+      X_OUTPUT_NAME_X: "${{ steps.X_STEP_ID_X.outputs.X_STEP_OUTPUT_NAME_X }}"

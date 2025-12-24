@@ -1,0 +1,7 @@
+# X_STEPS_ACTION_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    steps:
+      - id: "X_STEP_ID_X"
+        shell: 'script -q -e -c "bash {0}"'
+        run: "X_SHELL_PLACEHOLDER_X"

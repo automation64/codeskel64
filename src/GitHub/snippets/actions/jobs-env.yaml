@@ -1,0 +1,5 @@
+# X_JOB_ENV_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    env:
+      # X_BASE_ENV_PLACEHOLDER_X

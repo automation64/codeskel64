@@ -1,0 +1,9 @@
+# X_CALL_INPUTS_PLACEHOLDER_X
+on:
+  workflow_call:
+    inputs:
+      X_INPUT_NAME_X:
+        description: "X_INPUT_DESCRIPTION_X"
+        default: "X_INPUT_DEFAULT_X"
+        required: "X_INPUT_REQUIRED_X"
+        type: "X_INPUT_TYPE_X"

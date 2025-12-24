@@ -1,0 +1,4 @@
+# X_ON_PLACEHOLDER_X
+on:
+  workflow_dispatch:
+    # X_CALL_INPUTS_PLACEHOLDER_X

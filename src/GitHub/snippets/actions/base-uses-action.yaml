@@ -1,0 +1,5 @@
+# X_BASE_USES_PLACEHOLDER_X
+uses: "actions/X_ACTION_NAME_X@X_GIT_REF_X"
+# example # uses: actions/checkout@v5
+# example # uses: ./.github/actions/hello-world-action
+# example # uses: actions/aws/ec2@main

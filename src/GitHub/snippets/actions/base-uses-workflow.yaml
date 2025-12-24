@@ -1,0 +1,7 @@
+# X_BASE_USES_PLACEHOLDER_X
+uses: "X_SOURCE_PLACEHOLDER_X/.github/workflows/X_ACTION_PLACEHOLDER_X"
+# example # uses: "X_ORG_NAME_X/X_REPO_NAME_X/.github/workflows/X_ACTION_FILE_X@X_GIT_REF_X"
+# example # uses: "./.github/workflows/X_ACTION_FILE_X@X_GIT_REF_X"
+# example # uses: "./.github/workflows/X_ACTION_FILE_X@X_GIT_TAG_X"
+# example # uses: "./.github/workflows/X_ACTION_FILE_X"
+# X_PARAMETERS_PLACEHOLDER_X

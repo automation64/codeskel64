@@ -1,0 +1,20 @@
+# X_JOB_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    name: "X_JOB_TITLE_X"
+    runs-on: "ubuntu-latest"
+    # X_BASE_PERMISSIONS_PLACEHOLDER_X
+    # X_MATRIX_PLACEHOLDER_X
+    # X_JOB_SECRETS_PLACEHOLDER_X
+    # X_JOB_ENV_PLACEHOLDER_X
+    # X_NEEDS_PLACEHOLDER_X
+    # X_BASE_USES_PLACEHOLDER_X
+    # X_BASE_WITH_PLACEHOLDER_X
+    steps:
+
+      - name: "Check out repository code"
+        uses: "actions/checkout@main"
+        with:
+          fetch-depth: 0
+
+      # X_STEPS_PLACEHOLDER_X
