@@ -5,10 +5,10 @@
 #
 # Imports
 #
-# delete-me # Use this section to declare imports
+# delete-me # Use this section to declare sources
 
-# optional # # shellcheck source=X_PATH_LIBRARY_X
-# optional # source 'X_PATH_LIBRARY_X'
+# example # # shellcheck source=X_PATH_LIBRARY_X
+# example # source 'X_PATH_LIBRARY_X'
 
 #
 # Globals

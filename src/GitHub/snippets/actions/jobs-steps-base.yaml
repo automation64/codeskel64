@@ -1,0 +1,9 @@
+# X_STEPS_PLACEHOLDER_X
+jobs:
+  X_JOB_ID_X:
+    steps:
+      - id: "X_STEP_ID_X"
+        name: "X_STEP_NAME_X"
+        # X_STEPS_ACTION_PLACEHOLDER_X
+        # X_BASE_ENV_PLACEHOLDER_X
+        # X_BASE_WITH_PLACEHOLDER_X

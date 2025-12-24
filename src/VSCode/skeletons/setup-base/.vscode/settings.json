@@ -2,9 +2,10 @@
   //
   // VSCode / Settings / Base
   //
-  // Settings Template Version: 20NOV25
+  // Settings Template Version: 14DEC25
   // VSCode Version: >= 1.66
   //
+  "accessibility.verbosity.terminal": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorStyle": "block",
@@ -28,7 +29,6 @@
   "files.enableTrash": true,
   "search.followSymlinks": false,
   "search.useIgnoreFiles": true,
-  "terminal.integrated.defaultLocation": "editor",
   "window.closeWhenEmpty": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,

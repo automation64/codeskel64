@@ -1,0 +1,28 @@
+{
+  //
+  // VSCode / Settings / Dev
+  //
+  // Settings Template Version: 14DEC25
+  // VSCode Version: >= 1.66
+  //
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.altClickMovesCursor": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.enableFileLinks": "notRemote",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.initialHint": false,
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.shellIntegration.quickFixEnabled": false,
+  "terminal.integrated.shellIntegration.showCommandGuide": false,
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.suggest.upArrowNavigatesHistory": false,
+  "terminal.integrated.suggest.providers": {
+    "lsp": false,
+    "vscode.terminal-suggest": false
+  },
+}

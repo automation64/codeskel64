@@ -1,0 +1,27 @@
+{
+  //
+  // VSCode / Settings / Go Lang
+  //
+  // Settings Template Version: 15DEC25
+  // VSCode Version: >= 1.66
+  //
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "custom",
+  "go.diagnostic.vulncheck": "Imports",
+  "go.editorContextMenuCommands": {
+    "removeTags": true,
+    "fillStruct": true,
+    "generateTestForFile": true,
+    "generateTestForPackage": true
+  },
+  "go.alternateTools": {
+    "customFormatter": "golangci-lint"
+  },
+  "go.formatFlags": [
+    "fmt",
+    "--stdin"
+  ],
+  "go.lintFlags": [
+    "--config=${workspaceFolder}/.golangci.yaml"
+  ]
+}

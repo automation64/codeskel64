@@ -21,6 +21,11 @@ X_DESCRIPTION_X
 ```shell
 ```
 
+```text
+/ X_MENU_X
+/ X_MENU_X / X_SUBMENU_X
+```
+
 [## Paths]
 
 ### `X_CHILD_PATH_X/`

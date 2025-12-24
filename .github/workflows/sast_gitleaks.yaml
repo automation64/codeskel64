@@ -1,8 +1,9 @@
 ---
-# Template: 1.0.0
-name: "SAST / GitLeaks"
+# template: 1.1.0
+name: "SAST/GitLeaks"
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - "main"
@@ -11,19 +12,12 @@ on:
       - "feature/**"
 
 jobs:
-  sast-GitLeaks:
-    runs-on: "ubuntu-latest"
-    steps:
-
-      - name: "Check out repository code"
-        uses: "actions/checkout@main"
-
-      - name: "Prepare environment"
-        run: "./bin/dev-lib-base"
-
-      - name: "Download tools"
-        run: "./bin/dev-lib-gitleaks"
-
-      - name: "Run SAST"
-        run: "./bin/dev-sast-gitleaks"
+  sast-gitleaks:
+    uses: "automation64/github-workflow-gitleaks/.github/workflows/main.yaml@main"
+    with:
+      DEV_CICD_DEBUG: "${{ vars.DEV_CICD_DEBUG }}"
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
 ...

@@ -1,0 +1,22 @@
+---
+# Template: 1.1.0
+name: "X_WORKFLOW_TITLE_X"
+
+permissions:
+  # X_PERMISSIONS_PLACEHOLDER_X
+
+concurrency:
+  # X_CONCURRENCY_PLACEHOLDER_X
+
+defaults:
+  # X_DEFAULTS_PLACEHOLDER_X
+
+env:
+  # X_WORKFLOW_ENV_PLACEHOLDER_X
+
+on:
+  # X_ON_PLACEHOLDER_X
+
+jobs:
+  # X_JOB_PLACEHOLDER_X
+...

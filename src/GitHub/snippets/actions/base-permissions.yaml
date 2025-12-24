@@ -1,4 +1,4 @@
-X_PERMISSIONS_PLACEHOLDER_X
+# X_BASE_PERMISSIONS_PLACEHOLDER_X
 permissions:
   # example # actions: read|write|none
   # example # checks: read|write|none

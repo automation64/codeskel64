@@ -1,0 +1,7 @@
+# X_CALL_OUTPUTS_PLACEHOLDER_X
+on:
+  workflow_call:
+    outputs:
+      X_OUTPUT_NAME_X:
+        description: "X_OUTPUT_DESCRIPTION_X"
+        value: "${{ jobs.X_JOB_ID_X.outputs.X_JOB_OUTPUT_NAME_X }}"

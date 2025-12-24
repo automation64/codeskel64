@@ -3,12 +3,14 @@
     //
     // VSCode / Extensions / Themes
     //
-    // Settings Template Version: 20NOV25
+    // Settings Template Version: 15DEC25
     // VSCode Version: >= 1.66
     //
     // Theme tools
     "johnpapa.vscode-peacock",
-    // Theme Library
+    // Icon Theme Library
+    "miguelsolorio.fluent-icons",
+    // Color Theme Library
     "ahmadawais.shades-of-purple",
     "AiyuAyaan.neon-cyberpunk",
     "akamud.vscode-theme-onedark",
