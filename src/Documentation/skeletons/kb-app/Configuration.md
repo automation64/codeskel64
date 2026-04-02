@@ -4,12 +4,15 @@
   - [X\_SECTION\_X](#x_section_x)
     - [X\_TASK\_X](#x_task_x)
       - [Version: OS:](#version-os)
+  - [Paths](#paths)
     - [`X_CHILD_PATH_X/`](#x_child_path_x)
       - [Version: OS:](#version-os-1)
     - [`X_FILE_NAME_X`](#x_file_name_x)
       - [Version: OS:](#version-os-2)
+  - [File-Spec](#file-spec)
     - [`X_FILE_NAME_X`](#x_file_name_x-1)
       - [Version: OS:](#version-os-3)
+  - [Shell-Env](#shell-env)
     - [Version: OS:](#version-os-4)
   - [References](#references)
 
@@ -26,7 +29,7 @@ X_DESCRIPTION_X
 ```shell
 ```
 
-[## Paths]
+## Paths
 
 ### `X_CHILD_PATH_X/`
 
@@ -44,7 +47,7 @@ X_DESCRIPTION_X
 
 - `X_FILE_PATH_X`
 
-[## File-Spec]
+## File-Spec
 
 ### `X_FILE_NAME_X`
 
@@ -54,7 +57,7 @@ X_DESCRIPTION_X
 X_SPEC_PLACEHOLDER_X
 ```
 
-[## Shell-Env]
+## Shell-Env
 
 ### Version: OS:
 

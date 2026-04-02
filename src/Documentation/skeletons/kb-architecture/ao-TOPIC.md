@@ -2,6 +2,7 @@
 
 - [Architecture Overview](#architecture-overview)
   - [Purpose](#purpose)
+  - [Scope](#scope)
   - [Solution Objective](#solution-objective)
   - [Solution Scope](#solution-scope)
   - [Solution Requirements](#solution-requirements)
@@ -11,6 +12,8 @@
 ## Purpose
 
 Provide a high-level description of the solution architecture
+
+## Scope
 
 ## Solution Objective
 
@@ -28,4 +31,4 @@ Provide a high-level description of the solution architecture
 
 ## References
 
-**_template: 2.0.0_**
+**_template: 2.0.1_**

@@ -1,0 +1,19 @@
+---
+# template: 1.0.0
+name: "X_WORKFLOW_TITLE_X"
+
+on:
+  - push
+
+jobs:
+  X_JOB_ID_X:
+    name: "X_JOB_TITLE_X"
+    runs-on: "ubuntu-latest"
+
+    steps:
+
+      - name: "Check out repository code"
+        uses: "actions/checkout@main"
+        with:
+          fetch-depth: 0
+...

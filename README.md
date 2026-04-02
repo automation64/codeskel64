@@ -35,6 +35,7 @@
 | [BatsCore](src/BatsCore)           |
 | [CertManager](src/CertManager)     |
 | [Container](src/Container)         |
+| [CSharp](src/CSharp)               |
 | [Documentation](src/Documentation) |
 | [FluxCD](src/FluxCD)               |
 | [GitHub](src/GitHub)               |
@@ -45,6 +46,7 @@
 | [Kubernetes](src/Kubernetes)       |
 | [Licenses](src/Licenses)           |
 | [MkDocs](src/MkDocs)               |
+| [NodeJS](src/NodeJS)               |
 | [OpenTofu](src/OpenTofuerraform)   |
 | [Python](src/Python)               |
 | [ShellCheck](src/ShellCheck)       |

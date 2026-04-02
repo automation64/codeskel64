@@ -4,13 +4,12 @@
 | `ARM64`     | `ARM CPU 64bit`                   |
 | `AWS`       | `Amazon AWS`                      |
 | `AZ`        | `Microsoft Azure`                 |
+| `LXC`       | `System Container`                |
 | `CNT`       | `Container`                       |
 | `GCP`       | `Google Cloud`                    |
 | `GUI`       | `Platform independent Graphic UI` |
 | `HPV`       | `MS Hyper-V`                      |
 | `KVM`       | `Linux KVM Hypervisor`            |
-| `KVM4AMD64` | `Linux KVM Hypervisor on amd64`   |
-| `KVM4X86`   | `Linux KVM Hypervisor on x86`     |
 | `PPC`       | `IBM Power CPU`                   |
 | `APPSH`     | `Application interactive shell`   |
 | `SL`        | `IBM Softlayer`                   |

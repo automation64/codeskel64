@@ -1,0 +1,8 @@
+# optional ##
+# optional ## X_RESOURCE_TYPE_X [/ X_RESOURCE_COMPONENT_X]
+# optional ##
+
+# X_TERRAFORM_LOCALS_PLACEHOLDER_X
+locals {
+  # X_TERRAFORM_LOCALS_NAME_X = X_TERRAFORM_LOCALS_VALUE_X
+}

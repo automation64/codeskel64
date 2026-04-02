@@ -1,6 +1,6 @@
-# Architectural Direction
+# Architectural Decision
 
-- [Architectural Direction](#architectural-direction)
+- [Architectural Decision](#architectural-decision)
   - [Purpose](#purpose)
   - [Scope](#scope)
   - [Decision](#decision)

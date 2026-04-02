@@ -4,8 +4,10 @@
   - [X\_SECTION\_X](#x_section_x)
     - [X\_TASK\_X](#x_task_x)
       - [Version: OS:](#version-os)
+  - [Paths](#paths)
     - [`X_CHILD_PATH_X/`](#x_child_path_x)
       - [Version: OS:](#version-os-1)
+  - [Log-Format](#log-format)
   - [References](#references)
 
 ## X_SECTION_X
@@ -26,7 +28,7 @@ X_DESCRIPTION_X
 / X_MENU_X / X_SUBMENU_X
 ```
 
-[## Paths]
+## Paths
 
 ### `X_CHILD_PATH_X/`
 
@@ -36,7 +38,7 @@ X_DESCRIPTION_X
 
 - `X_PARENT_PATH_X/`
 
-[## Log-Format]
+## Log-Format
 
 ## References
 

@@ -4,7 +4,7 @@
 | `ALM`  | `AlmaLinux`                  | 8.5                                                                           |
 | `ALP`  | `Alpine`                     | 3.15                                                                          |
 | `AMZ`  | `Amazon Linux`               | 1.0 2.0                                                                       |
-| `ARC`  | `ArchLinux`                  |                                                                               |
+| `ARC`  | `ArchLinux`                  | 2025.10                                                                       |
 | `CNT`  | `CentOS`                     | 7.0 8.0 8.2 8.3 8.5                                                           |
 | `CNTR` | `Container`                  |                                                                               |
 | `DEB`  | `Debian`                     | 10.0 11.0                                                                     |
