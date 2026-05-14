@@ -25,14 +25,18 @@ source "${DEV_LIB_BASHLIB64_TARGET}/bashlib64-module-rxtx.bash" &&
   source "${DEV_LIB_BASHLIB64_TARGET}/bashlib64-core.bash" || exit 1
 source ./bin/dev-env-git || exit 1
 
-declare MY_BRANCH="${1:-"${DEV_GIT_BRANCH_FEATURE}"}"
-
 function my_close() {
   bl64_dbg_app_show_function
-  bl64_msg_show_task "switch to main branch (${DEV_GIT_BRANCH_MAIN})" &&
-    bl64_vcs_run_git checkout "$DEV_GIT_BRANCH_MAIN" &&
-    bl64_msg_show_task "delete local branch (${MY_BRANCH})" &&
-    bl64_vcs_run_git branch -d "$MY_BRANCH"
+  bl64_msg_show_task "switch to main branch (${DEV_GIT_BRANCH_MAIN})"
+  bl64_vcs_run_git checkout "$DEV_GIT_BRANCH_MAIN" || return $?
+
+  bl64_msg_show_task "delete release branch (local/${DEV_GIT_BRANCH_RELEASE})"
+  bl64_vcs_run_git branch -d "$DEV_GIT_BRANCH_RELEASE" || return $?
+
+  bl64_msg_show_task "delete feature branch (${DEV_GIT_REMOTE_ORIGIN}/${DEV_GIT_BRANCH_FEATURE})"
+  bl64_vcs_run_git branch -df "$DEV_GIT_BRANCH_FEATURE" &&
+    bl64_vcs_run_git push -d "$DEV_GIT_REMOTE_ORIGIN" "$DEV_GIT_BRANCH_FEATURE" &&
+    bl64_vcs_run_git remote prune "$DEV_GIT_REMOTE_ORIGIN"
 }
 
 function my_initialize() {
@@ -41,11 +45,13 @@ function my_initialize() {
     dev_git_check_repo_root &&
     bl64_vcs_setup &&
     dev_bin64_task_show_setup \
-      'MY_BRANCH'
+      'DEV_GIT_REMOTE_ORIGIN' \
+      'DEV_GIT_BRANCH_RELEASE' \
+      'DEV_GIT_BRANCH_FEATURE'
 }
 
-bl64_lib_script_version_set '2.3.0'
-bl64_msg_help_about_set 'Close GIT branch'
+bl64_lib_script_version_set '1.0.0'
+bl64_msg_help_about_set 'Close release and feature branches'
 dev_bin64_initialize && my_initialize || exit $?
 
 bl64_msg_show_batch_start "$BL64_SCRIPT_ID"

@@ -1,0 +1,22 @@
+---
+- name: "X_PLAYBOOK_NAME_X"
+  hosts: "X_TARGET_HOST_X"
+  # optional # remote_user: X_REMOTE_USER_NAME_X
+  # optional # become: true
+  # optional # gather_facts: false
+
+  # optional # vars:
+  # optional #   - X_VAR_NAME_X: X_VAR_VALUE_X
+
+  # optional # pre_tasks:
+  # optional #    - name: "X_PRE_TASK_NAME_X"
+  # optional #      # X_PRE_TASK_PLACEHOLDER_X
+
+  tasks:
+    - name: "X_TASK_NAME_X"
+      # X_TASK_PLACEHOLDER_X
+
+  # optional # post_tasks:
+  # optional #    - name: "X_POST_TASK_NAME_X"
+  # optional #      # X_POST_TASK_PLACEHOLDER_X
+...
