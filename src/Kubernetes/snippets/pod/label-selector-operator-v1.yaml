@@ -1,0 +1,6 @@
+---
+
+# "X_AFFINITY_OPERATOR_X" # operator:"DoesNotExist"
+# "X_AFFINITY_OPERATOR_X" # operator:"Exists"
+# "X_AFFINITY_OPERATOR_X" # operator:"In"
+# "X_AFFINITY_OPERATOR_X" # operator:"NotIn"

@@ -1,9 +1,3 @@
-#
-# Provider: GitHub
-#
-# * man: https://registry.terraform.io/providers/integrations/github/latest/docs
-#
-
 provider "github" {
   owner = var.provider_github__owner
 
