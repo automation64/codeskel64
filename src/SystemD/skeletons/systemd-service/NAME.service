@@ -1,0 +1,23 @@
+[Unit]
+Description=X_SERVICE_DESCRIPTION_X
+# optional # Documentation=X_SERVICE_DOC_URL_X
+# optional # After=X_SERVICE_DEPENDENCY_X
+
+[Service]
+PermissionsStartOnly=true
+# example # LimitNOFILE=1048576
+# example # LimitNPROC=512
+# example # CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+# example # AmbientCapabilities=CAP_NET_BIND_SERVICE
+# example # NoNewPrivileges=true
+# example # User=X_RUN_US_USER_X
+# example # WorkingDirectory=X_WORKING_DIR_X
+ExecStart=X_COMMAND_START_X
+ExecReload=X_COMMAND_RELOAD_X
+Restart=on-failure
+# example # StandardOutput=append:X_LOG_FILE_X
+# example # StandardError=append:X_LOG_FILE_X
+
+
+[Install]
+WantedBy=multi-user.target

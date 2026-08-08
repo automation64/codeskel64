@@ -1,0 +1,32 @@
+$ORIGIN X_REVERSE_ZONE_X.
+$TTL X_DEFAULT_TTL_X
+
+@   IN  SOA X_PRIMARY_NS_X. X_ADMIN_EMAIL_X. (
+            X_SERIAL_X
+            X_REFRESH_X
+            X_RETRY_X
+            X_EXPIRE_X
+            X_MINIMUM_X
+)
+
+; ============================================================================
+; Name Servers
+; ============================================================================
+
+@               IN  NS      X_PRIMARY_NS_X.
+@               IN  NS      X_SECONDARY_NS_X.
+
+; ============================================================================
+; PTR Records
+; ============================================================================
+
+X_GATEWAY_LAST_OCTET_X      IN PTR gateway.X_DOMAIN_NAME_X.
+X_NS1_LAST_OCTET_X          IN PTR ns1.X_DOMAIN_NAME_X.
+X_NS2_LAST_OCTET_X          IN PTR ns2.X_DOMAIN_NAME_X.
+X_MAIL_LAST_OCTET_X         IN PTR mail.X_DOMAIN_NAME_X.
+X_HOST_LAST_OCTET_X         IN PTR X_DOMAIN_NAME_X.
+
+; Additional examples
+; 20            IN PTR www.X_DOMAIN_NAME_X.
+; 30            IN PTR ftp.X_DOMAIN_NAME_X.
+; 40            IN PTR vpn.X_DOMAIN_NAME_X.

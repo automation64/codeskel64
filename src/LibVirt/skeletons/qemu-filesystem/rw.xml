@@ -1,0 +1,8 @@
+<filesystem type="mount" accessmode="passthrough">
+    <driver type="virtiofs"/>
+    <binary path="/usr/lib/virtiofsd" xattr="on"/>
+    <source dir="X_SOURCE_PATH_X"/>
+    <target dir="X_MOUNT_TAG_X"/>
+    <alias name="X_ALIAS_X"/>
+    <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
+</filesystem>

@@ -1,0 +1,11 @@
+$ORIGIN X_DOMAIN_NAME_X.
+$TTL X_DEFAULT_TTL_X
+
+@   IN  SOA X_PRIMARY_NS_X. X_ADMIN_EMAIL_X. (
+            X_SERIAL_X     ; Serial (e.g., YYYYMMDDNN)
+            X_REFRESH_X    ; Refresh
+            X_RETRY_X      ; Retry
+            X_EXPIRE_X     ; Expire
+            X_MINIMUM_X    ) ; Minimum TTL
+
+; X_BASE_RECORDS_PLACEHOLDER_X

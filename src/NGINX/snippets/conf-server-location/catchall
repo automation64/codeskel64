@@ -1,0 +1,7 @@
+# X_HTTP_SERVER_PLACEHOLDER_X
+server {
+	# Warning: must be the last location in the server block
+	location / {
+		return 404;
+	}
+}

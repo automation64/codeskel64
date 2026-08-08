@@ -1,0 +1,2 @@
+; X_BASE_RECORDS_PLACEHOLDER_X
+@               IN  NS   X_NAME_SERVER_FQDN_X.
