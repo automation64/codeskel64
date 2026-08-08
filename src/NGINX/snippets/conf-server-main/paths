@@ -1,0 +1,5 @@
+# X_HTTP_SERVER_PLACEHOLDER_X
+server {
+	root /var/www/html;
+	access_log /var/log/nginx/access.log main;
+}

@@ -1,0 +1,2 @@
+; X_BASE_RECORDS_PLACEHOLDER_X
+@               IN  CAA  X_FLAGS_X X_TAG_X "X_VALUE_X"

@@ -1,0 +1,7 @@
+# X_HTTP_SERVER_PLACEHOLDER_X
+server {
+	location = / {
+		index index.html;
+		try_files /index.html =404;
+	}
+}
